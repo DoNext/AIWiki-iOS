@@ -21,7 +21,13 @@ enum Fixture {
             icon: "chatgpt.png",
             category: "聊天机器人",
             sourceURL: "https://openai.com/chatgpt/overview/",
-            lastVerifiedAt: "2026-03-02"
+            lastVerifiedAt: "2026-03-02",
+            useCases: nil,
+            bestPractices: nil,
+            strengths: nil,
+            limitations: nil,
+            promptTemplates: nil,
+            access: nil
         ),
         AITool(
             id: "copilot",
@@ -33,7 +39,13 @@ enum Fixture {
             icon: "copilot.png",
             category: "编程助手",
             sourceURL: "https://github.com/features/copilot",
-            lastVerifiedAt: "2026-03-02"
+            lastVerifiedAt: "2026-03-02",
+            useCases: nil,
+            bestPractices: nil,
+            strengths: nil,
+            limitations: nil,
+            promptTemplates: nil,
+            access: nil
         )
     ]
 }

@@ -59,7 +59,12 @@ final class AppStore: ObservableObject {
 
         do {
             let learningMaterials = try learningRepository.fetchAllLearningMaterials()
-            learningByToolID = Dictionary(uniqueKeysWithValues: learningMaterials.map { ($0.id, $0) })
+            learningByToolID = learningMaterials.reduce(into: [String: LearningMaterial]()) { result, material in
+                // Keep the first material encountered for a given ID to avoid duplicate key crash
+                if result[material.id] == nil {
+                    result[material.id] = material
+                }
+            }
         } catch {
             learningByToolID = [:]
         }

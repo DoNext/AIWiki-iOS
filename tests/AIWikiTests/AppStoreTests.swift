@@ -22,7 +22,7 @@ final class AppStoreTests: XCTestCase {
 
     func testSearchReturnsExpectedTool() {
         let store = makeStore()
-        let results = store.filteredTools(query: "copilot")
+        let results = store.filteredTools(query: "github")
         XCTAssertEqual(results.map(\.id), ["copilot"])
     }
 
