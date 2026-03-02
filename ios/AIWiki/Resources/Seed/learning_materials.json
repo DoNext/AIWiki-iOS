@@ -241,5 +241,834 @@
     "review_note": "batch approved from official-source pipeline",
     "raw_file": "data/raw/sources/stable-diffusion.json",
     "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "jasper",
+    "name": "Jasper",
+    "summary": "AI 驱动的营销内容生成平台",
+    "core_capabilities": [
+      "营销文案生成",
+      "品牌语调定制",
+      "多语言内容"
+    ],
+    "getting_started": [
+      "访问 https://www.jasper.ai/ 开始使用 Jasper"
+    ],
+    "official_links": [
+      "https://www.jasper.ai/",
+      "https://www.jasper.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/jasper.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "summary": "嵌入 Notion 的 AI 写作与知识管理助手",
+    "core_capabilities": [
+      "文档生成",
+      "知识问答",
+      "内容改写"
+    ],
+    "getting_started": [
+      "访问 https://www.notion.so/product/ai 开始使用 Notion AI"
+    ],
+    "official_links": [
+      "https://www.notion.so/product/ai",
+      "https://www.notion.so/product/ai"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/notion-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "summary": "AI 英文写作校对与润色工具",
+    "core_capabilities": [
+      "语法检查",
+      "风格建议",
+      "语调调整"
+    ],
+    "getting_started": [
+      "访问 https://www.grammarly.com/ 开始使用 Grammarly"
+    ],
+    "official_links": [
+      "https://www.grammarly.com/",
+      "https://www.grammarly.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/grammarly.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "summary": "高质量 AI 语音合成与克隆平台",
+    "core_capabilities": [
+      "文字转语音",
+      "声音克隆",
+      "多语言语音"
+    ],
+    "getting_started": [
+      "访问 https://elevenlabs.io/ 开始使用 ElevenLabs"
+    ],
+    "official_links": [
+      "https://elevenlabs.io/",
+      "https://elevenlabs.io/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/elevenlabs.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "whisper",
+    "name": "Whisper",
+    "summary": "OpenAI 开源语音识别模型",
+    "core_capabilities": [
+      "语音转文字",
+      "多语言识别",
+      "本地部署"
+    ],
+    "getting_started": [
+      "访问 https://openai.com/research/whisper 开始使用 Whisper"
+    ],
+    "official_links": [
+      "https://openai.com/research/whisper",
+      "https://openai.com/research/whisper"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/whisper.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "summary": "AI 音乐生成平台",
+    "core_capabilities": [
+      "文字生成音乐",
+      "风格定制",
+      "歌词创作"
+    ],
+    "getting_started": [
+      "访问 https://suno.com/ 开始使用 Suno"
+    ],
+    "official_links": [
+      "https://suno.com/",
+      "https://suno.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/suno.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "summary": "多功能 AI 视频生成与编辑平台",
+    "core_capabilities": [
+      "文字生成视频",
+      "视频编辑",
+      "绿幕去除"
+    ],
+    "getting_started": [
+      "访问 https://runwayml.com/ 开始使用 Runway"
+    ],
+    "official_links": [
+      "https://runwayml.com/",
+      "https://runwayml.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/runway.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "heygen",
+    "name": "HeyGen",
+    "summary": "AI 数字人视频生成平台",
+    "core_capabilities": [
+      "数字人视频",
+      "多语言口型同步",
+      "品牌定制"
+    ],
+    "getting_started": [
+      "访问 https://www.heygen.com/ 开始使用 HeyGen"
+    ],
+    "official_links": [
+      "https://www.heygen.com/",
+      "https://www.heygen.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/heygen.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "pika",
+    "name": "Pika",
+    "summary": "轻量级 AI 视频生成工具",
+    "core_capabilities": [
+      "图片转视频",
+      "文字转视频",
+      "视频风格转换"
+    ],
+    "getting_started": [
+      "访问 https://pika.art/ 开始使用 Pika"
+    ],
+    "official_links": [
+      "https://pika.art/",
+      "https://pika.art/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/pika.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "phind",
+    "name": "Phind",
+    "summary": "面向开发者的 AI 搜索引擎",
+    "core_capabilities": [
+      "代码搜索",
+      "技术问答",
+      "来源引用"
+    ],
+    "getting_started": [
+      "访问 https://www.phind.com/ 开始使用 Phind"
+    ],
+    "official_links": [
+      "https://www.phind.com/",
+      "https://www.phind.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/phind.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "you-com",
+    "name": "You.com",
+    "summary": "支持 AI 增强的隐私优先搜索引擎",
+    "core_capabilities": [
+      "AI 摘要",
+      "隐私搜索",
+      "多模式搜索"
+    ],
+    "getting_started": [
+      "访问 https://you.com/ 开始使用 You.com"
+    ],
+    "official_links": [
+      "https://you.com/",
+      "https://you.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/you-com.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "gamma",
+    "name": "Gamma",
+    "summary": "AI 驱动的演示文稿生成工具",
+    "core_capabilities": [
+      "一键生成 PPT",
+      "自动排版",
+      "多模板"
+    ],
+    "getting_started": [
+      "访问 https://gamma.app/ 开始使用 Gamma"
+    ],
+    "official_links": [
+      "https://gamma.app/",
+      "https://gamma.app/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/gamma.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "otter-ai",
+    "name": "Otter.ai",
+    "summary": "AI 会议记录与转写工具",
+    "core_capabilities": [
+      "实时转写",
+      "会议摘要",
+      "说话人识别"
+    ],
+    "getting_started": [
+      "访问 https://otter.ai/ 开始使用 Otter.ai"
+    ],
+    "official_links": [
+      "https://otter.ai/",
+      "https://otter.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/otter-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "summary": "AI 智能排版演示工具",
+    "core_capabilities": [
+      "智能排版",
+      "模板库",
+      "团队协作"
+    ],
+    "getting_started": [
+      "访问 https://www.beautiful.ai/ 开始使用 Beautiful.ai"
+    ],
+    "official_links": [
+      "https://www.beautiful.ai/",
+      "https://www.beautiful.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/beautiful-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "canva-ai",
+    "name": "Canva AI",
+    "summary": "Canva 内置的 AI 设计助手",
+    "core_capabilities": [
+      "AI 生成图",
+      "魔法橡皮擦",
+      "模板推荐"
+    ],
+    "getting_started": [
+      "访问 https://www.canva.com/ 开始使用 Canva AI"
+    ],
+    "official_links": [
+      "https://www.canva.com/",
+      "https://www.canva.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/canva-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "figma-ai",
+    "name": "Figma AI",
+    "summary": "Figma 内置的 AI 设计辅助功能",
+    "core_capabilities": [
+      "自动布局",
+      "文案生成",
+      "设计建议"
+    ],
+    "getting_started": [
+      "访问 https://www.figma.com/ 开始使用 Figma AI"
+    ],
+    "official_links": [
+      "https://www.figma.com/",
+      "https://www.figma.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/figma-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "looka",
+    "name": "Looka",
+    "summary": "AI Logo 和品牌设计工具",
+    "core_capabilities": [
+      "Logo 生成",
+      "品牌套件",
+      "名片设计"
+    ],
+    "getting_started": [
+      "访问 https://looka.com/ 开始使用 Looka"
+    ],
+    "official_links": [
+      "https://looka.com/",
+      "https://looka.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/looka.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "khan-academy-ai",
+    "name": "Khanmigo",
+    "summary": "Khan Academy 的 AI 学习辅导员",
+    "core_capabilities": [
+      "个性化辅导",
+      "题目讲解",
+      "学习进度跟踪"
+    ],
+    "getting_started": [
+      "访问 https://www.khanacademy.org/khan-labs 开始使用 Khanmigo"
+    ],
+    "official_links": [
+      "https://www.khanacademy.org/khan-labs",
+      "https://www.khanacademy.org/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/khan-academy-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "duolingo-max",
+    "name": "Duolingo Max",
+    "summary": "AI 增强的语言学习应用",
+    "core_capabilities": [
+      "AI 对话练习",
+      "错误讲解",
+      "个性化课程"
+    ],
+    "getting_started": [
+      "访问 https://www.duolingo.com/ 开始使用 Duolingo Max"
+    ],
+    "official_links": [
+      "https://www.duolingo.com/",
+      "https://www.duolingo.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/duolingo-max.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "photomath",
+    "name": "Photomath",
+    "summary": "AI 拍照解数学题工具",
+    "core_capabilities": [
+      "拍照解题",
+      "分步讲解",
+      "图形计算"
+    ],
+    "getting_started": [
+      "访问 https://photomath.com/ 开始使用 Photomath"
+    ],
+    "official_links": [
+      "https://photomath.com/",
+      "https://photomath.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/photomath.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "synthesia",
+    "name": "Synthesia",
+    "summary": "AI 虚拟人视频制作平台",
+    "core_capabilities": [
+      "虚拟主持人",
+      "多语言配音",
+      "企业定制"
+    ],
+    "getting_started": [
+      "访问 https://www.synthesia.io/ 开始使用 Synthesia"
+    ],
+    "official_links": [
+      "https://www.synthesia.io/",
+      "https://www.synthesia.io/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/synthesia.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "adcreative-ai",
+    "name": "AdCreative.ai",
+    "summary": "AI 广告创意生成工具",
+    "core_capabilities": [
+      "广告素材生成",
+      "效果预测",
+      "A/B 测试"
+    ],
+    "getting_started": [
+      "访问 https://www.adcreative.ai/ 开始使用 AdCreative.ai"
+    ],
+    "official_links": [
+      "https://www.adcreative.ai/",
+      "https://www.adcreative.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/adcreative-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "copy-ai",
+    "name": "Copy.ai",
+    "summary": "AI 营销文案一站式平台",
+    "core_capabilities": [
+      "文案生成",
+      "工作流自动化",
+      "SEO 内容"
+    ],
+    "getting_started": [
+      "访问 https://www.copy.ai/ 开始使用 Copy.ai"
+    ],
+    "official_links": [
+      "https://www.copy.ai/",
+      "https://www.copy.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/copy-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "summary": "深度求索推出的开源大语言模型",
+    "core_capabilities": [
+      "代码生成",
+      "数学推理",
+      "长文本处理"
+    ],
+    "getting_started": [
+      "访问 https://www.deepseek.com/ 开始使用 DeepSeek"
+    ],
+    "official_links": [
+      "https://www.deepseek.com/",
+      "https://www.deepseek.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/deepseek.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "qianwen",
+    "name": "通义千问",
+    "summary": "阿里云推出的大语言模型",
+    "core_capabilities": [
+      "多语言对话",
+      "文档分析",
+      "代码生成"
+    ],
+    "getting_started": [
+      "访问 https://tongyi.aliyun.com/ 开始使用 通义千问"
+    ],
+    "official_links": [
+      "https://tongyi.aliyun.com/",
+      "https://tongyi.aliyun.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/qianwen.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "kimi",
+    "name": "Kimi",
+    "summary": "月之暗面推出的长文本 AI 助手",
+    "core_capabilities": [
+      "超长文本理解",
+      "文档分析",
+      "联网搜索"
+    ],
+    "getting_started": [
+      "访问 https://kimi.moonshot.cn/ 开始使用 Kimi"
+    ],
+    "official_links": [
+      "https://kimi.moonshot.cn/",
+      "https://kimi.moonshot.cn/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/kimi.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "v0",
+    "name": "v0",
+    "summary": "Vercel 推出的 AI UI 代码生成工具",
+    "core_capabilities": [
+      "UI 代码生成",
+      "组件设计",
+      "实时预览"
+    ],
+    "getting_started": [
+      "访问 https://v0.dev/ 开始使用 v0"
+    ],
+    "official_links": [
+      "https://v0.dev/",
+      "https://v0.dev/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/v0.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "replit-ai",
+    "name": "Replit AI",
+    "summary": "在线 IDE 集成的 AI 编程助手",
+    "core_capabilities": [
+      "代码生成",
+      "在线运行",
+      "协作编程"
+    ],
+    "getting_started": [
+      "访问 https://replit.com/ 开始使用 Replit AI"
+    ],
+    "official_links": [
+      "https://replit.com/",
+      "https://replit.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/replit-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "gpt4o",
+    "name": "GPT-4o",
+    "summary": "OpenAI 推出的全能旗舰多模态模型",
+    "core_capabilities": [
+      "文本理解",
+      "图像分析",
+      "实时语音",
+      "代码生成"
+    ],
+    "getting_started": [
+      "访问 https://openai.com/gpt-4o 开始使用 GPT-4o"
+    ],
+    "official_links": [
+      "https://openai.com/gpt-4o",
+      "https://openai.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/gpt4o.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "doubao",
+    "name": "豆包",
+    "summary": "字节跳动推出的 AI 对话助手",
+    "core_capabilities": [
+      "多轮对话",
+      "文档理解",
+      "图像生成"
+    ],
+    "getting_started": [
+      "访问 https://www.doubao.com/ 开始使用 豆包"
+    ],
+    "official_links": [
+      "https://www.doubao.com/",
+      "https://www.doubao.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/doubao.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "dall-e",
+    "name": "DALL·E",
+    "summary": "OpenAI 推出的文生图模型",
+    "core_capabilities": [
+      "文字生成图片",
+      "图像编辑",
+      "风格多样"
+    ],
+    "getting_started": [
+      "访问 https://openai.com/dall-e 开始使用 DALL·E"
+    ],
+    "official_links": [
+      "https://openai.com/dall-e",
+      "https://openai.com/dall-e"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/dall-e.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "ideogram",
+    "name": "Ideogram",
+    "summary": "擅长文字渲染的 AI 图像生成工具",
+    "core_capabilities": [
+      "文字渲染",
+      "海报设计",
+      "风格多样"
+    ],
+    "getting_started": [
+      "访问 https://ideogram.ai/ 开始使用 Ideogram"
+    ],
+    "official_links": [
+      "https://ideogram.ai/",
+      "https://ideogram.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/ideogram.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "julius-ai",
+    "name": "Julius AI",
+    "summary": "AI 数据分析与可视化工具",
+    "core_capabilities": [
+      "数据可视化",
+      "统计分析",
+      "自然语言查询"
+    ],
+    "getting_started": [
+      "访问 https://julius.ai/ 开始使用 Julius AI"
+    ],
+    "official_links": [
+      "https://julius.ai/",
+      "https://julius.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/julius-ai.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "chatgpt-data",
+    "name": "ChatGPT 数据分析",
+    "summary": "通过 ChatGPT 的代码解释器进行数据分析",
+    "core_capabilities": [
+      "上传文件分析",
+      "Python 代码执行",
+      "图表生成"
+    ],
+    "getting_started": [
+      "访问 https://chatgpt.com/ 开始使用 ChatGPT 数据分析"
+    ],
+    "official_links": [
+      "https://chatgpt.com/",
+      "https://openai.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/chatgpt-data.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "dify",
+    "name": "Dify",
+    "summary": "开源 AI 应用开发平台",
+    "core_capabilities": [
+      "AI 应用编排",
+      "知识库",
+      "工作流自动化"
+    ],
+    "getting_started": [
+      "访问 https://dify.ai/ 开始使用 Dify"
+    ],
+    "official_links": [
+      "https://dify.ai/",
+      "https://dify.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/dify.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "coze",
+    "name": "Coze（扣子）",
+    "summary": "字节跳动的 AI 应用搭建平台",
+    "core_capabilities": [
+      "AI Bot 搭建",
+      "插件系统",
+      "多平台发布"
+    ],
+    "getting_started": [
+      "访问 https://www.coze.com/ 开始使用 Coze（扣子）"
+    ],
+    "official_links": [
+      "https://www.coze.com/",
+      "https://www.coze.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/coze.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
   }
 ]

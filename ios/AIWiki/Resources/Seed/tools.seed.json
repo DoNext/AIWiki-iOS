@@ -3,21 +3,37 @@
     "id": "chatgpt",
     "name": "ChatGPT",
     "intro": "对话式人工智能助手平台",
-    "features": ["自然语言问答", "多轮对话", "内容生成"],
+    "features": [
+      "自然语言问答",
+      "多轮对话",
+      "内容生成"
+    ],
     "company": "OpenAI",
     "url": "https://chatgpt.com/",
     "icon": "chatgpt.png",
     "category": "聊天机器人",
     "source_url": "https://openai.com/chatgpt/overview/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["学习与知识总结", "写作与改写", "代码调试与解释", "产品方案头脑风暴"],
+    "use_cases": [
+      "学习与知识总结",
+      "写作与改写",
+      "代码调试与解释",
+      "产品方案头脑风暴"
+    ],
     "best_practices": [
       "先写清角色、目标和输出格式，再补充约束条件",
       "复杂任务分步骤提问，逐步迭代结果",
       "对关键事实要求给出依据并进行二次核对"
     ],
-    "strengths": ["通用任务覆盖广", "中文可用性高", "提示词生态成熟"],
-    "limitations": ["事实错误仍可能发生", "专业领域结论需人工复核"],
+    "strengths": [
+      "通用任务覆盖广",
+      "中文可用性高",
+      "提示词生态成熟"
+    ],
+    "limitations": [
+      "事实错误仍可能发生",
+      "专业领域结论需人工复核"
+    ],
     "prompt_templates": [
       {
         "title": "结构化写作模板",
@@ -31,7 +47,12 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["Web", "iOS", "Android", "API"],
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "API"
+      ],
       "api_available": true
     }
   },
@@ -39,21 +60,37 @@
     "id": "claude",
     "name": "Claude",
     "intro": "面向通用任务的人工智能助手",
-    "features": ["长文本理解", "写作辅助", "代码生成"],
+    "features": [
+      "长文本理解",
+      "写作辅助",
+      "代码生成"
+    ],
     "company": "Anthropic",
     "url": "https://claude.ai/",
     "icon": "claude.png",
     "category": "聊天机器人",
     "source_url": "https://www.anthropic.com/claude",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["长文阅读与总结", "文档润色", "规范写作", "代码解释与重构建议"],
+    "use_cases": [
+      "长文阅读与总结",
+      "文档润色",
+      "规范写作",
+      "代码解释与重构建议"
+    ],
     "best_practices": [
       "输入长文时先给任务边界和输出结构",
       "要求回答中标注不确定点，降低幻觉影响",
       "对关键条款采用逐段提问而不是一次问完"
     ],
-    "strengths": ["长上下文处理能力突出", "回答风格稳定", "长文整理体验好"],
-    "limitations": ["实时信息覆盖有限", "某些代码场景不如专注编程工具高效"],
+    "strengths": [
+      "长上下文处理能力突出",
+      "回答风格稳定",
+      "长文整理体验好"
+    ],
+    "limitations": [
+      "实时信息覆盖有限",
+      "某些代码场景不如专注编程工具高效"
+    ],
     "prompt_templates": [
       {
         "title": "长文归纳模板",
@@ -67,7 +104,12 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["Web", "iOS", "Android", "API"],
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "API"
+      ],
       "api_available": true
     }
   },
@@ -75,21 +117,37 @@
     "id": "gemini",
     "name": "Gemini",
     "intro": "Google 推出的多模态 AI 助手",
-    "features": ["文本生成", "图像理解", "跨设备协作"],
+    "features": [
+      "文本生成",
+      "图像理解",
+      "跨设备协作"
+    ],
     "company": "Google",
     "url": "https://gemini.google.com/",
     "icon": "gemini.png",
     "category": "多模态模型",
     "source_url": "https://gemini.google.com/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["多模态问答", "Google 生态办公辅助", "图文理解", "学习与资料整理"],
+    "use_cases": [
+      "多模态问答",
+      "Google 生态办公辅助",
+      "图文理解",
+      "学习与资料整理"
+    ],
     "best_practices": [
       "涉及图像任务时，明确你希望它关注的区域或元素",
       "与文档任务结合时，要求按目录层级输出",
       "先用简版问题探索，再逐步增加约束"
     ],
-    "strengths": ["多模态能力均衡", "与 Google 服务协同强", "跨设备使用体验好"],
-    "limitations": ["部分高级能力受地区和版本影响", "不同入口能力表现可能不一致"],
+    "strengths": [
+      "多模态能力均衡",
+      "与 Google 服务协同强",
+      "跨设备使用体验好"
+    ],
+    "limitations": [
+      "部分高级能力受地区和版本影响",
+      "不同入口能力表现可能不一致"
+    ],
     "prompt_templates": [
       {
         "title": "图文分析模板",
@@ -103,7 +161,12 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["Web", "Android", "iOS", "API"],
+      "platforms": [
+        "Web",
+        "Android",
+        "iOS",
+        "API"
+      ],
       "api_available": true
     }
   },
@@ -111,21 +174,37 @@
     "id": "github-copilot",
     "name": "GitHub Copilot",
     "intro": "面向开发者的 AI 编程助手",
-    "features": ["代码补全", "聊天问答", "IDE 集成"],
+    "features": [
+      "代码补全",
+      "聊天问答",
+      "IDE 集成"
+    ],
     "company": "GitHub",
     "url": "https://github.com/features/copilot",
     "icon": "copilot.png",
     "category": "编程助手",
     "source_url": "https://github.com/features/copilot",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["IDE 内代码补全", "单元测试生成", "重构建议", "代码解释与学习"],
+    "use_cases": [
+      "IDE 内代码补全",
+      "单元测试生成",
+      "重构建议",
+      "代码解释与学习"
+    ],
     "best_practices": [
       "让 Copilot 先给最小可运行版本，再逐步增强",
       "在注释中写明输入、输出和边界条件",
       "生成后必须跑测试并人工审查关键逻辑"
     ],
-    "strengths": ["开发流程内嵌体验好", "补全速度快", "与主流 IDE 集成完善"],
-    "limitations": ["复杂业务上下文理解有限", "生成代码需要严格审查"],
+    "strengths": [
+      "开发流程内嵌体验好",
+      "补全速度快",
+      "与主流 IDE 集成完善"
+    ],
+    "limitations": [
+      "复杂业务上下文理解有限",
+      "生成代码需要严格审查"
+    ],
     "prompt_templates": [
       {
         "title": "单元测试生成模板",
@@ -139,7 +218,12 @@
     "access": {
       "pricing": "订阅制（部分场景可试用）",
       "account_required": true,
-      "platforms": ["VS Code", "JetBrains", "Neovim", "GitHub"],
+      "platforms": [
+        "VS Code",
+        "JetBrains",
+        "Neovim",
+        "GitHub"
+      ],
       "api_available": false
     }
   },
@@ -147,21 +231,37 @@
     "id": "cursor",
     "name": "Cursor",
     "intro": "集成 AI 的代码编辑器",
-    "features": ["代码生成", "代码重构", "项目问答"],
+    "features": [
+      "代码生成",
+      "代码重构",
+      "项目问答"
+    ],
     "company": "Anysphere",
     "url": "https://www.cursor.com/",
     "icon": "cursor.png",
     "category": "编程助手",
     "source_url": "https://www.cursor.com/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["仓库级代码理解", "多文件改造", "Bug 定位", "快速原型开发"],
+    "use_cases": [
+      "仓库级代码理解",
+      "多文件改造",
+      "Bug 定位",
+      "快速原型开发"
+    ],
     "best_practices": [
       "先让模型总结项目结构，再下发改动任务",
       "复杂改动拆成小步并逐步验证",
       "每次改动后通过测试或构建检查回归"
     ],
-    "strengths": ["项目级上下文对话强", "多文件编辑效率高", "AI 工作流集成度高"],
-    "limitations": ["错误修改可能跨文件扩散", "仍需工程师把关架构与安全"],
+    "strengths": [
+      "项目级上下文对话强",
+      "多文件编辑效率高",
+      "AI 工作流集成度高"
+    ],
+    "limitations": [
+      "错误修改可能跨文件扩散",
+      "仍需工程师把关架构与安全"
+    ],
     "prompt_templates": [
       {
         "title": "仓库理解模板",
@@ -175,7 +275,11 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["macOS", "Windows", "Linux"],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
       "api_available": false
     }
   },
@@ -183,21 +287,37 @@
     "id": "midjourney",
     "name": "Midjourney",
     "intro": "基于提示词的图像生成工具",
-    "features": ["文生图", "风格化生成", "社区画廊"],
+    "features": [
+      "文生图",
+      "风格化生成",
+      "社区画廊"
+    ],
     "company": "Midjourney",
     "url": "https://www.midjourney.com/",
     "icon": "midjourney.png",
     "category": "图像生成",
     "source_url": "https://www.midjourney.com/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["概念视觉探索", "海报与封面草图", "品牌风格尝试", "社媒素材创意"],
+    "use_cases": [
+      "概念视觉探索",
+      "海报与封面草图",
+      "品牌风格尝试",
+      "社媒素材创意"
+    ],
     "best_practices": [
       "提示词包含主体、风格、镜头、光线和构图",
       "先低成本批量探索，再放大优选方向",
       "用负面描述减少不希望出现的元素"
     ],
-    "strengths": ["风格化效果突出", "创意探索效率高", "社区生态活跃"],
-    "limitations": ["精确可控性有限", "商用前需关注版权和合规"],
+    "strengths": [
+      "风格化效果突出",
+      "创意探索效率高",
+      "社区生态活跃"
+    ],
+    "limitations": [
+      "精确可控性有限",
+      "商用前需关注版权和合规"
+    ],
     "prompt_templates": [
       {
         "title": "品牌海报模板",
@@ -211,7 +331,10 @@
     "access": {
       "pricing": "订阅制",
       "account_required": true,
-      "platforms": ["Web", "Discord"],
+      "platforms": [
+        "Web",
+        "Discord"
+      ],
       "api_available": false
     }
   },
@@ -219,21 +342,37 @@
     "id": "stable-diffusion",
     "name": "Stable Diffusion",
     "intro": "开源的图像生成基础模型",
-    "features": ["文生图", "图像编辑", "本地部署"],
+    "features": [
+      "文生图",
+      "图像编辑",
+      "本地部署"
+    ],
     "company": "Stability AI",
     "url": "https://stability.ai/stable-diffusion",
     "icon": "stable-diffusion.png",
     "category": "图像生成",
     "source_url": "https://stability.ai/stable-diffusion",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["本地文生图", "企业内网图像生成", "风格迁移", "可控图像工作流"],
+    "use_cases": [
+      "本地文生图",
+      "企业内网图像生成",
+      "风格迁移",
+      "可控图像工作流"
+    ],
     "best_practices": [
       "先确定模型版本与采样参数再调提示词",
       "结合 ControlNet / LoRA 提升可控性",
       "为每个项目固定参数模板，便于复现"
     ],
-    "strengths": ["可本地部署", "可扩展性强", "生态插件丰富"],
-    "limitations": ["学习和调参门槛较高", "算力与显存要求较高"],
+    "strengths": [
+      "可本地部署",
+      "可扩展性强",
+      "生态插件丰富"
+    ],
+    "limitations": [
+      "学习和调参门槛较高",
+      "算力与显存要求较高"
+    ],
     "prompt_templates": [
       {
         "title": "写实产品图模板",
@@ -247,7 +386,10 @@
     "access": {
       "pricing": "开源模型（部署成本自担）",
       "account_required": false,
-      "platforms": ["Local", "Cloud"],
+      "platforms": [
+        "Local",
+        "Cloud"
+      ],
       "api_available": true
     }
   },
@@ -255,21 +397,37 @@
     "id": "notebooklm",
     "name": "NotebookLM",
     "intro": "面向资料整理的 AI 研究助手",
-    "features": ["文档问答", "要点总结", "来源引用"],
+    "features": [
+      "文档问答",
+      "要点总结",
+      "来源引用"
+    ],
     "company": "Google",
     "url": "https://notebooklm.google/",
     "icon": "notebooklm.png",
     "category": "数据分析",
     "source_url": "https://notebooklm.google/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["资料归纳", "研究问答", "课程复习", "知识库摘要"],
+    "use_cases": [
+      "资料归纳",
+      "研究问答",
+      "课程复习",
+      "知识库摘要"
+    ],
     "best_practices": [
       "先上传高质量来源，再进行问答",
       "要求回答引用具体来源段落",
       "对重点结论要求列出证据链"
     ],
-    "strengths": ["来源引用能力强", "长资料整理效率高", "学习场景体验好"],
-    "limitations": ["依赖输入资料质量", "跨来源推理仍需人工核验"],
+    "strengths": [
+      "来源引用能力强",
+      "长资料整理效率高",
+      "学习场景体验好"
+    ],
+    "limitations": [
+      "依赖输入资料质量",
+      "跨来源推理仍需人工核验"
+    ],
     "prompt_templates": [
       {
         "title": "研究摘要模板",
@@ -283,7 +441,9 @@
     "access": {
       "pricing": "免费版 + 订阅版（能力差异视版本）",
       "account_required": true,
-      "platforms": ["Web"],
+      "platforms": [
+        "Web"
+      ],
       "api_available": false
     }
   },
@@ -291,21 +451,37 @@
     "id": "perplexity",
     "name": "Perplexity",
     "intro": "支持联网检索的 AI 搜索工具",
-    "features": ["搜索问答", "来源引用", "研究模式"],
+    "features": [
+      "搜索问答",
+      "来源引用",
+      "研究模式"
+    ],
     "company": "Perplexity",
     "url": "https://www.perplexity.ai/",
     "icon": "perplexity.png",
     "category": "数据分析",
     "source_url": "https://www.perplexity.ai/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["信息检索", "行业调研", "竞品速览", "事实问答"],
+    "use_cases": [
+      "信息检索",
+      "行业调研",
+      "竞品速览",
+      "事实问答"
+    ],
     "best_practices": [
       "提问时指定时间范围和目标受众",
       "要求按来源可信度分层输出",
       "关键结论交叉验证至少两个来源"
     ],
-    "strengths": ["检索与回答一体化", "来源可追溯", "调研速度快"],
-    "limitations": ["来源质量不一", "深度分析仍需人工结构化"],
+    "strengths": [
+      "检索与回答一体化",
+      "来源可追溯",
+      "调研速度快"
+    ],
+    "limitations": [
+      "来源质量不一",
+      "深度分析仍需人工结构化"
+    ],
     "prompt_templates": [
       {
         "title": "行业扫描模板",
@@ -319,7 +495,11 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["Web", "iOS", "Android"],
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
       "api_available": true
     }
   },
@@ -327,21 +507,37 @@
     "id": "grok",
     "name": "Grok",
     "intro": "支持多模态交互的 AI 助手",
-    "features": ["对话问答", "图像理解", "实时信息"],
+    "features": [
+      "对话问答",
+      "图像理解",
+      "实时信息"
+    ],
     "company": "xAI",
     "url": "https://grok.com/",
     "icon": "grok.png",
     "category": "多模态模型",
     "source_url": "https://x.ai/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["多模态对话", "实时热点讨论", "图像理解问答", "通用知识探索"],
+    "use_cases": [
+      "多模态对话",
+      "实时热点讨论",
+      "图像理解问答",
+      "通用知识探索"
+    ],
     "best_practices": [
       "涉及实时事件时先限定时间窗口",
       "图像任务请明确你关心的细节维度",
       "让模型分别输出事实、观点与不确定点"
     ],
-    "strengths": ["实时性场景表现好", "多模态交互自然", "对话风格有辨识度"],
-    "limitations": ["某些专业深度不稳定", "地区与平台可用性可能有差异"],
+    "strengths": [
+      "实时性场景表现好",
+      "多模态交互自然",
+      "对话风格有辨识度"
+    ],
+    "limitations": [
+      "某些专业深度不稳定",
+      "地区与平台可用性可能有差异"
+    ],
     "prompt_templates": [
       {
         "title": "热点追踪模板",
@@ -355,7 +551,1521 @@
     "access": {
       "pricing": "订阅制（部分能力与平台绑定）",
       "account_required": true,
-      "platforms": ["Web", "iOS", "Android"],
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "jasper",
+    "name": "Jasper",
+    "intro": "AI 驱动的营销内容生成平台",
+    "features": [
+      "营销文案生成",
+      "品牌语调定制",
+      "多语言内容"
+    ],
+    "company": "Jasper AI",
+    "url": "https://www.jasper.ai/",
+    "icon": "jasper.png",
+    "category": "写作助手",
+    "source_url": "https://www.jasper.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "广告文案",
+      "博客写作",
+      "社媒帖子",
+      "邮件营销"
+    ],
+    "best_practices": [
+      "先设定品牌语调和目标受众",
+      "给足背景信息让内容更精准"
+    ],
+    "strengths": [
+      "营销场景模板丰富",
+      "品牌语调一致性好"
+    ],
+    "limitations": [
+      "非营销场景表现一般"
+    ],
+    "access": {
+      "pricing": "订阅制",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "intro": "嵌入 Notion 的 AI 写作与知识管理助手",
+    "features": [
+      "文档生成",
+      "知识问答",
+      "内容改写"
+    ],
+    "company": "Notion",
+    "url": "https://www.notion.so/product/ai",
+    "icon": "notion.png",
+    "category": "写作助手",
+    "source_url": "https://www.notion.so/product/ai",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "会议纪要整理",
+      "文档草稿",
+      "知识库问答",
+      "任务列表生成"
+    ],
+    "best_practices": [
+      "结合 Notion 数据库使用效果最佳",
+      "用斜杠命令快速调用 AI"
+    ],
+    "strengths": [
+      "与 Notion 生态深度集成",
+      "上下文理解准确"
+    ],
+    "limitations": [
+      "离开 Notion 生态无法使用"
+    ],
+    "access": {
+      "pricing": "附加订阅",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "macOS",
+        "Windows"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "intro": "AI 英文写作校对与润色工具",
+    "features": [
+      "语法检查",
+      "风格建议",
+      "语调调整"
+    ],
+    "company": "Grammarly",
+    "url": "https://www.grammarly.com/",
+    "icon": "grammarly.png",
+    "category": "写作助手",
+    "source_url": "https://www.grammarly.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "英文邮件润色",
+      "学术论文校对",
+      "商务文档改写"
+    ],
+    "best_practices": [
+      "设定写作目标和受众以获得最佳建议",
+      "配合浏览器插件使用效率最高"
+    ],
+    "strengths": [
+      "英文校对精准",
+      "多平台覆盖"
+    ],
+    "limitations": [
+      "中文支持有限"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "Chrome",
+        "iOS",
+        "Android",
+        "macOS",
+        "Windows"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "intro": "高质量 AI 语音合成与克隆平台",
+    "features": [
+      "文字转语音",
+      "声音克隆",
+      "多语言语音"
+    ],
+    "company": "ElevenLabs",
+    "url": "https://elevenlabs.io/",
+    "icon": "elevenlabs.png",
+    "category": "音频处理",
+    "source_url": "https://elevenlabs.io/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "有声书制作",
+      "播客配音",
+      "视频旁白",
+      "多语言内容"
+    ],
+    "best_practices": [
+      "使用高质量音频样本进行声音克隆",
+      "选择适合内容类型的语音风格"
+    ],
+    "strengths": [
+      "语音自然度极高",
+      "声音克隆效果好"
+    ],
+    "limitations": [
+      "高级功能需付费"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "API"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "whisper",
+    "name": "Whisper",
+    "intro": "OpenAI 开源语音识别模型",
+    "features": [
+      "语音转文字",
+      "多语言识别",
+      "本地部署"
+    ],
+    "company": "OpenAI",
+    "url": "https://openai.com/research/whisper",
+    "icon": "whisper.png",
+    "category": "音频处理",
+    "source_url": "https://openai.com/research/whisper",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "会议录音转写",
+      "字幕生成",
+      "播客内容提取"
+    ],
+    "best_practices": [
+      "高质量音频输入可显著提升准确率",
+      "对长音频建议分段处理"
+    ],
+    "strengths": [
+      "开源免费",
+      "多语言支持好",
+      "可本地部署"
+    ],
+    "limitations": [
+      "需要一定技术能力部署"
+    ],
+    "access": {
+      "pricing": "开源免费",
+      "account_required": false,
+      "platforms": [
+        "Local",
+        "API"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "intro": "AI 音乐生成平台",
+    "features": [
+      "文字生成音乐",
+      "风格定制",
+      "歌词创作"
+    ],
+    "company": "Suno",
+    "url": "https://suno.com/",
+    "icon": "suno.png",
+    "category": "音频处理",
+    "source_url": "https://suno.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "背景音乐制作",
+      "短视频配乐",
+      "歌曲创作实验"
+    ],
+    "best_practices": [
+      "描述清楚风格、节奏和情绪",
+      "多次迭代筛选最佳结果"
+    ],
+    "strengths": [
+      "音乐质量高",
+      "操作门槛低"
+    ],
+    "limitations": [
+      "商用版权条款需注意"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "intro": "多功能 AI 视频生成与编辑平台",
+    "features": [
+      "文字生成视频",
+      "视频编辑",
+      "绿幕去除"
+    ],
+    "company": "Runway",
+    "url": "https://runwayml.com/",
+    "icon": "runway.png",
+    "category": "视频工具",
+    "source_url": "https://runwayml.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "短视频创作",
+      "特效制作",
+      "概念视频",
+      "广告素材"
+    ],
+    "best_practices": [
+      "先用简短描述测试风格",
+      "结合图片引导视频方向"
+    ],
+    "strengths": [
+      "视频质量领先",
+      "工具链完整"
+    ],
+    "limitations": [
+      "生成时间较长",
+      "高分辨率需付费"
+    ],
+    "access": {
+      "pricing": "免费试用 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "heygen",
+    "name": "HeyGen",
+    "intro": "AI 数字人视频生成平台",
+    "features": [
+      "数字人视频",
+      "多语言口型同步",
+      "品牌定制"
+    ],
+    "company": "HeyGen",
+    "url": "https://www.heygen.com/",
+    "icon": "heygen.png",
+    "category": "视频工具",
+    "source_url": "https://www.heygen.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "产品讲解视频",
+      "培训视频",
+      "多语言营销",
+      "新闻播报"
+    ],
+    "best_practices": [
+      "选择匹配品牌调性的数字人形象",
+      "脚本简洁口语化效果更好"
+    ],
+    "strengths": [
+      "数字人效果逼真",
+      "多语言翻译便捷"
+    ],
+    "limitations": [
+      "高度定制需企业版"
+    ],
+    "access": {
+      "pricing": "免费试用 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "pika",
+    "name": "Pika",
+    "intro": "轻量级 AI 视频生成工具",
+    "features": [
+      "图片转视频",
+      "文字转视频",
+      "视频风格转换"
+    ],
+    "company": "Pika",
+    "url": "https://pika.art/",
+    "icon": "pika.png",
+    "category": "视频工具",
+    "source_url": "https://pika.art/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "社媒视频",
+      "创意短片",
+      "产品动画"
+    ],
+    "best_practices": [
+      "用高质量图片作为起始帧",
+      "保持提示词简洁明确"
+    ],
+    "strengths": [
+      "生成速度快",
+      "使用门槛低"
+    ],
+    "limitations": [
+      "视频时长有限"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "phind",
+    "name": "Phind",
+    "intro": "面向开发者的 AI 搜索引擎",
+    "features": [
+      "代码搜索",
+      "技术问答",
+      "来源引用"
+    ],
+    "company": "Phind",
+    "url": "https://www.phind.com/",
+    "icon": "phind.png",
+    "category": "搜索引擎",
+    "source_url": "https://www.phind.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "技术问题检索",
+      "API 用法查询",
+      "错误排查",
+      "框架对比"
+    ],
+    "best_practices": [
+      "包含技术栈信息让结果更精准",
+      "贴上错误日志直接搜索"
+    ],
+    "strengths": [
+      "开发者场景优化",
+      "搜索结果精准"
+    ],
+    "limitations": [
+      "非技术领域表现一般"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": false,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "you-com",
+    "name": "You.com",
+    "intro": "支持 AI 增强的隐私优先搜索引擎",
+    "features": [
+      "AI 摘要",
+      "隐私搜索",
+      "多模式搜索"
+    ],
+    "company": "You.com",
+    "url": "https://you.com/",
+    "icon": "you.png",
+    "category": "搜索引擎",
+    "source_url": "https://you.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "日常搜索",
+      "学术研究",
+      "产品对比"
+    ],
+    "best_practices": [
+      "善用不同搜索模式切换",
+      "复杂问题用 AI 聊天模式"
+    ],
+    "strengths": [
+      "注重隐私保护",
+      "AI 聊天模式方便"
+    ],
+    "limitations": [
+      "中文搜索结果不如英文"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": false,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "gamma",
+    "name": "Gamma",
+    "intro": "AI 驱动的演示文稿生成工具",
+    "features": [
+      "一键生成 PPT",
+      "自动排版",
+      "多模板"
+    ],
+    "company": "Gamma",
+    "url": "https://gamma.app/",
+    "icon": "gamma.png",
+    "category": "办公效率",
+    "source_url": "https://gamma.app/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "商业提案",
+      "周报月报",
+      "培训课件",
+      "项目汇报"
+    ],
+    "best_practices": [
+      "提供大纲结构让 AI 生成内容更精准",
+      "生成后微调设计细节"
+    ],
+    "strengths": [
+      "PPT 生成速度极快",
+      "主题设计丰富"
+    ],
+    "limitations": [
+      "复杂动画支持有限"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "otter-ai",
+    "name": "Otter.ai",
+    "intro": "AI 会议记录与转写工具",
+    "features": [
+      "实时转写",
+      "会议摘要",
+      "说话人识别"
+    ],
+    "company": "Otter.ai",
+    "url": "https://otter.ai/",
+    "icon": "otter.png",
+    "category": "办公效率",
+    "source_url": "https://otter.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "会议纪要自动生成",
+      "采访记录",
+      "课堂笔记"
+    ],
+    "best_practices": [
+      "确保麦克风质量好",
+      "会后立即审核关键决策内容"
+    ],
+    "strengths": [
+      "实时转写准确",
+      "自动生成摘要"
+    ],
+    "limitations": [
+      "中文支持不如英文"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "intro": "AI 智能排版演示工具",
+    "features": [
+      "智能排版",
+      "模板库",
+      "团队协作"
+    ],
+    "company": "Beautiful.ai",
+    "url": "https://www.beautiful.ai/",
+    "icon": "beautifulai.png",
+    "category": "办公效率",
+    "source_url": "https://www.beautiful.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "商务演示",
+      "投资路演",
+      "市场报告"
+    ],
+    "best_practices": [
+      "从模板开始修改比从零开始更高效",
+      "善用品牌主题功能"
+    ],
+    "strengths": [
+      "设计感专业",
+      "排版自动化"
+    ],
+    "limitations": [
+      "导出格式有限"
+    ],
+    "access": {
+      "pricing": "订阅制",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "canva-ai",
+    "name": "Canva AI",
+    "intro": "Canva 内置的 AI 设计助手",
+    "features": [
+      "AI 生成图",
+      "魔法橡皮擦",
+      "模板推荐"
+    ],
+    "company": "Canva",
+    "url": "https://www.canva.com/",
+    "icon": "canva.png",
+    "category": "设计工具",
+    "source_url": "https://www.canva.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "社媒设计",
+      "海报制作",
+      "品牌素材",
+      "简历设计"
+    ],
+    "best_practices": [
+      "善用品牌套件保持视觉一致性",
+      "结合模板和 AI 生成效率最高"
+    ],
+    "strengths": [
+      "上手极简",
+      "模板生态海量"
+    ],
+    "limitations": [
+      "高级设计灵活性有限"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "figma-ai",
+    "name": "Figma AI",
+    "intro": "Figma 内置的 AI 设计辅助功能",
+    "features": [
+      "自动布局",
+      "文案生成",
+      "设计建议"
+    ],
+    "company": "Figma",
+    "url": "https://www.figma.com/",
+    "icon": "figma.png",
+    "category": "设计工具",
+    "source_url": "https://www.figma.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "UI 设计",
+      "原型制作",
+      "设计系统管理"
+    ],
+    "best_practices": [
+      "先建好设计系统，AI 辅助效果更佳",
+      "用 AI 快速探索布局方案"
+    ],
+    "strengths": [
+      "与设计工作流深度集成",
+      "团队协作强"
+    ],
+    "limitations": [
+      "AI 功能仍在迭代中"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "macOS",
+        "Windows"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "looka",
+    "name": "Looka",
+    "intro": "AI Logo 和品牌设计工具",
+    "features": [
+      "Logo 生成",
+      "品牌套件",
+      "名片设计"
+    ],
+    "company": "Looka",
+    "url": "https://looka.com/",
+    "icon": "looka.png",
+    "category": "设计工具",
+    "source_url": "https://looka.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "创业品牌设计",
+      "Logo 创作",
+      "品牌视觉体系"
+    ],
+    "best_practices": [
+      "提供行业和风格偏好让结果更匹配",
+      "多轮迭代筛选最佳方案"
+    ],
+    "strengths": [
+      "Logo 质量专业",
+      "品牌套件一站式"
+    ],
+    "limitations": [
+      "深度定制需人工设计"
+    ],
+    "access": {
+      "pricing": "按项目付费",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "khan-academy-ai",
+    "name": "Khanmigo",
+    "intro": "Khan Academy 的 AI 学习辅导员",
+    "features": [
+      "个性化辅导",
+      "题目讲解",
+      "学习进度跟踪"
+    ],
+    "company": "Khan Academy",
+    "url": "https://www.khanacademy.org/khan-labs",
+    "icon": "khanmigo.png",
+    "category": "教育学习",
+    "source_url": "https://www.khanacademy.org/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "数学辅导",
+      "科学实验指导",
+      "写作练习",
+      "编程入门"
+    ],
+    "best_practices": [
+      "让 AI 引导思考而非直接给答案",
+      "结合课程进度使用"
+    ],
+    "strengths": [
+      "教育理念专业",
+      "苏格拉底式引导"
+    ],
+    "limitations": [
+      "主要面向 K-12 教育"
+    ],
+    "access": {
+      "pricing": "订阅制",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "duolingo-max",
+    "name": "Duolingo Max",
+    "intro": "AI 增强的语言学习应用",
+    "features": [
+      "AI 对话练习",
+      "错误讲解",
+      "个性化课程"
+    ],
+    "company": "Duolingo",
+    "url": "https://www.duolingo.com/",
+    "icon": "duolingo.png",
+    "category": "教育学习",
+    "source_url": "https://www.duolingo.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "外语学习",
+      "口语练习",
+      "语法巩固"
+    ],
+    "best_practices": [
+      "每天坚持练习比突击更有效",
+      "AI 对话练习多尝试不同场景"
+    ],
+    "strengths": [
+      "游戏化学习体验好",
+      "AI 纠错针对性强"
+    ],
+    "limitations": [
+      "高级语言学习深度有限"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "iOS",
+        "Android",
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "photomath",
+    "name": "Photomath",
+    "intro": "AI 拍照解数学题工具",
+    "features": [
+      "拍照解题",
+      "分步讲解",
+      "图形计算"
+    ],
+    "company": "Google",
+    "url": "https://photomath.com/",
+    "icon": "photomath.png",
+    "category": "教育学习",
+    "source_url": "https://photomath.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "数学作业辅导",
+      "考试复习",
+      "公式理解"
+    ],
+    "best_practices": [
+      "拍照清晰可提高识别率",
+      "重点看解题步骤而非只看答案"
+    ],
+    "strengths": [
+      "数学题识别准确",
+      "步骤讲解清晰"
+    ],
+    "limitations": [
+      "仅限数学领域"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "synthesia",
+    "name": "Synthesia",
+    "intro": "AI 虚拟人视频制作平台",
+    "features": [
+      "虚拟主持人",
+      "多语言配音",
+      "企业定制"
+    ],
+    "company": "Synthesia",
+    "url": "https://www.synthesia.io/",
+    "icon": "synthesia.png",
+    "category": "营销工具",
+    "source_url": "https://www.synthesia.io/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "培训视频",
+      "产品演示",
+      "多语言营销",
+      "内部沟通"
+    ],
+    "best_practices": [
+      "脚本简洁直白效果最好",
+      "选择匹配目标市场的虚拟人形象"
+    ],
+    "strengths": [
+      "无需真人出镜",
+      "多语言一键切换"
+    ],
+    "limitations": [
+      "虚拟人自然度仍有提升空间"
+    ],
+    "access": {
+      "pricing": "订阅制",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "adcreative-ai",
+    "name": "AdCreative.ai",
+    "intro": "AI 广告创意生成工具",
+    "features": [
+      "广告素材生成",
+      "效果预测",
+      "A/B 测试"
+    ],
+    "company": "AdCreative.ai",
+    "url": "https://www.adcreative.ai/",
+    "icon": "adcreative.png",
+    "category": "营销工具",
+    "source_url": "https://www.adcreative.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "社媒广告",
+      "Banner 设计",
+      "广告文案",
+      "投放优化"
+    ],
+    "best_practices": [
+      "输入品牌素材让生成更贴合",
+      "关注 AI 效果评分进行筛选"
+    ],
+    "strengths": [
+      "广告场景专业",
+      "批量生成效率高"
+    ],
+    "limitations": [
+      "其他设计场景不适用"
+    ],
+    "access": {
+      "pricing": "订阅制",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "copy-ai",
+    "name": "Copy.ai",
+    "intro": "AI 营销文案一站式平台",
+    "features": [
+      "文案生成",
+      "工作流自动化",
+      "SEO 内容"
+    ],
+    "company": "Copy.ai",
+    "url": "https://www.copy.ai/",
+    "icon": "copyai.png",
+    "category": "营销工具",
+    "source_url": "https://www.copy.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "落地页文案",
+      "产品描述",
+      "社媒内容",
+      "邮件序列"
+    ],
+    "best_practices": [
+      "先定义目标受众和痛点",
+      "多生成几个版本对比选择"
+    ],
+    "strengths": [
+      "文案质量稳定",
+      "模板丰富"
+    ],
+    "limitations": [
+      "中文文案质量不如英文"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "intro": "深度求索推出的开源大语言模型",
+    "features": [
+      "代码生成",
+      "数学推理",
+      "长文本处理"
+    ],
+    "company": "深度求索",
+    "url": "https://www.deepseek.com/",
+    "icon": "deepseek.png",
+    "category": "聊天机器人",
+    "source_url": "https://www.deepseek.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "代码编写",
+      "数学证明",
+      "文档写作",
+      "知识问答"
+    ],
+    "best_practices": [
+      "复杂推理任务可启用深度思考模式",
+      "代码任务给足上下文"
+    ],
+    "strengths": [
+      "推理能力强",
+      "性价比高",
+      "代码能力突出"
+    ],
+    "limitations": [
+      "多模态能力相对有限"
+    ],
+    "access": {
+      "pricing": "免费版 + API",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "API"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "qianwen",
+    "name": "通义千问",
+    "intro": "阿里云推出的大语言模型",
+    "features": [
+      "多语言对话",
+      "文档分析",
+      "代码生成"
+    ],
+    "company": "阿里云",
+    "url": "https://tongyi.aliyun.com/",
+    "icon": "qianwen.png",
+    "category": "聊天机器人",
+    "source_url": "https://tongyi.aliyun.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "中文写作",
+      "数据分析",
+      "代码辅助",
+      "知识问答"
+    ],
+    "best_practices": [
+      "中文任务表现优秀",
+      "结合阿里云生态使用效果好"
+    ],
+    "strengths": [
+      "中文能力强",
+      "接入阿里生态",
+      "开源版本可私有化部署"
+    ],
+    "limitations": [
+      "某些英文场景不如国际模型"
+    ],
+    "access": {
+      "pricing": "免费版 + API",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "API"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "kimi",
+    "name": "Kimi",
+    "intro": "月之暗面推出的长文本 AI 助手",
+    "features": [
+      "超长文本理解",
+      "文档分析",
+      "联网搜索"
+    ],
+    "company": "月之暗面",
+    "url": "https://kimi.moonshot.cn/",
+    "icon": "kimi.png",
+    "category": "聊天机器人",
+    "source_url": "https://kimi.moonshot.cn/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "长文阅读",
+      "论文分析",
+      "网页内容提取",
+      "文档问答"
+    ],
+    "best_practices": [
+      "适合处理超长文档",
+      "可直接传入文件或 URL"
+    ],
+    "strengths": [
+      "超长上下文窗口",
+      "中文理解优秀",
+      "文件处理方便"
+    ],
+    "limitations": [
+      "创意写作能力一般"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "v0",
+    "name": "v0",
+    "intro": "Vercel 推出的 AI UI 代码生成工具",
+    "features": [
+      "UI 代码生成",
+      "组件设计",
+      "实时预览"
+    ],
+    "company": "Vercel",
+    "url": "https://v0.dev/",
+    "icon": "v0.png",
+    "category": "编程助手",
+    "source_url": "https://v0.dev/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "快速原型",
+      "UI 组件生成",
+      "页面布局设计"
+    ],
+    "best_practices": [
+      "描述越具体生成效果越好",
+      "生成后在项目中微调"
+    ],
+    "strengths": [
+      "UI 代码质量高",
+      "实时预览方便",
+      "React/Next.js 生态"
+    ],
+    "limitations": [
+      "仅限前端 UI"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "replit-ai",
+    "name": "Replit AI",
+    "intro": "在线 IDE 集成的 AI 编程助手",
+    "features": [
+      "代码生成",
+      "在线运行",
+      "协作编程"
+    ],
+    "company": "Replit",
+    "url": "https://replit.com/",
+    "icon": "replit.png",
+    "category": "编程助手",
+    "source_url": "https://replit.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "快速原型",
+      "编程学习",
+      "小型项目开发",
+      "代码分享"
+    ],
+    "best_practices": [
+      "从模板开始比从零开始更高效",
+      "善用 AI 对话理解代码"
+    ],
+    "strengths": [
+      "无需本地环境",
+      "即写即跑",
+      "AI 与 IDE 一体化"
+    ],
+    "limitations": [
+      "大型项目性能受限"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "gpt4o",
+    "name": "GPT-4o",
+    "intro": "OpenAI 推出的全能旗舰多模态模型",
+    "features": [
+      "文本理解",
+      "图像分析",
+      "实时语音",
+      "代码生成"
+    ],
+    "company": "OpenAI",
+    "url": "https://openai.com/gpt-4o",
+    "icon": "gpt4o.png",
+    "category": "多模态模型",
+    "source_url": "https://openai.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "复杂推理",
+      "图文分析",
+      "语音对话",
+      "创意写作"
+    ],
+    "best_practices": [
+      "多模态任务分开描述文本和图像要求",
+      "利用系统提示设定角色和风格"
+    ],
+    "strengths": [
+      "多模态能力全面",
+      "响应速度快",
+      "推理能力强"
+    ],
+    "limitations": [
+      "API 费用较高"
+    ],
+    "access": {
+      "pricing": "免费版（受限）+ 订阅版 + API",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "API"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "doubao",
+    "name": "豆包",
+    "intro": "字节跳动推出的 AI 对话助手",
+    "features": [
+      "多轮对话",
+      "文档理解",
+      "图像生成"
+    ],
+    "company": "字节跳动",
+    "url": "https://www.doubao.com/",
+    "icon": "doubao.png",
+    "category": "多模态模型",
+    "source_url": "https://www.doubao.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "日常问答",
+      "文档分析",
+      "创意写作",
+      "图像创意"
+    ],
+    "best_practices": [
+      "中文提问效果最佳",
+      "复杂任务可分步引导"
+    ],
+    "strengths": [
+      "中文交互自然",
+      "多功能集成",
+      "免费额度充足"
+    ],
+    "limitations": [
+      "英文能力不如国际模型"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "dall-e",
+    "name": "DALL·E",
+    "intro": "OpenAI 推出的文生图模型",
+    "features": [
+      "文字生成图片",
+      "图像编辑",
+      "风格多样"
+    ],
+    "company": "OpenAI",
+    "url": "https://openai.com/dall-e",
+    "icon": "dalle.png",
+    "category": "图像生成",
+    "source_url": "https://openai.com/dall-e",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "概念设计",
+      "插图创作",
+      "社媒素材",
+      "演示配图"
+    ],
+    "best_practices": [
+      "描述越详细效果越好",
+      "指定风格和构图提高可控性"
+    ],
+    "strengths": [
+      "与 ChatGPT 集成使用方便",
+      "文字渲染能力强"
+    ],
+    "limitations": [
+      "精细控制不如 Midjourney"
+    ],
+    "access": {
+      "pricing": "按量计费 + ChatGPT Plus 含量",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "API"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "ideogram",
+    "name": "Ideogram",
+    "intro": "擅长文字渲染的 AI 图像生成工具",
+    "features": [
+      "文字渲染",
+      "海报设计",
+      "风格多样"
+    ],
+    "company": "Ideogram",
+    "url": "https://ideogram.ai/",
+    "icon": "ideogram.png",
+    "category": "图像生成",
+    "source_url": "https://ideogram.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "Logo 创意",
+      "海报设计",
+      "社媒配图",
+      "文字艺术"
+    ],
+    "best_practices": [
+      "需要文字的图片优先选择 Ideogram",
+      "多次生成能选出满意结果"
+    ],
+    "strengths": [
+      "文字渲染业界领先",
+      "免费额度充足"
+    ],
+    "limitations": [
+      "写实图像不如 Midjourney"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "julius-ai",
+    "name": "Julius AI",
+    "intro": "AI 数据分析与可视化工具",
+    "features": [
+      "数据可视化",
+      "统计分析",
+      "自然语言查询"
+    ],
+    "company": "Julius AI",
+    "url": "https://julius.ai/",
+    "icon": "julius.png",
+    "category": "数据分析",
+    "source_url": "https://julius.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "数据探索",
+      "报表生成",
+      "统计分析",
+      "趋势预测"
+    ],
+    "best_practices": [
+      "上传干净数据效果更好",
+      "用自然语言描述你想看的图表"
+    ],
+    "strengths": [
+      "零代码数据分析",
+      "图表美观"
+    ],
+    "limitations": [
+      "超大数据集处理能力有限"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "chatgpt-data",
+    "name": "ChatGPT 数据分析",
+    "intro": "通过 ChatGPT 的代码解释器进行数据分析",
+    "features": [
+      "上传文件分析",
+      "Python 代码执行",
+      "图表生成"
+    ],
+    "company": "OpenAI",
+    "url": "https://chatgpt.com/",
+    "icon": "chatgpt-data.png",
+    "category": "数据分析",
+    "source_url": "https://openai.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "Excel 数据分析",
+      "CSV 处理",
+      "数据清洗",
+      "可视化报告"
+    ],
+    "best_practices": [
+      "上传前清理数据列名",
+      "逐步提出分析需求效果更好"
+    ],
+    "strengths": [
+      "支持多种文件格式",
+      "分析与对话结合"
+    ],
+    "limitations": [
+      "文件大小有限制"
+    ],
+    "access": {
+      "pricing": "ChatGPT Plus 订阅",
+      "account_required": true,
+      "platforms": [
+        "Web"
+      ],
+      "api_available": false
+    }
+  },
+  {
+    "id": "dify",
+    "name": "Dify",
+    "intro": "开源 AI 应用开发平台",
+    "features": [
+      "AI 应用编排",
+      "知识库",
+      "工作流自动化"
+    ],
+    "company": "Dify",
+    "url": "https://dify.ai/",
+    "icon": "dify.png",
+    "category": "办公效率",
+    "source_url": "https://dify.ai/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "企业 AI 助手",
+      "客服机器人",
+      "知识管理",
+      "自动化工作流"
+    ],
+    "best_practices": [
+      "先梳理业务流程再搭建 AI 工作流",
+      "善用知识库提高回答准确性"
+    ],
+    "strengths": [
+      "开源可自部署",
+      "低代码搭建 AI 应用",
+      "多模型支持"
+    ],
+    "limitations": [
+      "复杂场景需要技术人员支持"
+    ],
+    "access": {
+      "pricing": "开源免费 + 云服务版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "Self-hosted"
+      ],
+      "api_available": true
+    }
+  },
+  {
+    "id": "coze",
+    "name": "Coze（扣子）",
+    "intro": "字节跳动的 AI 应用搭建平台",
+    "features": [
+      "AI Bot 搭建",
+      "插件系统",
+      "多平台发布"
+    ],
+    "company": "字节跳动",
+    "url": "https://www.coze.com/",
+    "icon": "coze.png",
+    "category": "办公效率",
+    "source_url": "https://www.coze.com/",
+    "last_verified_at": "2026-03-02",
+    "use_cases": [
+      "定制 AI 助手",
+      "客服自动化",
+      "内容创作工作流"
+    ],
+    "best_practices": [
+      "结合插件扩展 Bot 能力",
+      "发布到多个渠道扩大覆盖"
+    ],
+    "strengths": [
+      "零代码搭建",
+      "插件生态丰富",
+      "可发布到多平台"
+    ],
+    "limitations": [
+      "复杂逻辑编排有学习成本"
+    ],
+    "access": {
+      "pricing": "免费版 + 订阅版",
+      "account_required": true,
+      "platforms": [
+        "Web",
+        "Discord",
+        "Telegram"
+      ],
       "api_available": true
     }
   }

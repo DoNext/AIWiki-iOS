@@ -70,6 +70,9 @@ enum CategoryIcon {
         case "写作助手": return "pencil.and.outline"
         case "搜索引擎": return "magnifyingglass"
         case "办公效率": return "briefcase.fill"
+        case "设计工具": return "paintbrush.pointed.fill"
+        case "教育学习": return "graduationcap.fill"
+        case "营销工具": return "megaphone.fill"
         default: return "sparkles"
         }
     }
