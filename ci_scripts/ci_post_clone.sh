@@ -1,6 +1,9 @@
 #!/bin/sh
 set -euo pipefail
 
+# cd to the root of the repository so agvtool can find the Xcode project
+cd ..
+
 if [ -n "${CI_BUILD_NUMBER:-}" ]; then
   echo "[ci_post_clone] Set build number to ${CI_BUILD_NUMBER}"
   xcrun agvtool new-version -all "${CI_BUILD_NUMBER}" >/dev/null
