@@ -1,14 +1,38 @@
 import SwiftUI
+import UIKit
 
-// MARK: - Colors
+// MARK: - Colors (Adaptive: light + dark)
 enum AppColors {
-    static let background = Color(red: 0.05, green: 0.05, blue: 0.05)
-    static let card = Color(red: 0.11, green: 0.11, blue: 0.12)
-    static let cardHighlight = Color(red: 0.15, green: 0.15, blue: 0.17)
+    static let background = Color(UIColor { traits in
+        traits.userInterfaceStyle == .dark
+            ? UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
+            : UIColor(red: 0.96, green: 0.96, blue: 0.97, alpha: 1)
+    })
+
+    static let card = Color(UIColor { traits in
+        traits.userInterfaceStyle == .dark
+            ? UIColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1)
+            : UIColor.white
+    })
+
+    static let cardHighlight = Color(UIColor { traits in
+        traits.userInterfaceStyle == .dark
+            ? UIColor(red: 0.15, green: 0.15, blue: 0.17, alpha: 1)
+            : UIColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
+    })
+
     static let accent = Color(red: 0.45, green: 0.35, blue: 0.9)
     static let accentLight = Color(red: 0.6, green: 0.5, blue: 1.0)
-    static let textPrimary = Color.white
-    static let textSecondary = Color(white: 0.55)
+
+    static let textPrimary = Color(UIColor { traits in
+        traits.userInterfaceStyle == .dark ? .white : UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+    })
+
+    static let textSecondary = Color(UIColor { traits in
+        traits.userInterfaceStyle == .dark
+            ? UIColor(white: 0.55, alpha: 1)
+            : UIColor(white: 0.45, alpha: 1)
+    })
 }
 
 // MARK: - Gradients
@@ -58,10 +82,7 @@ struct CardStyle: ViewModifier {
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .fill(AppColors.card)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(Color.white.opacity(0.06), lineWidth: 1)
-                    )
+                    .shadow(color: Color.black.opacity(0.08), radius: 4, x: 0, y: 2)
             )
     }
 }
