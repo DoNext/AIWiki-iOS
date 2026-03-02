@@ -40,7 +40,7 @@ final class AppStore: ObservableObject {
            let value = AppTheme(rawValue: rawTheme) {
             self.theme = value
         } else {
-            self.theme = .system
+            self.theme = .dark
         }
 
         loadTools()
