@@ -1,0 +1,232 @@
+import Foundation
+
+@MainActor
+final class AppStore: ObservableObject {
+    @Published private(set) var tools: [AITool] = []
+    @Published private(set) var learningByToolID: [String: LearningMaterial] = [:]
+    @Published private(set) var loadError: String?
+    @Published private(set) var favoriteIDs: Set<String>
+    @Published private(set) var bookmarkedScenarioIDs: Set<String>
+    @Published private(set) var scenarioProgress: [String: Set<Int>]
+    @Published private(set) var scenarioNotes: [String: String]
+    @Published var theme: AppTheme {
+        didSet { userDefaults.set(theme.rawValue, forKey: Keys.theme) }
+    }
+
+    private let repository: ToolRepository
+    private let learningRepository: LearningMaterialRepository
+    private let userDefaults: UserDefaults
+
+    init(
+        repository: ToolRepository = ToolSeedStore(),
+        learningRepository: LearningMaterialRepository = LearningMaterialSeedStore(),
+        userDefaults: UserDefaults = .standard
+    ) {
+        self.repository = repository
+        self.learningRepository = learningRepository
+        self.userDefaults = userDefaults
+
+        let savedIDs = userDefaults.array(forKey: Keys.favorites) as? [String] ?? []
+        self.favoriteIDs = Set(savedIDs)
+        let savedScenarioIDs = userDefaults.array(forKey: Keys.scenarioBookmarks) as? [String] ?? []
+        self.bookmarkedScenarioIDs = Set(savedScenarioIDs)
+        let rawProgress = userDefaults.dictionary(forKey: Keys.scenarioProgress) as? [String: [Int]] ?? [:]
+        self.scenarioProgress = rawProgress.reduce(into: [:]) { partialResult, item in
+            partialResult[item.key] = Set(item.value)
+        }
+        self.scenarioNotes = userDefaults.dictionary(forKey: Keys.scenarioNotes) as? [String: String] ?? [:]
+
+        if let rawTheme = userDefaults.string(forKey: Keys.theme),
+           let value = AppTheme(rawValue: rawTheme) {
+            self.theme = value
+        } else {
+            self.theme = .system
+        }
+
+        loadTools()
+    }
+
+    func loadTools() {
+        do {
+            tools = try repository.fetchAll()
+            loadError = nil
+        } catch {
+            tools = []
+            learningByToolID = [:]
+            loadError = error.localizedDescription
+            return
+        }
+
+        do {
+            let learningMaterials = try learningRepository.fetchAllLearningMaterials()
+            learningByToolID = Dictionary(uniqueKeysWithValues: learningMaterials.map { ($0.id, $0) })
+        } catch {
+            learningByToolID = [:]
+        }
+    }
+
+    func learningMaterial(for toolID: String) -> LearningMaterial? {
+        learningByToolID[toolID]
+    }
+
+    func filteredTools(query: String) -> [AITool] {
+        rankAndFilter(tools: tools, query: query)
+    }
+
+    func categoryGroups() -> [(name: String, count: Int)] {
+        let grouped = Dictionary(grouping: tools, by: \.category)
+        return grouped
+            .map { ($0.key, $0.value.count) }
+            .sorted { $0.0.localizedCompare($1.0) == .orderedAscending }
+    }
+
+    func tools(in category: String) -> [AITool] {
+        tools
+            .filter { $0.category == category }
+            .sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
+    }
+
+    func tool(withID id: String) -> AITool? {
+        tools.first { $0.id == id }
+    }
+
+    func filteredTools(in category: String, query: String) -> [AITool] {
+        rankAndFilter(tools: tools(in: category), query: query)
+    }
+
+    func favoriteTools() -> [AITool] {
+        tools
+            .filter { favoriteIDs.contains($0.id) }
+            .sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
+    }
+
+    func isFavorite(_ id: String) -> Bool {
+        favoriteIDs.contains(id)
+    }
+
+    func toggleFavorite(_ id: String) {
+        if favoriteIDs.contains(id) {
+            favoriteIDs.remove(id)
+        } else {
+            favoriteIDs.insert(id)
+        }
+        persistFavorites()
+    }
+
+    func clearFavorites() {
+        favoriteIDs.removeAll()
+        persistFavorites()
+    }
+
+    func isScenarioBookmarked(_ scenarioID: String) -> Bool {
+        bookmarkedScenarioIDs.contains(scenarioID)
+    }
+
+    func toggleScenarioBookmark(_ scenarioID: String) {
+        if bookmarkedScenarioIDs.contains(scenarioID) {
+            bookmarkedScenarioIDs.remove(scenarioID)
+        } else {
+            bookmarkedScenarioIDs.insert(scenarioID)
+        }
+        persistScenarioBookmarks()
+    }
+
+    func isQuickStepCompleted(scenarioID: String, stepIndex: Int) -> Bool {
+        scenarioProgress[scenarioID, default: []].contains(stepIndex)
+    }
+
+    func toggleQuickStepCompleted(scenarioID: String, stepIndex: Int) {
+        var completed = scenarioProgress[scenarioID, default: []]
+        if completed.contains(stepIndex) {
+            completed.remove(stepIndex)
+        } else {
+            completed.insert(stepIndex)
+        }
+        scenarioProgress[scenarioID] = completed
+        persistScenarioProgress()
+    }
+
+    func completedQuickStepCount(scenarioID: String) -> Int {
+        scenarioProgress[scenarioID, default: []].count
+    }
+
+    func resetQuickSteps(scenarioID: String) {
+        scenarioProgress[scenarioID] = []
+        persistScenarioProgress()
+    }
+
+    func note(for scenarioID: String) -> String {
+        scenarioNotes[scenarioID, default: ""]
+    }
+
+    func updateNote(for scenarioID: String, text: String) {
+        scenarioNotes[scenarioID] = text
+        persistScenarioNotes()
+    }
+
+    private func persistFavorites() {
+        userDefaults.set(Array(favoriteIDs).sorted(), forKey: Keys.favorites)
+    }
+
+    private func persistScenarioBookmarks() {
+        userDefaults.set(Array(bookmarkedScenarioIDs).sorted(), forKey: Keys.scenarioBookmarks)
+    }
+
+    private func persistScenarioProgress() {
+        let payload = scenarioProgress.reduce(into: [String: [Int]]()) { partialResult, item in
+            partialResult[item.key] = Array(item.value).sorted()
+        }
+        userDefaults.set(payload, forKey: Keys.scenarioProgress)
+    }
+
+    private func persistScenarioNotes() {
+        userDefaults.set(scenarioNotes, forKey: Keys.scenarioNotes)
+    }
+
+    private func score(tool: AITool, tokens: [String]) -> Int {
+        let name = tool.name.lowercased()
+        let intro = tool.intro.lowercased()
+        let features = tool.features.joined(separator: " ").lowercased()
+
+        var score = 0
+        for token in tokens {
+            if name.contains(token) { score += 5 }
+            if intro.contains(token) { score += 3 }
+            if features.contains(token) { score += 2 }
+        }
+        return score
+    }
+
+    private func rankAndFilter(tools: [AITool], query: String) -> [AITool] {
+        let keyword = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !keyword.isEmpty else { return tools }
+
+        let tokens = keyword
+            .split(whereSeparator: \.isWhitespace)
+            .map(String.init)
+            .filter { !$0.isEmpty }
+
+        guard !tokens.isEmpty else { return tools }
+
+        return tools
+            .compactMap { tool in
+                let score = score(tool: tool, tokens: tokens)
+                return score > 0 ? (tool, score) : nil
+            }
+            .sorted { lhs, rhs in
+                if lhs.1 == rhs.1 {
+                    return lhs.0.name.localizedCompare(rhs.0.name) == .orderedAscending
+                }
+                return lhs.1 > rhs.1
+            }
+            .map(\.0)
+    }
+}
+
+private enum Keys {
+    static let favorites = "aiwiki.favorites"
+    static let theme = "aiwiki.theme"
+    static let scenarioBookmarks = "aiwiki.scenarioBookmarks"
+    static let scenarioProgress = "aiwiki.scenarioProgress"
+    static let scenarioNotes = "aiwiki.scenarioNotes"
+}

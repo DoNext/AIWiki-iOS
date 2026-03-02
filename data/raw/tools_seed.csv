@@ -1,0 +1,11 @@
+id,name,intro,features,company,url,icon,category,source_url,last_verified_at
+chatgpt,ChatGPT,对话式人工智能助手平台,自然语言问答|多轮对话|内容生成,OpenAI,https://chatgpt.com/,chatgpt.png,聊天机器人,https://openai.com/chatgpt/overview/,2026-03-02
+claude,Claude,面向通用任务的人工智能助手,长文本理解|写作辅助|代码生成,Anthropic,https://claude.ai/,claude.png,聊天机器人,https://www.anthropic.com/claude,2026-03-02
+gemini,Gemini,Google 推出的多模态 AI 助手,文本生成|图像理解|跨设备协作,Google,https://gemini.google.com/,gemini.png,多模态模型,https://gemini.google.com/,2026-03-02
+github-copilot,GitHub Copilot,面向开发者的 AI 编程助手,代码补全|聊天问答|IDE 集成,GitHub,https://github.com/features/copilot,copilot.png,编程助手,https://github.com/features/copilot,2026-03-02
+cursor,Cursor,集成 AI 的代码编辑器,代码生成|代码重构|项目问答,Anysphere,https://www.cursor.com/,cursor.png,编程助手,https://www.cursor.com/,2026-03-02
+midjourney,Midjourney,基于提示词的图像生成工具,文生图|风格化生成|社区画廊,Midjourney,https://www.midjourney.com/,midjourney.png,图像生成,https://www.midjourney.com/,2026-03-02
+stable-diffusion,Stable Diffusion,开源的图像生成基础模型,文生图|图像编辑|本地部署,Stability AI,https://stability.ai/stable-diffusion,stable-diffusion.png,图像生成,https://stability.ai/stable-diffusion,2026-03-02
+notebooklm,NotebookLM,面向资料整理的 AI 研究助手,文档问答|要点总结|来源引用,Google,https://notebooklm.google/,notebooklm.png,数据分析,https://notebooklm.google/,2026-03-02
+perplexity,Perplexity,支持联网检索的 AI 搜索工具,搜索问答|来源引用|研究模式,Perplexity,https://www.perplexity.ai/,perplexity.png,数据分析,https://www.perplexity.ai/,2026-03-02
+grok,Grok,支持多模态交互的 AI 助手,对话问答|图像理解|实时信息,xAI,https://grok.com/,grok.png,多模态模型,https://x.ai/,2026-03-02

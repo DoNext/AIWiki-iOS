@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "decisions": {
+    "chatgpt": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "claude": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "gemini": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "github-copilot": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "cursor": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "midjourney": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "stable-diffusion": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "notebooklm": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "perplexity": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    },
+    "grok": {
+      "status": "APPROVED",
+      "note": "batch approved from official-source pipeline",
+      "reviewed_at": "2026-03-02T17:12:36"
+    }
+  }
+}

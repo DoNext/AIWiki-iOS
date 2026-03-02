@@ -1,0 +1,50 @@
+{
+  "id": "perplexity",
+  "name": "Perplexity",
+  "primary_url": "https://docs.perplexity.ai/",
+  "learning_urls": [
+    "https://docs.perplexity.ai/",
+    "https://www.perplexity.ai/"
+  ],
+  "fetched_at": "2026-03-02T09:10:09Z",
+  "pages": [
+    {
+      "url": "https://docs.perplexity.ai/",
+      "ok": true,
+      "final_url": "https://docs.perplexity.ai/docs/getting-started/overview",
+      "fetched_via": "direct",
+      "title": "Overview - Perplexity",
+      "meta_description": "",
+      "h1": [],
+      "h2": [
+        "Available APIs"
+      ],
+      "paragraphs": [
+        "Get ranked web search results with advanced filtering and real-time data.",
+        "Access third-party models with web search tools and presets.",
+        "Suggestions"
+      ],
+      "error": null
+    },
+    {
+      "url": "https://www.perplexity.ai/",
+      "ok": true,
+      "final_url": "https://r.jina.ai/http://www.perplexity.ai/",
+      "fetched_via": "reader_fallback",
+      "title": "Perplexity",
+      "meta_description": "Published Time: Mon, 02 Mar 2026 04:18:33 GMT",
+      "h1": [],
+      "h2": [],
+      "paragraphs": [
+        "Published Time: Mon, 02 Mar 2026 04:18:33 GMT",
+        "HistoryDiscoverSpacesFinance",
+        "Recent and active threads will appear here.",
+        "Sign in or create an account",
+        "Save and sync your searches",
+        "Continue with Google Continue with Apple",
+        "Single sign-on (SSO)"
+      ],
+      "error": null
+    }
+  ]
+}

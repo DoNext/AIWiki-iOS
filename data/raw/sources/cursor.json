@@ -1,0 +1,23 @@
+{
+  "id": "cursor",
+  "name": "Cursor",
+  "primary_url": "https://cursor.com/docs",
+  "learning_urls": [
+    "https://cursor.com/docs"
+  ],
+  "fetched_at": "2026-03-02T09:10:09Z",
+  "pages": [
+    {
+      "url": "https://cursor.com/docs",
+      "ok": true,
+      "final_url": "https://cursor.com/docs",
+      "fetched_via": "direct",
+      "title": "Cursor Docs",
+      "meta_description": "Built to make you extraordinarily productive, Cursor is the best way to build software with AI.",
+      "h1": [],
+      "h2": [],
+      "paragraphs": [],
+      "error": null
+    }
+  ]
+}

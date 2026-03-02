@@ -1,0 +1,245 @@
+[
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "summary": "Apps and experiences developers can build for ChatGPT users.",
+    "core_capabilities": [
+      "Search the ChatGPT docs",
+      "Resources"
+    ],
+    "getting_started": [
+      "Apps and experiences developers can build for ChatGPT users.",
+      "Design, develop, and launch apps with UI components to be used as tools in ChatGPT.",
+      "Agentic Commerce Protocol",
+      "Power guided shopping flows with the Agentic Commerce Protocol and connect merchants to ChatGPT users."
+    ],
+    "official_links": [
+      "https://developers.openai.com/chatgpt/",
+      "https://developers.openai.com/resources/",
+      "https://help.openai.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/chatgpt.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
+    "summary": "Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work.",
+    "core_capabilities": [
+      "Claude is a space to think",
+      "The AI for problem solvers",
+      "How you can use Claude",
+      "Keep thinking with Claude",
+      "Claude models",
+      "Explore the latest releases"
+    ],
+    "getting_started": [
+      "No ads. No sponsored content. Just genuinely helpful conversations.",
+      "Tackle any big, bold, bewildering challenge with Claude.",
+      "This is another test",
+      "Claude builds on your ideas, expands on your logic, and simplifies complexity one step at a time."
+    ],
+    "official_links": [
+      "https://www.anthropic.com/claude",
+      "https://support.anthropic.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/claude.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "summary": "Built to make you extraordinarily productive, Cursor is the best way to build software with AI.",
+    "core_capabilities": [],
+    "getting_started": [],
+    "official_links": [
+      "https://cursor.com/docs"
+    ],
+    "caveats": [
+      "未自动提取到能力点，建议人工编辑。",
+      "未自动提取到入门步骤，建议人工编辑。"
+    ],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/cursor.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "gemini",
+    "name": "Gemini",
+    "summary": "Meet Gemini, Google’s AI assistant. Get help with writing, planning, brainstorming, and more. Experience the power of generative AI.",
+    "core_capabilities": [],
+    "getting_started": [],
+    "official_links": [
+      "https://gemini.google.com/",
+      "https://ai.google.dev/gemini-api/docs/models"
+    ],
+    "caveats": [
+      "未自动提取到能力点，建议人工编辑。",
+      "未自动提取到入门步骤，建议人工编辑。"
+    ],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/gemini.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "summary": "GitHub Copilot works alongside you directly in your editor, suggesting whole lines or entire functions for you.",
+    "core_capabilities": [
+      "Navigation Menu",
+      "Use saved searches to filter your results more quickly",
+      "Companies using Copilot",
+      "Code, command, and collaborate",
+      "Tailor-made for your organization",
+      "Take flight with GitHub Copilot"
+    ],
+    "getting_started": [
+      "We read every piece of feedback, and take your input very seriously.",
+      "To see all available qualifiers, see our documentation .",
+      "Your AI accelerator for every workflow, from the editor to the enterprise.",
+      "Choose from leading LLMs optimized for speed, accuracy, or cost."
+    ],
+    "official_links": [
+      "https://github.com/features/copilot",
+      "https://docs.github.com/en/copilot"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/github-copilot.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "grok",
+    "name": "Grok",
+    "summary": "Learn how to use our products and services",
+    "core_capabilities": [
+      "Get started",
+      "Grok 4.20 Early Access",
+      "Quick start with the API"
+    ],
+    "getting_started": [
+      "Build with Grok, the AI model designed to deliver truthful, insightful answers.",
+      "Learn how to integrate Grok into your applications.",
+      "Learn about billing, API keys, and account settings.",
+      "Learn how to use Grok on web and mobile."
+    ],
+    "official_links": [
+      "https://docs.x.ai/overview",
+      "https://x.ai/",
+      "https://grok.com/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/grok.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "midjourney",
+    "name": "Midjourney",
+    "summary": "### Welcome to Midjourney, your portal to transforming text into amazing images and videos! If you're ready to unleash your creativity, this guide is your first step to crafting st",
+    "core_capabilities": [],
+    "getting_started": [
+      "Image 1: getting-started-header.png",
+      "Subscribing to Midjourney[](http://docs.midjourney.com/docs/quick-start#h_01JHRHRGGEB9WPRYSR22DGBDPQ)",
+      "Before you dive into creating your first masterpiece, you'll need to subscribe to one of our plans. Here's how you can get started:",
+      "* Log in to midjourney.com: Logging In & Connecting Accounts"
+    ],
+    "official_links": [
+      "https://docs.midjourney.com/docs/quick-start",
+      "https://www.midjourney.com/"
+    ],
+    "caveats": [
+      "未自动提取到能力点，建议人工编辑。"
+    ],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/midjourney.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "notebooklm",
+    "name": "NotebookLM",
+    "summary": "Meet NotebookLM, the AI research tool and thinking partner that can analyze your sources, turn complexity into clarity and transform your content.",
+    "core_capabilities": [],
+    "getting_started": [],
+    "official_links": [
+      "https://notebooklm.google/"
+    ],
+    "caveats": [
+      "未自动提取到能力点，建议人工编辑。",
+      "未自动提取到入门步骤，建议人工编辑。"
+    ],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/notebooklm.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "summary": "Overview - Perplexity",
+    "core_capabilities": [
+      "Available APIs"
+    ],
+    "getting_started": [
+      "Get ranked web search results with advanced filtering and real-time data.",
+      "Access third-party models with web search tools and presets."
+    ],
+    "official_links": [
+      "https://docs.perplexity.ai/",
+      "https://www.perplexity.ai/"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/perplexity.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  },
+  {
+    "id": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "summary": "Experience unparalleled image generation capabilities with SDXL Turbo and \r\nStable Diffusion XL. Our models use shorter prompts and generate \r\ndescriptive images with enhanced composition and realistic aesthetics.",
+    "core_capabilities": [
+      "Versatile styles",
+      "Prompt Adherence",
+      "Diverse Outputs",
+      "Flexible options for any use case.",
+      "Professional-grade image generation that works where you do.",
+      "Self-Hosted License"
+    ],
+    "getting_started": [
+      "Stable Diffusion 3.5",
+      "Stable Diffusion 3.5",
+      "Where the model excels.",
+      "Generate a wide range of image styles like 3D, photography, painting, line art, and more."
+    ],
+    "official_links": [
+      "https://stability.ai/stable-diffusion"
+    ],
+    "caveats": [],
+    "last_verified_at": "2026-03-02",
+    "review_status": "APPROVED",
+    "review_note": "batch approved from official-source pipeline",
+    "raw_file": "data/raw/sources/stable-diffusion.json",
+    "fetched_at": "2026-03-02T09:10:09Z"
+  }
+]

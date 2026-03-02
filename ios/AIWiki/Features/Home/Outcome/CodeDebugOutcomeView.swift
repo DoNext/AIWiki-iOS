@@ -1,0 +1,120 @@
+import SwiftUI
+import UIKit
+
+struct CodeDebugOutcomeView: View {
+    @State private var language: String = "Swift"
+    @State private var expectedBehavior: String = ""
+    @State private var errorLog: String = ""
+    @State private var codeSnippet: String = ""
+
+    private var hasEnoughInput: Bool {
+        !errorLog.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !codeSnippet.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    private var prompt: String {
+        """
+        你是资深 \(language) 工程师。请定位并修复以下问题。
+
+        预期行为：
+        \(expectedBehavior.isEmpty ? "未提供" : expectedBehavior)
+
+        报错日志：
+        \(errorLog)
+
+        代码片段：
+        \(codeSnippet)
+
+        请按以下格式输出：
+        A. 根因分析
+        B. 最小修复方案
+        C. 修复后代码
+        D. 回归测试清单
+        E. 防止复发建议
+        """
+    }
+
+    private var checklist: [String] {
+        [
+            "根因是否与日志一致",
+            "修复是否为最小改动",
+            "是否覆盖边界测试",
+            "是否评估副作用"
+        ]
+    }
+
+    private var refinePrompt: String {
+        """
+        请基于上一版修复结果进行二次审查：
+        1) 找出潜在副作用
+        2) 提供更稳健但复杂度可控的备选方案
+        3) 补充缺失测试用例
+        """
+    }
+
+    private var fullPackage: String {
+        """
+        [排错提示词]
+        \(prompt)
+
+        [质量清单]
+        \(checklist.map { "- \($0)" }.joined(separator: "\n"))
+
+        [二次优化]
+        \(refinePrompt)
+        """
+    }
+
+    var body: some View {
+        List {
+            Section("输入信息") {
+                TextField("语言/框架", text: $language)
+                TextField("预期行为（可选）", text: $expectedBehavior, axis: .vertical)
+                    .lineLimit(2...3)
+                TextField("报错日志（必填）", text: $errorLog, axis: .vertical)
+                    .lineLimit(4...8)
+                TextField("代码片段（必填）", text: $codeSnippet, axis: .vertical)
+                    .lineLimit(6...12)
+            }
+
+            if hasEnoughInput {
+                Section("一键提示词") {
+                    copyable(prompt)
+                }
+                Section("质量检查清单") {
+                    ForEach(checklist, id: \.self) { item in
+                        Text("• \(item)")
+                    }
+                }
+                Section("二次优化提示词") {
+                    copyable(refinePrompt)
+                }
+                Section("导出结果包") {
+                    Button("一键复制完整结果包") {
+                        UIPasteboard.general.string = fullPackage
+                    }
+                }
+            } else {
+                Section {
+                    Text("先填写报错日志和代码片段。")
+                        .foregroundColor(.secondary)
+                }
+            }
+        }
+        .navigationTitle("一键产出：代码排错")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func copyable(_ text: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(text)
+                .font(.footnote)
+                .foregroundColor(.secondary)
+                .textSelection(.enabled)
+            Button("复制") {
+                UIPasteboard.general.string = text
+            }
+            .font(.footnote)
+        }
+    }
+}

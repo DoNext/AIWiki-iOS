@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "primary_url": "https://developers.openai.com/chatgpt/",
+      "learning_urls": [
+        "https://developers.openai.com/chatgpt/",
+        "https://developers.openai.com/resources/",
+        "https://help.openai.com/"
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "primary_url": "https://www.anthropic.com/claude",
+      "learning_urls": [
+        "https://www.anthropic.com/claude",
+        "https://support.anthropic.com/"
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "primary_url": "https://gemini.google.com/",
+      "learning_urls": [
+        "https://gemini.google.com/",
+        "https://ai.google.dev/gemini-api/docs/models"
+      ]
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "primary_url": "https://github.com/features/copilot",
+      "learning_urls": [
+        "https://github.com/features/copilot",
+        "https://docs.github.com/en/copilot"
+      ]
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "primary_url": "https://cursor.com/docs",
+      "learning_urls": [
+        "https://cursor.com/docs"
+      ]
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "primary_url": "https://docs.midjourney.com/docs/quick-start",
+      "learning_urls": [
+        "https://docs.midjourney.com/docs/quick-start",
+        "https://www.midjourney.com/"
+      ]
+    },
+    {
+      "id": "stable-diffusion",
+      "name": "Stable Diffusion",
+      "primary_url": "https://stability.ai/stable-diffusion",
+      "learning_urls": [
+        "https://stability.ai/stable-diffusion"
+      ]
+    },
+    {
+      "id": "notebooklm",
+      "name": "NotebookLM",
+      "primary_url": "https://notebooklm.google/",
+      "learning_urls": [
+        "https://notebooklm.google/"
+      ]
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "primary_url": "https://docs.perplexity.ai/",
+      "learning_urls": [
+        "https://docs.perplexity.ai/",
+        "https://www.perplexity.ai/"
+      ]
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "primary_url": "https://docs.x.ai/overview",
+      "learning_urls": [
+        "https://docs.x.ai/overview",
+        "https://x.ai/",
+        "https://grok.com/"
+      ]
+    }
+  ]
+}

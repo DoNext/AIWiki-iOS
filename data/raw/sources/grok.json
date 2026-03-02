@@ -1,0 +1,82 @@
+{
+  "id": "grok",
+  "name": "Grok",
+  "primary_url": "https://docs.x.ai/overview",
+  "learning_urls": [
+    "https://docs.x.ai/overview",
+    "https://x.ai/",
+    "https://grok.com/"
+  ],
+  "fetched_at": "2026-03-02T09:10:09Z",
+  "pages": [
+    {
+      "url": "https://docs.x.ai/overview",
+      "ok": true,
+      "final_url": "https://docs.x.ai/overview",
+      "fetched_via": "direct",
+      "title": "Overview | xAI",
+      "meta_description": "Learn how to use our products and services",
+      "h1": [
+        "Welcome to xAI Documentation"
+      ],
+      "h2": [
+        "Get started",
+        "Grok 4.20 Early Access",
+        "Quick start with the API"
+      ],
+      "paragraphs": [
+        "Search",
+        "Build with Grok, the AI model designed to deliver truthful, insightful answers.",
+        "Learn how to integrate Grok into your applications.",
+        "Learn about billing, API keys, and account settings.",
+        "Learn how to use Grok on web and mobile.",
+        "Grok 4.20 and Grok 4.20 Multi-Agent are coming soon to the API. Request early access below.",
+        "Create an API Key and make your first request.",
+        "Let Grok search, execute code, and call functions.",
+        "Use Grok to analyze images or perform OCR."
+      ],
+      "error": null
+    },
+    {
+      "url": "https://x.ai/",
+      "ok": true,
+      "final_url": "https://r.jina.ai/http://x.ai/",
+      "fetched_via": "reader_fallback",
+      "title": "Welcome | xAI — Creators of Grok, the AI Chatbot",
+      "meta_description": "xAI — Creators of Grok, the truth-seeking AI Chatbot",
+      "h1": [],
+      "h2": [],
+      "paragraphs": [
+        "xAI — Creators of Grok, the truth-seeking AI Chatbot",
+        "SpaceX has acquired xAI to accelerate humanity’s future.",
+        "Read announcementxAI joins SpaceX",
+        "Grok is your cosmic guide, now accessible on grok.com, iOS, and Android. Explore the universe with AI.",
+        "Supercharge your applications with Grok's enhanced speed, precision, and multilingual capabilities.",
+        "Learn how to quickly install Grok at the heart of your applications and explore guides covering common use cases.",
+        "Unlock a SuperGrok subscription on Grok.com.",
+        "We've just launched SuperGrok Heavy, providing access to Grok Heavy and much higher rate limits.",
+        "### xAI joins SpaceX",
+        "SpaceX announced today that it has acquired xAI.",
+        "### Grok Imagine API",
+        "State-of-the-art video generation across quality, cost, and latency.",
+        "### xAI Raises $20B Series E",
+        "xAI is rapidly accelerating its progress in building advanced AI."
+      ],
+      "error": null
+    },
+    {
+      "url": "https://grok.com/",
+      "ok": true,
+      "final_url": "https://r.jina.ai/http://grok.com/",
+      "fetched_via": "reader_fallback",
+      "title": "Grok",
+      "meta_description": "By messaging Grok, you agree to our Terms and Privacy Policy.",
+      "h1": [],
+      "h2": [],
+      "paragraphs": [
+        "By messaging Grok, you agree to our Terms and Privacy Policy."
+      ],
+      "error": null
+    }
+  ]
+}
