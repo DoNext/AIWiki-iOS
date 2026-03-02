@@ -18,6 +18,7 @@ struct SettingsView: View {
                     }
                 }
                 .pickerStyle(.inline)
+                .labelsHidden()
                 .listRowBackground(AppColors.card)
             }
 
