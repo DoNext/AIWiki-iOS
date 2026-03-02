@@ -6,14 +6,16 @@ struct ToolListRow: View {
     let tool: AITool
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(spacing: 14) {
+            ToolAvatar(name: tool.name, size: 44)
+
             VStack(alignment: .leading, spacing: 4) {
                 Text(tool.name)
                     .font(.headline)
-                    .foregroundColor(.primary)
+                    .foregroundColor(AppColors.textPrimary)
                 Text(tool.intro)
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(AppColors.textSecondary)
                     .lineLimit(2)
             }
 
@@ -22,12 +24,14 @@ struct ToolListRow: View {
             Button {
                 store.toggleFavorite(tool.id)
             } label: {
-                Image(systemName: store.isFavorite(tool.id) ? "star.fill" : "star")
-                    .foregroundColor(store.isFavorite(tool.id) ? .yellow : .secondary)
+                Image(systemName: store.isFavorite(tool.id) ? "heart.fill" : "heart")
+                    .font(.title3)
+                    .foregroundColor(store.isFavorite(tool.id) ? AppColors.accent : AppColors.textSecondary)
             }
             .buttonStyle(.plain)
             .accessibilityLabel(store.isFavorite(tool.id) ? "取消收藏" : "收藏")
         }
-        .padding(.vertical, 4)
+        .padding(14)
+        .cardStyle()
     }
 }

@@ -40,30 +40,45 @@ struct FavoritesView: View {
                     .foregroundColor(.red)
                     .padding()
             } else if store.favoriteTools().isEmpty {
-                VStack(spacing: 8) {
-                    Image(systemName: "star")
-                        .font(.title2)
-                        .foregroundColor(.secondary)
+                VStack(spacing: 12) {
+                    Image(systemName: "heart.slash")
+                        .font(.system(size: 40))
+                        .foregroundColor(AppColors.textSecondary)
                     Text("还没有收藏")
-                        .foregroundColor(.secondary)
+                        .font(.headline)
+                        .foregroundColor(AppColors.textSecondary)
+                    Text("浏览 AI 工具，点击心形图标收藏")
+                        .font(.subheadline)
+                        .foregroundColor(AppColors.textSecondary.opacity(0.7))
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(AppColors.background.ignoresSafeArea())
             } else if favoriteTools.isEmpty {
-                VStack(spacing: 8) {
+                VStack(spacing: 12) {
                     Image(systemName: "magnifyingglass")
-                        .font(.title2)
-                        .foregroundColor(.secondary)
+                        .font(.system(size: 40))
+                        .foregroundColor(AppColors.textSecondary)
                     Text("收藏中无匹配结果")
-                        .foregroundColor(.secondary)
+                        .foregroundColor(AppColors.textSecondary)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(AppColors.background.ignoresSafeArea())
             } else {
-                List(favoriteTools, id: \.id) { tool in
-                    NavigationLink {
-                        ToolDetailView(tool: tool)
-                    } label: {
-                        ToolListRow(tool: tool)
+                ScrollView {
+                    LazyVStack(spacing: 10) {
+                        ForEach(favoriteTools, id: \.id) { tool in
+                            NavigationLink {
+                                ToolDetailView(tool: tool)
+                            } label: {
+                                ToolListRow(tool: tool)
+                            }
+                            .buttonStyle(.plain)
+                        }
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
                 }
-                .listStyle(.plain)
+                .background(AppColors.background.ignoresSafeArea())
             }
         }
         .searchable(text: $query, prompt: "搜索收藏")
@@ -82,6 +97,7 @@ struct FavoritesView: View {
                     }
                 } label: {
                     Image(systemName: "ellipsis.circle")
+                        .foregroundColor(AppColors.accent)
                 }
             }
         }

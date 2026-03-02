@@ -15,22 +15,31 @@ struct SearchView: View {
                     .foregroundColor(.red)
                     .padding()
             } else if results.isEmpty {
-                VStack(spacing: 8) {
+                VStack(spacing: 12) {
                     Image(systemName: "magnifyingglass")
-                        .font(.title2)
-                        .foregroundColor(.secondary)
-                    Text("无结果")
-                        .foregroundColor(.secondary)
+                        .font(.largeTitle)
+                        .foregroundColor(AppColors.textSecondary)
+                    Text("输入关键词搜索 AI 工具")
+                        .foregroundColor(AppColors.textSecondary)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(AppColors.background.ignoresSafeArea())
             } else {
-                List(results, id: \.id) { tool in
-                    NavigationLink {
-                        ToolDetailView(tool: tool)
-                    } label: {
-                        ToolListRow(tool: tool)
+                ScrollView {
+                    LazyVStack(spacing: 10) {
+                        ForEach(results, id: \.id) { tool in
+                            NavigationLink {
+                                ToolDetailView(tool: tool)
+                            } label: {
+                                ToolListRow(tool: tool)
+                            }
+                            .buttonStyle(.plain)
+                        }
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
                 }
-                .listStyle(.plain)
+                .background(AppColors.background.ignoresSafeArea())
             }
         }
         .searchable(text: $query, prompt: "搜索名称、简介、功能")
