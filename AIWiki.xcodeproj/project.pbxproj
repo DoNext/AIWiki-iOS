@@ -31,6 +31,7 @@
 		820E4925DFFA3A1CCD953888 /* AppStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43778D1D3A8F94A75634E9 /* AppStoreTests.swift */; };
 		83837F22CA6B7152C7201CFE /* TaskScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C84B0D8DA86CF6ADAED7DA7 /* TaskScenario.swift */; };
 		E71094628ED3F90B78E094B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C04525FC36C8419EA6A7A48 /* Assets.xcassets */; };
+		E983D2D37DFAD9F1927CA7C2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77806761A79D9F4838334C93 /* SplashView.swift */; };
 		EC0AC480BF45284E4CA8C12A /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791ECA35285342CAAB73509 /* CategoriesView.swift */; };
 		F09CE043EE30D80104C3C2CD /* ScenarioDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB896E3A8988B754DF4F7D9 /* ScenarioDetailView.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		3BE99E0EEBF776F32C19F4B3 /* ScenarioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioLibrary.swift; sourceTree = "<group>"; };
 		4C84B0D8DA86CF6ADAED7DA7 /* TaskScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScenario.swift; sourceTree = "<group>"; };
 		6BBE42251ACF10E733D4F393 /* AppDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
+		77806761A79D9F4838334C93 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		77B78395396123526409DD13 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		869486803512DAA2D976A051 /* AIWikiTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AIWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F0316A3C59314B5825A351 /* CodeDebugOutcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDebugOutcomeView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		94B248E316A11600BCBC8BEA /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				77806761A79D9F4838334C93 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		9E03862B656EDDBABFE8378C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 				A6E6839F6A11E65C8EDDADAD /* Home */,
 				8D042CB31E40162E49A08537 /* Search */,
 				8552FC788EB1D573FB07480D /* Settings */,
+				94B248E316A11600BCBC8BEA /* Splash */,
 				813B385BDC1820EF418964FA /* ToolDetail */,
 			);
 			path = Features;
@@ -376,6 +387,7 @@
 				56B4604E166ADDA983708FC8 /* ScenarioLibrary.swift in Sources */,
 				1B21F48B768D5BE000FCD7E8 /* SearchView.swift in Sources */,
 				3AD4C9B9DB7CDFB690727CE5 /* SettingsView.swift in Sources */,
+				E983D2D37DFAD9F1927CA7C2 /* SplashView.swift in Sources */,
 				83837F22CA6B7152C7201CFE /* TaskScenario.swift in Sources */,
 				255D215EDCED5C1A55D6E14E /* ToolDetailView.swift in Sources */,
 				2EB4FA00901DED078861AA61 /* ToolListRow.swift in Sources */,
