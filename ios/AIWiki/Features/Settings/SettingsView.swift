@@ -1,7 +1,9 @@
 import SwiftUI
+import StoreKit
 
 struct SettingsView: View {
     @EnvironmentObject private var store: AppStore
+    @State private var showingShareSheet = false
 
     private var appVersionText: String {
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "-"
@@ -22,6 +24,59 @@ struct SettingsView: View {
                 .listRowBackground(AppColors.card)
             }
 
+            Section("统计") {
+                infoRow(title: "工具总数", value: "\(store.tools.count)")
+                infoRow(title: "分类总数", value: "\(store.categoryGroups().count)")
+                infoRow(title: "收藏数", value: "\(store.favoriteTools().count)")
+            }
+            .listRowBackground(AppColors.card)
+
+            Section("支持我们") {
+                Button {
+                    requestReview()
+                } label: {
+                    HStack {
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.orange)
+                        Text("给个好评")
+                            .foregroundColor(AppColors.textPrimary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundColor(AppColors.textSecondary)
+                    }
+                }
+
+                Button {
+                    showingShareSheet = true
+                } label: {
+                    HStack {
+                        Image(systemName: "square.and.arrow.up")
+                            .foregroundColor(AppColors.accent)
+                        Text("推荐给朋友")
+                            .foregroundColor(AppColors.textPrimary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundColor(AppColors.textSecondary)
+                    }
+                }
+
+                Link(destination: URL(string: "mailto:feedback@aiwiki.app")!) {
+                    HStack {
+                        Image(systemName: "envelope.fill")
+                            .foregroundColor(.blue)
+                        Text("意见反馈")
+                            .foregroundColor(AppColors.textPrimary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundColor(AppColors.textSecondary)
+                    }
+                }
+            }
+            .listRowBackground(AppColors.card)
+
             Section("应用信息") {
                 infoRow(title: "版本", value: appVersionText)
                 infoRow(title: "运行模式", value: "完全离线")
@@ -34,10 +89,30 @@ struct SettingsView: View {
                     .foregroundColor(AppColors.textSecondary)
             }
             .listRowBackground(AppColors.card)
+
+            Section {
+                Link(destination: URL(string: "https://github.com/DoNext/AIWiki-iOS")!) {
+                    HStack {
+                        Image(systemName: "chevron.left.forwardslash.chevron.right")
+                            .foregroundColor(AppColors.accent)
+                        Text("GitHub 开源地址")
+                            .foregroundColor(AppColors.textPrimary)
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                            .font(.caption)
+                            .foregroundColor(AppColors.textSecondary)
+                    }
+                }
+            }
+            .listRowBackground(AppColors.card)
         }
         .scrollContentBackground(.hidden)
         .background(AppColors.background.ignoresSafeArea())
         .navigationTitle("设置")
+        .sheet(isPresented: $showingShareSheet) {
+            let text = "推荐一个超棒的 AI 工具百科 App —— AIWiki，收录了 \(store.tools.count) 个 AI 工具，离线可用！"
+            ShareSheet(items: [text])
+        }
     }
 
     private func infoRow(title: String, value: String) -> some View {
@@ -49,4 +124,21 @@ struct SettingsView: View {
                 .foregroundColor(AppColors.textSecondary)
         }
     }
+
+    private func requestReview() {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
+    }
+}
+
+// MARK: - Share Sheet
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }

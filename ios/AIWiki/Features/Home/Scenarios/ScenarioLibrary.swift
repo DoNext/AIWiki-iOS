@@ -105,6 +105,110 @@ enum ScenarioLibrary {
             exampleOutput: "第1周目标：掌握基础概念与最小实践；每日任务：40分钟学习 + 20分钟练习；周复盘：完成率、难点、下周调整动作。",
             reviewQuestions: ["本周计划是否与可投入时间匹配？", "复盘后是否给出下周具体调整动作？"],
             relatedToolIDs: ["gemini", "notebooklm", "claude"]
+        ),
+        TaskScenario(
+            id: "content-creation",
+            title: "写公众号文章",
+            subtitle: "从选题到成稿的高效创作流程",
+            outcome: "30 分钟产出一篇结构清晰、可发布的公众号文章。",
+            quickStartSteps: [
+                "确定选题和目标读者",
+                "用 AI 生成大纲和初稿",
+                "人工润色后配图发布"
+            ],
+            steps: [
+                .init(title: "选题调研", detail: "用搜索工具找热门话题，确定切入角度。"),
+                .init(title: "生成大纲与初稿", detail: "让 AI 按大纲展开，每段 100-200 字。"),
+                .init(title: "润色与配图", detail: "调整语气，用 AI 生成配图或封面。")
+            ],
+            promptCards: [
+                .init(
+                    title: "公众号文章模板",
+                    prompt: "请为我写一篇公众号文章，主题：<填写>，目标读者：<填写>。要求：标题吸引眼球、开头有故事感、分 3-5 个小节、每节有小标题、结尾引导互动。字数 1500 左右。"
+                )
+            ],
+            pitfalls: ["AI 生成的文字容易千篇一律", "不加个人观点会缺乏温度"],
+            exampleOutput: "标题：AI 时代，普通人如何用 3 个工具提升 10 倍效率？...",
+            reviewQuestions: ["是否有独特观点而不只是常识？", "读者看完是否有行动指引？"],
+            relatedToolIDs: ["chatgpt", "jasper", "notion-ai"]
+        ),
+        TaskScenario(
+            id: "meeting-summary",
+            title: "整理会议纪要",
+            subtitle: "会后 5 分钟输出可执行纪要",
+            outcome: "会后 5 分钟自动生成结构化会议纪要与 TODO 列表。",
+            quickStartSteps: [
+                "录制或粘贴会议内容",
+                "用模板提取决议和待办",
+                "发送给参会人确认"
+            ],
+            steps: [
+                .init(title: "录音转文字", detail: "使用语音识别工具将会议录音转为文字稿。"),
+                .init(title: "提取要点", detail: "让 AI 按决议、待办、问题三栏整理。"),
+                .init(title: "分发确认", detail: "发给参会人核实后归档。")
+            ],
+            promptCards: [
+                .init(
+                    title: "会议纪要模板",
+                    prompt: "请将以下会议内容整理为纪要，格式：1) 会议主题；2) 关键讨论点（列表）；3) 决议事项（含负责人和截止日期）；4) 遗留问题。会议内容：<粘贴>"
+                )
+            ],
+            pitfalls: ["录音质量差会影响识别准确率", "AI 可能遗漏非正式口头决定"],
+            exampleOutput: "决议：Q3 预算上调 15%（负责人：张三，截止 3/15）；遗留问题：供应商合同条款待法务确认。",
+            reviewQuestions: ["每条决议是否有负责人和截止时间？", "是否遗漏了重要讨论？"],
+            relatedToolIDs: ["whisper", "otter-ai", "chatgpt"]
+        ),
+        TaskScenario(
+            id: "data-report",
+            title: "分析数据出报告",
+            subtitle: "从 Excel 到可汇报的数据洞察",
+            outcome: "20 分钟将原始数据转化为带图表的分析报告。",
+            quickStartSteps: [
+                "上传数据文件或粘贴表格",
+                "让 AI 生成统计摘要和可视化",
+                "提炼 3 条关键洞察"
+            ],
+            steps: [
+                .init(title: "数据清洗", detail: "上传数据，让 AI 检查缺失值和异常值。"),
+                .init(title: "统计分析", detail: "生成关键指标的统计摘要和趋势图表。"),
+                .init(title: "洞察提炼", detail: "让 AI 总结 3-5 条关键发现并给出建议。")
+            ],
+            promptCards: [
+                .init(
+                    title: "数据分析模板",
+                    prompt: "请分析以下数据并输出：1) 数据概览（行列数、类型分布）；2) 关键指标统计（均值、中位数、增长率）；3) 趋势分析；4) 3 条关键洞察；5) 行动建议。数据：<粘贴>"
+                )
+            ],
+            pitfalls: ["不检查数据质量直接分析会得到错误结论", "忽略业务背景只看数字会误导"],
+            exampleOutput: "洞察 1：用户留存率在第 7 天有明显断崖，建议优化首周引导流程；洞察 2：付费转化集中在晚 8-10 点...",
+            reviewQuestions: ["结论是否有数据支撑？", "建议是否可落地执行？"],
+            relatedToolIDs: ["julius-ai", "chatgpt-data", "notebooklm"]
+        ),
+        TaskScenario(
+            id: "email-writing",
+            title: "写商务邮件",
+            subtitle: "3 分钟写出得体的英文商务邮件",
+            outcome: "快速产出语法正确、语气得当的商务邮件。",
+            quickStartSteps: [
+                "说明邮件目的和收件人关系",
+                "用模板生成邮件初稿",
+                "检查语气和关键信息后发送"
+            ],
+            steps: [
+                .init(title: "明确目标", detail: "确定邮件目的、收件人、紧急程度和期望行动。"),
+                .init(title: "生成初稿", detail: "让 AI 按商务邮件格式生成，注意称呼和结尾。"),
+                .init(title: "语法检查", detail: "用语法工具做最后检查，确保无拼写错误。")
+            ],
+            promptCards: [
+                .init(
+                    title: "商务邮件模板",
+                    prompt: "请帮我写一封商务邮件。目的：<填写>；收件人：<填写关系>；语气：<正式/友好>；关键信息：<填写>。要求简洁、专业，不超过 200 词。"
+                )
+            ],
+            pitfalls: ["直接翻译中文思维会导致语气生硬", "忘记明确期望行动（call to action）"],
+            exampleOutput: "Subject: Follow-up on Q3 Partnership Proposal\nDear Mr. Chen,\nThank you for taking the time to discuss... I'd appreciate your feedback by March 15th.",
+            reviewQuestions: ["是否有明确的 call to action？", "语气是否匹配与收件人的关系？"],
+            relatedToolIDs: ["grammarly", "chatgpt", "claude"]
         )
     ]
 }

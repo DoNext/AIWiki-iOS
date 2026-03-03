@@ -6,6 +6,7 @@ struct ToolDetailView: View {
 
     let tool: AITool
     @State private var copied = false
+    @State private var showingShareSheet = false
     private var websiteURL: URL? { URL(string: tool.url) }
     private var learningMaterial: LearningMaterial? { store.learningMaterial(for: tool.id) }
 
@@ -288,6 +289,20 @@ struct ToolDetailView: View {
         .background(AppColors.background.ignoresSafeArea())
         .navigationTitle("详情")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    showingShareSheet = true
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(AppColors.accent)
+                }
+            }
+        }
+        .sheet(isPresented: $showingShareSheet) {
+            let text = "推荐一个 AI 工具：\(tool.name) — \(tool.intro) 👉 \(tool.url)"
+            ShareSheet(items: [text])
+        }
     }
 
     // MARK: - Helpers

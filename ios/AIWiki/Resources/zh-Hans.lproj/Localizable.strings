@@ -1,0 +1,78 @@
+/* Tabs */
+"tab.home" = "首页";
+"tab.categories" = "分类";
+"tab.favorites" = "收藏";
+"tab.settings" = "设置";
+
+/* Home */
+"home.title" = "AIWiki";
+"home.search.placeholder" = "搜索 AI 工具...";
+"home.featured" = "🔥 热门推荐";
+"home.recent" = "🆕 新增工具";
+"home.bookmarked" = "📌 收藏任务";
+"home.scenarios" = "💡 我想完成什么";
+
+/* Categories */
+"categories.title" = "分类";
+"categories.toolCount" = "%d 个工具";
+
+/* Search */
+"search.title" = "搜索";
+"search.placeholder" = "搜索名称、简介、功能";
+"search.hotSearch" = "🔥 热门搜索";
+"search.history" = "🕐 搜索历史";
+"search.clear" = "清除";
+"search.noResults" = "没有找到匹配的工具";
+"search.hint" = "输入关键词搜索 AI 工具";
+
+/* Favorites */
+"favorites.title" = "收藏";
+"favorites.empty" = "还没有收藏";
+"favorites.emptyHint" = "浏览 AI 工具，点击心形图标收藏";
+"favorites.noMatch" = "收藏中无匹配结果";
+"favorites.sortAZ" = "名称 A-Z";
+"favorites.sortZA" = "名称 Z-A";
+"favorites.clearAll" = "清空收藏";
+
+/* Tool Detail */
+"detail.title" = "详情";
+"detail.intro" = "简介";
+"detail.features" = "功能特点";
+"detail.learningSummary" = "学习摘要";
+"detail.coreCapabilities" = "核心能力";
+"detail.gettingStarted" = "快速上手";
+"detail.officialLinks" = "官方资料";
+"detail.caveats" = "注意事项";
+"detail.useCases" = "适用场景";
+"detail.bestPractices" = "最佳实践";
+"detail.promptTemplates" = "提示词模板";
+"detail.strengths" = "优势";
+"detail.limitations" = "局限";
+"detail.basicInfo" = "基础信息";
+"detail.openWebsite" = "打开官网";
+"detail.copyLink" = "复制官网链接";
+"detail.copied" = "已复制";
+"detail.favorite" = "收藏";
+"detail.favorited" = "已收藏";
+
+/* Settings */
+"settings.title" = "设置";
+"settings.theme" = "主题";
+"settings.stats" = "统计";
+"settings.toolCount" = "工具总数";
+"settings.categoryCount" = "分类总数";
+"settings.favoriteCount" = "收藏数";
+"settings.support" = "支持我们";
+"settings.rate" = "给个好评";
+"settings.share" = "推荐给朋友";
+"settings.feedback" = "意见反馈";
+"settings.appInfo" = "应用信息";
+"settings.version" = "版本";
+"settings.offlineMode" = "完全离线";
+"settings.dataSource" = "数据来源";
+"settings.dataSourceDesc" = "数据主要来自各 AI 工具官方站点与官方文档，整理后预置在本地。";
+
+/* Theme */
+"theme.system" = "跟随系统";
+"theme.light" = "浅色";
+"theme.dark" = "深色";

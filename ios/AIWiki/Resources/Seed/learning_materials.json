@@ -252,13 +252,18 @@
       "多语言内容"
     ],
     "getting_started": [
-      "访问 https://www.jasper.ai/ 开始使用 Jasper"
+      "注册 Jasper 账号并选择内容模板",
+      "选择品牌语调和目标受众",
+      "输入关键词生成初稿，再人工润色"
     ],
     "official_links": [
       "https://www.jasper.ai/",
       "https://www.jasper.ai/"
     ],
-    "caveats": [],
+    "caveats": [
+      "免费额度有限，高频使用需付费",
+      "生成内容需人工校验事实准确性"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -275,13 +280,18 @@
       "内容改写"
     ],
     "getting_started": [
-      "访问 https://www.notion.so/product/ai 开始使用 Notion AI"
+      "在 Notion 中按空格键唤出 AI 助手",
+      "使用 /summarize 快速总结文档",
+      "用 AI 改写语气或翻译段落"
     ],
     "official_links": [
       "https://www.notion.so/product/ai",
       "https://www.notion.so/product/ai"
     ],
-    "caveats": [],
+    "caveats": [
+      "需要 Notion 付费计划才能使用",
+      "长文档处理可能较慢"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -298,13 +308,18 @@
       "语调调整"
     ],
     "getting_started": [
-      "访问 https://www.grammarly.com/ 开始使用 Grammarly"
+      "安装浏览器插件或桌面应用",
+      "在任意输入框中自动检测语法错误",
+      "使用语气调整功能优化表达"
     ],
     "official_links": [
       "https://www.grammarly.com/",
       "https://www.grammarly.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "免费版功能有限，高级语法建议需要 Premium",
+      "对中文内容不适用"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -321,13 +336,18 @@
       "多语言语音"
     ],
     "getting_started": [
-      "访问 https://elevenlabs.io/ 开始使用 ElevenLabs"
+      "上传文本或输入要转换的内容",
+      "选择预设声音或克隆自己的声音",
+      "调整语速和情感参数后导出音频"
     ],
     "official_links": [
       "https://elevenlabs.io/",
       "https://elevenlabs.io/"
     ],
-    "caveats": [],
+    "caveats": [
+      "免费额度每月有限",
+      "声音克隆需注意版权和隐私问题"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -344,13 +364,18 @@
       "本地部署"
     ],
     "getting_started": [
-      "访问 https://openai.com/research/whisper 开始使用 Whisper"
+      "安装 OpenAI Whisper 开源模型",
+      "使用命令行转录音频文件",
+      "支持多种语言自动检测"
     ],
     "official_links": [
       "https://openai.com/research/whisper",
       "https://openai.com/research/whisper"
     ],
-    "caveats": [],
+    "caveats": [
+      "本地运行需要较好的 GPU",
+      "嘈杂环境录音识别率会下降"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -367,13 +392,18 @@
       "歌词创作"
     ],
     "getting_started": [
-      "访问 https://suno.com/ 开始使用 Suno"
+      "访问 Suno 官网并登录",
+      "输入歌词或让 AI 自动生成",
+      "选择音乐风格生成完整歌曲"
     ],
     "official_links": [
       "https://suno.com/",
       "https://suno.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "商用需购买付费许可",
+      "复杂音乐结构的细微调整有限"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -390,13 +420,18 @@
       "绿幕去除"
     ],
     "getting_started": [
-      "访问 https://runwayml.com/ 开始使用 Runway"
+      "注册 Runway 账号获取免费积分",
+      "上传视频或图片素材",
+      "使用 Gen-2 进行文本生成视频"
     ],
     "official_links": [
       "https://runwayml.com/",
       "https://runwayml.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "生成HD视频消耗积分较快",
+      "视频时长目前受限"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -413,13 +448,18 @@
       "品牌定制"
     ],
     "getting_started": [
-      "访问 https://www.heygen.com/ 开始使用 HeyGen"
+      "选择虚拟人形象和语言",
+      "输入脚本文本",
+      "一键生成带口型同步的视频"
     ],
     "official_links": [
       "https://www.heygen.com/",
       "https://www.heygen.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "免费版有水印",
+      "复杂手势和表情仍不够自然"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -436,13 +476,18 @@
       "视频风格转换"
     ],
     "getting_started": [
-      "访问 https://pika.art/ 开始使用 Pika"
+      "上传图片或输入文字描述",
+      "选择视频风格和时长",
+      "调整运动参数后生成视频"
     ],
     "official_links": [
       "https://pika.art/",
       "https://pika.art/"
     ],
-    "caveats": [],
+    "caveats": [
+      "生成时间较长",
+      "精确控制运动方向仍有挑战"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -505,13 +550,18 @@
       "多模板"
     ],
     "getting_started": [
-      "访问 https://gamma.app/ 开始使用 Gamma"
+      "输入主题让 AI 自动生成 PPT 大纲",
+      "选择设计主题和配色方案",
+      "逐页调整内容后导出"
     ],
     "official_links": [
       "https://gamma.app/",
       "https://gamma.app/"
     ],
-    "caveats": [],
+    "caveats": [
+      "导出 PDF/PPTX 需付费",
+      "复杂图表和数据可视化支持有限"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -574,13 +624,18 @@
       "模板推荐"
     ],
     "getting_started": [
-      "访问 https://www.canva.com/ 开始使用 Canva AI"
+      "登录 Canva 选择设计模板",
+      "使用 Magic Design 自动生成设计方案",
+      "用 AI 图片编辑功能快速修图"
     ],
     "official_links": [
       "https://www.canva.com/",
       "https://www.canva.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "部分 AI 功能需要 Pro 订阅",
+      "生成设计可能与品牌风格不完全一致"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -597,13 +652,18 @@
       "设计建议"
     ],
     "getting_started": [
-      "访问 https://www.figma.com/ 开始使用 Figma AI"
+      "在 Figma 中启用 AI 功能",
+      "使用自动布局建议优化设计",
+      "用 AI 生成设计变体"
     ],
     "official_links": [
       "https://www.figma.com/",
       "https://www.figma.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "AI 功能仍在beta阶段",
+      "生成结果可能需要手动调整"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -620,13 +680,18 @@
       "名片设计"
     ],
     "getting_started": [
-      "访问 https://looka.com/ 开始使用 Looka"
+      "输入品牌名称和行业",
+      "选择偏好的图标和颜色风格",
+      "AI 生成多个 Logo 方案供选择"
     ],
     "official_links": [
       "https://looka.com/",
       "https://looka.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "下载高清 Logo 需付费",
+      "生成的 Logo 可能与已有品牌相似"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -666,13 +731,18 @@
       "个性化课程"
     ],
     "getting_started": [
-      "访问 https://www.duolingo.com/ 开始使用 Duolingo Max"
+      "升级到 Duolingo Max 计划",
+      "使用 AI 角色扮演练习对话",
+      "让 AI 解释你的语法错误"
     ],
     "official_links": [
       "https://www.duolingo.com/",
       "https://www.duolingo.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "仅支持部分语言课程",
+      "需要订阅 Max 计划"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -689,13 +759,18 @@
       "图形计算"
     ],
     "getting_started": [
-      "访问 https://photomath.com/ 开始使用 Photomath"
+      "拍照扫描数学题目",
+      "查看 AI 分步解题过程",
+      "理解每一步的解题思路"
     ],
     "official_links": [
       "https://photomath.com/",
       "https://photomath.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "复杂高等数学支持有限",
+      "拍照识别偏手写体时可能不准"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -712,13 +787,18 @@
       "企业定制"
     ],
     "getting_started": [
-      "访问 https://www.synthesia.io/ 开始使用 Synthesia"
+      "选择 AI 虚拟主持人",
+      "输入视频脚本文字",
+      "选择语言和场景后生成视频"
     ],
     "official_links": [
       "https://www.synthesia.io/",
       "https://www.synthesia.io/"
     ],
-    "caveats": [],
+    "caveats": [
+      "免费试用版有水印和时长限制",
+      "虚拟人表情自然度仍在改进中"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -735,13 +815,18 @@
       "A/B 测试"
     ],
     "getting_started": [
-      "访问 https://www.adcreative.ai/ 开始使用 AdCreative.ai"
+      "输入品牌信息和产品描述",
+      "选择广告平台和尺寸",
+      "AI 生成多组广告创意供选择"
     ],
     "official_links": [
       "https://www.adcreative.ai/",
       "https://www.adcreative.ai/"
     ],
-    "caveats": [],
+    "caveats": [
+      "生成效果依赖输入质量",
+      "需要付费订阅"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -758,13 +843,18 @@
       "SEO 内容"
     ],
     "getting_started": [
-      "访问 https://www.copy.ai/ 开始使用 Copy.ai"
+      "选择内容类型（广告文案、社交帖子等）",
+      "输入产品信息和目标受众",
+      "从多个生成方案中选择最佳版本"
     ],
     "official_links": [
       "https://www.copy.ai/",
       "https://www.copy.ai/"
     ],
-    "caveats": [],
+    "caveats": [
+      "免费版每月生成次数有限",
+      "生成内容需根据品牌调性微调"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -781,13 +871,18 @@
       "长文本处理"
     ],
     "getting_started": [
-      "访问 https://www.deepseek.com/ 开始使用 DeepSeek"
+      "访问 DeepSeek 官网或 API",
+      "在对话框中直接提问",
+      "使用代码模式进行编程辅助"
     ],
     "official_links": [
       "https://www.deepseek.com/",
       "https://www.deepseek.com/"
     ],
-    "caveats": [],
+    "caveats": [
+      "部分高峰时段可能响应较慢",
+      "复杂推理任务仍需人工验证"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
@@ -989,13 +1084,18 @@
       "自然语言查询"
     ],
     "getting_started": [
-      "访问 https://julius.ai/ 开始使用 Julius AI"
+      "上传 CSV/Excel 数据文件",
+      "用自然语言提问分析数据",
+      "自动生成图表和统计摘要"
     ],
     "official_links": [
       "https://julius.ai/",
       "https://julius.ai/"
     ],
-    "caveats": [],
+    "caveats": [
+      "大文件上传有大小限制",
+      "复杂统计分析仍需专业工具辅助"
+    ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",

@@ -2,11 +2,12 @@ import SwiftUI
 
 struct CategoriesView: View {
     @EnvironmentObject private var store: AppStore
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
-    private let columns = [
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12)
-    ]
+    private var columns: [GridItem] {
+        let count = sizeClass == .regular ? 3 : 2
+        return Array(repeating: GridItem(.flexible(), spacing: 12), count: count)
+    }
 
     var body: some View {
         Group {
@@ -29,7 +30,7 @@ struct CategoriesView: View {
                                         .font(.subheadline)
                                         .fontWeight(.semibold)
                                         .foregroundColor(AppColors.textPrimary)
-                                    Text("\(item.count)")
+                                    Text("\(item.count) 个工具")
                                         .font(.caption)
                                         .foregroundColor(AppColors.textSecondary)
                                 }
