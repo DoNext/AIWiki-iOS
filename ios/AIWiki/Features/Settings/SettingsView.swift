@@ -5,7 +5,6 @@ import UIKit
 struct SettingsView: View {
     @EnvironmentObject private var store: AppStore
     @State private var showingShareSheet = false
-    @State private var showingFeedbackAlert = false
 
     private var appVersionText: String {
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "-"
@@ -64,16 +63,7 @@ struct SettingsView: View {
                     }
                 }
 
-                Button {
-                    let email = "yinchyu@gmail.com"
-                    if let url = URL(string: "mailto:\(email)"),
-                       UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url)
-                    } else {
-                        UIPasteboard.general.string = email
-                        showingFeedbackAlert = true
-                    }
-                } label: {
+                Link(destination: URL(string: "mailto:yinchyu@gmail.com")!) {
                     HStack {
                         Image(systemName: "envelope.fill")
                             .foregroundColor(.blue)
@@ -123,11 +113,6 @@ struct SettingsView: View {
         .sheet(isPresented: $showingShareSheet) {
             let text = "推荐一个超棒的 AI 工具百科 App —— AIWiki，收录了 \(store.tools.count) 个 AI 工具，离线可用！"
             ShareSheet(items: [text])
-        }
-        .alert("意见反馈", isPresented: $showingFeedbackAlert) {
-            Button("好的") {}
-        } message: {
-            Text("邮箱地址已复制到剪贴板：yinchyu@gmail.com")
         }
     }
 
