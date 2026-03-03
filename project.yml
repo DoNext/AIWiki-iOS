@@ -28,10 +28,18 @@ targets:
     scheme:
       testTargets:
         - AIWikiTests
+        - AIWikiUITests
   AIWikiTests:
     type: bundle.unit-test
     platform: iOS
     sources:
       - path: tests/AIWikiTests
+    dependencies:
+      - target: AIWiki
+  AIWikiUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: tests/AIWikiUITests
     dependencies:
       - target: AIWiki
