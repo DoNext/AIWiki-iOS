@@ -65,7 +65,7 @@ struct SettingsView: View {
                 }
 
                 Button {
-                    let email = "feedback@aiwiki.app"
+                    let email = "yinchyu@gmail.com"
                     if let url = URL(string: "mailto:\(email)"),
                        UIApplication.shared.canOpenURL(url) {
                         UIApplication.shared.open(url)
@@ -127,7 +127,7 @@ struct SettingsView: View {
         .alert("意见反馈", isPresented: $showingFeedbackAlert) {
             Button("好的") {}
         } message: {
-            Text("邮箱地址已复制到剪贴板：feedback@aiwiki.app")
+            Text("邮箱地址已复制到剪贴板：yinchyu@gmail.com")
         }
     }
 
