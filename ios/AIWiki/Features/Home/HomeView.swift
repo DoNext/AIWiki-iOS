@@ -8,7 +8,7 @@ struct HomeView: View {
     }
 
     private var featuredTools: [AITool] {
-        let featured = ["chatgpt", "midjourney", "cursor", "elevenlabs", "runway", "deepseek", "gamma", "canva-ai"]
+        let featured = ["deepseek", "midjourney", "cursor", "elevenlabs", "runway", "claude", "gamma", "canva-ai"]
         return featured.compactMap { id in store.tools.first { $0.id == id } }
     }
 
@@ -51,6 +51,24 @@ struct HomeView: View {
                                 featuredToolCard(tool)
                             }
                             .buttonStyle(.plain)
+                        }
+                    }
+                }
+
+                // Personalized recommendations
+                let recommended = store.recommendedTools()
+                if !recommended.isEmpty {
+                    sectionHeader("🎯 为你推荐")
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 12) {
+                            ForEach(recommended) { tool in
+                                NavigationLink {
+                                    ToolDetailView(tool: tool)
+                                } label: {
+                                    featuredToolCard(tool)
+                                }
+                                .buttonStyle(.plain)
+                            }
                         }
                     }
                 }

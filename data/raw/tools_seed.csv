@@ -1,5 +1,4 @@
 id,name,intro,features,company,url,icon,category,source_url,last_verified_at
-chatgpt,ChatGPT,对话式人工智能助手平台,自然语言问答|多轮对话|内容生成,OpenAI,https://chatgpt.com/,chatgpt.png,聊天机器人,https://openai.com/chatgpt/overview/,2026-03-02
 claude,Claude,面向通用任务的人工智能助手,长文本理解|写作辅助|代码生成,Anthropic,https://claude.ai/,claude.png,聊天机器人,https://www.anthropic.com/claude,2026-03-02
 gemini,Gemini,Google 推出的多模态 AI 助手,文本生成|图像理解|跨设备协作,Google,https://gemini.google.com/,gemini.png,多模态模型,https://gemini.google.com/,2026-03-02
 github-copilot,GitHub Copilot,面向开发者的 AI 编程助手,代码补全|聊天问答|IDE 集成,GitHub,https://github.com/features/copilot,copilot.png,编程助手,https://github.com/features/copilot,2026-03-02

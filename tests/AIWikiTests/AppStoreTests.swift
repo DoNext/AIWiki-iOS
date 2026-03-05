@@ -29,18 +29,18 @@ final class AppStoreTests: XCTestCase {
     func testCategoryFilterReturnsOnlyCategoryTools() {
         let store = makeStore()
         let results = store.tools(in: "聊天机器人")
-        XCTAssertEqual(results.map(\.id), ["chatgpt"])
+        XCTAssertEqual(results.map(\.id), ["deepseek"])
     }
 
     func testToggleFavoriteAndClearFavorites() {
         let store = makeStore()
 
-        store.toggleFavorite("chatgpt")
-        XCTAssertTrue(store.isFavorite("chatgpt"))
-        XCTAssertEqual(store.favoriteTools().map(\.id), ["chatgpt"])
+        store.toggleFavorite("deepseek")
+        XCTAssertTrue(store.isFavorite("deepseek"))
+        XCTAssertEqual(store.favoriteTools().map(\.id), ["deepseek"])
 
         store.clearFavorites()
-        XCTAssertFalse(store.isFavorite("chatgpt"))
+        XCTAssertFalse(store.isFavorite("deepseek"))
         XCTAssertTrue(store.favoriteTools().isEmpty)
     }
 

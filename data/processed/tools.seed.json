@@ -1,59 +1,39 @@
 [
   {
-    "id": "chatgpt",
-    "name": "ChatGPT",
-    "intro": "对话式人工智能助手平台",
-    "features": ["自然语言问答", "多轮对话", "内容生成"],
-    "company": "OpenAI",
-    "url": "https://chatgpt.com/",
-    "icon": "chatgpt.png",
-    "category": "聊天机器人",
-    "source_url": "https://openai.com/chatgpt/overview/",
-    "last_verified_at": "2026-03-02",
-    "use_cases": ["学习与知识总结", "写作与改写", "代码调试与解释", "产品方案头脑风暴"],
-    "best_practices": [
-      "先写清角色、目标和输出格式，再补充约束条件",
-      "复杂任务分步骤提问，逐步迭代结果",
-      "对关键事实要求给出依据并进行二次核对"
-    ],
-    "strengths": ["通用任务覆盖广", "中文可用性高", "提示词生态成熟"],
-    "limitations": ["事实错误仍可能发生", "专业领域结论需人工复核"],
-    "prompt_templates": [
-      {
-        "title": "结构化写作模板",
-        "prompt": "你是资深编辑。请基于以下主题输出一篇文章，要求包含：1) 结论先行摘要；2) 3个核心观点；3) 每个观点给出示例；4) 最后给行动建议。主题：<在此填写>。字数控制在800字内，语气专业但易读。"
-      },
-      {
-        "title": "代码排错模板",
-        "prompt": "你是高级工程师。请帮我定位并修复以下代码问题。按这个格式输出：A. 问题根因；B. 最小修复方案；C. 修复后代码；D. 如何防止复发。代码和报错如下：<粘贴代码与错误日志>。"
-      }
-    ],
-    "access": {
-      "pricing": "免费版 + 订阅版",
-      "account_required": true,
-      "platforms": ["Web", "iOS", "Android", "API"],
-      "api_available": true
-    }
-  },
-  {
     "id": "claude",
     "name": "Claude",
     "intro": "面向通用任务的人工智能助手",
-    "features": ["长文本理解", "写作辅助", "代码生成"],
+    "features": [
+      "长文本理解",
+      "写作辅助",
+      "代码生成"
+    ],
     "company": "Anthropic",
     "url": "https://claude.ai/",
     "icon": "claude.png",
     "category": "聊天机器人",
     "source_url": "https://www.anthropic.com/claude",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["长文阅读与总结", "文档润色", "规范写作", "代码解释与重构建议"],
+    "use_cases": [
+      "长文阅读与总结",
+      "文档润色",
+      "规范写作",
+      "代码解释与重构建议"
+    ],
     "best_practices": [
       "输入长文时先给任务边界和输出结构",
       "要求回答中标注不确定点，降低幻觉影响",
       "对关键条款采用逐段提问而不是一次问完"
     ],
-    "strengths": ["长上下文处理能力突出", "回答风格稳定", "长文整理体验好"],
-    "limitations": ["实时信息覆盖有限", "某些代码场景不如专注编程工具高效"],
+    "strengths": [
+      "长上下文处理能力突出",
+      "回答风格稳定",
+      "长文整理体验好"
+    ],
+    "limitations": [
+      "实时信息覆盖有限",
+      "某些代码场景不如专注编程工具高效"
+    ],
     "prompt_templates": [
       {
         "title": "长文归纳模板",
@@ -67,7 +47,12 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["Web", "iOS", "Android", "API"],
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "API"
+      ],
       "api_available": true
     }
   },
@@ -75,21 +60,37 @@
     "id": "gemini",
     "name": "Gemini",
     "intro": "Google 推出的多模态 AI 助手",
-    "features": ["文本生成", "图像理解", "跨设备协作"],
+    "features": [
+      "文本生成",
+      "图像理解",
+      "跨设备协作"
+    ],
     "company": "Google",
     "url": "https://gemini.google.com/",
     "icon": "gemini.png",
     "category": "多模态模型",
     "source_url": "https://gemini.google.com/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["多模态问答", "Google 生态办公辅助", "图文理解", "学习与资料整理"],
+    "use_cases": [
+      "多模态问答",
+      "Google 生态办公辅助",
+      "图文理解",
+      "学习与资料整理"
+    ],
     "best_practices": [
       "涉及图像任务时，明确你希望它关注的区域或元素",
       "与文档任务结合时，要求按目录层级输出",
       "先用简版问题探索，再逐步增加约束"
     ],
-    "strengths": ["多模态能力均衡", "与 Google 服务协同强", "跨设备使用体验好"],
-    "limitations": ["部分高级能力受地区和版本影响", "不同入口能力表现可能不一致"],
+    "strengths": [
+      "多模态能力均衡",
+      "与 Google 服务协同强",
+      "跨设备使用体验好"
+    ],
+    "limitations": [
+      "部分高级能力受地区和版本影响",
+      "不同入口能力表现可能不一致"
+    ],
     "prompt_templates": [
       {
         "title": "图文分析模板",
@@ -103,7 +104,12 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["Web", "Android", "iOS", "API"],
+      "platforms": [
+        "Web",
+        "Android",
+        "iOS",
+        "API"
+      ],
       "api_available": true
     }
   },
@@ -111,21 +117,37 @@
     "id": "github-copilot",
     "name": "GitHub Copilot",
     "intro": "面向开发者的 AI 编程助手",
-    "features": ["代码补全", "聊天问答", "IDE 集成"],
+    "features": [
+      "代码补全",
+      "聊天问答",
+      "IDE 集成"
+    ],
     "company": "GitHub",
     "url": "https://github.com/features/copilot",
     "icon": "copilot.png",
     "category": "编程助手",
     "source_url": "https://github.com/features/copilot",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["IDE 内代码补全", "单元测试生成", "重构建议", "代码解释与学习"],
+    "use_cases": [
+      "IDE 内代码补全",
+      "单元测试生成",
+      "重构建议",
+      "代码解释与学习"
+    ],
     "best_practices": [
       "让 Copilot 先给最小可运行版本，再逐步增强",
       "在注释中写明输入、输出和边界条件",
       "生成后必须跑测试并人工审查关键逻辑"
     ],
-    "strengths": ["开发流程内嵌体验好", "补全速度快", "与主流 IDE 集成完善"],
-    "limitations": ["复杂业务上下文理解有限", "生成代码需要严格审查"],
+    "strengths": [
+      "开发流程内嵌体验好",
+      "补全速度快",
+      "与主流 IDE 集成完善"
+    ],
+    "limitations": [
+      "复杂业务上下文理解有限",
+      "生成代码需要严格审查"
+    ],
     "prompt_templates": [
       {
         "title": "单元测试生成模板",
@@ -139,7 +161,12 @@
     "access": {
       "pricing": "订阅制（部分场景可试用）",
       "account_required": true,
-      "platforms": ["VS Code", "JetBrains", "Neovim", "GitHub"],
+      "platforms": [
+        "VS Code",
+        "JetBrains",
+        "Neovim",
+        "GitHub"
+      ],
       "api_available": false
     }
   },
@@ -147,21 +174,37 @@
     "id": "cursor",
     "name": "Cursor",
     "intro": "集成 AI 的代码编辑器",
-    "features": ["代码生成", "代码重构", "项目问答"],
+    "features": [
+      "代码生成",
+      "代码重构",
+      "项目问答"
+    ],
     "company": "Anysphere",
     "url": "https://www.cursor.com/",
     "icon": "cursor.png",
     "category": "编程助手",
     "source_url": "https://www.cursor.com/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["仓库级代码理解", "多文件改造", "Bug 定位", "快速原型开发"],
+    "use_cases": [
+      "仓库级代码理解",
+      "多文件改造",
+      "Bug 定位",
+      "快速原型开发"
+    ],
     "best_practices": [
       "先让模型总结项目结构，再下发改动任务",
       "复杂改动拆成小步并逐步验证",
       "每次改动后通过测试或构建检查回归"
     ],
-    "strengths": ["项目级上下文对话强", "多文件编辑效率高", "AI 工作流集成度高"],
-    "limitations": ["错误修改可能跨文件扩散", "仍需工程师把关架构与安全"],
+    "strengths": [
+      "项目级上下文对话强",
+      "多文件编辑效率高",
+      "AI 工作流集成度高"
+    ],
+    "limitations": [
+      "错误修改可能跨文件扩散",
+      "仍需工程师把关架构与安全"
+    ],
     "prompt_templates": [
       {
         "title": "仓库理解模板",
@@ -175,7 +218,11 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["macOS", "Windows", "Linux"],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
       "api_available": false
     }
   },
@@ -183,21 +230,37 @@
     "id": "midjourney",
     "name": "Midjourney",
     "intro": "基于提示词的图像生成工具",
-    "features": ["文生图", "风格化生成", "社区画廊"],
+    "features": [
+      "文生图",
+      "风格化生成",
+      "社区画廊"
+    ],
     "company": "Midjourney",
     "url": "https://www.midjourney.com/",
     "icon": "midjourney.png",
     "category": "图像生成",
     "source_url": "https://www.midjourney.com/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["概念视觉探索", "海报与封面草图", "品牌风格尝试", "社媒素材创意"],
+    "use_cases": [
+      "概念视觉探索",
+      "海报与封面草图",
+      "品牌风格尝试",
+      "社媒素材创意"
+    ],
     "best_practices": [
       "提示词包含主体、风格、镜头、光线和构图",
       "先低成本批量探索，再放大优选方向",
       "用负面描述减少不希望出现的元素"
     ],
-    "strengths": ["风格化效果突出", "创意探索效率高", "社区生态活跃"],
-    "limitations": ["精确可控性有限", "商用前需关注版权和合规"],
+    "strengths": [
+      "风格化效果突出",
+      "创意探索效率高",
+      "社区生态活跃"
+    ],
+    "limitations": [
+      "精确可控性有限",
+      "商用前需关注版权和合规"
+    ],
     "prompt_templates": [
       {
         "title": "品牌海报模板",
@@ -211,7 +274,10 @@
     "access": {
       "pricing": "订阅制",
       "account_required": true,
-      "platforms": ["Web", "Discord"],
+      "platforms": [
+        "Web",
+        "Discord"
+      ],
       "api_available": false
     }
   },
@@ -219,21 +285,37 @@
     "id": "stable-diffusion",
     "name": "Stable Diffusion",
     "intro": "开源的图像生成基础模型",
-    "features": ["文生图", "图像编辑", "本地部署"],
+    "features": [
+      "文生图",
+      "图像编辑",
+      "本地部署"
+    ],
     "company": "Stability AI",
     "url": "https://stability.ai/stable-diffusion",
     "icon": "stable-diffusion.png",
     "category": "图像生成",
     "source_url": "https://stability.ai/stable-diffusion",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["本地文生图", "企业内网图像生成", "风格迁移", "可控图像工作流"],
+    "use_cases": [
+      "本地文生图",
+      "企业内网图像生成",
+      "风格迁移",
+      "可控图像工作流"
+    ],
     "best_practices": [
       "先确定模型版本与采样参数再调提示词",
       "结合 ControlNet / LoRA 提升可控性",
       "为每个项目固定参数模板，便于复现"
     ],
-    "strengths": ["可本地部署", "可扩展性强", "生态插件丰富"],
-    "limitations": ["学习和调参门槛较高", "算力与显存要求较高"],
+    "strengths": [
+      "可本地部署",
+      "可扩展性强",
+      "生态插件丰富"
+    ],
+    "limitations": [
+      "学习和调参门槛较高",
+      "算力与显存要求较高"
+    ],
     "prompt_templates": [
       {
         "title": "写实产品图模板",
@@ -247,7 +329,10 @@
     "access": {
       "pricing": "开源模型（部署成本自担）",
       "account_required": false,
-      "platforms": ["Local", "Cloud"],
+      "platforms": [
+        "Local",
+        "Cloud"
+      ],
       "api_available": true
     }
   },
@@ -255,21 +340,37 @@
     "id": "notebooklm",
     "name": "NotebookLM",
     "intro": "面向资料整理的 AI 研究助手",
-    "features": ["文档问答", "要点总结", "来源引用"],
+    "features": [
+      "文档问答",
+      "要点总结",
+      "来源引用"
+    ],
     "company": "Google",
     "url": "https://notebooklm.google/",
     "icon": "notebooklm.png",
     "category": "数据分析",
     "source_url": "https://notebooklm.google/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["资料归纳", "研究问答", "课程复习", "知识库摘要"],
+    "use_cases": [
+      "资料归纳",
+      "研究问答",
+      "课程复习",
+      "知识库摘要"
+    ],
     "best_practices": [
       "先上传高质量来源，再进行问答",
       "要求回答引用具体来源段落",
       "对重点结论要求列出证据链"
     ],
-    "strengths": ["来源引用能力强", "长资料整理效率高", "学习场景体验好"],
-    "limitations": ["依赖输入资料质量", "跨来源推理仍需人工核验"],
+    "strengths": [
+      "来源引用能力强",
+      "长资料整理效率高",
+      "学习场景体验好"
+    ],
+    "limitations": [
+      "依赖输入资料质量",
+      "跨来源推理仍需人工核验"
+    ],
     "prompt_templates": [
       {
         "title": "研究摘要模板",
@@ -283,7 +384,9 @@
     "access": {
       "pricing": "免费版 + 订阅版（能力差异视版本）",
       "account_required": true,
-      "platforms": ["Web"],
+      "platforms": [
+        "Web"
+      ],
       "api_available": false
     }
   },
@@ -291,21 +394,37 @@
     "id": "perplexity",
     "name": "Perplexity",
     "intro": "支持联网检索的 AI 搜索工具",
-    "features": ["搜索问答", "来源引用", "研究模式"],
+    "features": [
+      "搜索问答",
+      "来源引用",
+      "研究模式"
+    ],
     "company": "Perplexity",
     "url": "https://www.perplexity.ai/",
     "icon": "perplexity.png",
     "category": "数据分析",
     "source_url": "https://www.perplexity.ai/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["信息检索", "行业调研", "竞品速览", "事实问答"],
+    "use_cases": [
+      "信息检索",
+      "行业调研",
+      "竞品速览",
+      "事实问答"
+    ],
     "best_practices": [
       "提问时指定时间范围和目标受众",
       "要求按来源可信度分层输出",
       "关键结论交叉验证至少两个来源"
     ],
-    "strengths": ["检索与回答一体化", "来源可追溯", "调研速度快"],
-    "limitations": ["来源质量不一", "深度分析仍需人工结构化"],
+    "strengths": [
+      "检索与回答一体化",
+      "来源可追溯",
+      "调研速度快"
+    ],
+    "limitations": [
+      "来源质量不一",
+      "深度分析仍需人工结构化"
+    ],
     "prompt_templates": [
       {
         "title": "行业扫描模板",
@@ -319,7 +438,11 @@
     "access": {
       "pricing": "免费版 + 订阅版",
       "account_required": true,
-      "platforms": ["Web", "iOS", "Android"],
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
       "api_available": true
     }
   },
@@ -327,21 +450,37 @@
     "id": "grok",
     "name": "Grok",
     "intro": "支持多模态交互的 AI 助手",
-    "features": ["对话问答", "图像理解", "实时信息"],
+    "features": [
+      "对话问答",
+      "图像理解",
+      "实时信息"
+    ],
     "company": "xAI",
     "url": "https://grok.com/",
     "icon": "grok.png",
     "category": "多模态模型",
     "source_url": "https://x.ai/",
     "last_verified_at": "2026-03-02",
-    "use_cases": ["多模态对话", "实时热点讨论", "图像理解问答", "通用知识探索"],
+    "use_cases": [
+      "多模态对话",
+      "实时热点讨论",
+      "图像理解问答",
+      "通用知识探索"
+    ],
     "best_practices": [
       "涉及实时事件时先限定时间窗口",
       "图像任务请明确你关心的细节维度",
       "让模型分别输出事实、观点与不确定点"
     ],
-    "strengths": ["实时性场景表现好", "多模态交互自然", "对话风格有辨识度"],
-    "limitations": ["某些专业深度不稳定", "地区与平台可用性可能有差异"],
+    "strengths": [
+      "实时性场景表现好",
+      "多模态交互自然",
+      "对话风格有辨识度"
+    ],
+    "limitations": [
+      "某些专业深度不稳定",
+      "地区与平台可用性可能有差异"
+    ],
     "prompt_templates": [
       {
         "title": "热点追踪模板",
@@ -355,7 +494,11 @@
     "access": {
       "pricing": "订阅制（部分能力与平台绑定）",
       "account_required": true,
-      "platforms": ["Web", "iOS", "Android"],
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
       "api_available": true
     }
   }

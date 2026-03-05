@@ -26,7 +26,7 @@ enum ScenarioLibrary {
             pitfalls: ["只给笼统描述会导致结果空泛", "数据未校对容易造成管理误判"],
             exampleOutput: "本周完成：完成支付链路重构并上线灰度；关键数据：结算失败率从 1.8% 降到 0.6%；风险：账单导出接口高峰期延迟仍偏高；下周计划：完成导出任务异步化并补齐监控。",
             reviewQuestions: ["这份周报是否突出关键结果而不是过程？", "是否明确了风险和下一步责任人？"],
-            relatedToolIDs: ["chatgpt", "claude", "gemini"]
+            relatedToolIDs: ["deepseek", "claude", "gemini"]
         ),
         TaskScenario(
             id: "competitor-brief",
@@ -52,7 +52,7 @@ enum ScenarioLibrary {
             pitfalls: ["没有限定时间窗口会混入过期信息", "只看功能不看商业模式会失真"],
             exampleOutput: "结论：产品A在企业协作和权限体系上更强，产品B在上手速度和价格门槛更低；建议：短期优先补齐模板市场与团队协作能力。",
             reviewQuestions: ["结论是否有来源支撑？", "建议是否是团队两周内可执行动作？"],
-            relatedToolIDs: ["perplexity", "notebooklm", "chatgpt"]
+            relatedToolIDs: ["perplexity", "notebooklm", "deepseek"]
         ),
         TaskScenario(
             id: "code-debug",
@@ -78,7 +78,7 @@ enum ScenarioLibrary {
             pitfalls: ["只贴一小段代码会误判根因", "不做回归测试会引入新问题"],
             exampleOutput: "根因：空数组输入时索引越界；最小修复：在访问 first 前增加 isEmpty 判断；回归测试：空输入、单元素、多元素三种场景。",
             reviewQuestions: ["修复是否保持最小改动原则？", "回归测试是否覆盖边界场景？"],
-            relatedToolIDs: ["github-copilot", "cursor", "chatgpt"]
+            relatedToolIDs: ["github-copilot", "cursor", "deepseek"]
         ),
         TaskScenario(
             id: "study-plan",
@@ -130,7 +130,7 @@ enum ScenarioLibrary {
             pitfalls: ["AI 生成的文字容易千篇一律", "不加个人观点会缺乏温度"],
             exampleOutput: "标题：AI 时代，普通人如何用 3 个工具提升 10 倍效率？...",
             reviewQuestions: ["是否有独特观点而不只是常识？", "读者看完是否有行动指引？"],
-            relatedToolIDs: ["chatgpt", "jasper", "notion-ai"]
+            relatedToolIDs: ["deepseek", "jasper", "notion-ai"]
         ),
         TaskScenario(
             id: "meeting-summary",
@@ -156,7 +156,7 @@ enum ScenarioLibrary {
             pitfalls: ["录音质量差会影响识别准确率", "AI 可能遗漏非正式口头决定"],
             exampleOutput: "决议：Q3 预算上调 15%（负责人：张三，截止 3/15）；遗留问题：供应商合同条款待法务确认。",
             reviewQuestions: ["每条决议是否有负责人和截止时间？", "是否遗漏了重要讨论？"],
-            relatedToolIDs: ["whisper", "otter-ai", "chatgpt"]
+            relatedToolIDs: ["whisper", "otter-ai", "deepseek"]
         ),
         TaskScenario(
             id: "data-report",
@@ -182,7 +182,7 @@ enum ScenarioLibrary {
             pitfalls: ["不检查数据质量直接分析会得到错误结论", "忽略业务背景只看数字会误导"],
             exampleOutput: "洞察 1：用户留存率在第 7 天有明显断崖，建议优化首周引导流程；洞察 2：付费转化集中在晚 8-10 点...",
             reviewQuestions: ["结论是否有数据支撑？", "建议是否可落地执行？"],
-            relatedToolIDs: ["julius-ai", "chatgpt-data", "notebooklm"]
+            relatedToolIDs: ["julius-ai", "deepseek", "notebooklm"]
         ),
         TaskScenario(
             id: "email-writing",
@@ -208,7 +208,7 @@ enum ScenarioLibrary {
             pitfalls: ["直接翻译中文思维会导致语气生硬", "忘记明确期望行动（call to action）"],
             exampleOutput: "Subject: Follow-up on Q3 Partnership Proposal\nDear Mr. Chen,\nThank you for taking the time to discuss... I'd appreciate your feedback by March 15th.",
             reviewQuestions: ["是否有明确的 call to action？", "语气是否匹配与收件人的关系？"],
-            relatedToolIDs: ["grammarly", "chatgpt", "claude"]
+            relatedToolIDs: ["grammarly", "deepseek", "claude"]
         )
     ]
 }

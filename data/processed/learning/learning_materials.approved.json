@@ -1,31 +1,5 @@
 [
   {
-    "id": "chatgpt",
-    "name": "ChatGPT",
-    "summary": "Apps and experiences developers can build for ChatGPT users.",
-    "core_capabilities": [
-      "Search the ChatGPT docs",
-      "Resources"
-    ],
-    "getting_started": [
-      "Apps and experiences developers can build for ChatGPT users.",
-      "Design, develop, and launch apps with UI components to be used as tools in ChatGPT.",
-      "Agentic Commerce Protocol",
-      "Power guided shopping flows with the Agentic Commerce Protocol and connect merchants to ChatGPT users."
-    ],
-    "official_links": [
-      "https://developers.openai.com/chatgpt/",
-      "https://developers.openai.com/resources/",
-      "https://help.openai.com/"
-    ],
-    "caveats": [],
-    "last_verified_at": "2026-03-02",
-    "review_status": "APPROVED",
-    "review_note": "batch approved from official-source pipeline",
-    "raw_file": "data/raw/sources/chatgpt.json",
-    "fetched_at": "2026-03-02T09:10:09Z"
-  },
-  {
     "id": "claude",
     "name": "Claude",
     "summary": "Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work.",

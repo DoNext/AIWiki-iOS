@@ -22,7 +22,7 @@ struct WeeklyReportOutcomeView: View {
         """
     }
 
-    private var promptForChatGPT: String {
+    private var promptForGeneralAI: String {
         """
         你是团队负责人助理。请根据以下信息生成可直接发送的中文周报：
         \(contextBlock)
@@ -108,8 +108,8 @@ struct WeeklyReportOutcomeView: View {
 
     private var fullPackage: String {
         """
-        [ChatGPT 提示词]
-        \(promptForChatGPT)
+        [通用 AI 提示词]
+        \(promptForGeneralAI)
 
         [Claude 提示词]
         \(promptForClaude)
@@ -144,7 +144,7 @@ struct WeeklyReportOutcomeView: View {
 
             if hasEnoughInput {
                 Section("一键提示词（按工具）") {
-                    promptBlock(title: "ChatGPT", text: promptForChatGPT)
+                    promptBlock(title: "通用 AI", text: promptForGeneralAI)
                     promptBlock(title: "Claude", text: promptForClaude)
                     promptBlock(title: "Gemini", text: promptForGemini)
                 }

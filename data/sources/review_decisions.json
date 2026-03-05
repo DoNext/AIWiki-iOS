@@ -1,11 +1,6 @@
 {
   "version": 1,
   "decisions": {
-    "chatgpt": {
-      "status": "APPROVED",
-      "note": "batch approved from official-source pipeline",
-      "reviewed_at": "2026-03-02T17:12:36"
-    },
     "claude": {
       "status": "APPROVED",
       "note": "batch approved from official-source pipeline",

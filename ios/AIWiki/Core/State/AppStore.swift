@@ -9,6 +9,8 @@ final class AppStore: ObservableObject {
     @Published private(set) var bookmarkedScenarioIDs: Set<String>
     @Published private(set) var scenarioProgress: [String: Set<Int>]
     @Published private(set) var scenarioNotes: [String: String]
+    @Published private(set) var toolRatings: [String: Int]
+    @Published private(set) var toolNotes: [String: String]
     @Published var theme: AppTheme {
         didSet { userDefaults.set(theme.rawValue, forKey: Keys.theme) }
     }
@@ -35,6 +37,8 @@ final class AppStore: ObservableObject {
             partialResult[item.key] = Set(item.value)
         }
         self.scenarioNotes = userDefaults.dictionary(forKey: Keys.scenarioNotes) as? [String: String] ?? [:]
+        self.toolRatings = userDefaults.dictionary(forKey: Keys.toolRatings) as? [String: Int] ?? [:]
+        self.toolNotes = userDefaults.dictionary(forKey: Keys.toolNotes) as? [String: String] ?? [:]
 
         if let rawTheme = userDefaults.string(forKey: Keys.theme),
            let value = AppTheme(rawValue: rawTheme) {
@@ -169,6 +173,49 @@ final class AppStore: ObservableObject {
         persistScenarioNotes()
     }
 
+    // MARK: - Tool Ratings & Notes
+
+    func rating(for toolID: String) -> Int {
+        toolRatings[toolID, default: 0]
+    }
+
+    func rate(toolID: String, score: Int) {
+        toolRatings[toolID] = max(0, min(5, score))
+        persistToolRatings()
+    }
+
+    func toolNote(for toolID: String) -> String {
+        toolNotes[toolID, default: ""]
+    }
+
+    func updateToolNote(toolID: String, text: String) {
+        toolNotes[toolID] = text.isEmpty ? nil : text
+        persistToolNotes()
+    }
+
+    // MARK: - Recommendations
+
+    func recommendedTools() -> [AITool] {
+        // Collect categories the user has engaged with (favorites + rated)
+        let engagedIDs = favoriteIDs.union(Set(toolRatings.filter { $0.value >= 3 }.keys))
+        guard !engagedIDs.isEmpty else { return [] }
+
+        let engagedCategories = tools
+            .filter { engagedIDs.contains($0.id) }
+            .map(\.category)
+        let categorySet = Set(engagedCategories)
+
+        // Recommend tools from same categories that user hasn't engaged with
+        let candidates = tools.filter { tool in
+            categorySet.contains(tool.category) && !engagedIDs.contains(tool.id)
+        }
+
+        // Shuffle deterministically by tool name, take up to 6
+        return Array(candidates
+            .sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
+            .prefix(6))
+    }
+
     private func persistFavorites() {
         userDefaults.set(Array(favoriteIDs).sorted(), forKey: Keys.favorites)
     }
@@ -186,6 +233,14 @@ final class AppStore: ObservableObject {
 
     private func persistScenarioNotes() {
         userDefaults.set(scenarioNotes, forKey: Keys.scenarioNotes)
+    }
+
+    private func persistToolRatings() {
+        userDefaults.set(toolRatings, forKey: Keys.toolRatings)
+    }
+
+    private func persistToolNotes() {
+        userDefaults.set(toolNotes, forKey: Keys.toolNotes)
     }
 
     private func score(tool: AITool, tokens: [String]) -> Int {
@@ -234,4 +289,6 @@ private enum Keys {
     static let scenarioBookmarks = "aiwiki.scenarioBookmarks"
     static let scenarioProgress = "aiwiki.scenarioProgress"
     static let scenarioNotes = "aiwiki.scenarioNotes"
+    static let toolRatings = "aiwiki.toolRatings"
+    static let toolNotes = "aiwiki.toolNotes"
 }

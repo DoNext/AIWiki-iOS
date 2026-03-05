@@ -2,16 +2,6 @@
   "version": 1,
   "tools": [
     {
-      "id": "chatgpt",
-      "name": "ChatGPT",
-      "primary_url": "https://developers.openai.com/chatgpt/",
-      "learning_urls": [
-        "https://developers.openai.com/chatgpt/",
-        "https://developers.openai.com/resources/",
-        "https://help.openai.com/"
-      ]
-    },
-    {
       "id": "claude",
       "name": "Claude",
       "primary_url": "https://www.anthropic.com/claude",

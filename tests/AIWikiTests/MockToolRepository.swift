@@ -12,15 +12,15 @@ struct MockToolRepository: ToolRepository {
 enum Fixture {
     static let tools: [AITool] = [
         AITool(
-            id: "chatgpt",
-            name: "ChatGPT",
-            intro: "对话式人工智能助手平台",
-            features: ["自然语言问答", "多轮对话", "内容生成"],
-            company: "OpenAI",
-            url: "https://chatgpt.com/",
-            icon: "chatgpt.png",
+            id: "deepseek",
+            name: "DeepSeek",
+            intro: "高性能开源大语言模型",
+            features: ["自然语言问答", "代码生成", "多轮对话"],
+            company: "DeepSeek",
+            url: "https://www.deepseek.com/",
+            icon: "deepseek.png",
             category: "聊天机器人",
-            sourceURL: "https://openai.com/chatgpt/overview/",
+            sourceURL: "https://www.deepseek.com/",
             lastVerifiedAt: "2026-03-02",
             useCases: nil,
             bestPractices: nil,

@@ -18,6 +18,13 @@ struct RootTabView: View {
                 }
 
             NavigationStack {
+                CompareView()
+            }
+                .tabItem {
+                    Label("对比", systemImage: "arrow.left.arrow.right")
+                }
+
+            NavigationStack {
                 FavoritesView()
             }
                 .tabItem {

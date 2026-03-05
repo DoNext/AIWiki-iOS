@@ -1,31 +1,5 @@
 [
   {
-    "id": "chatgpt",
-    "name": "ChatGPT",
-    "summary": "Apps and experiences developers can build for ChatGPT users.",
-    "core_capabilities": [
-      "Search the ChatGPT docs",
-      "Resources"
-    ],
-    "getting_started": [
-      "Apps and experiences developers can build for ChatGPT users.",
-      "Design, develop, and launch apps with UI components to be used as tools in ChatGPT.",
-      "Agentic Commerce Protocol",
-      "Power guided shopping flows with the Agentic Commerce Protocol and connect merchants to ChatGPT users."
-    ],
-    "official_links": [
-      "https://developers.openai.com/chatgpt/",
-      "https://developers.openai.com/resources/",
-      "https://help.openai.com/"
-    ],
-    "caveats": [],
-    "last_verified_at": "2026-03-02",
-    "review_status": "APPROVED",
-    "review_note": "batch approved from official-source pipeline",
-    "raw_file": "data/raw/sources/chatgpt.json",
-    "fetched_at": "2026-03-02T09:10:09Z"
-  },
-  {
     "id": "claude",
     "name": "Claude",
     "summary": "Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work.",
@@ -352,34 +326,6 @@
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
     "raw_file": "data/raw/sources/elevenlabs.json",
-    "fetched_at": "2026-03-02T09:10:09Z"
-  },
-  {
-    "id": "whisper",
-    "name": "Whisper",
-    "summary": "OpenAI 开源语音识别模型",
-    "core_capabilities": [
-      "语音转文字",
-      "多语言识别",
-      "本地部署"
-    ],
-    "getting_started": [
-      "安装 OpenAI Whisper 开源模型",
-      "使用命令行转录音频文件",
-      "支持多种语言自动检测"
-    ],
-    "official_links": [
-      "https://openai.com/research/whisper",
-      "https://openai.com/research/whisper"
-    ],
-    "caveats": [
-      "本地运行需要较好的 GPU",
-      "嘈杂环境录音识别率会下降"
-    ],
-    "last_verified_at": "2026-03-02",
-    "review_status": "APPROVED",
-    "review_note": "batch approved from official-source pipeline",
-    "raw_file": "data/raw/sources/whisper.json",
     "fetched_at": "2026-03-02T09:10:09Z"
   },
   {
@@ -982,30 +928,6 @@
     "fetched_at": "2026-03-02T09:10:09Z"
   },
   {
-    "id": "gpt4o",
-    "name": "GPT-4o",
-    "summary": "OpenAI 推出的全能旗舰多模态模型",
-    "core_capabilities": [
-      "文本理解",
-      "图像分析",
-      "实时语音",
-      "代码生成"
-    ],
-    "getting_started": [
-      "访问 https://openai.com/gpt-4o 开始使用 GPT-4o"
-    ],
-    "official_links": [
-      "https://openai.com/gpt-4o",
-      "https://openai.com/"
-    ],
-    "caveats": [],
-    "last_verified_at": "2026-03-02",
-    "review_status": "APPROVED",
-    "review_note": "batch approved from official-source pipeline",
-    "raw_file": "data/raw/sources/gpt4o.json",
-    "fetched_at": "2026-03-02T09:10:09Z"
-  },
-  {
     "id": "doubao",
     "name": "豆包",
     "summary": "字节跳动推出的 AI 对话助手",
@@ -1026,29 +948,6 @@
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
     "raw_file": "data/raw/sources/doubao.json",
-    "fetched_at": "2026-03-02T09:10:09Z"
-  },
-  {
-    "id": "dall-e",
-    "name": "DALL·E",
-    "summary": "OpenAI 推出的文生图模型",
-    "core_capabilities": [
-      "文字生成图片",
-      "图像编辑",
-      "风格多样"
-    ],
-    "getting_started": [
-      "访问 https://openai.com/dall-e 开始使用 DALL·E"
-    ],
-    "official_links": [
-      "https://openai.com/dall-e",
-      "https://openai.com/dall-e"
-    ],
-    "caveats": [],
-    "last_verified_at": "2026-03-02",
-    "review_status": "APPROVED",
-    "review_note": "batch approved from official-source pipeline",
-    "raw_file": "data/raw/sources/dall-e.json",
     "fetched_at": "2026-03-02T09:10:09Z"
   },
   {
@@ -1100,29 +999,6 @@
     "review_status": "APPROVED",
     "review_note": "batch approved from official-source pipeline",
     "raw_file": "data/raw/sources/julius-ai.json",
-    "fetched_at": "2026-03-02T09:10:09Z"
-  },
-  {
-    "id": "chatgpt-data",
-    "name": "ChatGPT 数据分析",
-    "summary": "通过 ChatGPT 的代码解释器进行数据分析",
-    "core_capabilities": [
-      "上传文件分析",
-      "Python 代码执行",
-      "图表生成"
-    ],
-    "getting_started": [
-      "访问 https://chatgpt.com/ 开始使用 ChatGPT 数据分析"
-    ],
-    "official_links": [
-      "https://chatgpt.com/",
-      "https://openai.com/"
-    ],
-    "caveats": [],
-    "last_verified_at": "2026-03-02",
-    "review_status": "APPROVED",
-    "review_note": "batch approved from official-source pipeline",
-    "raw_file": "data/raw/sources/chatgpt-data.json",
     "fetched_at": "2026-03-02T09:10:09Z"
   },
   {

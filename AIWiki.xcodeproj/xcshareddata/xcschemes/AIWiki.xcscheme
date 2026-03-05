@@ -50,6 +50,17 @@
                ReferencedContainer = "container:AIWiki.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D2496085F5E91A66FC2CCF72"
+               BuildableName = "AIWikiUITests.xctest"
+               BlueprintName = "AIWikiUITests"
+               ReferencedContainer = "container:AIWiki.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <CommandLineArguments>
       </CommandLineArguments>

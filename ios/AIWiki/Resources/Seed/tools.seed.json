@@ -1,62 +1,5 @@
 [
   {
-    "id": "chatgpt",
-    "name": "ChatGPT",
-    "intro": "对话式人工智能助手平台",
-    "features": [
-      "自然语言问答",
-      "多轮对话",
-      "内容生成"
-    ],
-    "company": "OpenAI",
-    "url": "https://chatgpt.com/",
-    "icon": "chatgpt.png",
-    "category": "聊天机器人",
-    "source_url": "https://openai.com/chatgpt/overview/",
-    "last_verified_at": "2026-03-02",
-    "use_cases": [
-      "学习与知识总结",
-      "写作与改写",
-      "代码调试与解释",
-      "产品方案头脑风暴"
-    ],
-    "best_practices": [
-      "先写清角色、目标和输出格式，再补充约束条件",
-      "复杂任务分步骤提问，逐步迭代结果",
-      "对关键事实要求给出依据并进行二次核对"
-    ],
-    "strengths": [
-      "通用任务覆盖广",
-      "中文可用性高",
-      "提示词生态成熟"
-    ],
-    "limitations": [
-      "事实错误仍可能发生",
-      "专业领域结论需人工复核"
-    ],
-    "prompt_templates": [
-      {
-        "title": "结构化写作模板",
-        "prompt": "你是资深编辑。请基于以下主题输出一篇文章，要求包含：1) 结论先行摘要；2) 3个核心观点；3) 每个观点给出示例；4) 最后给行动建议。主题：<在此填写>。字数控制在800字内，语气专业但易读。"
-      },
-      {
-        "title": "代码排错模板",
-        "prompt": "你是高级工程师。请帮我定位并修复以下代码问题。按这个格式输出：A. 问题根因；B. 最小修复方案；C. 修复后代码；D. 如何防止复发。代码和报错如下：<粘贴代码与错误日志>。"
-      }
-    ],
-    "access": {
-      "pricing": "免费版 + 订阅版",
-      "account_required": true,
-      "platforms": [
-        "Web",
-        "iOS",
-        "Android",
-        "API"
-      ],
-      "api_available": true
-    }
-  },
-  {
     "id": "claude",
     "name": "Claude",
     "intro": "面向通用任务的人工智能助手",
@@ -727,48 +670,6 @@
       "account_required": true,
       "platforms": [
         "Web",
-        "API"
-      ],
-      "api_available": true
-    }
-  },
-  {
-    "id": "whisper",
-    "name": "Whisper",
-    "intro": "OpenAI 开源语音识别模型",
-    "features": [
-      "语音转文字",
-      "多语言识别",
-      "本地部署"
-    ],
-    "company": "OpenAI",
-    "url": "https://openai.com/research/whisper",
-    "icon": "whisper.png",
-    "category": "音频处理",
-    "source_url": "https://openai.com/research/whisper",
-    "last_verified_at": "2026-03-02",
-    "use_cases": [
-      "会议录音转写",
-      "字幕生成",
-      "播客内容提取"
-    ],
-    "best_practices": [
-      "高质量音频输入可显著提升准确率",
-      "对长音频建议分段处理"
-    ],
-    "strengths": [
-      "开源免费",
-      "多语言支持好",
-      "可本地部署"
-    ],
-    "limitations": [
-      "需要一定技术能力部署"
-    ],
-    "access": {
-      "pricing": "开源免费",
-      "account_required": false,
-      "platforms": [
-        "Local",
         "API"
       ],
       "api_available": true
@@ -1729,52 +1630,6 @@
     }
   },
   {
-    "id": "gpt4o",
-    "name": "GPT-4o",
-    "intro": "OpenAI 推出的全能旗舰多模态模型",
-    "features": [
-      "文本理解",
-      "图像分析",
-      "实时语音",
-      "代码生成"
-    ],
-    "company": "OpenAI",
-    "url": "https://openai.com/gpt-4o",
-    "icon": "gpt4o.png",
-    "category": "多模态模型",
-    "source_url": "https://openai.com/",
-    "last_verified_at": "2026-03-02",
-    "use_cases": [
-      "复杂推理",
-      "图文分析",
-      "语音对话",
-      "创意写作"
-    ],
-    "best_practices": [
-      "多模态任务分开描述文本和图像要求",
-      "利用系统提示设定角色和风格"
-    ],
-    "strengths": [
-      "多模态能力全面",
-      "响应速度快",
-      "推理能力强"
-    ],
-    "limitations": [
-      "API 费用较高"
-    ],
-    "access": {
-      "pricing": "免费版（受限）+ 订阅版 + API",
-      "account_required": true,
-      "platforms": [
-        "Web",
-        "iOS",
-        "Android",
-        "API"
-      ],
-      "api_available": true
-    }
-  },
-  {
     "id": "doubao",
     "name": "豆包",
     "intro": "字节跳动推出的 AI 对话助手",
@@ -1814,48 +1669,6 @@
         "Web",
         "iOS",
         "Android"
-      ],
-      "api_available": true
-    }
-  },
-  {
-    "id": "dall-e",
-    "name": "DALL·E",
-    "intro": "OpenAI 推出的文生图模型",
-    "features": [
-      "文字生成图片",
-      "图像编辑",
-      "风格多样"
-    ],
-    "company": "OpenAI",
-    "url": "https://openai.com/dall-e",
-    "icon": "dalle.png",
-    "category": "图像生成",
-    "source_url": "https://openai.com/dall-e",
-    "last_verified_at": "2026-03-02",
-    "use_cases": [
-      "概念设计",
-      "插图创作",
-      "社媒素材",
-      "演示配图"
-    ],
-    "best_practices": [
-      "描述越详细效果越好",
-      "指定风格和构图提高可控性"
-    ],
-    "strengths": [
-      "与 ChatGPT 集成使用方便",
-      "文字渲染能力强"
-    ],
-    "limitations": [
-      "精细控制不如 Midjourney"
-    ],
-    "access": {
-      "pricing": "按量计费 + ChatGPT Plus 含量",
-      "account_required": true,
-      "platforms": [
-        "Web",
-        "API"
       ],
       "api_available": true
     }
@@ -1935,47 +1748,6 @@
     ],
     "access": {
       "pricing": "免费版 + 订阅版",
-      "account_required": true,
-      "platforms": [
-        "Web"
-      ],
-      "api_available": false
-    }
-  },
-  {
-    "id": "chatgpt-data",
-    "name": "ChatGPT 数据分析",
-    "intro": "通过 ChatGPT 的代码解释器进行数据分析",
-    "features": [
-      "上传文件分析",
-      "Python 代码执行",
-      "图表生成"
-    ],
-    "company": "OpenAI",
-    "url": "https://chatgpt.com/",
-    "icon": "chatgpt-data.png",
-    "category": "数据分析",
-    "source_url": "https://openai.com/",
-    "last_verified_at": "2026-03-02",
-    "use_cases": [
-      "Excel 数据分析",
-      "CSV 处理",
-      "数据清洗",
-      "可视化报告"
-    ],
-    "best_practices": [
-      "上传前清理数据列名",
-      "逐步提出分析需求效果更好"
-    ],
-    "strengths": [
-      "支持多种文件格式",
-      "分析与对话结合"
-    ],
-    "limitations": [
-      "文件大小有限制"
-    ],
-    "access": {
-      "pricing": "ChatGPT Plus 订阅",
       "account_required": true,
       "platforms": [
         "Web"

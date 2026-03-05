@@ -7,6 +7,8 @@ struct ToolDetailView: View {
     let tool: AITool
     @State private var copied = false
     @State private var showingShareSheet = false
+    @State private var showingNoteEditor = false
+    @State private var noteText = ""
     private var websiteURL: URL? { URL(string: tool.url) }
     private var learningMaterial: LearningMaterial? { store.learningMaterial(for: tool.id) }
 
@@ -226,6 +228,85 @@ struct ToolDetailView: View {
                                         .foregroundColor(AppColors.textPrimary)
                                 }
                             }
+                        }
+                    }
+                }
+
+                // MARK: - My Rating & Notes
+                detailSection("⭐ 我的评分") {
+                    HStack(spacing: 8) {
+                        ForEach(1...5, id: \.self) { star in
+                            Button {
+                                withAnimation(.spring(response: 0.3)) {
+                                    store.rate(toolID: tool.id, score: star)
+                                }
+                            } label: {
+                                Image(systemName: star <= store.rating(for: tool.id) ? "star.fill" : "star")
+                                    .font(.title2)
+                                    .foregroundColor(star <= store.rating(for: tool.id) ? .yellow : AppColors.textSecondary.opacity(0.4))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        Spacer()
+                        if store.rating(for: tool.id) > 0 {
+                            Button {
+                                store.rate(toolID: tool.id, score: 0)
+                            } label: {
+                                Text("清除")
+                                    .font(.caption)
+                                    .foregroundColor(AppColors.textSecondary)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+
+                detailSection("📝 使用笔记") {
+                    VStack(alignment: .leading, spacing: 10) {
+                        let existingNote = store.toolNote(for: tool.id)
+                        if !showingNoteEditor && !existingNote.isEmpty {
+                            Text(existingNote)
+                                .font(.subheadline)
+                                .foregroundColor(AppColors.textPrimary)
+                        }
+
+                        if showingNoteEditor {
+                            TextEditor(text: $noteText)
+                                .frame(minHeight: 80)
+                                .font(.subheadline)
+                                .scrollContentBackground(.hidden)
+                                .padding(8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(AppColors.cardHighlight)
+                                )
+
+                            HStack {
+                                Button("取消") {
+                                    showingNoteEditor = false
+                                    noteText = store.toolNote(for: tool.id)
+                                }
+                                .foregroundColor(AppColors.textSecondary)
+                                Spacer()
+                                Button("保存") {
+                                    store.updateToolNote(toolID: tool.id, text: noteText)
+                                    showingNoteEditor = false
+                                }
+                                .fontWeight(.semibold)
+                                .foregroundColor(AppColors.accent)
+                            }
+                            .font(.subheadline)
+                        } else {
+                            Button {
+                                noteText = store.toolNote(for: tool.id)
+                                showingNoteEditor = true
+                            } label: {
+                                Label(existingNote.isEmpty ? "记录使用心得..." : "编辑笔记",
+                                      systemImage: existingNote.isEmpty ? "square.and.pencil" : "pencil")
+                                    .font(.subheadline)
+                                    .foregroundColor(AppColors.accent)
+                            }
+                            .buttonStyle(.plain)
                         }
                     }
                 }

@@ -29,7 +29,7 @@ class ScreenshotTests: XCTestCase {
         let searchField = app.searchFields.firstMatch
         if searchField.exists {
             searchField.tap()
-            searchField.typeText("Chat")
+            searchField.typeText("Deep")
             sleep(2)
             takeScreenshot(name: "\(deviceName)_02_Search")
             
@@ -43,7 +43,7 @@ class ScreenshotTests: XCTestCase {
         
         // Tap a tool to show details
         app.tabBars.buttons["首页"].tap()
-        let toolButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'ChatGPT'")).firstMatch
+        let toolButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'DeepSeek'")).firstMatch
         if toolButton.exists {
             toolButton.tap()
             sleep(1)
