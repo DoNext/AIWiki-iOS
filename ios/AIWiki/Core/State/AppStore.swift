@@ -198,7 +198,15 @@ final class AppStore: ObservableObject {
     func recommendedTools() -> [AITool] {
         // Collect categories the user has engaged with (favorites + rated)
         let engagedIDs = favoriteIDs.union(Set(toolRatings.filter { $0.value >= 3 }.keys))
-        guard !engagedIDs.isEmpty else { return [] }
+
+        if engagedIDs.isEmpty {
+            // New user: show a diverse selection — one tool per category
+            let grouped = Dictionary(grouping: tools, by: \.category)
+            return Array(grouped.values
+                .compactMap { $0.first }
+                .sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
+                .prefix(6))
+        }
 
         let engagedCategories = tools
             .filter { engagedIDs.contains($0.id) }
@@ -210,7 +218,7 @@ final class AppStore: ObservableObject {
             categorySet.contains(tool.category) && !engagedIDs.contains(tool.id)
         }
 
-        // Shuffle deterministically by tool name, take up to 6
+        // Sort by name, take up to 6
         return Array(candidates
             .sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
             .prefix(6))
