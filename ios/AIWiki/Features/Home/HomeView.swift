@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var store: AppStore
     @State private var showingQuiz = false
+    @State private var showingPromptStudio = false
 
     private var bookmarkedScenarios: [TaskScenario] {
         ScenarioLibrary.all.filter { store.bookmarkedScenarioIDs.contains($0.id) }
@@ -105,6 +106,45 @@ struct HomeView: View {
                         .stroke(AppColors.accent.opacity(0.3), lineWidth: 1)
                 )
 
+                // Prompt Studio Entry
+                Button {
+                    showingPromptStudio = true
+                } label: {
+                    HStack(spacing: 16) {
+                        ZStack {
+                            Circle()
+                                .fill(AppGradients.accent.opacity(0.2))
+                                .frame(width: 44, height: 44)
+                            Image(systemName: "wand.and.stars.inverse")
+                                .foregroundColor(AppColors.accent)
+                                .font(.title3)
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("AI 提示词工作室")
+                                .font(.headline)
+                                .foregroundColor(AppColors.textPrimary)
+                            Text("角色扮演 + 任务定制，一键生成高质量提示词")
+                                .font(.caption)
+                                .foregroundColor(AppColors.textSecondary)
+                        }
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundColor(AppColors.textSecondary)
+                    }
+                    .padding(16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .fill(AppColors.card)
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .stroke(AppColors.accent.opacity(0.1), lineWidth: 1)
+                    )
+                }
+                .buttonStyle(.plain)
+
                 // Featured tools (horizontal scroll)
                 sectionHeader("🔥 热门推荐")
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -186,6 +226,9 @@ struct HomeView: View {
         .navigationTitle("AIWiki")
         .fullScreenCover(isPresented: $showingQuiz) {
             ToolQuizView()
+        }
+        .sheet(isPresented: $showingPromptStudio) {
+            PromptStudioView()
         }
     }
 

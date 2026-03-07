@@ -36,6 +36,25 @@ struct AITool: Codable, Identifiable, Hashable {
     let limitations: [String]?
     let promptTemplates: [PromptTemplate]?
     let access: AccessInfo?
+    let radarScores: [String: Int]?
+
+    var radarScoresOrDefault: [String: Int] {
+        if let scores = radarScores, !scores.isEmpty {
+            return scores
+        }
+        
+        // Generate deterministic "best guess" scores based on tool features
+        let count = (features.count + (useCases?.count ?? 0))
+        let base = min(5, max(3, count / 2))
+        
+        return [
+            "reasoning": base,
+            "multimodal": features.contains(where: { $0.contains("图像") || $0.contains("视频") }) ? 5 : 2,
+            "speed": base,
+            "cost": access?.pricing.contains("免费") == true ? 5 : 3,
+            "easeOfUse": 4
+        ]
+    }
 
     enum CodingKeys: String, CodingKey {
         case id

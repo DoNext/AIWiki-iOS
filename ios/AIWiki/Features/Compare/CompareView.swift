@@ -111,6 +111,10 @@ struct CompareView: View {
 
     private func compareContent(a: AITool, b: AITool) -> some View {
         VStack(spacing: 16) {
+            // Visual Comparison
+            RadarChartView(scoresA: a.radarScoresOrDefault, scoresB: b.radarScoresOrDefault)
+                .cardStyle()
+            
             compareRow(title: "简介", valueA: a.intro, valueB: b.intro)
             compareRow(title: "公司", valueA: a.company, valueB: b.company)
             compareRow(title: "分类", valueA: a.category, valueB: b.category)
