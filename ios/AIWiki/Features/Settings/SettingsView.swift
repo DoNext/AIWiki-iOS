@@ -26,7 +26,7 @@ struct SettingsView: View {
             }
 
             Section("统计") {
-                NavigationLink {
+                NavigationLink(isActive: $store.showStats) {
                     ToolUsageStatsView()
                 } label: {
                     HStack {

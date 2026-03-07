@@ -3,7 +3,6 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var store: AppStore
     @State private var showingQuiz = false
-    @State private var showingPromptStudio = false
     @State private var showingAIConsole = false
     @State private var searchText = ""
 
@@ -128,7 +127,7 @@ struct HomeView: View {
 
                 // Prompt Studio Entry
                 Button {
-                    showingPromptStudio = true
+                    store.showPromptStudio = true
                 } label: {
                     HStack(spacing: 16) {
                         ZStack {
@@ -243,14 +242,11 @@ struct HomeView: View {
             .padding(.bottom, 24)
         }
         .background(AppColors.background.ignoresSafeArea())
-        .onReceive(NotificationCenter.default.publisher(for: .openPromptStudio)) { _ in
-            showingPromptStudio = true
-        }
         .navigationTitle("AIWiki")
         .fullScreenCover(isPresented: $showingQuiz) {
             ToolQuizView()
         }
-        .sheet(isPresented: $showingPromptStudio) {
+        .sheet(isPresented: $store.showPromptStudio) {
             PromptStudioView()
         }
         .sheet(item: $store.deepLinkTool) { tool in

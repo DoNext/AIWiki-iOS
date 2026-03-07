@@ -15,6 +15,8 @@ final class AppStore: ObservableObject {
     @Published private(set) var savedPrompts: [SavedPrompt]
     @Published var deepLinkTool: AITool?
     @Published var selectedTab: Int = 0
+    @Published var showStats: Bool = false
+    @Published var showPromptStudio: Bool = false
     @Published var theme: AppTheme {
         didSet { userDefaults.set(theme.rawValue, forKey: Keys.theme) }
     }
