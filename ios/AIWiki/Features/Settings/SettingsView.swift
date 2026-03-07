@@ -44,6 +44,31 @@ struct SettingsView: View {
             }
             .listRowBackground(AppColors.card)
 
+            Section("库管理") {
+                NavigationLink {
+                    PromptHistoryView()
+                        .environmentObject(store)
+                } label: {
+                    HStack {
+                        Image(systemName: "archivebox.fill")
+                            .foregroundColor(AppColors.accent)
+                        Text("我的提示词库")
+                            .foregroundColor(AppColors.textPrimary)
+                        Spacer()
+                        if !store.savedPrompts.isEmpty {
+                            Text("\(store.savedPrompts.count)")
+                                .font(.caption2)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 2)
+                                .background(AppColors.accent.opacity(0.1))
+                                .foregroundColor(AppColors.accent)
+                                .clipShape(Capsule())
+                        }
+                    }
+                }
+            }
+            .listRowBackground(AppColors.card)
+
             Section("支持我们") {
                 Button {
                     requestReview()

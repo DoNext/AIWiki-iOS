@@ -3,6 +3,7 @@ import UIKit
 
 struct PromptStudioView: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var store: AppStore
     
     // Form States
     @State private var selectedRole = "通用助手"
@@ -14,6 +15,8 @@ struct PromptStudioView: View {
     // Result States
     @State private var generatedPrompt = ""
     @State private var showingCopyAlert = false
+    @State private var showingHistory = false
+    @State private var hasSaved = false
     
     let roles = ["通用助手", "资深程序员", "营销专家", "翻译官", "创意作家", "数据分析师"]
     let tones = ["专业", "友好", "严谨", "幽默", "简洁"]
@@ -96,6 +99,15 @@ struct PromptStudioView: View {
                             Label("复制到剪贴板", systemImage: "doc.on.doc")
                                 .foregroundColor(AppColors.accent)
                         }
+
+                        Button {
+                            store.savePrompt(role: selectedRole, task: taskDescription, content: generatedPrompt)
+                            hasSaved = true
+                        } label: {
+                            Label(hasSaved ? "已保存到库" : "保存到提示词库", systemImage: hasSaved ? "checkmark.circle.fill" : "archivebox")
+                                .foregroundColor(hasSaved ? .green : AppColors.accent)
+                        }
+                        .disabled(hasSaved)
                     } header: {
                         Text("预览生成的 Prompt")
                     }
@@ -110,14 +122,15 @@ struct PromptStudioView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        UIPasteboard.general.string = generatedPrompt
-                        dismiss()
+                        showingHistory = true
                     } label: {
-                        Text("完成")
-                            .fontWeight(.semibold)
+                        Image(systemName: "clock.arrow.circlepath")
                     }
-                    .disabled(generatedPrompt.isEmpty)
                 }
+            }
+            .sheet(isPresented: $showingHistory) {
+                PromptHistoryView()
+                    .environmentObject(store)
             }
             .alert("已复制", isPresented: $showingCopyAlert) {
                 Button("好", role: .cancel) { }
@@ -136,6 +149,159 @@ struct PromptStudioView: View {
         
         withAnimation {
             generatedPrompt = rolePart + taskPart + tonePart + constraintPart + formatPart
+            hasSaved = false
+        }
+    }
+}
+
+struct PromptHistoryView: View {
+    @EnvironmentObject var store: AppStore
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(store.savedPrompts) { item in
+                    NavigationLink {
+                        PromptDetailView(item: item)
+                    } label: {
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text(item.role)
+                                    .font(.caption.bold())
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(AppColors.accent.opacity(0.1))
+                                    .foregroundColor(AppColors.accent)
+                                    .clipShape(Capsule())
+                                
+                                Spacer()
+                                
+                                Text(item.date, style: .date)
+                                    .font(.caption2)
+                                    .foregroundColor(AppColors.textSecondary)
+                            }
+                            
+                            Text(item.task)
+                                .font(.subheadline.weight(.medium))
+                                .foregroundColor(AppColors.textPrimary)
+                                .lineLimit(1)
+                            
+                            Text(item.content)
+                                .font(.caption)
+                                .foregroundColor(AppColors.textSecondary)
+                                .lineLimit(2)
+                        }
+                        .padding(.vertical, 4)
+                    }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            store.deletePrompt(id: item.id)
+                        } label: {
+                            Label("删除", systemImage: "trash")
+                        }
+                        
+                        Button {
+                            UIPasteboard.general.string = item.content
+                        } label: {
+                            Label("复制", systemImage: "doc.on.doc")
+                        }
+                        .tint(AppColors.accent)
+                    }
+                }
+            }
+            .navigationTitle("历史记录")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("关闭") { dismiss() }
+                }
+            }
+            .overlay {
+                if store.savedPrompts.isEmpty {
+                    VStack(spacing: 16) {
+                        Image(systemName: "clock.badge.exclamationmark")
+                            .font(.system(size: 48))
+                            .foregroundColor(AppColors.textSecondary.opacity(0.5))
+                        Text("暂无保存记录")
+                            .foregroundColor(AppColors.textSecondary)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct PromptDetailView: View {
+    let item: SavedPrompt
+    @State private var showingCopyAlert = false
+    
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Header
+                HStack {
+                    Text(item.role)
+                        .font(.headline)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(AppColors.accent.opacity(0.1))
+                        .foregroundColor(AppColors.accent)
+                        .clipShape(Capsule())
+                    
+                    Spacer()
+                    
+                    Text(item.date, style: .date)
+                        .font(.subheadline)
+                        .foregroundColor(AppColors.textSecondary)
+                }
+                
+                // Task
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("描述的任务目标")
+                        .font(.caption.bold())
+                        .foregroundColor(AppColors.accent)
+                    Text(item.task)
+                        .font(.body)
+                        .foregroundColor(AppColors.textPrimary)
+                }
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(AppColors.card)
+                .cornerRadius(12)
+                
+                // Content
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack {
+                        Text("生成的 Prompt")
+                            .font(.caption.bold())
+                            .foregroundColor(AppColors.accent)
+                        Spacer()
+                        Button {
+                            UIPasteboard.general.string = item.content
+                            showingCopyAlert = true
+                        } label: {
+                            Image(systemName: "doc.on.doc")
+                                .font(.subheadline)
+                        }
+                    }
+                    
+                    Text(item.content)
+                        .font(.system(.subheadline, design: .monospaced))
+                        .foregroundColor(AppColors.textPrimary)
+                        .textSelection(.enabled)
+                }
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(AppColors.card)
+                .cornerRadius(12)
+            }
+            .padding()
+        }
+        .background(AppColors.background.ignoresSafeArea())
+        .navigationTitle("记录详情")
+        .alert("已复制", isPresented: $showingCopyAlert) {
+            Button("好", role: .cancel) { }
         }
     }
 }

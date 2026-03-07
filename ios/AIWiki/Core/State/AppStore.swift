@@ -12,6 +12,7 @@ final class AppStore: ObservableObject {
     @Published private(set) var toolRatings: [String: Int]
     @Published private(set) var toolNotes: [String: String]
     @Published private(set) var checkInEvents: [CheckInEvent]
+    @Published private(set) var savedPrompts: [SavedPrompt]
     @Published var deepLinkTool: AITool?
     @Published var selectedTab: Int = 0
     @Published var theme: AppTheme {
@@ -55,6 +56,13 @@ final class AppStore: ObservableObject {
             self.theme = value
         } else {
             self.theme = .dark
+        }
+
+        if let data = userDefaults.data(forKey: Keys.savedPrompts),
+           let prompts = try? JSONDecoder().decode([SavedPrompt].self, from: data) {
+            self.savedPrompts = prompts
+        } else {
+            self.savedPrompts = []
         }
 
         loadTools()
@@ -225,6 +233,25 @@ final class AppStore: ObservableObject {
         persistCheckIns()
     }
 
+    // MARK: - Prompt Library
+
+    func savePrompt(role: String, task: String, content: String) {
+        let newPrompt = SavedPrompt(role: role, task: task, content: content, date: Date())
+        savedPrompts.insert(newPrompt, at: 0)
+        persistSavedPrompts()
+    }
+
+    func deletePrompt(id: UUID) {
+        savedPrompts.removeAll { $0.id == id }
+        persistSavedPrompts()
+    }
+
+    private func persistSavedPrompts() {
+        if let data = try? JSONEncoder().encode(savedPrompts) {
+            userDefaults.set(data, forKey: Keys.savedPrompts)
+        }
+    }
+
     // MARK: - Recommendations
 
     func recommendedTools() -> [AITool] {
@@ -352,6 +379,7 @@ private enum Keys {
     static let toolRatings = "aiwiki.toolRatings"
     static let toolNotes = "aiwiki.toolNotes"
     static let checkIns = "aiwiki.checkIns"
+    static let savedPrompts = "aiwiki.savedPrompts"
 }
 
 struct CheckInEvent: Codable, Identifiable {
@@ -359,4 +387,12 @@ struct CheckInEvent: Codable, Identifiable {
     let toolID: String
     let date: Date
     let category: String
+}
+
+struct SavedPrompt: Codable, Identifiable {
+    var id = UUID()
+    let role: String
+    let task: String
+    let content: String
+    let date: Date
 }
