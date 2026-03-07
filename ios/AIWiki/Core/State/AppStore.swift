@@ -13,6 +13,7 @@ final class AppStore: ObservableObject {
     @Published private(set) var toolNotes: [String: String]
     @Published private(set) var checkInEvents: [CheckInEvent]
     @Published var deepLinkTool: AITool?
+    @Published var selectedTab: Int = 0
     @Published var theme: AppTheme {
         didSet { userDefaults.set(theme.rawValue, forKey: Keys.theme) }
     }

@@ -21,33 +21,67 @@ class ScreenshotTests: XCTestCase {
     func testCaptureScreenshots() throws {
         let deviceName = UIDevice.current.name.replacingOccurrences(of: " ", with: "_")
         
-        sleep(2)
-        takeScreenshot(name: "\(deviceName)_01_Home")
+        // Setup data
+        setupFavorites()
         
-        // Tap on Search (it's a textfield "搜索名称、简介、功能" or navigation title)
-        // Wait, it's searchable. The search bar is accessible.
-        let searchField = app.searchFields.firstMatch
-        if searchField.exists {
-            searchField.tap()
-            searchField.typeText("Deep")
-            sleep(2)
-            takeScreenshot(name: "\(deviceName)_02_Search")
-            
-            app.buttons["Cancel"].tap() // Or keyboard "Dismiss"
+        let tabs = ["首页", "分类", "对比", "收藏", "设置"]
+        let suffixes = ["01_Home", "02_Categories", "03_Compare", "04_Favorites", "05_Settings"]
+        
+        for (index, tabName) in tabs.enumerated() {
+            let tabButton = app.tabBars.buttons[tabName]
+            if tabButton.exists {
+                tabButton.tap()
+                sleep(2)
+                dismissNotifications()
+                takeScreenshot(name: "\(deviceName)_\(suffixes[index])")
+            }
+        }
+    }
+
+    func setupFavorites() {
+        // Go to Home first
+        let homeButton = app.tabBars.buttons["首页"]
+        if homeButton.exists {
+            homeButton.tap()
         }
         
-        // Tap first category
-        app.tabBars.buttons["分类"].tap()
-        sleep(1)
-        takeScreenshot(name: "\(deviceName)_03_Categories")
+        // Favorite a few tools from "热门推荐" or "新增工具"
+        let toolQuery = app.scrollViews.otherElements.buttons.matching(NSPredicate(format: "label CONTAINS 'DeepSeek' OR label CONTAINS 'ChatGPT' OR label CONTAINS 'Midjourney'"))
         
-        // Tap a tool to show details
-        app.tabBars.buttons["首页"].tap()
-        let toolButton = app.buttons.matching(NSPredicate(format: "label CONTAINS 'DeepSeek'")).firstMatch
-        if toolButton.exists {
-            toolButton.tap()
+        let count = min(toolQuery.count, 3)
+        for i in 0..<count {
+            let tool = toolQuery.element(boundBy: i)
+            if tool.exists {
+                tool.tap()
+                sleep(1)
+                
+                let favoriteButton = app.scrollViews.buttons["收藏"]
+                let alreadyFavorited = app.scrollViews.buttons["已收藏"]
+                
+                if alreadyFavorited.exists {
+                    // Already favorited, do nothing
+                } else if favoriteButton.exists {
+                    favoriteButton.tap()
+                    sleep(1)
+                }
+                
+                // Go back using the back button in the navigation bar
+                let backButton = app.navigationBars.buttons.element(boundBy: 0)
+                if backButton.exists {
+                    backButton.tap()
+                    sleep(1)
+                }
+            }
+        }
+    }
+
+    func dismissNotifications() {
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        // Target specific Apple Intelligence or other notification banners
+        let notification = springboard.otherElements.matching(NSPredicate(format: "label CONTAINS '智能' OR label CONTAINS 'Notification'")).firstMatch
+        if notification.exists && notification.isHittable {
+            notification.swipeUp()
             sleep(1)
-            takeScreenshot(name: "\(deviceName)_04_Detail")
         }
     }
 

@@ -22,8 +22,10 @@ let configs = [
 
 let screens = [
     ("01_Home", "一键开启 AI 知识之旅"),
-    ("03_Categories", "分类浏览，一目了然"),
-    ("04_Detail", "每个工具，深度解析")
+    ("02_Categories", "分类浏览，一目了然"),
+    ("03_Compare", "横向对比，择优而从"),
+    ("04_Favorites", "常用工具，随手可得"),
+    ("05_Settings", "个性化设置，懂你所需")
 ]
 
 let baseDir = "/Users/yinchaoyu/Downloads/scratch/test-clone/beijing-camera-ios/screenshots"
@@ -62,9 +64,9 @@ func process() {
     for config in configs {
         for (suffix, marketingText) in screens {
             // Find the raw screenshot
-            // For iPhone configs, use iPhone_15_Pro_Max raw screenshots
+            // For iPhone configs, use iPhone_17_Pro_Max raw screenshots
             // For iPad configs, use iPad_Pro_(12.9-inch)_(6th_generation) screenshots
-            let sourcePrefix = config.name.contains("iPad") ? "iPad_Pro_(12.9-inch)_(6th_generation)" : "iPhone_15_Pro_Max"
+            let sourcePrefix = config.name.contains("iPad") ? "iPad_Pro_(12.9-inch)_(6th_generation)" : "iPhone_17_Pro_Max"
             let imagePath = "\(baseDir)/\(sourcePrefix)_\(suffix).png"
             
             guard let rawImage = NSImage(contentsOfFile: imagePath) else {

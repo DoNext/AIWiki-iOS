@@ -1,14 +1,17 @@
 import SwiftUI
 
 struct RootTabView: View {
+    @EnvironmentObject private var store: AppStore
+    
     var body: some View {
-        TabView {
+        TabView(selection: $store.selectedTab) {
             NavigationStack {
                 HomeView()
             }
                 .tabItem {
                     Label("首页", systemImage: "house.fill")
                 }
+                .tag(0)
 
             NavigationStack {
                 CategoriesView()
@@ -16,6 +19,7 @@ struct RootTabView: View {
                 .tabItem {
                     Label("分类", systemImage: "square.grid.2x2.fill")
                 }
+                .tag(1)
 
             NavigationStack {
                 CompareView()
@@ -23,6 +27,7 @@ struct RootTabView: View {
                 .tabItem {
                     Label("对比", systemImage: "arrow.left.arrow.right")
                 }
+                .tag(2)
 
             NavigationStack {
                 FavoritesView()
@@ -30,6 +35,7 @@ struct RootTabView: View {
                 .tabItem {
                     Label("收藏", systemImage: "heart.fill")
                 }
+                .tag(3)
 
             NavigationStack {
                 SettingsView()
@@ -37,6 +43,7 @@ struct RootTabView: View {
                 .tabItem {
                     Label("设置", systemImage: "gearshape.fill")
                 }
+                .tag(4)
         }
         .tint(AppColors.accent)
     }

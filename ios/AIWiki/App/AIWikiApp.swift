@@ -30,6 +30,27 @@ struct AIWikiApp: App {
                 }
             }
         }
+        .onOpenURL { url in
+            guard url.scheme == "aiwiki" else { return }
+            
+            let path = url.path.trimmingCharacters(in: ["/"])
+            let host = url.host ?? ""
+            
+            switch host {
+            case "tab":
+                if let tabIndex = Int(path) {
+                    store.selectedTab = tabIndex
+                }
+            case "tool":
+                if let tool = store.tool(withID: path) {
+                    store.deepLinkTool = tool
+                }
+            case "compare":
+                store.selectedTab = 2
+            default:
+                break
+            }
+        }
     }
 }
 }

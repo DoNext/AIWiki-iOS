@@ -25,6 +25,9 @@ targets:
     settings:
       base:
         PRODUCT_NAME: AIWiki
+        INFOPLIST_KEY_CFBundleURLTypes:
+          - CFBundleURLSchemes: [aiwiki]
+            CFBundleURLName: com.next.wiki
     scheme:
       testTargets:
         - AIWikiTests

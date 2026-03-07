@@ -27,7 +27,8 @@ enum Fixture {
             strengths: nil,
             limitations: nil,
             promptTemplates: nil,
-            access: nil
+            access: nil,
+            radarScores: nil
         ),
         AITool(
             id: "copilot",
@@ -45,7 +46,8 @@ enum Fixture {
             strengths: nil,
             limitations: nil,
             promptTemplates: nil,
-            access: nil
+            access: nil,
+            radarScores: nil
         )
     ]
 }
