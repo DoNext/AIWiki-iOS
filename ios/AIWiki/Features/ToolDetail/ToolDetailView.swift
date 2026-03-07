@@ -434,11 +434,14 @@ struct ToolDetailView: View {
         .background(AppColors.background.ignoresSafeArea())
         .background(
             // Warm-up hack: Put the export view in the real hierarchy (invisible)
-            // to force SwiftUI to perform a full layout pass.
-            ToolCardExportView(tool: tool, note: store.toolNote(for: tool.id))
-                .frame(width: 400)
-                .opacity(0)
-                .allowsHitTesting(false)
+            ToolCardExportView(
+                tool: tool,
+                note: store.toolNote(for: tool.id),
+                rating: store.rating(for: tool.id)
+            )
+            .frame(width: 450, height: 800)
+            .opacity(0)
+            .allowsHitTesting(false)
         )
         .navigationTitle("详情")
         .navigationBarTitleDisplayMode(.inline)
@@ -469,7 +472,8 @@ struct ToolDetailView: View {
     private func generateExportImage() {
         isGeneratingImage = true
         let note = store.toolNote(for: tool.id)
-        let exportView = ToolCardExportView(tool: tool, note: note)
+        let rating = store.rating(for: tool.id)
+        let exportView = ToolCardExportView(tool: tool, note: note, rating: rating)
             .environment(\.colorScheme, colorScheme)
         
         // Use a more robust UIHostingController method for first-time rendering
@@ -477,7 +481,7 @@ struct ToolDetailView: View {
         let view = controller.view
         
         // Set fixed dimensions for the redesigned card
-        let targetSize = CGSize(width: 400, height: 700)
+        let targetSize = CGSize(width: 450, height: 800)
         view?.bounds = CGRect(origin: .zero, size: targetSize)
         view?.backgroundColor = .clear
 
