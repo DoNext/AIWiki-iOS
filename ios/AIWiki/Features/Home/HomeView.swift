@@ -4,13 +4,15 @@ struct HomeView: View {
     @EnvironmentObject private var store: AppStore
     @State private var showingQuiz = false
     @State private var showingPromptStudio = false
+    @State private var showingAIConsole = false
+    @State private var searchText = ""
 
     private var bookmarkedScenarios: [TaskScenario] {
         ScenarioLibrary.all.filter { store.bookmarkedScenarioIDs.contains($0.id) }
     }
 
     private var featuredTools: [AITool] {
-        let featured = ["deepseek", "midjourney", "cursor", "elevenlabs", "runway", "claude", "gamma", "canva-ai"]
+        let featured = ["midjourney", "cursor", "elevenlabs", "runway", "gamma", "canva-ai"]
         return featured.compactMap { id in store.tools.first { $0.id == id } }
     }
 
@@ -75,27 +77,8 @@ struct HomeView: View {
                     }
                 }
 
-                // Daily Tip
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack {
-                        Image(systemName: "lightbulb.fill")
-                            .foregroundColor(.orange)
-                        Text("今日 AI 技巧")
-                            .font(.headline)
-                            .foregroundColor(AppColors.textPrimary)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(dailyTip.title)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(AppColors.textPrimary)
-                        Text(dailyTip.content)
-                            .font(.footnote)
-                            .foregroundColor(AppColors.textSecondary)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                }
+                // AI News & Tips Widget
+                AINewsWidget()
                 .padding(16)
                 .background(
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -105,6 +88,43 @@ struct HomeView: View {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .stroke(AppColors.accent.opacity(0.3), lineWidth: 1)
                 )
+
+                // AI Hub Console Entry
+                Button {
+                    showingAIConsole = true
+                } label: {
+                    HStack(spacing: 16) {
+                        ZStack {
+                            Circle()
+                                .fill(Color.orange.opacity(0.2))
+                                .frame(width: 44, height: 44)
+                            Image(systemName: "cpu.fill")
+                                .foregroundColor(.orange)
+                                .font(.title3)
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("AI 枢纽控制台")
+                                .font(.headline)
+                                .foregroundColor(AppColors.textPrimary)
+                            Text("内置多款热门 AI，支持提示词一键注入使用")
+                                .font(.caption)
+                                .foregroundColor(AppColors.textSecondary)
+                        }
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.caption)
+                            .foregroundColor(AppColors.textSecondary)
+                    }
+                    .padding(16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .fill(AppColors.card)
+                    )
+                }
+                .sheet(isPresented: $showingAIConsole) {
+                    AIConsoleView()
+                }
 
                 // Prompt Studio Entry
                 Button {
@@ -229,6 +249,17 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showingPromptStudio) {
             PromptStudioView()
+        }
+        .sheet(item: $store.deepLinkTool) { tool in
+            NavigationStack {
+                ToolDetailView(tool: tool)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button("完成") { store.deepLinkTool = nil }
+                        }
+                    }
+            }
         }
     }
 

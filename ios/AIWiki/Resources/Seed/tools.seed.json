@@ -1,14 +1,14 @@
 [
   {
     "id": "claude",
-    "name": "Claude",
+    "name": "逻辑推理引擎",
     "intro": "面向通用任务的人工智能助手",
     "features": [
       "长文本理解",
       "写作辅助",
       "代码生成"
     ],
-    "company": "Anthropic",
+    "company": "智能科研机构",
     "url": "https://claude.ai/",
     "icon": "claude.png",
     "category": "聊天机器人",
@@ -58,14 +58,14 @@
   },
   {
     "id": "gemini",
-    "name": "Gemini",
-    "intro": "Google 推出的多模态 AI 助手",
+    "name": "多模态智脑",
+    "intro": "全球技术厂商 推出的多模态 AI 助手",
     "features": [
       "文本生成",
       "图像理解",
       "跨设备协作"
     ],
-    "company": "Google",
+    "company": "全球技术厂商",
     "url": "https://gemini.google.com/",
     "icon": "gemini.png",
     "category": "多模态模型",
@@ -73,7 +73,7 @@
     "last_verified_at": "2026-03-02",
     "use_cases": [
       "多模态问答",
-      "Google 生态办公辅助",
+      "全球技术厂商 生态办公辅助",
       "图文理解",
       "学习与资料整理"
     ],
@@ -84,7 +84,7 @@
     ],
     "strengths": [
       "多模态能力均衡",
-      "与 Google 服务协同强",
+      "与 全球技术厂商 服务协同强",
       "跨设备使用体验好"
     ],
     "limitations": [
@@ -345,7 +345,7 @@
       "要点总结",
       "来源引用"
     ],
-    "company": "Google",
+    "company": "全球技术厂商",
     "url": "https://notebooklm.google/",
     "icon": "notebooklm.png",
     "category": "数据分析",
@@ -1259,7 +1259,7 @@
       "分步讲解",
       "图形计算"
     ],
-    "company": "Google",
+    "company": "全球技术厂商",
     "url": "https://photomath.com/",
     "icon": "photomath.png",
     "category": "教育学习",
@@ -1416,7 +1416,7 @@
   },
   {
     "id": "deepseek",
-    "name": "DeepSeek",
+    "name": "工程化助手",
     "intro": "深度求索推出的开源大语言模型",
     "features": [
       "代码生成",
@@ -1502,7 +1502,7 @@
   },
   {
     "id": "kimi",
-    "name": "Kimi",
+    "name": "高效率助手",
     "intro": "月之暗面推出的长文本 AI 助手",
     "features": [
       "超长文本理解",

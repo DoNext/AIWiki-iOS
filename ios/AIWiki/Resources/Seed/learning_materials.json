@@ -1,21 +1,21 @@
 [
   {
     "id": "claude",
-    "name": "Claude",
-    "summary": "Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work.",
+    "name": "逻辑推理引擎",
+    "summary": "逻辑推理引擎 is 智能科研机构's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work.",
     "core_capabilities": [
-      "Claude is a space to think",
+      "逻辑推理引擎 is a space to think",
       "The AI for problem solvers",
-      "How you can use Claude",
-      "Keep thinking with Claude",
-      "Claude models",
+      "How you can use 逻辑推理引擎",
+      "Keep thinking with 逻辑推理引擎",
+      "逻辑推理引擎 models",
       "Explore the latest releases"
     ],
     "getting_started": [
       "No ads. No sponsored content. Just genuinely helpful conversations.",
-      "Tackle any big, bold, bewildering challenge with Claude.",
+      "Tackle any big, bold, bewildering challenge with 逻辑推理引擎.",
       "This is another test",
-      "Claude builds on your ideas, expands on your logic, and simplifies complexity one step at a time."
+      "逻辑推理引擎 builds on your ideas, expands on your logic, and simplifies complexity one step at a time."
     ],
     "official_links": [
       "https://www.anthropic.com/claude",
@@ -49,8 +49,8 @@
   },
   {
     "id": "gemini",
-    "name": "Gemini",
-    "summary": "Meet Gemini, Google’s AI assistant. Get help with writing, planning, brainstorming, and more. Experience the power of generative AI.",
+    "name": "多模态智脑",
+    "summary": "Meet 多模态智脑, 全球技术厂商’s AI assistant. Get help with writing, planning, brainstorming, and more. Experience the power of generative AI.",
     "core_capabilities": [],
     "getting_started": [],
     "official_links": [
@@ -788,7 +788,7 @@
   },
   {
     "id": "deepseek",
-    "name": "DeepSeek",
+    "name": "工程化助手",
     "summary": "深度求索推出的开源大语言模型",
     "core_capabilities": [
       "代码生成",
@@ -796,7 +796,7 @@
       "长文本处理"
     ],
     "getting_started": [
-      "访问 DeepSeek 官网或 API",
+      "访问 工程化助手 官网或 API",
       "在对话框中直接提问",
       "使用代码模式进行编程辅助"
     ],
@@ -837,7 +837,7 @@
   },
   {
     "id": "kimi",
-    "name": "Kimi",
+    "name": "高效率助手",
     "summary": "月之暗面推出的长文本 AI 助手",
     "core_capabilities": [
       "超长文本理解",
@@ -845,7 +845,7 @@
       "联网搜索"
     ],
     "getting_started": [
-      "访问 https://kimi.moonshot.cn/ 开始使用 Kimi"
+      "访问 https://kimi.moonshot.cn/ 开始使用 高效率助手"
     ],
     "official_links": [
       "https://kimi.moonshot.cn/"

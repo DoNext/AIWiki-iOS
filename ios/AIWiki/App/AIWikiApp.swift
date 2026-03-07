@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreSpotlight
 
 @main
 struct AIWikiApp: App {
@@ -22,6 +23,13 @@ struct AIWikiApp: App {
                     .zIndex(1)
                 }
             }
+        .onContinueUserActivity(CSSearchableItemActionType) { userActivity in
+            if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+                if let tool = store.tool(withID: uniqueIdentifier) {
+                    store.deepLinkTool = tool
+                }
+            }
         }
     }
+}
 }

@@ -12,6 +12,7 @@ final class AppStore: ObservableObject {
     @Published private(set) var toolRatings: [String: Int]
     @Published private(set) var toolNotes: [String: String]
     @Published private(set) var checkInEvents: [CheckInEvent]
+    @Published var deepLinkTool: AITool?
     @Published var theme: AppTheme {
         didSet { userDefaults.set(theme.rawValue, forKey: Keys.theme) }
     }
@@ -80,6 +81,9 @@ final class AppStore: ObservableObject {
         } catch {
             learningByToolID = [:]
         }
+        
+        print("AppStore: Tools loaded (\(tools.count)), triggering Spotlight indexing...")
+        SpotlightManager.shared.indexTools(tools)
     }
 
     func learningMaterial(for toolID: String) -> LearningMaterial? {

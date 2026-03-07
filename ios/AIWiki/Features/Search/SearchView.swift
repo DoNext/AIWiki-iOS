@@ -18,7 +18,7 @@ struct SearchView: View {
         !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
-    private let hotSearches = ["DeepSeek", "Midjourney", "Cursor", "Claude", "Whisper", "Notion AI"]
+    private let hotSearches = ["AI 搜索", "文生图", "代码助手", "法律咨询", "语音转换", "文档分析"]
 
     var body: some View {
         Group {

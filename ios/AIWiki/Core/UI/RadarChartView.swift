@@ -22,61 +22,95 @@ struct RadarChartView: View {
     
     var body: some View {
         ZStack {
-            // Background Grid
-            RadarBackgroundShape(sides: dimensions.count)
-                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
-            
-            RadarBackgroundShape(sides: dimensions.count)
-                .scale(0.75)
-                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
-            
-            RadarBackgroundShape(sides: dimensions.count)
-                .scale(0.5)
-                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
-            
-            RadarBackgroundShape(sides: dimensions.count)
-                .scale(0.25)
-                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
-            
-            // Axis Lines
-            RadarAxisShape(sides: dimensions.count)
-                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
-            
-            // Labels
-            GeometryReader { geo in
-                let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
-                let radius = min(geo.size.width, geo.size.height) / 2
-                
-                ForEach(0..<dimensions.count, id: \.self) { i in
-                    let angle = (CGFloat(i) * (2 * .pi) / CGFloat(dimensions.count)) - (.pi / 2)
-                    let point = CGPoint(
-                        x: center.x + (radius * 1.2) * cos(angle),
-                        y: center.y + (radius * 1.2) * sin(angle)
-                    )
-                    
-                    Text(dimensions[i].name)
-                        .font(.caption2)
-                        .foregroundColor(AppColors.textSecondary)
-                        .position(point)
-                }
-            }
-            
-            // Data Polygon A
-            RadarDataShape(sides: dimensions.count, scores: scoresA, keys: dimensions.map(\.key))
-                .fill(colorA.opacity(0.4))
-            RadarDataShape(sides: dimensions.count, scores: scoresA, keys: dimensions.map(\.key))
-                .stroke(colorA, lineWidth: 2)
-            
-            // Data Polygon B (Optional)
-            if let scoresB = scoresB {
-                RadarDataShape(sides: dimensions.count, scores: scoresB, keys: dimensions.map(\.key))
-                    .fill(colorB.opacity(0.3))
-                RadarDataShape(sides: dimensions.count, scores: scoresB, keys: dimensions.map(\.key))
-                    .stroke(colorB, lineWidth: 2)
-            }
+            backgroundGrid
+            axisLines
+            labels
+            dataPolygons
         }
         .frame(height: 220)
         .padding(40)
+    }
+    
+    private var backgroundGrid: some View {
+        ZStack {
+            ForEach([1.0, 0.75, 0.5, 0.25], id: \.self) { scale in
+                RadarBackgroundShape(sides: dimensions.count)
+                    .scale(scale)
+                    .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+            }
+        }
+    }
+    
+    private var axisLines: some View {
+        RadarAxisShape(sides: dimensions.count)
+            .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+    }
+    
+    private var labels: some View {
+        GeometryReader { geo in
+            let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
+            let radius = min(geo.size.width, geo.size.height) / 2
+            
+            ForEach(0..<dimensions.count, id: \.self) { i in
+                RadarLabel(
+                    name: dimensions[i].name,
+                    index: i,
+                    total: dimensions.count,
+                    center: center,
+                    radius: radius
+                )
+            }
+        }
+    }
+    
+    private var dataPolygons: some View {
+        ZStack {
+            let keys = dimensions.map(\.key)
+            polygonA(keys: keys)
+            polygonB(keys: keys)
+        }
+    }
+    
+    private func polygonA(keys: [String]) -> some View {
+        ZStack {
+            RadarDataShape(sides: dimensions.count, scores: scoresA, keys: keys)
+                .fill(colorA.opacity(0.4))
+            RadarDataShape(sides: dimensions.count, scores: scoresA, keys: keys)
+                .stroke(colorA, lineWidth: 2)
+        }
+    }
+    
+    private func polygonB(keys: [String]) -> some View {
+        Group {
+            if let scoresB = scoresB {
+                RadarDataShape(sides: dimensions.count, scores: scoresB, keys: keys)
+                    .fill(colorB.opacity(0.3))
+                RadarDataShape(sides: dimensions.count, scores: scoresB, keys: keys)
+                    .stroke(colorB, lineWidth: 2)
+            }
+        }
+    }
+}
+
+
+private struct RadarLabel: View {
+    let name: String
+    let index: Int
+    let total: Int
+    let center: CGPoint
+    let radius: CGFloat
+    
+    var body: some View {
+        let angle = (CGFloat(index) * (2.0 * .pi) / CGFloat(total)) - (.pi / 2.0)
+        let point = CGPoint(
+            x: center.x + (radius * 1.2) * cos(angle),
+            y: center.y + (radius * 1.2) * sin(angle)
+        )
+        
+        Text(name)
+            .font(.caption2)
+            .foregroundColor(AppColors.textSecondary)
+            .position(point)
     }
 }
 

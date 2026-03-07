@@ -38,7 +38,7 @@ struct WeeklyReportOutcomeView: View {
         """
     }
 
-    private var promptForClaude: String {
+    private var promptForLogicAI: String {
         """
         你是严谨的项目管理助理。基于以下输入生成周报，并额外指出“信息缺口”：
         \(contextBlock)
@@ -52,7 +52,7 @@ struct WeeklyReportOutcomeView: View {
         """
     }
 
-    private var promptForGemini: String {
+    private var promptForCreativeAI: String {
         """
         请把以下周工作信息整理成“可对外同步”的周报：
         \(contextBlock)
@@ -111,11 +111,11 @@ struct WeeklyReportOutcomeView: View {
         [通用 AI 提示词]
         \(promptForGeneralAI)
 
-        [Claude 提示词]
-        \(promptForClaude)
+        [逻辑提示词]
+        \(promptForLogicAI)
 
-        [Gemini 提示词]
-        \(promptForGemini)
+        [创意提示词]
+        \(promptForCreativeAI)
 
         [可交付模板]
         \(deliveryTemplate)
@@ -143,10 +143,10 @@ struct WeeklyReportOutcomeView: View {
             }
 
             if hasEnoughInput {
-                Section("一键提示词（按工具）") {
-                    promptBlock(title: "通用 AI", text: promptForGeneralAI)
-                    promptBlock(title: "Claude", text: promptForClaude)
-                    promptBlock(title: "Gemini", text: promptForGemini)
+                Section("一键提示词（按功能）") {
+                    promptBlock(title: "通用助手", text: promptForGeneralAI)
+                    promptBlock(title: "逻辑增强", text: promptForLogicAI)
+                    promptBlock(title: "创意激发", text: promptForCreativeAI)
                 }
 
                 Section("可交付模板") {

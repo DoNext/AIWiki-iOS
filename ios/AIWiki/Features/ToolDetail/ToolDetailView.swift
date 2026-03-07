@@ -11,6 +11,8 @@ struct ToolDetailView: View {
     @State private var showingNoteEditor = false
     @State private var noteText = ""
     @State private var showingExportPreview = false
+    @State private var showingConsole = false
+    @Environment(\.dismiss) private var dismiss
     @State private var exportedImage: UIImage?
     @State private var hasCheckedIn = false
     @State private var isGeneratingImage = false
@@ -340,18 +342,24 @@ struct ToolDetailView: View {
 
                 // Action buttons
                 VStack(spacing: 10) {
-                    if let websiteURL {
-                        Link(destination: websiteURL) {
+                    if websiteURL != nil {
+                        Button {
+                            showingConsole = true
+                        } label: {
                             HStack {
-                                Image(systemName: "safari")
-                                Text("打开官网")
+                                Image(systemName: "safari.fill")
+                                    .font(.system(size: 14, weight: .bold))
+                                Text("立即使用")
+                                    .font(.system(size: 14, weight: .bold))
                             }
-                            .font(.headline)
                             .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
                             .background(AppGradients.accent)
-                            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .cornerRadius(12)
+                        }
+                        .fullScreenCover(isPresented: $showingConsole) {
+                            AIConsoleView(initialToolName: tool.name, initialURL: tool.url)
                         }
                     }
 
