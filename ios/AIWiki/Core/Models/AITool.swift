@@ -73,8 +73,10 @@ struct AITool: Codable, Identifiable, Hashable {
         case limitations
         case promptTemplates = "prompt_templates"
         case access
+        case radarScores = "radar_scores"
     }
 }
+
 
 struct LearningMaterial: Codable, Hashable {
     let id: String
