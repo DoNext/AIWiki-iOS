@@ -135,6 +135,11 @@ struct CompareView: View {
                            valueB: accessB.apiAvailable ? "✅ 有" : "❌ 无")
             }
 
+            // Recommendation Score
+            let scoreA = min(5, max(3, (a.features.count + (a.useCases?.count ?? 0)) / 2))
+            let scoreB = min(5, max(3, (b.features.count + (b.useCases?.count ?? 0)) / 2))
+            compareScore(title: "系统推荐度", scoreA: scoreA, scoreB: scoreB)
+
             // User ratings
             let ratingA = store.rating(for: a.id)
             let ratingB = store.rating(for: b.id)
@@ -229,5 +234,49 @@ struct CompareView: View {
                     .foregroundColor(AppColors.textPrimary)
             }
         }
+    }
+
+    private func compareScore(title: String, scoreA: Int, scoreB: Int) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundColor(AppColors.accent)
+            HStack(alignment: .center, spacing: 12) {
+                // Score A
+                VStack(alignment: .trailing, spacing: 4) {
+                    Text("\(scoreA).0")
+                        .font(.headline)
+                        .foregroundColor(AppColors.textPrimary)
+                    HStack(spacing: 2) {
+                        ForEach(1...5, id: \.self) { i in
+                            Image(systemName: "star.fill")
+                                .font(.caption2)
+                                .foregroundColor(i <= scoreA ? .yellow : AppColors.textSecondary.opacity(0.3))
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                
+                Divider()
+                
+                // Score B
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("\(scoreB).0")
+                        .font(.headline)
+                        .foregroundColor(AppColors.textPrimary)
+                    HStack(spacing: 2) {
+                        ForEach(1...5, id: \.self) { i in
+                            Image(systemName: "star.fill")
+                                .font(.caption2)
+                                .foregroundColor(i <= scoreB ? .yellow : AppColors.textSecondary.opacity(0.3))
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .padding(14)
+        .background(AppColors.card)
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
