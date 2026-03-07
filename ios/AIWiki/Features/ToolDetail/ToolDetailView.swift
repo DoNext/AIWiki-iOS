@@ -9,6 +9,8 @@ struct ToolDetailView: View {
     @State private var showingShareSheet = false
     @State private var showingNoteEditor = false
     @State private var noteText = ""
+    @State private var showingExportPreview = false
+    @State private var exportedImage: UIImage?
     private var websiteURL: URL? { URL(string: tool.url) }
     private var learningMaterial: LearningMaterial? { store.learningMaterial(for: tool.id) }
 
@@ -361,6 +363,42 @@ struct ToolDetailView: View {
                         )
                     }
                     .buttonStyle(.plain)
+                    
+                    Button {
+                        generateExportImage()
+                    } label: {
+                        HStack {
+                            Image(systemName: "photo.artframe")
+                            Text("生成知识卡片")
+                        }
+                        .font(.subheadline.weight(.medium))
+                        .foregroundColor(AppColors.accent)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(AppColors.accent.opacity(0.5), lineWidth: 1)
+                        )
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        store.checkIn(tool: tool)
+                    } label: {
+                        HStack {
+                            Image(systemName: "calendar.badge.plus")
+                            Text("使用打卡")
+                        }
+                        .font(.subheadline.weight(.medium))
+                        .foregroundColor(AppColors.accent)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(AppColors.accent.opacity(0.5), lineWidth: 1)
+                        )
+                    }
+                    .buttonStyle(.plain)
                 }
                 .padding(.top, 8)
             }
@@ -383,6 +421,26 @@ struct ToolDetailView: View {
         .sheet(isPresented: $showingShareSheet) {
             let text = "推荐一个 AI 工具：\(tool.name) — \(tool.intro) 👉 \(tool.url)"
             ShareSheet(items: [text])
+        }
+        .sheet(isPresented: $showingExportPreview) {
+            if let exportedImage {
+                ExportPreviewView(image: exportedImage)
+            }
+        }
+    }
+
+    // MARK: - Export Logic
+    
+    @MainActor
+    private func generateExportImage() {
+        let note = store.toolNote(for: tool.id)
+        let exportView = ToolCardExportView(tool: tool, note: note)
+        let renderer = ImageRenderer(content: exportView)
+        renderer.scale = UIScreen.main.scale
+        
+        if let uiImage = renderer.uiImage {
+            self.exportedImage = uiImage
+            self.showingExportPreview = true
         }
     }
 

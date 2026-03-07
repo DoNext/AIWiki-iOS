@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var store: AppStore
+    @State private var showingQuiz = false
 
     private var bookmarkedScenarios: [TaskScenario] {
         ScenarioLibrary.all.filter { store.bookmarkedScenarioIDs.contains($0.id) }
@@ -32,25 +33,46 @@ struct HomeView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
 
-                // Search entry
-                NavigationLink {
-                    SearchView()
-                } label: {
-                    HStack(spacing: 10) {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(AppColors.textSecondary)
-                        Text("搜索 AI 工具...")
-                            .foregroundColor(AppColors.textSecondary)
-                        Spacer()
+                // Top Actions (Search & Quiz side-by-side)
+                HStack(spacing: 12) {
+                    // Search entry
+                    NavigationLink {
+                        SearchView()
+                    } label: {
+                        HStack(spacing: 8) {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(AppColors.textSecondary)
+                            Text("搜索 AI 工具...")
+                                .foregroundColor(AppColors.textSecondary)
+                                .font(.subheadline)
+                            Spacer()
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .fill(AppColors.card)
+                        )
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 14)
-                    .background(
-                        RoundedRectangle(cornerRadius: 14, style: .continuous)
-                            .fill(AppColors.card)
-                    )
+                    .buttonStyle(.plain)
+                    
+                    // Native Quiz Entry
+                    Button {
+                        showingQuiz = true
+                    } label: {
+                        HStack(spacing: 6) {
+                            Image(systemName: "wand.and.stars")
+                                .font(.subheadline)
+                            Text("帮我选")
+                                .font(.subheadline.weight(.semibold))
+                        }
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
+                        .background(AppGradients.accent)
+                        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
                 }
-                .buttonStyle(.plain)
 
                 // Daily Tip
                 VStack(alignment: .leading, spacing: 10) {
@@ -162,6 +184,9 @@ struct HomeView: View {
         }
         .background(AppColors.background.ignoresSafeArea())
         .navigationTitle("AIWiki")
+        .fullScreenCover(isPresented: $showingQuiz) {
+            ToolQuizView()
+        }
     }
 
     // MARK: - Sub Views

@@ -26,6 +26,18 @@ struct SettingsView: View {
             }
 
             Section("统计") {
+                NavigationLink {
+                    ToolUsageStatsView()
+                } label: {
+                    HStack {
+                        Image(systemName: "chart.bar.xaxis")
+                            .foregroundColor(AppColors.accent)
+                        Text("查看详细使用统计")
+                            .foregroundColor(AppColors.textPrimary)
+                        Spacer()
+                    }
+                }
+                
                 infoRow(title: "工具总数", value: "\(store.tools.count)")
                 infoRow(title: "分类总数", value: "\(store.categoryGroups().count)")
                 infoRow(title: "收藏数", value: "\(store.favoriteTools().count)")

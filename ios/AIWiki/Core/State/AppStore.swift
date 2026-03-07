@@ -11,6 +11,7 @@ final class AppStore: ObservableObject {
     @Published private(set) var scenarioNotes: [String: String]
     @Published private(set) var toolRatings: [String: Int]
     @Published private(set) var toolNotes: [String: String]
+    @Published private(set) var checkInEvents: [CheckInEvent]
     @Published var theme: AppTheme {
         didSet { userDefaults.set(theme.rawValue, forKey: Keys.theme) }
     }
@@ -39,6 +40,13 @@ final class AppStore: ObservableObject {
         self.scenarioNotes = userDefaults.dictionary(forKey: Keys.scenarioNotes) as? [String: String] ?? [:]
         self.toolRatings = userDefaults.dictionary(forKey: Keys.toolRatings) as? [String: Int] ?? [:]
         self.toolNotes = userDefaults.dictionary(forKey: Keys.toolNotes) as? [String: String] ?? [:]
+        
+        if let data = userDefaults.data(forKey: Keys.checkIns),
+           let events = try? JSONDecoder().decode([CheckInEvent].self, from: data) {
+            self.checkInEvents = events
+        } else {
+            self.checkInEvents = []
+        }
 
         if let rawTheme = userDefaults.string(forKey: Keys.theme),
            let value = AppTheme(rawValue: rawTheme) {
@@ -193,6 +201,25 @@ final class AppStore: ObservableObject {
         persistToolNotes()
     }
 
+    // MARK: - Check-ins
+
+    func checkIn(tool: AITool) {
+        let event = CheckInEvent(toolID: tool.id, date: Date(), category: tool.category)
+        checkInEvents.append(event)
+        persistCheckIns()
+    }
+
+    func checkInsInLast7Days() -> [CheckInEvent] {
+        let calendar = Calendar.current
+        let weekAgo = calendar.date(byAdding: .day, value: -7, to: Date()) ?? Date()
+        return checkInEvents.filter { $0.date >= weekAgo }
+    }
+
+    func clearCheckIns() {
+        checkInEvents.removeAll()
+        persistCheckIns()
+    }
+
     // MARK: - Recommendations
 
     func recommendedTools() -> [AITool] {
@@ -251,6 +278,12 @@ final class AppStore: ObservableObject {
         userDefaults.set(toolNotes, forKey: Keys.toolNotes)
     }
 
+    private func persistCheckIns() {
+        if let data = try? JSONEncoder().encode(checkInEvents) {
+            userDefaults.set(data, forKey: Keys.checkIns)
+        }
+    }
+
     private func score(tool: AITool, tokens: [String]) -> Int {
         let name = tool.name.lowercased()
         let intro = tool.intro.lowercased()
@@ -299,4 +332,12 @@ private enum Keys {
     static let scenarioNotes = "aiwiki.scenarioNotes"
     static let toolRatings = "aiwiki.toolRatings"
     static let toolNotes = "aiwiki.toolNotes"
+    static let checkIns = "aiwiki.checkIns"
+}
+
+struct CheckInEvent: Codable, Identifiable {
+    var id = UUID()
+    let toolID: String
+    let date: Date
+    let category: String
 }

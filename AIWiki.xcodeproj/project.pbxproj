@@ -10,6 +10,7 @@
 		02406EC34FC5B6CA40818672 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB213C6FEC645DFED80FF0 /* Localizable.strings */; };
 		041BC251AB99CB10C6C8AAA4 /* MockToolRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E64B757B103C4FEDFD3B6B4 /* MockToolRepository.swift */; };
 		043E2373010F6701DA678B0B /* AppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE42251ACF10E733D4F393 /* AppDesign.swift */; };
+		1298425D681D3E8C2B90A6F1 /* ToolUsageStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD3E52FC198C2208BC2A34 /* ToolUsageStatsView.swift */; };
 		12EBD8DDE76995BDD4017342 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E40B5322A78915B60918B1A /* HomeView.swift */; };
 		1B21F48B768D5BE000FCD7E8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC4A4B770C81D62969D853 /* SearchView.swift */; };
 		1DC9999343971C97B544A90F /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60E4A096FF503A79D55F5DD /* AppTheme.swift */; };
@@ -34,9 +35,12 @@
 		83837F22CA6B7152C7201CFE /* TaskScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C84B0D8DA86CF6ADAED7DA7 /* TaskScenario.swift */; };
 		89FF5EED1BF98953EABCFAEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3695C5815D34B58421845B3 /* Assets.xcassets */; };
 		8A76C89CAD37520B7C21D066 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12093B53711C4E5D5AE7E8A5 /* CompareView.swift */; };
+		9393C2EF5944D2512EFB9A15 /* ExportPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1EDA32BED20CF0141A881D /* ExportPreviewView.swift */; };
 		CECA9E88C48BFB725499619C /* ComparePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A557D3E63571A2108509830 /* ComparePickerView.swift */; };
+		D64693CA4C1534C89EB51ED4 /* ToolQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80049A29705CDE5D519E0585 /* ToolQuizView.swift */; };
 		E71094628ED3F90B78E094B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C04525FC36C8419EA6A7A48 /* Assets.xcassets */; };
 		E983D2D37DFAD9F1927CA7C2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77806761A79D9F4838334C93 /* SplashView.swift */; };
+		EAEAE349BF9DFC793EE24A01 /* ToolCardExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E1EF7D7F6D57E89AE0802 /* ToolCardExportView.swift */; };
 		EC0AC480BF45284E4CA8C12A /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791ECA35285342CAAB73509 /* CategoriesView.swift */; };
 		F09CE043EE30D80104C3C2CD /* ScenarioDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB896E3A8988B754DF4F7D9 /* ScenarioDetailView.swift */; };
 /* End PBXBuildFile section */
@@ -70,20 +74,24 @@
 		1A557D3E63571A2108509830 /* ComparePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparePickerView.swift; sourceTree = "<group>"; };
 		207E299D8FF2E89BA28FD060 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		3BE99E0EEBF776F32C19F4B3 /* ScenarioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioLibrary.swift; sourceTree = "<group>"; };
+		3C1EDA32BED20CF0141A881D /* ExportPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewView.swift; sourceTree = "<group>"; };
 		3FDB213C6FEC645DFED80FF0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4C84B0D8DA86CF6ADAED7DA7 /* TaskScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScenario.swift; sourceTree = "<group>"; };
 		6BBE42251ACF10E733D4F393 /* AppDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
 		77806761A79D9F4838334C93 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		77B78395396123526409DD13 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		80049A29705CDE5D519E0585 /* ToolQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolQuizView.swift; sourceTree = "<group>"; };
 		869486803512DAA2D976A051 /* AIWikiTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AIWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F0316A3C59314B5825A351 /* CodeDebugOutcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDebugOutcomeView.swift; sourceTree = "<group>"; };
 		8C04525FC36C8419EA6A7A48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E3B9E16E6504BE88C839FB0 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		8EFD14437CAF046F755BFD2B /* AIWiki.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AIWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90DD3E52FC198C2208BC2A34 /* ToolUsageStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolUsageStatsView.swift; sourceTree = "<group>"; };
 		91AEFA0B62400CD59CA45924 /* ToolSeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolSeedStore.swift; sourceTree = "<group>"; };
 		99EC4A4B770C81D62969D853 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		9CDFBBEA716503F7823A5A8E /* tools.seed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tools.seed.json; sourceTree = "<group>"; };
 		9E40B5322A78915B60918B1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A45E1EF7D7F6D57E89AE0802 /* ToolCardExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCardExportView.swift; sourceTree = "<group>"; };
 		B8DE0EBA83B22A561FAB6804 /* AITool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITool.swift; sourceTree = "<group>"; };
 		BB1CB1F50603E88B505E254D /* AIWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWikiApp.swift; sourceTree = "<group>"; };
 		C20C01D207CDC32D23B2F801 /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
@@ -174,6 +182,8 @@
 		813B385BDC1820EF418964FA /* ToolDetail */ = {
 			isa = PBXGroup;
 			children = (
+				3C1EDA32BED20CF0141A881D /* ExportPreviewView.swift */,
+				A45E1EF7D7F6D57E89AE0802 /* ToolCardExportView.swift */,
 				D7A9A6BD1AD1DB779AFDE151 /* ToolDetailView.swift */,
 				D68534C8677517F4CE121991 /* ToolListRow.swift */,
 			);
@@ -193,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				77B78395396123526409DD13 /* SettingsView.swift */,
+				90DD3E52FC198C2208BC2A34 /* ToolUsageStatsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				9E40B5322A78915B60918B1A /* HomeView.swift */,
+				80049A29705CDE5D519E0585 /* ToolQuizView.swift */,
 				AD4B03E4872DE70F3B708FC1 /* Outcome */,
 				431568C33753E00C42C63F22 /* Scenarios */,
 			);
@@ -458,6 +470,7 @@
 				CECA9E88C48BFB725499619C /* ComparePickerView.swift in Sources */,
 				8A76C89CAD37520B7C21D066 /* CompareView.swift in Sources */,
 				7AEA8BB3E3159E5526094691 /* CompetitorBriefOutcomeView.swift in Sources */,
+				9393C2EF5944D2512EFB9A15 /* ExportPreviewView.swift in Sources */,
 				7A11FD67EC55BB517B394768 /* FavoritesView.swift in Sources */,
 				12EBD8DDE76995BDD4017342 /* HomeView.swift in Sources */,
 				7940D9A7FCC8A2A17B107AD3 /* RootTabView.swift in Sources */,
@@ -467,9 +480,12 @@
 				3AD4C9B9DB7CDFB690727CE5 /* SettingsView.swift in Sources */,
 				E983D2D37DFAD9F1927CA7C2 /* SplashView.swift in Sources */,
 				83837F22CA6B7152C7201CFE /* TaskScenario.swift in Sources */,
+				EAEAE349BF9DFC793EE24A01 /* ToolCardExportView.swift in Sources */,
 				255D215EDCED5C1A55D6E14E /* ToolDetailView.swift in Sources */,
 				2EB4FA00901DED078861AA61 /* ToolListRow.swift in Sources */,
+				D64693CA4C1534C89EB51ED4 /* ToolQuizView.swift in Sources */,
 				2D0C76E099F5E6026968A626 /* ToolSeedStore.swift in Sources */,
+				1298425D681D3E8C2B90A6F1 /* ToolUsageStatsView.swift in Sources */,
 				7E4F6359C9BDB5BF1244F723 /* WeeklyReportOutcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
