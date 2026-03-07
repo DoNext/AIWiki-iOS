@@ -3,6 +3,7 @@ import UIKit
 
 struct ToolDetailView: View {
     @EnvironmentObject private var store: AppStore
+    @Environment(\.colorScheme) var colorScheme
 
     let tool: AITool
     @State private var copied = false
@@ -451,13 +452,22 @@ struct ToolDetailView: View {
     @MainActor
     private func generateExportImage() {
         let note = store.toolNote(for: tool.id)
+        // Explicitly inject environment to ensure colors/traits are correctly resolved
         let exportView = ToolCardExportView(tool: tool, note: note)
-        let renderer = ImageRenderer(content: exportView)
-        renderer.scale = UIScreen.main.scale
+            .environment(\.colorScheme, colorScheme)
         
-        if let uiImage = renderer.uiImage {
-            self.exportedImage = uiImage
-            self.showingExportPreview = true
+        Task {
+            // A small delay allows the view to perform initial layout calculations
+            try? await Task.sleep(nanoseconds: 300_000_000) // 0.3s
+            
+            let renderer = ImageRenderer(content: exportView)
+            renderer.scale = UIScreen.main.scale
+            renderer.proposedSize = ProposedViewSize(width: 400, height: nil)
+            
+            if let uiImage = renderer.uiImage {
+                self.exportedImage = uiImage
+                self.showingExportPreview = true
+            }
         }
     }
 
