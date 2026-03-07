@@ -131,13 +131,15 @@ struct ToolDetailView: View {
                     if !learningMaterial.officialLinks.isEmpty {
                         detailSection("官方资料") {
                             VStack(alignment: .leading, spacing: 6) {
-                                ForEach(learningMaterial.officialLinks, id: \.self) { link in
-                                    if let url = URL(string: link) {
-                                        Link(link, destination: url)
-                                            .font(.footnote)
-                                            .foregroundColor(AppColors.accentLight)
-                                            .lineLimit(2)
-                                    }
+                                // Deduplicate links to prevent repeating content if data is not clean
+                                let uniqueLinks = Array(Set(learningMaterial.officialLinks)).sorted()
+                                ForEach(uniqueLinks, id: \.self) { link in
+                                     if let url = URL(string: link) {
+                                         Link(link, destination: url)
+                                             .font(.footnote)
+                                             .foregroundColor(AppColors.accentLight)
+                                             .lineLimit(2)
+                                     }
                                 }
                             }
                         }
