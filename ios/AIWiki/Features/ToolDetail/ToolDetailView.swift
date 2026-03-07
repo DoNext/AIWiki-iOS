@@ -476,9 +476,8 @@ struct ToolDetailView: View {
         let controller = UIHostingController(rootView: exportView)
         let view = controller.view
         
-        // Set fixed width and allow auto-height
-        let targetWidth: CGFloat = 400
-        let targetSize = controller.view.sizeThatFits(CGSize(width: targetWidth, height: CGFloat.greatestFiniteMagnitude))
+        // Set fixed dimensions for the redesigned card
+        let targetSize = CGSize(width: 400, height: 700)
         view?.bounds = CGRect(origin: .zero, size: targetSize)
         view?.backgroundColor = .clear
 
