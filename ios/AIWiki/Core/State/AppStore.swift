@@ -287,13 +287,27 @@ final class AppStore: ObservableObject {
     private func score(tool: AITool, tokens: [String]) -> Int {
         let name = tool.name.lowercased()
         let intro = tool.intro.lowercased()
+        let category = tool.category.lowercased()
+        let company = tool.company.lowercased()
         let features = tool.features.joined(separator: " ").lowercased()
+        let useCases = (tool.useCases ?? []).joined(separator: " ").lowercased()
 
         var score = 0
         for token in tokens {
-            if name.contains(token) { score += 5 }
-            if intro.contains(token) { score += 3 }
-            if features.contains(token) { score += 2 }
+            // Exact full name match is highest priority
+            if name == token { score += 100 }
+            
+            // Name contains token
+            if name.contains(token) { score += 20 }
+            
+            // Category/Company matches
+            if category.contains(token) { score += 15 }
+            if company.contains(token) { score += 10 }
+            
+            // Content matches
+            if intro.contains(token) { score += 5 }
+            if features.contains(token) { score += 3 }
+            if useCases.contains(token) { score += 2 }
         }
         return score
     }

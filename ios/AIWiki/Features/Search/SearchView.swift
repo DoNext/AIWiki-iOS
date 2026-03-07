@@ -3,6 +3,7 @@ import SwiftUI
 struct SearchView: View {
     @EnvironmentObject private var store: AppStore
     @State private var query: String = ""
+    @FocusState private var isSearchFocused: Bool
     @AppStorage("searchHistory") private var searchHistoryData: Data = Data()
 
     private var searchHistory: [String] {
@@ -123,7 +124,14 @@ struct SearchView: View {
                 .background(AppColors.background.ignoresSafeArea())
             }
         }
-        .searchable(text: $query, prompt: "搜索名称、简介、功能")
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索名称、简介、功能")
+        .focused($isSearchFocused)
+        .onAppear {
+            // Delay focus slightly to ensure smooth transition
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                isSearchFocused = true
+            }
+        }
         .onSubmit(of: .search) {
             saveSearchHistory(query)
         }
