@@ -22,10 +22,10 @@ let configs = [
 
 let screens = [
     ("01_Home", "一键开启 AI 知识之旅"),
-    ("02_Categories", "分类浏览，一目了然"),
-    ("03_Compare", "横向对比，择优而从"),
+    ("02_PromptStudio", "AI 提示词创作与收藏"),
+    ("03_Compare", "导出精美工具对比长图"),
     ("04_Favorites", "常用工具，随手可得"),
-    ("05_Settings", "个性化设置，懂你所需")
+    ("05_Dashboard", "AI 生产力图谱与称号")
 ]
 
 let baseDir = "/Users/yinchaoyu/Downloads/scratch/test-clone/beijing-camera-ios/screenshots"

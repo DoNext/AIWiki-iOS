@@ -24,18 +24,38 @@ class ScreenshotTests: XCTestCase {
         // Setup data
         setupFavorites()
         
-        let tabs = ["首页", "分类", "对比", "收藏", "设置"]
-        let suffixes = ["01_Home", "02_Categories", "03_Compare", "04_Favorites", "05_Settings"]
+        // 01 Home
+        app.tabBars.buttons["首页"].tap()
+        sleep(1)
+        takeScreenshot(name: "\(deviceName)_01_Home")
         
-        for (index, tabName) in tabs.enumerated() {
-            let tabButton = app.tabBars.buttons[tabName]
-            if tabButton.exists {
-                tabButton.tap()
-                sleep(2)
-                dismissNotifications()
-                takeScreenshot(name: "\(deviceName)_\(suffixes[index])")
-            }
-        }
+        // 02 Prompt Studio (New)
+        let promptStudioBtn = app.buttons.matching(NSPredicate(format: "label CONTAINS '提示词工作室'")).firstMatch
+        _ = promptStudioBtn.waitForExistence(timeout: 5)
+        promptStudioBtn.tap()
+        sleep(2)
+        takeScreenshot(name: "\(deviceName)_02_PromptStudio")
+        app.buttons["取消"].firstMatch.tap() // Correct label is "取消"
+        sleep(1)
+        
+        // 03 Compare
+        app.tabBars.buttons["对比"].tap()
+        sleep(1)
+        takeScreenshot(name: "\(deviceName)_03_Compare")
+        
+        // 04 Favorites
+        app.tabBars.buttons["收藏"].tap()
+        sleep(1)
+        takeScreenshot(name: "\(deviceName)_04_Favorites")
+        
+        // 05 Dashboard (New - via Settings)
+        app.tabBars.buttons["设置"].tap()
+        sleep(1)
+        let dashboardBtn = app.buttons.matching(NSPredicate(format: "label CONTAINS '生产力仪表盘'")).firstMatch
+        _ = dashboardBtn.waitForExistence(timeout: 5)
+        dashboardBtn.tap()
+        sleep(5) // Radar chart animation might take time
+        takeScreenshot(name: "\(deviceName)_05_Dashboard")
     }
 
     func setupFavorites() {
