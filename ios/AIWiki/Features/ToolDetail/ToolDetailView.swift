@@ -11,6 +11,7 @@ struct ToolDetailView: View {
     @State private var noteText = ""
     @State private var showingExportPreview = false
     @State private var exportedImage: UIImage?
+    @State private var hasCheckedIn = false
     private var websiteURL: URL? { URL(string: tool.url) }
     private var learningMaterial: LearningMaterial? { store.learningMaterial(for: tool.id) }
 
@@ -383,19 +384,35 @@ struct ToolDetailView: View {
                     .buttonStyle(.plain)
 
                     Button {
-                        store.checkIn(tool: tool)
+                        if !hasCheckedIn {
+                            store.checkIn(tool: tool)
+                            let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                            impactMed.impactOccurred()
+                            withAnimation {
+                                hasCheckedIn = true
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation {
+                                    hasCheckedIn = false
+                                }
+                            }
+                        }
                     } label: {
                         HStack {
-                            Image(systemName: "calendar.badge.plus")
-                            Text("使用打卡")
+                            Image(systemName: hasCheckedIn ? "checkmark.circle.fill" : "calendar.badge.plus")
+                            Text(hasCheckedIn ? "打卡成功" : "使用打卡")
                         }
                         .font(.subheadline.weight(.medium))
-                        .foregroundColor(AppColors.accent)
+                        .foregroundColor(hasCheckedIn ? .white : AppColors.accent)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
                         .background(
                             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .stroke(AppColors.accent.opacity(0.5), lineWidth: 1)
+                                .fill(hasCheckedIn ? Color.green.opacity(0.8) : Color.clear)
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(hasCheckedIn ? Color.clear : AppColors.accent.opacity(0.5), lineWidth: 1)
                         )
                     }
                     .buttonStyle(.plain)
