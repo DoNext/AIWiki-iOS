@@ -243,6 +243,9 @@ struct HomeView: View {
             .padding(.bottom, 24)
         }
         .background(AppColors.background.ignoresSafeArea())
+        .onReceive(NotificationCenter.default.publisher(for: .openPromptStudio)) { _ in
+            showingPromptStudio = true
+        }
         .navigationTitle("AIWiki")
         .fullScreenCover(isPresented: $showingQuiz) {
             ToolQuizView()

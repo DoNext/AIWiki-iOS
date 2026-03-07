@@ -46,5 +46,14 @@ struct RootTabView: View {
                 .tag(4)
         }
         .tint(AppColors.accent)
+        .onReceive(NotificationCenter.default.publisher(for: .openPromptStudio)) { _ in
+            store.selectedTab = 0 // 回到首页
+            // 这里还可以进一步触发 HomeView 内部的状态，例如弹出 Sheet
+            // 但目前的 HomeView 是根据 store.showingPromptStudio 等状态来显示的
+            // 我们可以在 AppStore 中添加全局触发
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .openDashboard)) { _ in
+            store.selectedTab = 4 // 跳转到设置/仪表盘页
+        }
     }
 }
