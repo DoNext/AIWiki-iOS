@@ -424,6 +424,14 @@ struct ToolDetailView: View {
             .padding(.bottom, 32)
         }
         .background(AppColors.background.ignoresSafeArea())
+        .background(
+            // Warm-up hack: Put the export view in the real hierarchy (invisible)
+            // to force SwiftUI to perform a full layout pass.
+            ToolCardExportView(tool: tool, note: store.toolNote(for: tool.id))
+                .frame(width: 400)
+                .opacity(0)
+                .allowsHitTesting(false)
+        )
         .navigationTitle("详情")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
