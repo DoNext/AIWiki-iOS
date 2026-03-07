@@ -1,10 +1,14 @@
 import SwiftUI
+import UIKit
+import Charts
 
 struct CompareView: View {
     @EnvironmentObject private var store: AppStore
     @State private var toolA: AITool?
     @State private var toolB: AITool?
     @State private var showingPickerForSlot: PickerSlot?
+    @State private var sharedImage: UIImage?
+    @State private var isSharing = false
 
     enum PickerSlot: Identifiable {
         case a, b
@@ -41,6 +45,22 @@ struct CompareView: View {
         }
         .background(AppColors.background.ignoresSafeArea())
         .navigationTitle("工具对比")
+        .toolbar {
+            if toolA != nil && toolB != nil {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        exportLongImage()
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $isSharing) {
+            if let image = sharedImage {
+                ShareSheet(items: [image])
+            }
+        }
         .sheet(item: $showingPickerForSlot) { slot in
             NavigationStack {
                 ComparePickerView { selected in
@@ -52,6 +72,58 @@ struct CompareView: View {
                 }
                 .environmentObject(store)
             }
+        }
+    }
+
+    @MainActor
+    private func exportLongImage() {
+        guard let a = toolA, let b = toolB else { return }
+        
+        let exportView = VStack(spacing: 20) {
+            // Header for image
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("AI 工具深度对比")
+                        .font(.title2.bold())
+                    Text("由 AIWiki 自动生成")
+                        .font(.caption)
+                        .foregroundColor(AppColors.textSecondary)
+                }
+                Spacer()
+                Image(systemName: "bolt.shield.fill")
+                    .font(.title)
+                    .foregroundColor(AppColors.accent)
+            }
+            .padding()
+            
+            // Tool names
+            HStack {
+                Text(a.name)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                Text("VS")
+                    .font(.caption.bold())
+                    .foregroundColor(AppColors.accent)
+                Text(b.name)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+            }
+            .padding()
+            .background(AppColors.card)
+            .cornerRadius(12)
+            
+            compareContent(a: a, b: b)
+        }
+        .padding()
+        .background(AppColors.background)
+        .frame(width: 400) // Fixed width for export
+        
+        let renderer = ImageRenderer(content: exportView)
+        renderer.scale = UIScreen.main.scale
+        
+        if let image = renderer.uiImage {
+            self.sharedImage = image
+            self.isSharing = true
         }
     }
 

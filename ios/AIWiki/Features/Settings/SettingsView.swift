@@ -32,7 +32,7 @@ struct SettingsView: View {
                     HStack {
                         Image(systemName: "chart.bar.xaxis")
                             .foregroundColor(AppColors.accent)
-                        Text("查看详细使用统计")
+                        Text("生产力仪表盘")
                             .foregroundColor(AppColors.textPrimary)
                         Spacer()
                     }
