@@ -13,6 +13,7 @@ struct ToolDetailView: View {
     @State private var showingExportPreview = false
     @State private var exportedImage: UIImage?
     @State private var hasCheckedIn = false
+    @State private var isGeneratingImage = false
     private var websiteURL: URL? { URL(string: tool.url) }
     private var learningMaterial: LearningMaterial? { store.learningMaterial(for: tool.id) }
 
@@ -370,8 +371,14 @@ struct ToolDetailView: View {
                         generateExportImage()
                     } label: {
                         HStack {
-                            Image(systemName: "photo.artframe")
-                            Text("生成知识卡片")
+                            if isGeneratingImage {
+                                ProgressView()
+                                    .tint(AppColors.accent)
+                                    .padding(.trailing, 4)
+                            } else {
+                                Image(systemName: "photo.artframe")
+                            }
+                            Text(isGeneratingImage ? "正在生成..." : "生成知识卡片")
                         }
                         .font(.subheadline.weight(.medium))
                         .foregroundColor(AppColors.accent)
@@ -383,6 +390,7 @@ struct ToolDetailView: View {
                         )
                     }
                     .buttonStyle(.plain)
+                    .disabled(isGeneratingImage)
 
                     Button {
                         if !hasCheckedIn {
@@ -459,23 +467,33 @@ struct ToolDetailView: View {
     
     @MainActor
     private func generateExportImage() {
+        isGeneratingImage = true
         let note = store.toolNote(for: tool.id)
-        // Explicitly inject environment to ensure colors/traits are correctly resolved
         let exportView = ToolCardExportView(tool: tool, note: note)
             .environment(\.colorScheme, colorScheme)
         
+        // Use a more robust UIHostingController method for first-time rendering
+        let controller = UIHostingController(rootView: exportView)
+        let view = controller.view
+        
+        // Set fixed width and allow auto-height
+        let targetWidth: CGFloat = 400
+        let targetSize = controller.view.sizeThatFits(CGSize(width: targetWidth, height: CGFloat.greatestFiniteMagnitude))
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+
         Task {
-            // A small delay allows the view to perform initial layout calculations
-            try? await Task.sleep(nanoseconds: 300_000_000) // 0.3s
+            // Give extra time for layout and data to settle
+            try? await Task.sleep(nanoseconds: 500_000_000) // 0.5s
             
-            let renderer = ImageRenderer(content: exportView)
-            renderer.scale = UIScreen.main.scale
-            renderer.proposedSize = ProposedViewSize(width: 400, height: nil)
-            
-            if let uiImage = renderer.uiImage {
-                self.exportedImage = uiImage
-                self.showingExportPreview = true
+            let renderer = UIGraphicsImageRenderer(size: targetSize)
+            let image = renderer.image { _ in
+                view?.drawHierarchy(in: view!.bounds, afterScreenUpdates: true)
             }
+            
+            self.exportedImage = image
+            self.isGeneratingImage = false
+            self.showingExportPreview = true
         }
     }
 
