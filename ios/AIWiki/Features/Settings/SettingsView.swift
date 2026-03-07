@@ -103,21 +103,7 @@ struct SettingsView: View {
             }
             .listRowBackground(AppColors.card)
 
-            Section {
-                Link(destination: URL(string: "https://github.com/DoNext/AIWiki-iOS")!) {
-                    HStack {
-                        Image(systemName: "chevron.left.forwardslash.chevron.right")
-                            .foregroundColor(AppColors.accent)
-                        Text("GitHub 开源地址")
-                            .foregroundColor(AppColors.textPrimary)
-                        Spacer()
-                        Image(systemName: "arrow.up.right.square")
-                            .font(.caption)
-                            .foregroundColor(AppColors.textSecondary)
-                    }
-                }
-            }
-            .listRowBackground(AppColors.card)
+
         }
         .scrollContentBackground(.hidden)
         .background(AppColors.background.ignoresSafeArea())
