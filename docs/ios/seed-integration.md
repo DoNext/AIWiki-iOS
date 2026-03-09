@@ -8,6 +8,7 @@
 - Search ViewModel: `ios/AIWiki/Features/Search/SearchViewModel.swift`
 - Search View sample: `ios/AIWiki/Features/Search/SearchView.swift`
 - Seed file: `ios/AIWiki/Resources/Seed/tools.seed.json`
+- English copy guide: `docs/ios/english-terminology-style.md`
 
 ## Xcode setup
 
