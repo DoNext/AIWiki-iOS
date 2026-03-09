@@ -1,0 +1,118 @@
+default_platform(:ios)
+
+ROOT_DIR = File.expand_path("..", __dir__)
+METADATA_DIR = File.join(__dir__, "metadata")
+SCREENSHOTS_DIR = File.join(ROOT_DIR, "screenshots", "AppStore")
+
+def truthy?(value, default: false)
+  return default if value.nil?
+
+  %w[1 true yes y].include?(value.to_s.strip.downcase)
+end
+
+def release_locales(options)
+  raw = options[:locales] || ENV["APP_STORE_LOCALES"] || "en-US,zh-Hans"
+  raw.split(",").map(&:strip).reject(&:empty?)
+end
+
+def review_information_from_env
+  info = {
+    first_name: ENV["APP_REVIEW_FIRST_NAME"],
+    last_name: ENV["APP_REVIEW_LAST_NAME"],
+    phone_number: ENV["APP_REVIEW_PHONE"],
+    email_address: ENV["APP_REVIEW_EMAIL"],
+    demo_user: ENV["APP_REVIEW_DEMO_USER"],
+    demo_password: ENV["APP_REVIEW_DEMO_PASSWORD"],
+    notes: ENV["APP_REVIEW_NOTES"]
+  }
+
+  info.reject { |_, value| value.nil? || value.empty? }
+end
+
+def resolve_api_key_path
+  file_path = ENV["APP_STORE_CONNECT_KEY_FILE"]
+  return file_path unless file_path.nil? || file_path.empty?
+
+  key_content = ENV["APP_STORE_CONNECT_KEY_CONTENT"]
+  UI.user_error!("Missing APP_STORE_CONNECT_KEY_FILE or APP_STORE_CONNECT_KEY_CONTENT") if key_content.nil? || key_content.empty?
+
+  normalized_key_content =
+    if key_content.include?("-----BEGIN")
+      key_content.gsub('\n', "\n")
+    else
+      Base64.decode64(key_content)
+    end
+
+  tmp_dir = File.join(Dir.pwd, "fastlane", "tmp")
+  FileUtils.mkdir_p(tmp_dir)
+
+  tmp_path = File.join(tmp_dir, "AuthKey_#{ENV.fetch("APP_STORE_CONNECT_KEY_ID")}.p8")
+  File.write(tmp_path, normalized_key_content)
+  tmp_path
+end
+
+platform :ios do
+  desc "Generate localized App Store screenshots using the existing UI test pipeline"
+  lane :refresh_screenshots do |options|
+    destination = options[:destination] || ENV["APP_STORE_SCREENSHOT_DESTINATION"]
+
+    release_locales(options).each do |locale|
+      command = ["bash", "scripts/generate_screenshots.sh", locale]
+      command << destination if destination && !destination.empty?
+      sh(*command)
+    end
+  end
+
+  desc "Validate local metadata and screenshot assets before upload"
+  lane :validate_release_assets do |options|
+    metadata_root = METADATA_DIR
+    screenshots_root = SCREENSHOTS_DIR
+
+    UI.user_error!("Missing metadata directory at #{metadata_root}") unless Dir.exist?(metadata_root)
+    UI.user_error!("Missing screenshot directory at #{screenshots_root}") unless Dir.exist?(screenshots_root)
+
+    release_locales(options).each do |locale|
+      locale_metadata = File.join(metadata_root, locale)
+      locale_screenshots = File.join(screenshots_root, locale)
+
+      UI.user_error!("Missing metadata locale folder: #{locale_metadata}") unless Dir.exist?(locale_metadata)
+      UI.user_error!("Missing screenshots locale folder: #{locale_screenshots}") unless Dir.exist?(locale_screenshots)
+
+      screenshot_count = Dir.glob(File.join(locale_screenshots, "*.{png,jpg,jpeg}")).count
+      UI.user_error!("No screenshots found in #{locale_screenshots}") if screenshot_count.zero?
+    end
+  end
+
+  desc "Upload metadata/screenshots and optionally submit the selected build for App Store review"
+  lane :appstore_release do |options|
+    validate_release_assets(options)
+
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("APP_STORE_CONNECT_KEY_ID"),
+      issuer_id: ENV.fetch("APP_STORE_CONNECT_ISSUER_ID"),
+      key_filepath: resolve_api_key_path,
+      duration: 1200
+    )
+
+    upload_to_app_store(
+      api_key: api_key,
+      app_identifier: ENV.fetch("APP_BUNDLE_ID", "com.next.wiki"),
+      app_version: options[:version] || ENV["APP_STORE_VERSION"],
+      build_number: (options[:ipa] || ENV["APP_STORE_IPA_PATH"]) ? nil : (options[:build_number] || ENV["APP_STORE_BUILD_NUMBER"]),
+      ipa: options[:ipa] || ENV["APP_STORE_IPA_PATH"],
+      metadata_path: METADATA_DIR,
+      screenshots_path: SCREENSHOTS_DIR,
+      overwrite_screenshots: true,
+      skip_metadata: truthy?(options[:skip_metadata], default: false),
+      skip_screenshots: truthy?(options[:skip_screenshots], default: false),
+      skip_binary_upload: truthy?(options[:skip_binary_upload], default: true),
+      submit_for_review: truthy?(options[:submit_for_review] || ENV["APP_STORE_AUTO_SUBMIT"], default: false),
+      automatic_release: truthy?(options[:auto_release], default: false),
+      force: true,
+      run_precheck_before_submit: true,
+      precheck_include_in_app_purchases: false,
+      reject_if_possible: false,
+      app_review_information: review_information_from_env
+    )
+  end
+end
