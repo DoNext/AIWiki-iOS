@@ -30,7 +30,7 @@ struct CategoriesView: View {
                                         .font(.subheadline)
                                         .fontWeight(.semibold)
                                         .foregroundColor(AppColors.textPrimary)
-                                    Text(L10n.format("%d 个工具", item.count))
+                                    Text(L10n.format(L10n.Categories.toolCount, item.count))
                                         .font(.caption)
                                         .foregroundColor(AppColors.textSecondary)
                                 }
@@ -47,6 +47,6 @@ struct CategoriesView: View {
                 .background(AppColors.background.ignoresSafeArea())
             }
         }
-        .navigationTitle(L10n.text("categories.title"))
+        .navigationTitle(L10n.text(L10n.Categories.title))
     }
 }

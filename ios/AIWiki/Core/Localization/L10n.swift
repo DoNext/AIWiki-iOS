@@ -73,6 +73,11 @@ enum L10n {
         static let clearAll = "favorites.clear_all"
     }
 
+    enum Categories {
+        static let title = "categories.title"
+        static let toolCount = "categories.toolCount"
+    }
+
     enum Compare {
         static let title = "compare.title"
         static let toolA = "compare.tool_a"

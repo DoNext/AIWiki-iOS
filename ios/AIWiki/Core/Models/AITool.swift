@@ -42,16 +42,25 @@ struct AITool: Codable, Identifiable, Hashable {
         if let scores = radarScores, !scores.isEmpty {
             return scores
         }
-        
-        // Generate deterministic "best guess" scores based on tool features
+
+        // Generate deterministic "best guess" scores based on localized content,
+        // so future semantic-key seed data continues to behave correctly.
         let count = (features.count + (useCases?.count ?? 0))
         let base = min(5, max(3, count / 2))
-        
+        let multimodalText = (localizedFeatures + (localizedUseCases ?? [])).joined(separator: " ").lowercased()
+        let pricingText = ((localizedAccessPricing ?? access?.pricing) ?? "").lowercased()
+
         return [
             "reasoning": base,
-            "multimodal": features.contains(where: { $0.contains("图像") || $0.contains("视频") }) ? 5 : 2,
+            "multimodal": multimodalText.contains("图像")
+                || multimodalText.contains("视频")
+                || multimodalText.contains("image")
+                || multimodalText.contains("video") ? 5 : 2,
             "speed": base,
-            "cost": access?.pricing.contains("免费") == true ? 5 : 3,
+            "cost": pricingText.contains("免费")
+                || pricingText.contains("free")
+                || pricingText.contains("open source")
+                || pricingText.contains("开源") ? 5 : 3,
             "easeOfUse": 4
         ]
     }
