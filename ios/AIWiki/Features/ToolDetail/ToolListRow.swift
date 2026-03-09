@@ -29,7 +29,7 @@ struct ToolListRow: View {
                     .foregroundColor(store.isFavorite(tool.id) ? AppColors.accent : AppColors.textSecondary)
             }
             .buttonStyle(.plain)
-            .accessibilityLabel(Text(store.isFavorite(tool.id) ? "取消收藏" : "收藏"))
+            .accessibilityLabel(Text(store.isFavorite(tool.id) ? L10n.text(L10n.Detail.favoriteAccessibilityRemove) : L10n.text(L10n.Detail.favoriteAccessibilityAdd)))
         }
         .padding(14)
         .cardStyle()

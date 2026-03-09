@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 struct WeeklyReportOutcomeView: View {
-    @State private var audience: String = "产品与研发团队"
+    @State private var audience: String = ""
     @State private var highlights: String = ""
     @State private var metrics: String = ""
     @State private var risks: String = ""
@@ -130,53 +130,58 @@ struct WeeklyReportOutcomeView: View {
 
     var body: some View {
         List {
-            Section("输入信息") {
-                TextField("读者对象", text: $audience)
-                TextField("本周完成事项（必填）", text: $highlights, axis: .vertical)
+            Section(L10n.text(L10n.Outcome.input)) {
+                TextField(L10n.text(L10n.Outcome.audience), text: $audience)
+                TextField(L10n.text(L10n.Outcome.highlights), text: $highlights, axis: .vertical)
                     .lineLimit(2...4)
-                TextField("关键数据（可选）", text: $metrics, axis: .vertical)
+                TextField(L10n.text(L10n.Outcome.metrics), text: $metrics, axis: .vertical)
                     .lineLimit(2...3)
-                TextField("风险/阻塞（可选）", text: $risks, axis: .vertical)
+                TextField(L10n.text(L10n.Outcome.risks), text: $risks, axis: .vertical)
                     .lineLimit(2...3)
-                TextField("下周计划（可选）", text: $nextPlan, axis: .vertical)
+                TextField(L10n.text(L10n.Outcome.nextPlan), text: $nextPlan, axis: .vertical)
                     .lineLimit(2...3)
             }
 
             if hasEnoughInput {
-                Section("一键提示词（按功能）") {
-                    promptBlock(title: "通用助手", text: promptForGeneralAI)
-                    promptBlock(title: "逻辑增强", text: promptForLogicAI)
-                    promptBlock(title: "创意激发", text: promptForCreativeAI)
+                Section(L10n.text(L10n.Outcome.promptsByFunction)) {
+                    promptBlock(title: L10n.text(L10n.Outcome.generalAssistant), text: promptForGeneralAI)
+                    promptBlock(title: L10n.text(L10n.Outcome.logicEnhanced), text: promptForLogicAI)
+                    promptBlock(title: L10n.text(L10n.Outcome.creativeBoost), text: promptForCreativeAI)
                 }
 
-                Section("可交付模板") {
+                Section(L10n.text(L10n.Outcome.deliverableTemplate)) {
                     copyableText(deliveryTemplate)
                 }
 
-                Section("质量检查清单") {
+                Section(L10n.text(L10n.Outcome.qualityChecklist)) {
                     ForEach(qualityChecklist, id: \.self) { item in
                         Text("• \(item)")
                     }
                 }
 
-                Section("二次优化提示词") {
+                Section(L10n.text(L10n.Outcome.refinePrompt)) {
                     copyableText(refinePrompt)
                 }
 
-                Section("导出结果包") {
-                    Button("一键复制完整结果包") {
+                Section(L10n.text(L10n.Outcome.exportPackage)) {
+                    Button(L10n.text(L10n.Outcome.copyFullPackage)) {
                         UIPasteboard.general.string = fullPackage
                     }
                 }
             } else {
                 Section {
-                    Text("先填写“本周完成事项”，即可生成可复制结果。")
+                    Text(L10n.text(L10n.Outcome.weeklyReportEmpty))
                         .foregroundColor(.secondary)
                 }
             }
         }
-        .navigationTitle("一键产出：周报")
+        .navigationTitle(L10n.text(L10n.Outcome.weeklyReportTitle))
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            if audience.isEmpty {
+                audience = L10n.text(L10n.Outcome.weeklyDefaultAudience)
+            }
+        }
     }
 
     private func promptBlock(title: String, text: String) -> some View {
@@ -195,7 +200,7 @@ struct WeeklyReportOutcomeView: View {
                 .font(.footnote)
                 .foregroundColor(.secondary)
                 .textSelection(.enabled)
-            Button("复制") {
+            Button(L10n.text(L10n.Common.copy)) {
                 UIPasteboard.general.string = text
             }
             .font(.footnote)

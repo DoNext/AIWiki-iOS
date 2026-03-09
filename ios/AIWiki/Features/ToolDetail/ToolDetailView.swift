@@ -40,7 +40,7 @@ struct ToolDetailView: View {
                         store.toggleFavorite(tool.id)
                     } label: {
                         Label(
-                            store.isFavorite(tool.id) ? "已收藏" : "收藏",
+                            store.isFavorite(tool.id) ? L10n.text(L10n.Detail.favorited) : L10n.text(L10n.Detail.favorite),
                             systemImage: store.isFavorite(tool.id) ? "heart.fill" : "heart"
                         )
                         .font(.subheadline.weight(.semibold))
@@ -61,7 +61,7 @@ struct ToolDetailView: View {
                 .padding(.top, 8)
 
                 // MARK: - Intro
-                detailSection("简介") {
+                detailSection(L10n.text(L10n.Detail.intro)) {
                     Text(tool.localizedIntro)
                         .font(.body)
                         .foregroundColor(AppColors.textSecondary)
@@ -69,7 +69,7 @@ struct ToolDetailView: View {
                 }
 
                 // MARK: - Features
-                detailSection("功能特点") {
+                detailSection(L10n.text(L10n.Detail.features)) {
                     FlowLayout(spacing: 8) {
                         ForEach(tool.localizedFeatures, id: \.self) { feature in
                             Text(feature)
@@ -88,14 +88,14 @@ struct ToolDetailView: View {
 
                 // MARK: - Learning Material
                 if let learningMaterial {
-                    detailSection("学习摘要") {
+                    detailSection(L10n.text(L10n.Detail.learningSummary)) {
                         Text(learningMaterial.localizedSummary)
                             .font(.subheadline)
                             .foregroundColor(AppColors.textSecondary)
                     }
 
                     if !learningMaterial.localizedCoreCapabilities.isEmpty {
-                        detailSection("核心能力") {
+                        detailSection(L10n.text(L10n.Detail.coreCapabilities)) {
                             VStack(alignment: .leading, spacing: 8) {
                                 ForEach(learningMaterial.localizedCoreCapabilities, id: \.self) { item in
                                     HStack(alignment: .top, spacing: 8) {
@@ -112,7 +112,7 @@ struct ToolDetailView: View {
                     }
 
                     if !learningMaterial.localizedGettingStarted.isEmpty {
-                        detailSection("快速上手") {
+                        detailSection(L10n.text(L10n.Detail.gettingStarted)) {
                             VStack(alignment: .leading, spacing: 8) {
                                 ForEach(Array(learningMaterial.localizedGettingStarted.enumerated()), id: \.offset) { index, item in
                                     HStack(alignment: .top, spacing: 8) {
@@ -131,7 +131,7 @@ struct ToolDetailView: View {
                     }
 
                     if !learningMaterial.officialLinks.isEmpty {
-                        detailSection("官方资料") {
+                        detailSection(L10n.text(L10n.Detail.officialLinks)) {
                             VStack(alignment: .leading, spacing: 6) {
                                 // Deduplicate links to prevent repeating content if data is not clean
                                 let uniqueLinks = Array(Set(learningMaterial.officialLinks)).sorted()
@@ -148,7 +148,7 @@ struct ToolDetailView: View {
                     }
 
                     if !learningMaterial.localizedCaveats.isEmpty {
-                        detailSection("注意事项") {
+                        detailSection(L10n.text(L10n.Detail.caveats)) {
                             VStack(alignment: .leading, spacing: 6) {
                                 ForEach(learningMaterial.localizedCaveats, id: \.self) { item in
                                     HStack(alignment: .top, spacing: 8) {
@@ -167,7 +167,7 @@ struct ToolDetailView: View {
 
                 // MARK: - Use Cases
                 if let useCases = tool.localizedUseCases, !useCases.isEmpty {
-                    detailSection("适用场景") {
+                    detailSection(L10n.text(L10n.Detail.useCases)) {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(useCases, id: \.self) { item in
                                 bulletRow(item)
@@ -178,7 +178,7 @@ struct ToolDetailView: View {
 
                 // MARK: - Best Practices
                 if let bestPractices = tool.localizedBestPractices, !bestPractices.isEmpty {
-                    detailSection("最佳实践") {
+                    detailSection(L10n.text(L10n.Detail.bestPractices)) {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(bestPractices, id: \.self) { item in
                                 bulletRow(item)
@@ -189,7 +189,7 @@ struct ToolDetailView: View {
 
                 // MARK: - Prompt Templates
                 if !tool.localizedPromptTemplates.isEmpty {
-                    detailSection("提示词模板") {
+                    detailSection(L10n.text(L10n.Detail.promptTemplates)) {
                         VStack(alignment: .leading, spacing: 12) {
                             ForEach(tool.localizedPromptTemplates, id: \.title) { item in
                                 VStack(alignment: .leading, spacing: 4) {
@@ -208,7 +208,7 @@ struct ToolDetailView: View {
 
                 // MARK: - Strengths & Limitations
                 if let strengths = tool.localizedStrengths, !strengths.isEmpty {
-                    detailSection("优势") {
+                    detailSection(L10n.text(L10n.Detail.strengths)) {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(strengths, id: \.self) { item in
                                 HStack(alignment: .top, spacing: 8) {
@@ -225,7 +225,7 @@ struct ToolDetailView: View {
                 }
 
                 if let limitations = tool.localizedLimitations, !limitations.isEmpty {
-                    detailSection("局限") {
+                    detailSection(L10n.text(L10n.Detail.limitations)) {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(limitations, id: \.self) { item in
                                 HStack(alignment: .top, spacing: 8) {
@@ -241,13 +241,13 @@ struct ToolDetailView: View {
                     }
                 }
                 
-                detailSection("能力雷达图") {
+                detailSection(L10n.text(L10n.Detail.radar)) {
                     RadarChartView(scoresA: tool.radarScoresOrDefault, scoresB: nil)
                         .padding(.vertical, -40)
                 }
 
                 // MARK: - My Rating & Notes
-                detailSection("⭐ 我的评分") {
+                detailSection(L10n.text(L10n.Detail.myRating)) {
                     HStack(spacing: 8) {
                         ForEach(1...5, id: \.self) { star in
                             Button {
@@ -266,7 +266,7 @@ struct ToolDetailView: View {
                             Button {
                                 store.rate(toolID: tool.id, score: 0)
                             } label: {
-                                Text("清除")
+                                Text(L10n.text(L10n.Common.clear))
                                     .font(.caption)
                                     .foregroundColor(AppColors.textSecondary)
                             }
@@ -275,7 +275,7 @@ struct ToolDetailView: View {
                     }
                 }
 
-                detailSection("📝 使用笔记") {
+                detailSection(L10n.text(L10n.Detail.notes)) {
                     VStack(alignment: .leading, spacing: 10) {
                         let existingNote = store.toolNote(for: tool.id)
                         if !showingNoteEditor && !existingNote.isEmpty {
@@ -296,13 +296,13 @@ struct ToolDetailView: View {
                                 )
 
                             HStack {
-                                Button("取消") {
+                                Button(L10n.text(L10n.Common.cancel)) {
                                     showingNoteEditor = false
                                     noteText = store.toolNote(for: tool.id)
                                 }
                                 .foregroundColor(AppColors.textSecondary)
                                 Spacer()
-                                Button("保存") {
+                                Button(L10n.text(L10n.Common.save)) {
                                     store.updateToolNote(toolID: tool.id, text: noteText)
                                     showingNoteEditor = false
                                 }
@@ -315,7 +315,7 @@ struct ToolDetailView: View {
                                 noteText = store.toolNote(for: tool.id)
                                 showingNoteEditor = true
                             } label: {
-                                Label(existingNote.isEmpty ? "记录使用心得..." : "编辑笔记",
+                                Label(existingNote.isEmpty ? L10n.text(L10n.Detail.notePlaceholder) : L10n.text(L10n.Detail.editNote),
                                       systemImage: existingNote.isEmpty ? "square.and.pencil" : "pencil")
                                     .font(.subheadline)
                                     .foregroundColor(AppColors.accent)
@@ -326,16 +326,16 @@ struct ToolDetailView: View {
                 }
 
                 // MARK: - Info & Actions
-                detailSection("基础信息") {
+                detailSection(L10n.text(L10n.Detail.basicInfo)) {
                     VStack(alignment: .leading, spacing: 10) {
-                        infoRow(label: "公司", value: tool.company)
-                        infoRow(label: "分类", value: tool.localizedCategory)
+                        infoRow(label: L10n.text(L10n.Common.company), value: tool.company)
+                        infoRow(label: L10n.text(L10n.Common.category), value: tool.localizedCategory)
 
                         if let access = tool.access {
-                            infoRow(label: "价格", value: tool.localizedAccessPricing ?? access.pricing)
-                            infoRow(label: "需要账号", value: access.accountRequired ? "是" : "否")
-                            infoRow(label: "平台", value: (tool.localizedAccessPlatforms ?? access.platforms).joined(separator: " / "))
-                            infoRow(label: "API", value: access.apiAvailable ? "是" : "否")
+                            infoRow(label: L10n.text(L10n.Common.pricing), value: tool.localizedAccessPricing ?? access.pricing)
+                            infoRow(label: L10n.text(L10n.Detail.accountRequired), value: access.accountRequired ? L10n.text(L10n.Common.yes) : L10n.text(L10n.Common.no))
+                            infoRow(label: L10n.text(L10n.Common.platform), value: (tool.localizedAccessPlatforms ?? access.platforms).joined(separator: " / "))
+                            infoRow(label: L10n.text(L10n.Common.api), value: access.apiAvailable ? L10n.text(L10n.Common.yes) : L10n.text(L10n.Common.no))
                         }
                     }
                 }
@@ -349,7 +349,7 @@ struct ToolDetailView: View {
                             HStack {
                                 Image(systemName: "safari.fill")
                                     .font(.system(size: 14, weight: .bold))
-                                Text("立即使用")
+                                Text(L10n.text(L10n.Detail.openNow))
                                     .font(.system(size: 14, weight: .bold))
                             }
                             .foregroundColor(.white)
@@ -369,7 +369,7 @@ struct ToolDetailView: View {
                     } label: {
                         HStack {
                             Image(systemName: copied ? "checkmark" : "doc.on.doc")
-                            Text(copied ? "已复制" : "复制官网链接")
+                            Text(copied ? L10n.text(L10n.Common.copied) : L10n.text(L10n.Detail.copyLink))
                         }
                         .font(.subheadline.weight(.medium))
                         .foregroundColor(AppColors.accent)
@@ -393,7 +393,7 @@ struct ToolDetailView: View {
                             } else {
                                 Image(systemName: "photo.artframe")
                             }
-                            Text(isGeneratingImage ? "正在生成..." : "生成知识卡片")
+                            Text(isGeneratingImage ? L10n.text(L10n.Detail.generating) : L10n.text(L10n.Detail.generateCard))
                         }
                         .font(.subheadline.weight(.medium))
                         .foregroundColor(AppColors.accent)
@@ -424,7 +424,7 @@ struct ToolDetailView: View {
                     } label: {
                         HStack {
                             Image(systemName: hasCheckedIn ? "checkmark.circle.fill" : "calendar.badge.plus")
-                            Text(hasCheckedIn ? "打卡成功" : "使用打卡")
+                            Text(hasCheckedIn ? L10n.text(L10n.Detail.checkedIn) : L10n.text(L10n.Detail.checkIn))
                         }
                         .font(.subheadline.weight(.medium))
                         .foregroundColor(hasCheckedIn ? .white : AppColors.accent)
@@ -458,7 +458,7 @@ struct ToolDetailView: View {
             .opacity(0)
             .allowsHitTesting(false)
         )
-        .navigationTitle("详情")
+        .navigationTitle(L10n.text(L10n.Detail.title))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -471,7 +471,7 @@ struct ToolDetailView: View {
             }
         }
         .sheet(isPresented: $showingShareSheet) {
-            let text = "推荐一个 AI 工具：\(tool.name) — \(tool.localizedIntro) 👉 \(tool.url)"
+            let text = "\(L10n.text(L10n.Detail.sharePrefix))\(tool.name) — \(tool.localizedIntro) 👉 \(tool.url)"
             ShareSheet(items: [text])
         }
         .sheet(isPresented: $showingExportPreview) {

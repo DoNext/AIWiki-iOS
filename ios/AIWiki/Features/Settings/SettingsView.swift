@@ -14,8 +14,8 @@ struct SettingsView: View {
 
     var body: some View {
         List {
-            Section("主题") {
-                Picker("外观模式", selection: $store.theme) {
+            Section(L10n.text(L10n.Settings.theme)) {
+                Picker(L10n.text(L10n.Settings.appearance), selection: $store.theme) {
                     ForEach(AppTheme.allCases) { item in
                         Text(item.title).tag(item)
                     }
@@ -25,27 +25,27 @@ struct SettingsView: View {
                 .listRowBackground(AppColors.card)
             }
 
-            Section("统计") {
+            Section(L10n.text(L10n.Settings.stats)) {
                 Button {
                     store.showStats = true
                 } label: {
                     HStack {
                         Image(systemName: "chart.bar.xaxis")
                             .foregroundStyle(AppColors.accent)
-                        Text("生产力仪表盘")
+                        Text(L10n.text(L10n.Settings.dashboard))
                             .foregroundStyle(AppColors.textPrimary)
                         Spacer()
                     }
                 }
                 .buttonStyle(.plain)
                 
-                infoRow(title: "工具总数", value: "\(store.tools.count)")
-                infoRow(title: "分类总数", value: "\(store.categoryGroups().count)")
-                infoRow(title: "收藏数", value: "\(store.favoriteTools().count)")
+                infoRow(title: L10n.text(L10n.Settings.toolCount), value: "\(store.tools.count)")
+                infoRow(title: L10n.text(L10n.Settings.categoryCount), value: "\(store.categoryGroups().count)")
+                infoRow(title: L10n.text(L10n.Settings.favoriteCount), value: "\(store.favoriteTools().count)")
             }
             .listRowBackground(AppColors.card)
 
-            Section("库管理") {
+            Section(L10n.text(L10n.Settings.library)) {
                 NavigationLink {
                     PromptHistoryView()
                         .environmentObject(store)
@@ -53,7 +53,7 @@ struct SettingsView: View {
                     HStack {
                         Image(systemName: "archivebox.fill")
                             .foregroundColor(AppColors.accent)
-                        Text("我的提示词库")
+                        Text(L10n.text(L10n.Settings.promptLibrary))
                             .foregroundColor(AppColors.textPrimary)
                         Spacer()
                         if !store.savedPrompts.isEmpty {
@@ -70,14 +70,14 @@ struct SettingsView: View {
             }
             .listRowBackground(AppColors.card)
 
-            Section("支持我们") {
+            Section(L10n.text(L10n.Settings.support)) {
                 Button {
                     requestReview()
                 } label: {
                     HStack {
                         Image(systemName: "star.fill")
                             .foregroundColor(.orange)
-                        Text("给个好评")
+                        Text(L10n.text(L10n.Settings.rate))
                             .foregroundColor(AppColors.textPrimary)
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -92,7 +92,7 @@ struct SettingsView: View {
                     HStack {
                         Image(systemName: "square.and.arrow.up")
                             .foregroundColor(AppColors.accent)
-                        Text("推荐给朋友")
+                        Text(L10n.text(L10n.Settings.share))
                             .foregroundColor(AppColors.textPrimary)
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -105,7 +105,7 @@ struct SettingsView: View {
                     HStack {
                         Image(systemName: "envelope.fill")
                             .foregroundColor(.blue)
-                        Text("意见反馈")
+                        Text(L10n.text(L10n.Settings.feedback))
                             .foregroundColor(AppColors.textPrimary)
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -116,14 +116,14 @@ struct SettingsView: View {
             }
             .listRowBackground(AppColors.card)
 
-            Section("应用信息") {
-                infoRow(title: "版本", value: appVersionText)
-                infoRow(title: "运行模式", value: "完全离线")
+            Section(L10n.text(L10n.Settings.appInfo)) {
+                infoRow(title: L10n.text(L10n.Settings.version), value: appVersionText)
+                infoRow(title: L10n.text(L10n.Settings.mode), value: L10n.text(L10n.Settings.offline))
             }
             .listRowBackground(AppColors.card)
 
-            Section("数据来源") {
-                Text("数据主要来自各 AI 工具官方站点与官方文档，整理后预置在本地。")
+            Section(L10n.text(L10n.Settings.dataSource)) {
+                Text(L10n.text(L10n.Settings.dataSourceDesc))
                     .font(.subheadline)
                     .foregroundColor(AppColors.textSecondary)
             }
@@ -133,12 +133,12 @@ struct SettingsView: View {
         }
         .scrollContentBackground(.hidden)
         .background(AppColors.background.ignoresSafeArea())
-        .navigationTitle("设置")
+        .navigationTitle(L10n.text(L10n.Settings.title))
         .navigationDestination(isPresented: $store.showStats) {
             ToolUsageStatsView()
         }
         .sheet(isPresented: $showingShareSheet) {
-            let text = L10n.format("推荐一个超棒的 AI 工具百科 App —— AIWiki，收录了 %d 个 AI 工具，离线可用！", store.tools.count)
+            let text = L10n.format(L10n.Settings.shareTemplate, store.tools.count)
             ShareSheet(items: [text])
         }
     }

@@ -8,8 +8,8 @@ private enum FavoriteSort: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .nameAsc: return "名称 A-Z"
-        case .nameDesc: return "名称 Z-A"
+        case .nameAsc: return L10n.text(L10n.Favorites.sortAZ)
+        case .nameDesc: return L10n.text(L10n.Favorites.sortZA)
         }
     }
 }
@@ -43,10 +43,10 @@ struct FavoritesView: View {
                     Image(systemName: "heart.slash")
                         .font(.system(size: 40))
                         .foregroundColor(AppColors.textSecondary)
-                    Text("还没有收藏")
+                    Text(L10n.text(L10n.Favorites.empty))
                         .font(.headline)
                         .foregroundColor(AppColors.textSecondary)
-                    Text("浏览 AI 工具，点击心形图标收藏")
+                    Text(L10n.text(L10n.Favorites.emptyHint))
                         .font(.subheadline)
                         .foregroundColor(AppColors.textSecondary.opacity(0.7))
                 }
@@ -57,7 +57,7 @@ struct FavoritesView: View {
                     Image(systemName: "magnifyingglass")
                         .font(.system(size: 40))
                         .foregroundColor(AppColors.textSecondary)
-                    Text("收藏中无匹配结果")
+                    Text(L10n.text(L10n.Favorites.noMatch))
                         .foregroundColor(AppColors.textSecondary)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -80,17 +80,17 @@ struct FavoritesView: View {
                 .background(AppColors.background.ignoresSafeArea())
             }
         }
-        .searchable(text: $query, prompt: "搜索收藏")
-        .navigationTitle("收藏")
+        .searchable(text: $query, prompt: L10n.text(L10n.Search.favoritesPrompt))
+        .navigationTitle(L10n.text(L10n.Favorites.title))
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
-                    Picker("排序", selection: $sort) {
+                    Picker(L10n.text(L10n.Favorites.sort), selection: $sort) {
                         ForEach(FavoriteSort.allCases) { option in
                             Text(option.title).tag(option)
                         }
                     }
-                    Button("清空收藏", role: .destructive) {
+                    Button(L10n.text(L10n.Favorites.clearAll), role: .destructive) {
                         store.clearFavorites()
                         query = ""
                     }

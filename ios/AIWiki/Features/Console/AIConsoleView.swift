@@ -63,7 +63,7 @@ struct AIConsoleView: View {
                     } label: {
                         HStack {
                             Image(systemName: "wand.and.stars")
-                            Text(L10n.text("打开提示词工作室"))
+                            Text(L10n.text(L10n.Console.openPromptStudio))
                         }
                         .font(.subheadline.weight(.semibold))
                         .padding(.horizontal, 16)
@@ -75,18 +75,18 @@ struct AIConsoleView: View {
                     
                     Spacer()
                     
-                    Text(L10n.text("提示：在工作室复制后，长按对话框粘贴"))
+                    Text(L10n.text(L10n.Console.tip))
                         .font(.caption2)
                         .foregroundColor(AppColors.textSecondary)
                 }
                 .padding()
                 .background(AppColors.card)
             }
-            .navigationTitle("AI 枢纽控制台")
+            .navigationTitle(L10n.text(L10n.Console.title))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("关闭") { dismiss() }
+                    Button(L10n.text(L10n.Common.close)) { dismiss() }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {

@@ -20,7 +20,7 @@ struct CompareView: View {
             VStack(spacing: 20) {
                 // Selection header
                 HStack(spacing: 12) {
-                    slotButton(tool: toolA, label: "工具 A") {
+                    slotButton(tool: toolA, label: L10n.text(L10n.Compare.toolA)) {
                         showingPickerForSlot = .a
                     }
 
@@ -28,7 +28,7 @@ struct CompareView: View {
                         .font(.title2)
                         .foregroundColor(AppColors.accent)
 
-                    slotButton(tool: toolB, label: "工具 B") {
+                    slotButton(tool: toolB, label: L10n.text(L10n.Compare.toolB)) {
                         showingPickerForSlot = .b
                     }
                 }
@@ -44,7 +44,7 @@ struct CompareView: View {
             .padding(.bottom, 32)
         }
         .background(AppColors.background.ignoresSafeArea())
-        .navigationTitle("工具对比")
+        .navigationTitle(L10n.text(L10n.Compare.title))
         .toolbar {
             if toolA != nil && toolB != nil {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -83,9 +83,9 @@ struct CompareView: View {
             // Header for image
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("AI 工具深度对比")
+                    Text(L10n.text(L10n.Compare.exportTitle))
                         .font(.title2.bold())
-                    Text("由 AIWiki 自动生成")
+                    Text(L10n.text(L10n.Compare.exportSubtitle))
                         .font(.caption)
                         .foregroundColor(AppColors.textSecondary)
                 }
@@ -101,7 +101,7 @@ struct CompareView: View {
                 Text(a.name)
                     .font(.headline)
                     .frame(maxWidth: .infinity)
-                Text("VS")
+                Text(L10n.text(L10n.Compare.versus))
                     .font(.caption.bold())
                     .foregroundColor(AppColors.accent)
                 Text(b.name)
@@ -167,10 +167,10 @@ struct CompareView: View {
             Image(systemName: "arrow.left.arrow.right.circle")
                 .font(.system(size: 56))
                 .foregroundColor(AppColors.accent.opacity(0.4))
-            Text("选择两个工具开始对比")
+            Text(L10n.text(L10n.Compare.emptyTitle))
                 .font(.headline)
                 .foregroundColor(AppColors.textSecondary)
-            Text("从不同维度比较 AI 工具的功能、优劣势和定价")
+            Text(L10n.text(L10n.Compare.emptySubtitle))
                 .font(.subheadline)
                 .foregroundColor(AppColors.textSecondary.opacity(0.7))
                 .multilineTextAlignment(.center)
@@ -187,42 +187,42 @@ struct CompareView: View {
             RadarChartView(scoresA: a.radarScoresOrDefault, scoresB: b.radarScoresOrDefault)
                 .cardStyle()
             
-            compareRow(title: "简介", valueA: a.localizedIntro, valueB: b.localizedIntro)
-            compareRow(title: "公司", valueA: a.company, valueB: b.company)
-            compareRow(title: "分类", valueA: a.localizedCategory, valueB: b.localizedCategory)
+            compareRow(title: L10n.text(L10n.Detail.intro), valueA: a.localizedIntro, valueB: b.localizedIntro)
+            compareRow(title: L10n.text(L10n.Common.company), valueA: a.company, valueB: b.company)
+            compareRow(title: L10n.text(L10n.Common.category), valueA: a.localizedCategory, valueB: b.localizedCategory)
 
-            compareTags(title: "核心功能", tagsA: a.localizedFeatures, tagsB: b.localizedFeatures)
+            compareTags(title: L10n.text(L10n.Compare.coreFeatures), tagsA: a.localizedFeatures, tagsB: b.localizedFeatures)
 
             if let strengthsA = a.localizedStrengths, let strengthsB = b.localizedStrengths {
-                compareBullets(title: "✅ 优势", itemsA: strengthsA, itemsB: strengthsB)
+                compareBullets(title: L10n.text(L10n.Compare.strengths), itemsA: strengthsA, itemsB: strengthsB)
             }
 
             if let limitsA = a.localizedLimitations, let limitsB = b.localizedLimitations {
-                compareBullets(title: "⚠️ 局限", itemsA: limitsA, itemsB: limitsB)
+                compareBullets(title: L10n.text(L10n.Compare.limitations), itemsA: limitsA, itemsB: limitsB)
             }
 
             if let accessA = a.access, let accessB = b.access {
-                compareRow(title: "定价", valueA: a.localizedAccessPricing ?? accessA.pricing, valueB: b.localizedAccessPricing ?? accessB.pricing)
-                compareRow(title: "平台",
+                compareRow(title: L10n.text(L10n.Common.pricing), valueA: a.localizedAccessPricing ?? accessA.pricing, valueB: b.localizedAccessPricing ?? accessB.pricing)
+                compareRow(title: L10n.text(L10n.Common.platform),
                            valueA: (a.localizedAccessPlatforms ?? accessA.platforms).joined(separator: ", "),
                            valueB: (b.localizedAccessPlatforms ?? accessB.platforms).joined(separator: ", "))
-                compareRow(title: "API",
-                           valueA: accessA.apiAvailable ? "✅ 有" : "❌ 无",
-                           valueB: accessB.apiAvailable ? "✅ 有" : "❌ 无")
+                compareRow(title: L10n.text("API"),
+                           valueA: accessA.apiAvailable ? L10n.text(L10n.Compare.apiYes) : L10n.text(L10n.Compare.apiNo),
+                           valueB: accessB.apiAvailable ? L10n.text(L10n.Compare.apiYes) : L10n.text(L10n.Compare.apiNo))
             }
 
             // Recommendation Score
             let scoreA = min(5, max(3, (a.features.count + (a.useCases?.count ?? 0)) / 2))
             let scoreB = min(5, max(3, (b.features.count + (b.useCases?.count ?? 0)) / 2))
-            compareScore(title: "系统推荐度", scoreA: scoreA, scoreB: scoreB)
+            compareScore(title: L10n.text(L10n.Compare.recommendation), scoreA: scoreA, scoreB: scoreB)
 
             // User ratings
             let ratingA = store.rating(for: a.id)
             let ratingB = store.rating(for: b.id)
             if ratingA > 0 || ratingB > 0 {
-                compareRow(title: "我的评分",
-                           valueA: ratingA > 0 ? String(repeating: "⭐", count: ratingA) : "未评分",
-                           valueB: ratingB > 0 ? String(repeating: "⭐", count: ratingB) : "未评分")
+                compareRow(title: L10n.text(L10n.Detail.myRating),
+                           valueA: ratingA > 0 ? String(repeating: "⭐", count: ratingA) : L10n.text(L10n.Compare.unrated),
+                           valueB: ratingB > 0 ? String(repeating: "⭐", count: ratingB) : L10n.text(L10n.Compare.unrated))
             }
         }
         .padding(.horizontal)

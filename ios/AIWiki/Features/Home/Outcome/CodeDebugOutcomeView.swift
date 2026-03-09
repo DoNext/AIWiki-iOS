@@ -67,41 +67,41 @@ struct CodeDebugOutcomeView: View {
 
     var body: some View {
         List {
-            Section("输入信息") {
-                TextField("语言/框架", text: $language)
-                TextField("预期行为（可选）", text: $expectedBehavior, axis: .vertical)
+            Section(L10n.text(L10n.Outcome.input)) {
+                TextField(L10n.text(L10n.Outcome.language), text: $language)
+                TextField(L10n.text(L10n.Outcome.expectedBehavior), text: $expectedBehavior, axis: .vertical)
                     .lineLimit(2...3)
-                TextField("报错日志（必填）", text: $errorLog, axis: .vertical)
+                TextField(L10n.text(L10n.Outcome.errorLog), text: $errorLog, axis: .vertical)
                     .lineLimit(4...8)
-                TextField("代码片段（必填）", text: $codeSnippet, axis: .vertical)
+                TextField(L10n.text(L10n.Outcome.codeSnippet), text: $codeSnippet, axis: .vertical)
                     .lineLimit(6...12)
             }
 
             if hasEnoughInput {
-                Section("一键提示词") {
+                Section(L10n.text(L10n.Outcome.prompt)) {
                     copyable(prompt)
                 }
-                Section("质量检查清单") {
+                Section(L10n.text(L10n.Outcome.qualityChecklist)) {
                     ForEach(checklist, id: \.self) { item in
                         Text("• \(item)")
                     }
                 }
-                Section("二次优化提示词") {
+                Section(L10n.text(L10n.Outcome.refinePrompt)) {
                     copyable(refinePrompt)
                 }
-                Section("导出结果包") {
-                    Button("一键复制完整结果包") {
+                Section(L10n.text(L10n.Outcome.exportPackage)) {
+                    Button(L10n.text(L10n.Outcome.copyFullPackage)) {
                         UIPasteboard.general.string = fullPackage
                     }
                 }
             } else {
                 Section {
-                    Text("先填写报错日志和代码片段。")
+                    Text(L10n.text(L10n.Outcome.debugEmpty))
                         .foregroundColor(.secondary)
                 }
             }
         }
-        .navigationTitle("一键产出：代码排错")
+        .navigationTitle(L10n.text(L10n.Outcome.debugTitle))
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -111,7 +111,7 @@ struct CodeDebugOutcomeView: View {
                 .font(.footnote)
                 .foregroundColor(.secondary)
                 .textSelection(.enabled)
-            Button("复制") {
+            Button(L10n.text(L10n.Common.copy)) {
                 UIPasteboard.general.string = text
             }
             .font(.footnote)

@@ -4,9 +4,9 @@ import UIKit
 struct CompetitorBriefOutcomeView: View {
     @State private var productA: String = ""
     @State private var productB: String = ""
-    @State private var compareWindow: String = "近12个月"
-    @State private var focus: String = "功能、定价、目标用户、增长策略"
-    @State private var audience: String = "产品团队"
+    @State private var compareWindow: String = ""
+    @State private var focus: String = ""
+    @State private var audience: String = ""
 
     private var hasEnoughInput: Bool {
         !productA.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
@@ -93,44 +93,49 @@ struct CompetitorBriefOutcomeView: View {
 
     var body: some View {
         List {
-            Section("输入信息") {
-                TextField("产品A（必填）", text: $productA)
-                TextField("产品B（必填）", text: $productB)
-                TextField("时间范围", text: $compareWindow)
-                TextField("重点维度", text: $focus, axis: .vertical)
+            Section(L10n.text(L10n.Outcome.input)) {
+                TextField(L10n.text(L10n.Outcome.productA), text: $productA)
+                TextField(L10n.text(L10n.Outcome.productB), text: $productB)
+                TextField(L10n.text(L10n.Outcome.timeRange), text: $compareWindow)
+                TextField(L10n.text(L10n.Outcome.focus), text: $focus, axis: .vertical)
                     .lineLimit(2...3)
-                TextField("读者对象", text: $audience)
+                TextField(L10n.text(L10n.Outcome.audience), text: $audience)
             }
 
             if hasEnoughInput {
-                Section("一键提示词") {
+                Section(L10n.text(L10n.Outcome.prompt)) {
                     copyable(prompt)
                 }
-                Section("可交付模板") {
+                Section(L10n.text(L10n.Outcome.deliverableTemplate)) {
                     copyable(template)
                 }
-                Section("质量检查清单") {
+                Section(L10n.text(L10n.Outcome.qualityChecklist)) {
                     ForEach(checklist, id: \.self) { item in
                         Text("• \(item)")
                     }
                 }
-                Section("二次优化提示词") {
+                Section(L10n.text(L10n.Outcome.refinePrompt)) {
                     copyable(refinePrompt)
                 }
-                Section("导出结果包") {
-                    Button("一键复制完整结果包") {
+                Section(L10n.text(L10n.Outcome.exportPackage)) {
+                    Button(L10n.text(L10n.Outcome.copyFullPackage)) {
                         UIPasteboard.general.string = fullPackage
                     }
                 }
             } else {
                 Section {
-                    Text("先填写产品A和产品B。")
+                    Text(L10n.text(L10n.Outcome.competitorEmpty))
                         .foregroundColor(.secondary)
                 }
             }
         }
-        .navigationTitle("一键产出：竞品简报")
+        .navigationTitle(L10n.text(L10n.Outcome.competitorTitle))
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            if compareWindow.isEmpty { compareWindow = L10n.text(L10n.Outcome.competitorDefaultWindow) }
+            if focus.isEmpty { focus = L10n.text(L10n.Outcome.competitorDefaultFocus) }
+            if audience.isEmpty { audience = L10n.text(L10n.Outcome.competitorDefaultAudience) }
+        }
     }
 
     private func copyable(_ text: String) -> some View {
@@ -139,7 +144,7 @@ struct CompetitorBriefOutcomeView: View {
                 .font(.footnote)
                 .foregroundColor(.secondary)
                 .textSelection(.enabled)
-            Button("复制") {
+            Button(L10n.text(L10n.Common.copy)) {
                 UIPasteboard.general.string = text
             }
             .font(.footnote)

@@ -103,7 +103,7 @@ struct ToolUsageStatsView: View {
                 
                 // 2. Skill Radar
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("AI 核心能力图谱")
+                    Text(L10n.text(L10n.Stats.radarTitle))
                         .font(.headline)
                     
                     ZStack {
@@ -129,7 +129,7 @@ struct ToolUsageStatsView: View {
                 
                 // 3. Activity Trend
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("活跃趋势")
+                    Text(L10n.text(L10n.Stats.trendTitle))
                         .font(.headline)
                     
                     Chart {
@@ -155,7 +155,7 @@ struct ToolUsageStatsView: View {
             .padding(16)
         }
         .background(AppColors.background.ignoresSafeArea())
-        .navigationTitle("生产力仪表盘")
+        .navigationTitle(L10n.text(L10n.Settings.dashboard))
     }
 }
 

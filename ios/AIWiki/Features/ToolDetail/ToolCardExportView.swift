@@ -80,7 +80,7 @@ struct ToolCardExportView: View {
                 HStack(alignment: .top, spacing: 16) {
                     // Left Column: Features & Highlights
                     VStack(alignment: .leading, spacing: 16) {
-                        cardSection(title: "核心亮点", icon: "sparkles") {
+                        cardSection(title: L10n.text(L10n.ExportCard.highlights), icon: "sparkles") {
                             VStack(alignment: .leading, spacing: 8) {
                                 ForEach(tool.features.prefix(4), id: \.self) { feature in
                                     HStack(alignment: .top, spacing: 6) {
@@ -98,7 +98,7 @@ struct ToolCardExportView: View {
                         }
                         
                         if let bestPractices = tool.bestPractices, !bestPractices.isEmpty {
-                            cardSection(title: "最佳实践", icon: "lightbulb.fill") {
+                            cardSection(title: L10n.text(L10n.Detail.bestPractices), icon: "lightbulb.fill") {
                                 VStack(alignment: .leading, spacing: 8) {
                                     ForEach(bestPractices.prefix(3), id: \.self) { practice in
                                         Text("• \(practice)")
@@ -115,17 +115,17 @@ struct ToolCardExportView: View {
                     // Right Column: Access & Templates
                     VStack(alignment: .leading, spacing: 16) {
                         if let access = tool.access {
-                            cardSection(title: "准入信息", icon: "info.circle.fill") {
+                            cardSection(title: L10n.text(L10n.ExportCard.accessInfo), icon: "info.circle.fill") {
                                 VStack(alignment: .leading, spacing: 6) {
-                                    infoItem(label: "价格", value: access.pricing)
-                                    infoItem(label: "平台", value: access.platforms.joined(separator: "/"))
-                                    infoItem(label: "需账号", value: access.accountRequired ? "是" : "否")
+                                    infoItem(label: L10n.text(L10n.Common.pricing), value: access.pricing)
+                                    infoItem(label: L10n.text(L10n.Common.platform), value: access.platforms.joined(separator: "/"))
+                                    infoItem(label: L10n.text(L10n.ExportCard.account), value: access.accountRequired ? L10n.text(L10n.Common.yes) : L10n.text(L10n.Common.no))
                                 }
                             }
                         }
                         
                         if let templates = tool.promptTemplates, let first = templates.first {
-                            cardSection(title: "推荐指令", icon: "terminal.fill") {
+                            cardSection(title: L10n.text(L10n.ExportCard.suggestedPrompt), icon: "terminal.fill") {
                                 Text(first.prompt)
                                     .font(.system(size: 11))
                                     .italic()
@@ -143,7 +143,7 @@ struct ToolCardExportView: View {
                 // Full Width Section: User Notes
                 if !note.isEmpty {
                     VStack(alignment: .leading, spacing: 8) {
-                        Label("智库心得", systemImage: "pencil.and.outline")
+                        Label(L10n.text(L10n.ExportCard.note), systemImage: "pencil.and.outline")
                             .font(.system(size: 14, weight: .bold))
                             .foregroundColor(AppColors.textPrimary)
                         
@@ -169,9 +169,9 @@ struct ToolCardExportView: View {
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("AIWiki 智库助手")
+                            Text(L10n.text(L10n.ExportCard.footerTitle))
                                 .font(.system(size: 12, weight: .bold))
-                            Text("助力每一位生产力探索者")
+                            Text(L10n.text(L10n.ExportCard.footerSubtitle))
                                 .font(.system(size: 10))
                                 .foregroundColor(AppColors.textSecondary)
                         }
@@ -180,9 +180,9 @@ struct ToolCardExportView: View {
                         
                         HStack(spacing: 12) {
                             VStack(alignment: .trailing, spacing: 2) {
-                                Text("扫码获取更多")
+                                Text(L10n.text(L10n.ExportCard.qrTitle))
                                     .font(.system(size: 10, weight: .medium))
-                                Text("AI 工具干货")
+                                Text(L10n.text(L10n.ExportCard.qrSubtitle))
                                     .font(.system(size: 8))
                                     .foregroundColor(AppColors.textSecondary)
                             }

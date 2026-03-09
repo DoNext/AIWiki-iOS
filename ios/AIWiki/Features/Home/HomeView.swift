@@ -28,7 +28,8 @@ struct HomeView: View {
             ("提供示例 (Few-Shot)", "在要求 AI 输出复杂格式时，先提供一个你期望的格式示例。")
         ]
         let dayOfYear = Calendar.current.ordinality(of: .day, in: .year, for: Date()) ?? 0
-        return tips[dayOfYear % tips.count]
+        let tip = tips[dayOfYear % tips.count]
+        return (L10n.text(tip.0), L10n.text(tip.1))
     }
 
     var body: some View {
@@ -44,7 +45,7 @@ struct HomeView: View {
                         HStack(spacing: 8) {
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(AppColors.textSecondary)
-                            Text("搜索 AI 工具...")
+                            Text(L10n.text(L10n.Home.searchPlaceholder))
                                 .foregroundColor(AppColors.textSecondary)
                                 .font(.subheadline)
                             Spacer()
@@ -65,7 +66,7 @@ struct HomeView: View {
                         HStack(spacing: 6) {
                             Image(systemName: "wand.and.stars")
                                 .font(.subheadline)
-                            Text("帮我选")
+                            Text(L10n.text(L10n.Home.quiz))
                                 .font(.subheadline.weight(.semibold))
                         }
                         .foregroundColor(.white)
@@ -103,10 +104,10 @@ struct HomeView: View {
                         }
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("AI 枢纽控制台")
+                            Text(L10n.text(L10n.Home.consoleTitle))
                                 .font(.headline)
                                 .foregroundColor(AppColors.textPrimary)
-                            Text("内置多款热门 AI，支持提示词一键注入使用")
+                            Text(L10n.text(L10n.Home.consoleSubtitle))
                                 .font(.caption)
                                 .foregroundColor(AppColors.textSecondary)
                         }
@@ -140,10 +141,10 @@ struct HomeView: View {
                         }
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("AI 提示词工作室")
+                            Text(L10n.text(L10n.Home.promptStudioTitle))
                                 .font(.headline)
                                 .foregroundColor(AppColors.textPrimary)
-                            Text("角色扮演 + 任务定制，一键生成高质量提示词")
+                            Text(L10n.text(L10n.Home.promptStudioSubtitle))
                                 .font(.caption)
                                 .foregroundColor(AppColors.textSecondary)
                         }
@@ -165,7 +166,7 @@ struct HomeView: View {
                 .buttonStyle(.plain)
 
                 // Featured tools (horizontal scroll)
-                sectionHeader("🔥 热门推荐")
+                sectionHeader(L10n.text(L10n.Home.featured))
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         ForEach(featuredTools) { tool in
@@ -182,7 +183,7 @@ struct HomeView: View {
                 // Personalized recommendations
                 let recommended = store.recommendedTools()
                 if !recommended.isEmpty {
-                    sectionHeader("🎯 为你推荐")
+                    sectionHeader(L10n.text(L10n.Home.recommended))
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 12) {
                             ForEach(recommended) { tool in
@@ -198,7 +199,7 @@ struct HomeView: View {
                 }
 
                 // New tools
-                sectionHeader("🆕 新增工具")
+                sectionHeader(L10n.text(L10n.Home.recent))
                 VStack(spacing: 10) {
                     ForEach(recentTools) { tool in
                         NavigationLink {
@@ -212,7 +213,7 @@ struct HomeView: View {
 
                 // Bookmarked scenarios
                 if !bookmarkedScenarios.isEmpty {
-                    sectionHeader("📌 收藏任务")
+                    sectionHeader(L10n.text(L10n.Home.bookmarked))
                     VStack(spacing: 10) {
                         ForEach(bookmarkedScenarios) { scenario in
                             NavigationLink {
@@ -226,7 +227,7 @@ struct HomeView: View {
                 }
 
                 // Scenarios
-                sectionHeader("💡 我想完成什么")
+                sectionHeader(L10n.text(L10n.Home.scenarios))
                 VStack(spacing: 10) {
                     ForEach(ScenarioLibrary.all) { scenario in
                         NavigationLink {
@@ -242,7 +243,7 @@ struct HomeView: View {
             .padding(.bottom, 24)
         }
         .background(AppColors.background.ignoresSafeArea())
-        .navigationTitle("AIWiki")
+        .navigationTitle(L10n.text(L10n.Home.title))
         .fullScreenCover(isPresented: $showingQuiz) {
             ToolQuizView()
         }
@@ -255,7 +256,7 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("完成") { store.deepLinkTool = nil }
+                            Button(L10n.text(L10n.Common.done)) { store.deepLinkTool = nil }
                         }
                     }
             }

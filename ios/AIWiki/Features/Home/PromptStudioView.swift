@@ -26,46 +26,46 @@ struct PromptStudioView: View {
         NavigationStack {
             Form {
                 Section {
-                    Picker("我的身份是", selection: $selectedRole) {
+                    Picker(L10n.text(L10n.PromptStudio.roleLabel), selection: $selectedRole) {
                         ForEach(roles, id: \.self) { role in
-                            Text(role).tag(role)
+                            Text(L10n.text(role)).tag(role)
                         }
                     }
                     .pickerStyle(.menu)
                 } header: {
-                    Text("1. 设定 AI 角色")
+                    Text(L10n.text(L10n.PromptStudio.roleHeader))
                 } footer: {
-                    Text("设定角色能让 AI 的回答更具针对性")
+                    Text(L10n.text(L10n.PromptStudio.roleFooter))
                 }
 
                 Section {
-                    TextField("例如：写一篇关于深海探险的小说开头", text: $taskDescription, axis: .vertical)
+                    TextField(L10n.text(L10n.PromptStudio.taskPlaceholder), text: $taskDescription, axis: .vertical)
                         .lineLimit(3...6)
                 } header: {
-                    Text("2. 描述任务目标")
+                    Text(L10n.text(L10n.PromptStudio.taskHeader))
                 }
 
                 Section {
-                    Picker("语言风格", selection: $selectedTone) {
+                    Picker(L10n.text(L10n.PromptStudio.toneLabel), selection: $selectedTone) {
                         ForEach(tones, id: \.self) { tone in
-                            Text(tone).tag(tone)
+                            Text(L10n.text(tone)).tag(tone)
                         }
                     }
                     .pickerStyle(.segmented)
                 } header: {
-                    Text("3. 选择语气")
+                    Text(L10n.text(L10n.PromptStudio.toneHeader))
                 }
 
                 Section {
-                    TextField("例如：不要使用术语，500字以内", text: $constraints)
+                    TextField(L10n.text(L10n.PromptStudio.constraintsPlaceholder), text: $constraints)
                     
-                    Picker("输出格式", selection: $outputFormat) {
+                    Picker(L10n.text(L10n.PromptStudio.outputFormatLabel), selection: $outputFormat) {
                         ForEach(formats, id: \.self) { format in
-                            Text(format).tag(format)
+                            Text(L10n.text(format)).tag(format)
                         }
                     }
                 } header: {
-                    Text("4. 附加限制与格式")
+                    Text(L10n.text(L10n.PromptStudio.extraHeader))
                 }
 
                 Section {
@@ -75,7 +75,7 @@ struct PromptStudioView: View {
                         HStack {
                             Spacer()
                             Image(systemName: "wand.and.stars")
-                            Text("一键生成提示词")
+                            Text(L10n.text(L10n.PromptStudio.generate))
                                 .fontWeight(.bold)
                             Spacer()
                         }
@@ -96,7 +96,7 @@ struct PromptStudioView: View {
                             UIPasteboard.general.string = generatedPrompt
                             showingCopyAlert = true
                         } label: {
-                            Label("复制到剪贴板", systemImage: "doc.on.doc")
+                            Label(L10n.text(L10n.PromptStudio.copyToClipboard), systemImage: "doc.on.doc")
                                 .foregroundColor(AppColors.accent)
                         }
 
@@ -104,20 +104,20 @@ struct PromptStudioView: View {
                             store.savePrompt(role: selectedRole, task: taskDescription, content: generatedPrompt)
                             hasSaved = true
                         } label: {
-                            Label(hasSaved ? "已保存到库" : "保存到提示词库", systemImage: hasSaved ? "checkmark.circle.fill" : "archivebox")
+                            Label(hasSaved ? L10n.text(L10n.PromptStudio.savedToLibrary) : L10n.text(L10n.PromptStudio.saveToLibrary), systemImage: hasSaved ? "checkmark.circle.fill" : "archivebox")
                                 .foregroundColor(hasSaved ? .green : AppColors.accent)
                         }
                         .disabled(hasSaved)
                     } header: {
-                        Text("预览生成的 Prompt")
+                        Text(L10n.text(L10n.PromptStudio.preview))
                     }
                 }
             }
-            .navigationTitle("AI 提示词工作室")
+            .navigationTitle(L10n.text(L10n.PromptStudio.title))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("取消") { dismiss() }
+                    Button(L10n.text(L10n.Common.cancel)) { dismiss() }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -132,20 +132,20 @@ struct PromptStudioView: View {
                 PromptHistoryView()
                     .environmentObject(store)
             }
-            .alert("已复制", isPresented: $showingCopyAlert) {
-                Button("好", role: .cancel) { }
+            .alert(L10n.text(L10n.Common.copied), isPresented: $showingCopyAlert) {
+                Button(L10n.text(L10n.Common.ok), role: .cancel) { }
             } message: {
-                Text("提示词已就绪，快去粘贴给 AI 吧！")
+                Text(L10n.text(L10n.PromptStudio.copiedMessage))
             }
         }
     }
 
     private func generate() {
-        let rolePart = "你现在是一名\(selectedRole)。"
-        let taskPart = "\n\n任务：\(taskDescription)"
-        let tonePart = "\n请使用\(selectedTone)的语气进行回复。"
-        let constraintPart = constraints.isEmpty ? "" : "\n限制：\(constraints)"
-        let formatPart = "\n输出格式：\(outputFormat)"
+        let rolePart = String(format: L10n.text(L10n.PromptStudio.roleTemplate), L10n.text(selectedRole))
+        let taskPart = String(format: L10n.text(L10n.PromptStudio.taskTemplate), taskDescription)
+        let tonePart = String(format: L10n.text(L10n.PromptStudio.toneTemplate), L10n.text(selectedTone))
+        let constraintPart = constraints.isEmpty ? "" : String(format: L10n.text(L10n.PromptStudio.constraintsTemplate), constraints)
+        let formatPart = String(format: L10n.text(L10n.PromptStudio.formatTemplate), L10n.text(outputFormat))
         
         withAnimation {
             generatedPrompt = rolePart + taskPart + tonePart + constraintPart + formatPart
@@ -198,23 +198,23 @@ struct PromptHistoryView: View {
                         Button(role: .destructive) {
                             store.deletePrompt(id: item.id)
                         } label: {
-                            Label("删除", systemImage: "trash")
+                            Label(L10n.text(L10n.Common.delete), systemImage: "trash")
                         }
                         
                         Button {
                             UIPasteboard.general.string = item.content
                         } label: {
-                            Label("复制", systemImage: "doc.on.doc")
+                            Label(L10n.text(L10n.Common.copy), systemImage: "doc.on.doc")
                         }
                         .tint(AppColors.accent)
                     }
                 }
             }
-            .navigationTitle("历史记录")
+            .navigationTitle(L10n.text(L10n.PromptStudio.historyTitle))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("关闭") { dismiss() }
+                    Button(L10n.text(L10n.Common.close)) { dismiss() }
                 }
             }
             .overlay {
@@ -223,7 +223,7 @@ struct PromptHistoryView: View {
                         Image(systemName: "clock.badge.exclamationmark")
                             .font(.system(size: 48))
                             .foregroundColor(AppColors.textSecondary.opacity(0.5))
-                        Text("暂无保存记录")
+                            Text(L10n.text(L10n.PromptStudio.noHistory))
                             .foregroundColor(AppColors.textSecondary)
                     }
                 }
@@ -258,7 +258,7 @@ struct PromptDetailView: View {
                 
                 // Task
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("描述的任务目标")
+                    Text(L10n.text(L10n.PromptStudio.taskDetail))
                         .font(.caption.bold())
                         .foregroundColor(AppColors.accent)
                     Text(item.task)
@@ -273,7 +273,7 @@ struct PromptDetailView: View {
                 // Content
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
-                        Text("生成的 Prompt")
+                        Text(L10n.text(L10n.PromptStudio.generatedPrompt))
                             .font(.caption.bold())
                             .foregroundColor(AppColors.accent)
                         Spacer()
@@ -299,9 +299,9 @@ struct PromptDetailView: View {
             .padding()
         }
         .background(AppColors.background.ignoresSafeArea())
-        .navigationTitle("记录详情")
-        .alert("已复制", isPresented: $showingCopyAlert) {
-            Button("好", role: .cancel) { }
+        .navigationTitle(L10n.text(L10n.PromptStudio.detailTitle))
+        .alert(L10n.text(L10n.Common.copied), isPresented: $showingCopyAlert) {
+            Button(L10n.text(L10n.Common.ok), role: .cancel) { }
         }
     }
 }

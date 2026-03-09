@@ -1,13 +1,38 @@
 /* Tabs */
 "tab.home" = "首页";
 "tab.categories" = "分类";
+"tab.compare" = "对比";
 "tab.favorites" = "收藏";
 "tab.settings" = "设置";
+
+/* Common */
+"common.done" = "完成";
+"common.close" = "关闭";
+"common.cancel" = "取消";
+"common.save" = "保存";
+"common.clear" = "清除";
+"common.copy" = "复制";
+"common.copied" = "已复制";
+"common.yes" = "是";
+"common.no" = "否";
+"common.ok" = "好";
+"common.delete" = "删除";
+"common.company" = "公司";
+"common.category" = "分类";
+"common.pricing" = "价格";
+"common.platform" = "平台";
+"common.api" = "API";
 
 /* Home */
 "home.title" = "AIWiki";
 "home.search.placeholder" = "搜索 AI 工具...";
+"home.quiz" = "帮我选";
+"home.console.title" = "AI 枢纽控制台";
+"home.console.subtitle" = "内置多款热门 AI，支持提示词一键注入使用";
+"home.prompt_studio.title" = "AI 提示词工作室";
+"home.prompt_studio.subtitle" = "角色扮演 + 任务定制，一键生成高质量提示词";
 "home.featured" = "🔥 热门推荐";
+"home.recommended" = "🎯 为你推荐";
 "home.recent" = "🆕 新增工具";
 "home.bookmarked" = "📌 收藏任务";
 "home.scenarios" = "💡 我想完成什么";
@@ -18,61 +43,217 @@
 
 /* Search */
 "search.title" = "搜索";
-"search.placeholder" = "搜索名称、简介、功能";
-"search.hotSearch" = "🔥 热门搜索";
+"search.prompt" = "搜索名称、简介、功能";
+"search.in_category_prompt" = "分类内搜索";
+"search.favorites_prompt" = "搜索收藏";
+"search.hot" = "🔥 热门搜索";
 "search.history" = "🕐 搜索历史";
-"search.clear" = "清除";
-"search.noResults" = "没有找到匹配的工具";
+"search.no_results" = "没有找到匹配的工具";
+"search.no_category_results" = "该分类下无匹配结果";
 "search.hint" = "输入关键词搜索 AI 工具";
 
 /* Favorites */
 "favorites.title" = "收藏";
 "favorites.empty" = "还没有收藏";
-"favorites.emptyHint" = "浏览 AI 工具，点击心形图标收藏";
-"favorites.noMatch" = "收藏中无匹配结果";
-"favorites.sortAZ" = "名称 A-Z";
-"favorites.sortZA" = "名称 Z-A";
-"favorites.clearAll" = "清空收藏";
+"favorites.empty_hint" = "浏览 AI 工具，点击心形图标收藏";
+"favorites.no_match" = "收藏中无匹配结果";
+"favorites.sort" = "排序";
+"favorites.sort_az" = "名称 A-Z";
+"favorites.sort_za" = "名称 Z-A";
+"favorites.clear_all" = "清空收藏";
 
 /* Tool Detail */
 "detail.title" = "详情";
 "detail.intro" = "简介";
 "detail.features" = "功能特点";
-"detail.learningSummary" = "学习摘要";
-"detail.coreCapabilities" = "核心能力";
-"detail.gettingStarted" = "快速上手";
-"detail.officialLinks" = "官方资料";
+"detail.learning_summary" = "学习摘要";
+"detail.core_capabilities" = "核心能力";
+"detail.getting_started" = "快速上手";
+"detail.official_links" = "官方资料";
 "detail.caveats" = "注意事项";
-"detail.useCases" = "适用场景";
-"detail.bestPractices" = "最佳实践";
-"detail.promptTemplates" = "提示词模板";
+"detail.use_cases" = "适用场景";
+"detail.best_practices" = "最佳实践";
+"detail.prompt_templates" = "提示词模板";
 "detail.strengths" = "优势";
 "detail.limitations" = "局限";
-"detail.basicInfo" = "基础信息";
-"detail.openWebsite" = "打开官网";
-"detail.copyLink" = "复制官网链接";
-"detail.copied" = "已复制";
+"detail.radar" = "能力雷达图";
+"detail.my_rating" = "⭐ 我的评分";
+"detail.notes" = "📝 使用笔记";
+"detail.note_placeholder" = "记录使用心得...";
+"detail.edit_note" = "编辑笔记";
+"detail.basic_info" = "基础信息";
+"detail.account_required" = "需要账号";
+"detail.open_now" = "立即使用";
+"detail.copy_link" = "复制官网链接";
+"detail.generate_card" = "生成知识卡片";
+"detail.generating" = "正在生成...";
+"detail.check_in" = "使用打卡";
+"detail.checked_in" = "打卡成功";
 "detail.favorite" = "收藏";
 "detail.favorited" = "已收藏";
+"detail.share_prefix" = "推荐一个 AI 工具：";
+"detail.preview_title" = "知识卡片预览";
+"detail.favorite_accessibility_add" = "收藏";
+"detail.favorite_accessibility_remove" = "取消收藏";
 
 /* Settings */
 "settings.title" = "设置";
 "settings.theme" = "主题";
+"settings.appearance" = "外观模式";
 "settings.stats" = "统计";
-"settings.toolCount" = "工具总数";
-"settings.categoryCount" = "分类总数";
-"settings.favoriteCount" = "收藏数";
+"settings.dashboard" = "生产力仪表盘";
+"settings.tool_count" = "工具总数";
+"settings.category_count" = "分类总数";
+"settings.favorite_count" = "收藏数";
+"settings.library" = "库管理";
+"settings.prompt_library" = "我的提示词库";
 "settings.support" = "支持我们";
 "settings.rate" = "给个好评";
 "settings.share" = "推荐给朋友";
 "settings.feedback" = "意见反馈";
-"settings.appInfo" = "应用信息";
+"settings.app_info" = "应用信息";
 "settings.version" = "版本";
-"settings.offlineMode" = "完全离线";
-"settings.dataSource" = "数据来源";
-"settings.dataSourceDesc" = "数据主要来自各 AI 工具官方站点与官方文档，整理后预置在本地。";
+"settings.mode" = "运行模式";
+"settings.offline" = "完全离线";
+"settings.data_source" = "数据来源";
+"settings.data_source_desc" = "数据主要来自各 AI 工具官方站点与官方文档，整理后预置在本地。";
+"settings.share_template" = "推荐一个超棒的 AI 工具百科 App —— AIWiki，收录了 %d 个 AI 工具，离线可用！";
 
 /* Theme */
 "theme.system" = "跟随系统";
 "theme.light" = "浅色";
 "theme.dark" = "深色";
+
+/* Console */
+"console.title" = "AI 枢纽控制台";
+"console.open_prompt_studio" = "打开提示词工作室";
+"console.tip" = "提示：在工作室复制后，长按对话框粘贴";
+
+/* Compare */
+"compare.title" = "工具对比";
+"compare.tool_a" = "工具 A";
+"compare.tool_b" = "工具 B";
+"compare.export_title" = "AI 工具深度对比";
+"compare.export_subtitle" = "由 AIWiki 自动生成";
+"compare.vs" = "VS";
+"compare.empty_title" = "选择两个工具开始对比";
+"compare.empty_subtitle" = "从不同维度比较 AI 工具的功能、优劣势和定价";
+"compare.core_features" = "核心功能";
+"compare.strengths" = "✅ 优势";
+"compare.limitations" = "⚠️ 局限";
+"compare.recommendation" = "系统推荐度";
+"compare.unrated" = "未评分";
+"compare.api_yes" = "✅ 有";
+"compare.api_no" = "❌ 无";
+"compare.choose_tool" = "选择工具";
+"compare.search_prompt" = "搜索工具";
+
+/* Quiz */
+"quiz.title" = "帮我选工具";
+"quiz.matching" = "正在为你匹配最合适的 AI 工具...";
+"quiz.result_title" = "为你精选的工具";
+"quiz.result_subtitle" = "根据你的需求，我们为你推荐以下工具：";
+"quiz.restart" = "重新测试";
+
+/* Prompt Studio */
+"prompt_studio.title" = "AI 提示词工作室";
+"prompt_studio.role_label" = "我的身份是";
+"prompt_studio.role_header" = "1. 设定 AI 角色";
+"prompt_studio.role_footer" = "设定角色能让 AI 的回答更具针对性";
+"prompt_studio.task_placeholder" = "例如：写一篇关于深海探险的小说开头";
+"prompt_studio.task_header" = "2. 描述任务目标";
+"prompt_studio.tone_label" = "语言风格";
+"prompt_studio.tone_header" = "3. 选择语气";
+"prompt_studio.constraints_placeholder" = "例如：不要使用术语，500字以内";
+"prompt_studio.output_format_label" = "输出格式";
+"prompt_studio.extra_header" = "4. 附加限制与格式";
+"prompt_studio.generate" = "一键生成提示词";
+"prompt_studio.copy_to_clipboard" = "复制到剪贴板";
+"prompt_studio.save_to_library" = "保存到提示词库";
+"prompt_studio.saved_to_library" = "已保存到库";
+"prompt_studio.preview" = "预览生成的 Prompt";
+"prompt_studio.copied_message" = "提示词已就绪，快去粘贴给 AI 吧！";
+"prompt_studio.history_title" = "历史记录";
+"prompt_studio.no_history" = "暂无保存记录";
+"prompt_studio.detail_title" = "记录详情";
+"prompt_studio.task_detail" = "描述的任务目标";
+"prompt_studio.generated_prompt" = "生成的 Prompt";
+"prompt_studio.role_template" = "你现在是一名%@。";
+"prompt_studio.task_template" = "\n\n任务：%@";
+"prompt_studio.tone_template" = "\n请使用%@的语气进行回复。";
+"prompt_studio.constraints_template" = "\n限制：%@";
+"prompt_studio.format_template" = "\n输出格式：%@";
+
+/* Scenario */
+"scenario.view_mode" = "查看模式";
+"scenario.standard" = "标准模式";
+"scenario.quick" = "1分钟上手";
+"scenario.bookmarked" = "已加入收藏任务";
+"scenario.save_task" = "保存到收藏任务";
+"scenario.open_output" = "进入一键产出模式";
+"scenario.quick_steps" = "1分钟上手步骤（%d/%d）";
+"scenario.reset" = "重置清单";
+"scenario.starter_template" = "先用这个模板";
+"scenario.copy_template" = "复制模板";
+"scenario.example_output" = "示例输出";
+"scenario.steps" = "执行步骤";
+"scenario.templates" = "可复制模板";
+"scenario.pitfalls" = "常见坑";
+"scenario.recommended_tools" = "推荐工具";
+"scenario.review_questions" = "复盘问题";
+"scenario.review_notes" = "复盘笔记（1-2行）";
+"scenario.save_note" = "保存笔记";
+
+/* Outcome */
+"outcome.input" = "输入信息";
+"outcome.audience" = "读者对象";
+"outcome.highlights" = "本周完成事项（必填）";
+"outcome.metrics" = "关键数据（可选）";
+"outcome.risks" = "风险/阻塞（可选）";
+"outcome.next_plan" = "下周计划（可选）";
+"outcome.prompts_by_function" = "一键提示词（按功能）";
+"outcome.general_assistant" = "通用助手";
+"outcome.logic_enhanced" = "逻辑增强";
+"outcome.creative_boost" = "创意激发";
+"outcome.deliverable_template" = "可交付模板";
+"outcome.quality_checklist" = "质量检查清单";
+"outcome.refine_prompt" = "二次优化提示词";
+"outcome.export_package" = "导出结果包";
+"outcome.copy_full_package" = "一键复制完整结果包";
+"outcome.weekly_report_title" = "一键产出：周报";
+"outcome.weekly_report_empty" = "先填写“本周完成事项”，即可生成可复制结果。";
+"outcome.weekly_default_audience" = "产品与研发团队";
+"outcome.competitor_title" = "一键产出：竞品简报";
+"outcome.product_a" = "产品A（必填）";
+"outcome.product_b" = "产品B（必填）";
+"outcome.time_range" = "时间范围";
+"outcome.focus" = "重点维度";
+"outcome.competitor_empty" = "先填写产品A和产品B。";
+"outcome.competitor_default_window" = "近12个月";
+"outcome.competitor_default_focus" = "功能、定价、目标用户、增长策略";
+"outcome.competitor_default_audience" = "产品团队";
+"outcome.prompt" = "一键提示词";
+"outcome.debug_title" = "一键产出：代码排错";
+"outcome.language" = "语言/框架";
+"outcome.expected_behavior" = "预期行为（可选）";
+"outcome.error_log" = "报错日志（必填）";
+"outcome.code_snippet" = "代码片段（必填）";
+"outcome.debug_empty" = "先填写报错日志和代码片段。";
+
+/* Stats */
+"stats.radar_title" = "AI 核心能力图谱";
+"stats.trend_title" = "活跃趋势";
+
+/* Export Card */
+"export_card.highlights" = "核心亮点";
+"export_card.access_info" = "准入信息";
+"export_card.suggested_prompt" = "推荐指令";
+"export_card.note" = "智库心得";
+"export_card.footer_title" = "AIWiki 智库助手";
+"export_card.footer_subtitle" = "助力每一位生产力探索者";
+"export_card.qr_title" = "扫码获取更多";
+"export_card.qr_subtitle" = "AI 工具干货";
+"export_card.account" = "需账号";
+
+/* Splash */
+"splash.subtitle" = "AI 工具百科全书";

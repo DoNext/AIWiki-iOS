@@ -17,7 +17,7 @@ struct CategoryToolsView: View {
                     Image(systemName: "magnifyingglass")
                         .font(.title2)
                         .foregroundColor(.secondary)
-                    Text("该分类下无匹配结果")
+                    Text(L10n.text(L10n.Search.noCategoryResults))
                         .foregroundColor(.secondary)
                 }
             } else {
@@ -31,7 +31,7 @@ struct CategoryToolsView: View {
                 .listStyle(.plain)
             }
         }
-        .searchable(text: $query, prompt: "分类内搜索")
+        .searchable(text: $query, prompt: L10n.text(L10n.Search.inCategoryPrompt))
         .navigationTitle(L10n.text(category))
         .navigationBarTitleDisplayMode(.inline)
     }

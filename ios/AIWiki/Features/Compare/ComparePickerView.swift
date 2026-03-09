@@ -41,12 +41,12 @@ struct ComparePickerView: View {
                 .listRowBackground(AppColors.card)
             }
         }
-        .searchable(text: $query, prompt: "搜索工具")
-        .navigationTitle("选择工具")
+        .searchable(text: $query, prompt: L10n.text(L10n.Compare.searchPrompt))
+        .navigationTitle(L10n.text(L10n.Compare.chooseTool))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button("取消") { dismiss() }
+                Button(L10n.text(L10n.Common.cancel)) { dismiss() }
             }
         }
         .scrollContentBackground(.hidden)

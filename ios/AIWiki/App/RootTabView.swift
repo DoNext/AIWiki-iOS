@@ -5,31 +5,31 @@ struct RootTabView: View {
 
     var body: some View {
         TabView(selection: $store.selectedTab) {
-            Tab("首页", systemImage: "house.fill", value: .home) {
+            Tab(L10n.text(L10n.Tab.home), systemImage: "house.fill", value: .home) {
                 NavigationStack {
                     HomeView()
                 }
             }
 
-            Tab("分类", systemImage: "square.grid.2x2.fill", value: .categories) {
+            Tab(L10n.text(L10n.Tab.categories), systemImage: "square.grid.2x2.fill", value: .categories) {
                 NavigationStack {
                     CategoriesView()
                 }
             }
 
-            Tab("对比", systemImage: "arrow.left.arrow.right", value: .compare) {
+            Tab(L10n.text(L10n.Tab.compare), systemImage: "arrow.left.arrow.right", value: .compare) {
                 NavigationStack {
                     CompareView()
                 }
             }
 
-            Tab("收藏", systemImage: "heart.fill", value: .favorites) {
+            Tab(L10n.text(L10n.Tab.favorites), systemImage: "heart.fill", value: .favorites) {
                 NavigationStack {
                     FavoritesView()
                 }
             }
 
-            Tab("设置", systemImage: "gearshape.fill", value: .settings) {
+            Tab(L10n.text(L10n.Tab.settings), systemImage: "gearshape.fill", value: .settings) {
                 NavigationStack {
                     SettingsView()
                 }

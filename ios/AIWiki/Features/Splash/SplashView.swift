@@ -53,7 +53,7 @@ struct SplashView: View {
                     .opacity(titleOpacity)
 
                 // Subtitle
-                Text(L10n.text("AI 工具百科全书"))
+                Text(L10n.text("splash.subtitle"))
                     .font(.subheadline)
                     .foregroundColor(AppColors.textSecondary)
                     .opacity(subtitleOpacity)

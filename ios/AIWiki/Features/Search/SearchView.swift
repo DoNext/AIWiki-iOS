@@ -23,7 +23,9 @@ struct SearchView: View {
         !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
-    private let hotSearches = ["AI 搜索", "文生图", "代码助手", "法律咨询", "语音转换", "文档分析"]
+    private var hotSearches: [String] {
+        ["AI 搜索", "文生图", "代码助手", "法律咨询", "语音转换", "文档分析"].map(L10n.text)
+    }
 
     var body: some View {
         Group {
@@ -37,7 +39,7 @@ struct SearchView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         // Hot searches
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("🔥 热门搜索")
+                            Text(L10n.text(L10n.Search.hot))
                                 .font(.headline)
                                 .foregroundColor(AppColors.textPrimary)
                             FlowLayout(spacing: 8) {
@@ -63,11 +65,11 @@ struct SearchView: View {
                         // Search history
                         if !searchHistory.isEmpty {
                             HStack {
-                                Text("🕐 搜索历史")
+                                Text(L10n.text(L10n.Search.history))
                                     .font(.headline)
                                     .foregroundColor(AppColors.textPrimary)
                                 Spacer()
-                                Button("清除") {
+                                Button(L10n.text(L10n.Common.clear)) {
                                     searchHistoryData = Data()
                                 }
                                 .font(.caption)
@@ -106,7 +108,7 @@ struct SearchView: View {
                     Image(systemName: "magnifyingglass")
                         .font(.largeTitle)
                         .foregroundColor(AppColors.textSecondary)
-                    Text("没有找到匹配的工具")
+                    Text(L10n.text(L10n.Search.noResults))
                         .foregroundColor(AppColors.textSecondary)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -129,7 +131,7 @@ struct SearchView: View {
                 .background(AppColors.background.ignoresSafeArea())
             }
         }
-        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索名称、简介、功能")
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: L10n.text(L10n.Search.prompt))
         .focused($isSearchFocused)
         .onAppear {
             // Delay focus slightly to ensure smooth transition
@@ -140,7 +142,7 @@ struct SearchView: View {
         .onSubmit(of: .search) {
             saveSearchHistory(query)
         }
-        .navigationTitle("搜索")
+        .navigationTitle(L10n.text(L10n.Search.title))
     }
 
     private func saveSearchHistory(_ keyword: String) {

@@ -18,11 +18,11 @@ struct ExportPreviewView: View {
                         .padding()
                 }
             }
-            .navigationTitle("知识卡片预览")
+            .navigationTitle(L10n.text(L10n.Detail.previewTitle))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("关闭") {
+                    Button(L10n.text(L10n.Common.close)) {
                         dismiss()
                     }
                 }

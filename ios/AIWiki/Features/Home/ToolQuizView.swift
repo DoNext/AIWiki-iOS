@@ -62,11 +62,11 @@ struct ToolQuizView: View {
                     questionView
                 }
             }
-            .navigationTitle("帮我选工具")
+            .navigationTitle(L10n.text(L10n.Quiz.title))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("关闭") {
+                    Button(L10n.text(L10n.Common.close)) {
                         dismiss()
                     }
                 }
@@ -86,7 +86,7 @@ struct ToolQuizView: View {
             
             let question = quizQuestions[currentStep]
             
-            Text(question.text)
+            Text(L10n.text(question.text))
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundColor(AppColors.textPrimary)
@@ -98,7 +98,7 @@ struct ToolQuizView: View {
                     Button {
                         handleAnswer(option)
                     } label: {
-                        Text(option)
+                        Text(L10n.text(option))
                             .font(.headline)
                             .foregroundColor(AppColors.textPrimary)
                             .frame(maxWidth: .infinity)
@@ -125,7 +125,7 @@ struct ToolQuizView: View {
             ProgressView()
                 .controlSize(.large)
                 .tint(AppColors.accent)
-            Text("正在为你匹配最合适的 AI 工具...")
+            Text(L10n.text(L10n.Quiz.matching))
                 .font(.headline)
                 .foregroundColor(AppColors.textSecondary)
         }
@@ -139,12 +139,12 @@ struct ToolQuizView: View {
                     .foregroundColor(.yellow)
                     .padding(.top, 30)
                 
-                Text("为你精选的工具")
+                Text(L10n.text(L10n.Quiz.resultTitle))
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(AppColors.textPrimary)
                 
-                Text("根据你的需求，我们为你推荐以下工具：")
+                Text(L10n.text(L10n.Quiz.resultSubtitle))
                     .font(.subheadline)
                     .foregroundColor(AppColors.textSecondary)
                 
@@ -166,7 +166,7 @@ struct ToolQuizView: View {
                     answers.removeAll()
                     recommendedTools.removeAll()
                 } label: {
-                    Text("重新测试")
+                    Text(L10n.text(L10n.Quiz.restart))
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)

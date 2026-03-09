@@ -47,6 +47,6 @@ struct CategoriesView: View {
                 .background(AppColors.background.ignoresSafeArea())
             }
         }
-        .navigationTitle("分类")
+        .navigationTitle(L10n.text("categories.title"))
     }
 }
