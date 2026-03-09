@@ -22,8 +22,7 @@ struct FavoritesView: View {
     private var favoriteTools: [AITool] {
         let keyword = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         let filtered = keyword.isEmpty ? store.favoriteTools() : store.favoriteTools().filter { tool in
-            let text = "\(tool.name) \(tool.intro) \(tool.features.joined(separator: " "))".lowercased()
-            return text.contains(keyword)
+            tool.localizedSearchText.contains(keyword)
         }
         switch sort {
         case .nameAsc:

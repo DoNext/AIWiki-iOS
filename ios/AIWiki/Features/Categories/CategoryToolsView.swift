@@ -32,7 +32,7 @@ struct CategoryToolsView: View {
             }
         }
         .searchable(text: $query, prompt: "分类内搜索")
-        .navigationTitle(category)
+        .navigationTitle(L10n.text(category))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -10,7 +10,8 @@ struct ComparePickerView: View {
         if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             return store.tools.sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
         }
-        return store.filteredTools(query: query)
+        let keyword = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        return store.tools.filter { $0.localizedSearchText.contains(keyword) }
     }
 
     var body: some View {
@@ -25,7 +26,7 @@ struct ComparePickerView: View {
                             Text(tool.name)
                                 .font(.subheadline.weight(.semibold))
                                 .foregroundColor(AppColors.textPrimary)
-                            Text(tool.category)
+                            Text(tool.localizedCategory)
                                 .font(.caption)
                                 .foregroundColor(AppColors.textSecondary)
                         }

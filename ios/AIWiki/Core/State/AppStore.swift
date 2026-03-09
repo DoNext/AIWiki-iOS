@@ -14,7 +14,7 @@ final class AppStore: ObservableObject {
     @Published private(set) var checkInEvents: [CheckInEvent]
     @Published private(set) var savedPrompts: [SavedPrompt]
     @Published var deepLinkTool: AITool?
-    @Published var selectedTab: Int = 0
+    @Published var selectedTab: AppTab = .home
     @Published var showStats: Bool = false
     @Published var showPromptStudio: Bool = false
     @Published var theme: AppTheme {
@@ -109,7 +109,7 @@ final class AppStore: ObservableObject {
         let grouped = Dictionary(grouping: tools, by: \.category)
         return grouped
             .map { ($0.key, $0.value.count) }
-            .sorted { $0.0.localizedCompare($1.0) == .orderedAscending }
+            .sorted { L10n.text($0.0).localizedCompare(L10n.text($1.0)) == .orderedAscending }
     }
 
     func tools(in category: String) -> [AITool] {

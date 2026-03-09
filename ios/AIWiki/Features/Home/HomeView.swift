@@ -281,16 +281,16 @@ struct HomeView: View {
                 .foregroundColor(AppColors.textPrimary)
                 .lineLimit(1)
 
-            Text(tool.intro)
-                .font(.caption)
-                .foregroundColor(AppColors.textSecondary)
-                .lineLimit(2)
+                            Text(tool.localizedIntro)
+                                .font(.caption)
+                                .foregroundColor(AppColors.textSecondary)
+                                .lineLimit(2)
                 .frame(height: 32, alignment: .top)
 
             HStack(spacing: 4) {
                 Image(systemName: CategoryIcon.symbol(for: tool.category))
                     .font(.caption2)
-                Text(tool.category)
+                Text(tool.localizedCategory)
                     .font(.caption2)
             }
             .foregroundColor(AppColors.accent)
@@ -302,10 +302,10 @@ struct HomeView: View {
 
     private func scenarioCard(_ scenario: TaskScenario) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(scenario.title)
+            Text(scenario.localizedTitle)
                 .font(.headline)
                 .foregroundColor(AppColors.textPrimary)
-            Text(scenario.subtitle)
+            Text(scenario.localizedSubtitle)
                 .font(.subheadline)
                 .foregroundColor(AppColors.textSecondary)
                 .lineLimit(2)

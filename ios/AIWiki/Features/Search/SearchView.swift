@@ -11,7 +11,12 @@ struct SearchView: View {
     }
 
     private var results: [AITool] {
-        store.filteredTools(query: query)
+        let keyword = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !keyword.isEmpty else { return [] }
+
+        return store.tools.filter { tool in
+            tool.localizedSearchText.contains(keyword)
+        }
     }
 
     private var isSearching: Bool {

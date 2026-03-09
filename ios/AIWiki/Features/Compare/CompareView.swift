@@ -187,25 +187,25 @@ struct CompareView: View {
             RadarChartView(scoresA: a.radarScoresOrDefault, scoresB: b.radarScoresOrDefault)
                 .cardStyle()
             
-            compareRow(title: "简介", valueA: a.intro, valueB: b.intro)
+            compareRow(title: "简介", valueA: a.localizedIntro, valueB: b.localizedIntro)
             compareRow(title: "公司", valueA: a.company, valueB: b.company)
-            compareRow(title: "分类", valueA: a.category, valueB: b.category)
+            compareRow(title: "分类", valueA: a.localizedCategory, valueB: b.localizedCategory)
 
-            compareTags(title: "核心功能", tagsA: a.features, tagsB: b.features)
+            compareTags(title: "核心功能", tagsA: a.localizedFeatures, tagsB: b.localizedFeatures)
 
-            if let strengthsA = a.strengths, let strengthsB = b.strengths {
+            if let strengthsA = a.localizedStrengths, let strengthsB = b.localizedStrengths {
                 compareBullets(title: "✅ 优势", itemsA: strengthsA, itemsB: strengthsB)
             }
 
-            if let limitsA = a.limitations, let limitsB = b.limitations {
+            if let limitsA = a.localizedLimitations, let limitsB = b.localizedLimitations {
                 compareBullets(title: "⚠️ 局限", itemsA: limitsA, itemsB: limitsB)
             }
 
             if let accessA = a.access, let accessB = b.access {
-                compareRow(title: "定价", valueA: accessA.pricing, valueB: accessB.pricing)
+                compareRow(title: "定价", valueA: a.localizedAccessPricing ?? accessA.pricing, valueB: b.localizedAccessPricing ?? accessB.pricing)
                 compareRow(title: "平台",
-                           valueA: accessA.platforms.joined(separator: ", "),
-                           valueB: accessB.platforms.joined(separator: ", "))
+                           valueA: (a.localizedAccessPlatforms ?? accessA.platforms).joined(separator: ", "),
+                           valueB: (b.localizedAccessPlatforms ?? accessB.platforms).joined(separator: ", "))
                 compareRow(title: "API",
                            valueA: accessA.apiAvailable ? "✅ 有" : "❌ 无",
                            valueB: accessB.apiAvailable ? "✅ 有" : "❌ 无")

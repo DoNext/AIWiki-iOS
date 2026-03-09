@@ -26,17 +26,18 @@ struct SettingsView: View {
             }
 
             Section("统计") {
-                NavigationLink(isActive: $store.showStats) {
-                    ToolUsageStatsView()
+                Button {
+                    store.showStats = true
                 } label: {
                     HStack {
                         Image(systemName: "chart.bar.xaxis")
-                            .foregroundColor(AppColors.accent)
+                            .foregroundStyle(AppColors.accent)
                         Text("生产力仪表盘")
-                            .foregroundColor(AppColors.textPrimary)
+                            .foregroundStyle(AppColors.textPrimary)
                         Spacer()
                     }
                 }
+                .buttonStyle(.plain)
                 
                 infoRow(title: "工具总数", value: "\(store.tools.count)")
                 infoRow(title: "分类总数", value: "\(store.categoryGroups().count)")
@@ -133,8 +134,11 @@ struct SettingsView: View {
         .scrollContentBackground(.hidden)
         .background(AppColors.background.ignoresSafeArea())
         .navigationTitle("设置")
+        .navigationDestination(isPresented: $store.showStats) {
+            ToolUsageStatsView()
+        }
         .sheet(isPresented: $showingShareSheet) {
-            let text = "推荐一个超棒的 AI 工具百科 App —— AIWiki，收录了 \(store.tools.count) 个 AI 工具，离线可用！"
+            let text = L10n.format("推荐一个超棒的 AI 工具百科 App —— AIWiki，收录了 %d 个 AI 工具，离线可用！", store.tools.count)
             ShareSheet(items: [text])
         }
     }
@@ -151,7 +155,7 @@ struct SettingsView: View {
 
     private func requestReview() {
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
+            StoreKit.AppStore.requestReview(in: scene)
         }
     }
 }

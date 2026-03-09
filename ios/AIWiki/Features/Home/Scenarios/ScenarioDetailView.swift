@@ -34,9 +34,9 @@ struct ScenarioDetailView: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(scenario.subtitle)
+                    Text(scenario.localizedSubtitle)
                         .font(.headline)
-                    Text(scenario.outcome)
+                    Text(scenario.localizedOutcome)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -85,8 +85,8 @@ struct ScenarioDetailView: View {
             }
 
             if mode == .quick {
-                Section("1分钟上手步骤（\(completedCount)/\(scenario.quickStartSteps.count)）") {
-                    ForEach(Array(scenario.quickStartSteps.enumerated()), id: \.offset) { index, step in
+                Section(L10n.format("1分钟上手步骤（%d/%d）", completedCount, scenario.quickStartSteps.count)) {
+                    ForEach(Array(scenario.localizedQuickStartSteps.enumerated()), id: \.offset) { index, step in
                         Button {
                             store.toggleQuickStepCompleted(scenarioID: scenario.id, stepIndex: index)
                         } label: {
@@ -104,7 +104,7 @@ struct ScenarioDetailView: View {
                     }
                 }
 
-                if let firstPrompt = scenario.promptCards.first {
+                if let firstPrompt = scenario.localizedPromptCards.first {
                     Section("先用这个模板") {
                         Text(firstPrompt.prompt)
                             .font(.footnote)
@@ -118,13 +118,13 @@ struct ScenarioDetailView: View {
                 }
 
                 Section("示例输出") {
-                    Text(scenario.exampleOutput)
+                    Text(scenario.localizedExampleOutput)
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 }
             } else {
                 Section("执行步骤") {
-                    ForEach(Array(scenario.steps.enumerated()), id: \.offset) { index, step in
+                    ForEach(Array(scenario.localizedSteps.enumerated()), id: \.offset) { index, step in
                         VStack(alignment: .leading, spacing: 4) {
                             Text("\(index + 1). \(step.title)")
                                 .font(.subheadline)
@@ -138,7 +138,7 @@ struct ScenarioDetailView: View {
                 }
 
                 Section("可复制模板") {
-                    ForEach(scenario.promptCards, id: \.title) { card in
+                    ForEach(scenario.localizedPromptCards, id: \.title) { card in
                         VStack(alignment: .leading, spacing: 8) {
                             Text(card.title)
                                 .font(.subheadline)
@@ -157,7 +157,7 @@ struct ScenarioDetailView: View {
                 }
 
                 Section("常见坑") {
-                    ForEach(scenario.pitfalls, id: \.self) { item in
+                    ForEach(scenario.localizedPitfalls, id: \.self) { item in
                         Text("• \(item)")
                     }
                 }
@@ -176,7 +176,7 @@ struct ScenarioDetailView: View {
             }
 
             Section("复盘问题") {
-                ForEach(scenario.reviewQuestions, id: \.self) { item in
+                ForEach(scenario.localizedReviewQuestions, id: \.self) { item in
                     Text("• \(item)")
                 }
             }
@@ -190,7 +190,7 @@ struct ScenarioDetailView: View {
                 .disabled(noteText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             }
         }
-        .navigationTitle(scenario.title)
+        .navigationTitle(scenario.localizedTitle)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             noteText = store.note(for: scenario.id)

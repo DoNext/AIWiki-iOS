@@ -62,7 +62,7 @@ struct ToolDetailView: View {
 
                 // MARK: - Intro
                 detailSection("简介") {
-                    Text(tool.intro)
+                    Text(tool.localizedIntro)
                         .font(.body)
                         .foregroundColor(AppColors.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -71,7 +71,7 @@ struct ToolDetailView: View {
                 // MARK: - Features
                 detailSection("功能特点") {
                     FlowLayout(spacing: 8) {
-                        ForEach(tool.features, id: \.self) { feature in
+                        ForEach(tool.localizedFeatures, id: \.self) { feature in
                             Text(feature)
                                 .font(.caption)
                                 .fontWeight(.medium)
@@ -89,15 +89,15 @@ struct ToolDetailView: View {
                 // MARK: - Learning Material
                 if let learningMaterial {
                     detailSection("学习摘要") {
-                        Text(learningMaterial.summary)
+                        Text(learningMaterial.localizedSummary)
                             .font(.subheadline)
                             .foregroundColor(AppColors.textSecondary)
                     }
 
-                    if !learningMaterial.coreCapabilities.isEmpty {
+                    if !learningMaterial.localizedCoreCapabilities.isEmpty {
                         detailSection("核心能力") {
                             VStack(alignment: .leading, spacing: 8) {
-                                ForEach(learningMaterial.coreCapabilities, id: \.self) { item in
+                                ForEach(learningMaterial.localizedCoreCapabilities, id: \.self) { item in
                                     HStack(alignment: .top, spacing: 8) {
                                         Image(systemName: "checkmark.circle.fill")
                                             .foregroundColor(AppColors.accent)
@@ -111,10 +111,10 @@ struct ToolDetailView: View {
                         }
                     }
 
-                    if !learningMaterial.gettingStarted.isEmpty {
+                    if !learningMaterial.localizedGettingStarted.isEmpty {
                         detailSection("快速上手") {
                             VStack(alignment: .leading, spacing: 8) {
-                                ForEach(Array(learningMaterial.gettingStarted.enumerated()), id: \.offset) { index, item in
+                                ForEach(Array(learningMaterial.localizedGettingStarted.enumerated()), id: \.offset) { index, item in
                                     HStack(alignment: .top, spacing: 8) {
                                         Text("\(index + 1)")
                                             .font(.caption.weight(.bold))
@@ -147,10 +147,10 @@ struct ToolDetailView: View {
                         }
                     }
 
-                    if !learningMaterial.caveats.isEmpty {
+                    if !learningMaterial.localizedCaveats.isEmpty {
                         detailSection("注意事项") {
                             VStack(alignment: .leading, spacing: 6) {
-                                ForEach(learningMaterial.caveats, id: \.self) { item in
+                                ForEach(learningMaterial.localizedCaveats, id: \.self) { item in
                                     HStack(alignment: .top, spacing: 8) {
                                         Image(systemName: "exclamationmark.triangle.fill")
                                             .foregroundColor(.orange)
@@ -166,7 +166,7 @@ struct ToolDetailView: View {
                 }
 
                 // MARK: - Use Cases
-                if let useCases = tool.useCases, !useCases.isEmpty {
+                if let useCases = tool.localizedUseCases, !useCases.isEmpty {
                     detailSection("适用场景") {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(useCases, id: \.self) { item in
@@ -177,7 +177,7 @@ struct ToolDetailView: View {
                 }
 
                 // MARK: - Best Practices
-                if let bestPractices = tool.bestPractices, !bestPractices.isEmpty {
+                if let bestPractices = tool.localizedBestPractices, !bestPractices.isEmpty {
                     detailSection("最佳实践") {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(bestPractices, id: \.self) { item in
@@ -188,10 +188,10 @@ struct ToolDetailView: View {
                 }
 
                 // MARK: - Prompt Templates
-                if let promptTemplates = tool.promptTemplates, !promptTemplates.isEmpty {
+                if !tool.localizedPromptTemplates.isEmpty {
                     detailSection("提示词模板") {
                         VStack(alignment: .leading, spacing: 12) {
-                            ForEach(promptTemplates, id: \.title) { item in
+                            ForEach(tool.localizedPromptTemplates, id: \.title) { item in
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(item.title)
                                         .font(.subheadline.weight(.semibold))
@@ -207,7 +207,7 @@ struct ToolDetailView: View {
                 }
 
                 // MARK: - Strengths & Limitations
-                if let strengths = tool.strengths, !strengths.isEmpty {
+                if let strengths = tool.localizedStrengths, !strengths.isEmpty {
                     detailSection("优势") {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(strengths, id: \.self) { item in
@@ -224,7 +224,7 @@ struct ToolDetailView: View {
                     }
                 }
 
-                if let limitations = tool.limitations, !limitations.isEmpty {
+                if let limitations = tool.localizedLimitations, !limitations.isEmpty {
                     detailSection("局限") {
                         VStack(alignment: .leading, spacing: 6) {
                             ForEach(limitations, id: \.self) { item in
@@ -329,12 +329,12 @@ struct ToolDetailView: View {
                 detailSection("基础信息") {
                     VStack(alignment: .leading, spacing: 10) {
                         infoRow(label: "公司", value: tool.company)
-                        infoRow(label: "分类", value: tool.category)
+                        infoRow(label: "分类", value: tool.localizedCategory)
 
                         if let access = tool.access {
-                            infoRow(label: "价格", value: access.pricing)
+                            infoRow(label: "价格", value: tool.localizedAccessPricing ?? access.pricing)
                             infoRow(label: "需要账号", value: access.accountRequired ? "是" : "否")
-                            infoRow(label: "平台", value: access.platforms.joined(separator: " / "))
+                            infoRow(label: "平台", value: (tool.localizedAccessPlatforms ?? access.platforms).joined(separator: " / "))
                             infoRow(label: "API", value: access.apiAvailable ? "是" : "否")
                         }
                     }
@@ -471,7 +471,7 @@ struct ToolDetailView: View {
             }
         }
         .sheet(isPresented: $showingShareSheet) {
-            let text = "推荐一个 AI 工具：\(tool.name) — \(tool.intro) 👉 \(tool.url)"
+            let text = "推荐一个 AI 工具：\(tool.name) — \(tool.localizedIntro) 👉 \(tool.url)"
             ShareSheet(items: [text])
         }
         .sheet(isPresented: $showingExportPreview) {
@@ -553,4 +553,3 @@ struct ToolDetailView: View {
         }
     }
 }
-

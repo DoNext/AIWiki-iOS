@@ -35,13 +35,13 @@ struct AIConsoleView: View {
                                     reloadTrigger = true
                                 }
                             } label: {
-                                Text(tool.name)
-                                    .font(.subheadline.weight(currentToolName == tool.name ? .bold : .medium))
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 8)
-                                    .background(currentToolName == tool.name ? AppColors.accent : AppColors.cardHighlight)
-                                    .foregroundColor(currentToolName == tool.name ? .white : AppColors.textPrimary)
-                                    .cornerRadius(20)
+                            Text(tool.name)
+                                .font(.subheadline.weight(currentToolName == tool.name ? .bold : .medium))
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
+                                .background(currentToolName == tool.name ? AppColors.accent : AppColors.cardHighlight)
+                                .foregroundStyle(currentToolName == tool.name ? .white : AppColors.textPrimary)
+                                .clipShape(.rect(cornerRadius: 20))
                             }
                         }
                     }
@@ -63,19 +63,19 @@ struct AIConsoleView: View {
                     } label: {
                         HStack {
                             Image(systemName: "wand.and.stars")
-                            Text("打开提示词工作室")
+                            Text(L10n.text("打开提示词工作室"))
                         }
                         .font(.subheadline.weight(.semibold))
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
                         .background(AppGradients.accent)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
+                        .foregroundStyle(.white)
+                        .clipShape(.rect(cornerRadius: 12))
                     }
                     
                     Spacer()
                     
-                    Text("提示：在工作室复制后，长按对话框粘贴")
+                    Text(L10n.text("提示：在工作室复制后，长按对话框粘贴"))
                         .font(.caption2)
                         .foregroundColor(AppColors.textSecondary)
                 }
@@ -85,11 +85,11 @@ struct AIConsoleView: View {
             .navigationTitle("AI 枢纽控制台")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
                     Button("关闭") { dismiss() }
                 }
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         reloadTrigger = true
                     } label: {

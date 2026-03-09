@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02406EC34FC5B6CA40818672 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB213C6FEC645DFED80FF0 /* Localizable.strings */; };
+		02406EC34FC5B6CA40818672 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B5C6D7E8F901A2B3C4D5E6F /* Localizable.strings */; };
+		0A1B2C3D4E5F60718293A4B5 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C2D3E4F5061728394A5B6 /* L10n.swift */; };
+		0C1D2E3F405162738495A6B7 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E2F30415263748596A7B8 /* AppTab.swift */; };
 		041BC251AB99CB10C6C8AAA4 /* MockToolRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E64B757B103C4FEDFD3B6B4 /* MockToolRepository.swift */; };
 		043E2373010F6701DA678B0B /* AppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE42251ACF10E733D4F393 /* AppDesign.swift */; };
 		1298425D681D3E8C2B90A6F1 /* ToolUsageStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD3E52FC198C2208BC2A34 /* ToolUsageStatsView.swift */; };
 		12EBD8DDE76995BDD4017342 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E40B5322A78915B60918B1A /* HomeView.swift */; };
 		1B21F48B768D5BE000FCD7E8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC4A4B770C81D62969D853 /* SearchView.swift */; };
 		1DC9999343971C97B544A90F /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60E4A096FF503A79D55F5DD /* AppTheme.swift */; };
+		1A2B3C4D5E6F708192A3B4C5 /* AITool+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C3D4E5F60718293A4B5C6 /* AITool+Localization.swift */; };
+		2A3B4C5D6E7F8091A2B3C4D5 /* TaskScenario+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F708192A3B4C5D6 /* TaskScenario+Localization.swift */; };
 		24A4289B44F78B95F5D22E7E /* tools.seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CDFBBEA716503F7823A5A8E /* tools.seed.json */; };
 		255D215EDCED5C1A55D6E14E /* ToolDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9A6BD1AD1DB779AFDE151 /* ToolDetailView.swift */; };
 		2852A83C2DB5EF9B28061518 /* AIConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1BEBD1EE7B92EB8E526F4 /* AIConsoleView.swift */; };
@@ -72,15 +76,19 @@
 		00556EE6D345FDF96751535A /* AIWikiUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AIWikiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048119FDEFDCD3834D4BF2A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		0CB896E3A8988B754DF4F7D9 /* ScenarioDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioDetailView.swift; sourceTree = "<group>"; };
+		0D1E2F30415263748596A7B8 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		0E64B757B103C4FEDFD3B6B4 /* MockToolRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToolRepository.swift; sourceTree = "<group>"; };
 		12093B53711C4E5D5AE7E8A5 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
 		180E7C84E8F969EE42A82D19 /* learning_materials.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = learning_materials.json; sourceTree = "<group>"; };
 		181F4265BAFF40546338B75A /* CategoryToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToolsView.swift; sourceTree = "<group>"; };
 		1A43778D1D3A8F94A75634E9 /* AppStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTests.swift; sourceTree = "<group>"; };
 		1A557D3E63571A2108509830 /* ComparePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparePickerView.swift; sourceTree = "<group>"; };
+		1B2C3D4E5F60718293A4B5C6 /* AITool+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AITool+Localization.swift"; sourceTree = "<group>"; };
 		207E299D8FF2E89BA28FD060 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F708192A3B4C5D6 /* TaskScenario+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskScenario+Localization.swift"; sourceTree = "<group>"; };
 		3BE99E0EEBF776F32C19F4B3 /* ScenarioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioLibrary.swift; sourceTree = "<group>"; };
 		3C1EDA32BED20CF0141A881D /* ExportPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPreviewView.swift; sourceTree = "<group>"; };
+		3B4C5D6E7F8091A2B3C4D5E6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "en.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3FDB213C6FEC645DFED80FF0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4C84B0D8DA86CF6ADAED7DA7 /* TaskScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScenario.swift; sourceTree = "<group>"; };
 		646A0993E41DC725BF6CFD37 /* SpotlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightManager.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 		99EC4A4B770C81D62969D853 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		9CDFBBEA716503F7823A5A8E /* tools.seed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tools.seed.json; sourceTree = "<group>"; };
 		9E40B5322A78915B60918B1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0B1C2D3E4F5061728394A5B6 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		A45E1EF7D7F6D57E89AE0802 /* ToolCardExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCardExportView.swift; sourceTree = "<group>"; };
 		B8DE0EBA83B22A561FAB6804 /* AITool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITool.swift; sourceTree = "<group>"; };
 		BB1CB1F50603E88B505E254D /* AIWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWikiApp.swift; sourceTree = "<group>"; };
@@ -130,6 +139,7 @@
 		279CDAE39D0FDE6B35557DAE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				0D1E2F30415263748596A7B8 /* AppTab.swift */,
 				BB1CB1F50603E88B505E254D /* AIWikiApp.swift */,
 				048119FDEFDCD3834D4BF2A6 /* RootTabView.swift */,
 			);
@@ -189,6 +199,16 @@
 				00556EE6D345FDF96751535A /* AIWikiUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5B6C7D8E9F0A1B2C3D4E5F60 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				1B2C3D4E5F60718293A4B5C6 /* AITool+Localization.swift */,
+				0B1C2D3E4F5061728394A5B6 /* L10n.swift */,
+				2B3C4D5E6F708192A3B4C5D6 /* TaskScenario+Localization.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		6AE6B040156E188F2324BB33 /* Util */ = {
@@ -321,7 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				8C04525FC36C8419EA6A7A48 /* Assets.xcassets */,
-				3FDB213C6FEC645DFED80FF0 /* Localizable.strings */,
+				4B5C6D7E8F901A2B3C4D5E6F /* Localizable.strings */,
 				C3A35DFB498C57B9B3C0B576 /* Seed */,
 			);
 			path = Resources;
@@ -363,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				6BBE42251ACF10E733D4F393 /* AppDesign.swift */,
+				5B6C7D8E9F0A1B2C3D4E5F60 /* Localization */,
 				9E03862B656EDDBABFE8378C /* Models */,
 				4BCAA8EFBE8A4FFD93F7C301 /* State */,
 				4CCF9763B860438C6EA73EA8 /* UI */,
@@ -372,6 +393,18 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXVariantGroup section */
+		4B5C6D7E8F901A2B3C4D5E6F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B4C5D6E7F8091A2B3C4D5E6 /* Localizable.strings */,
+				3FDB213C6FEC645DFED80FF0 /* Localizable.strings */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin PBXNativeTarget section */
 		63E9F0673D03D973FAAF906F /* AIWikiTests */ = {
@@ -502,8 +535,10 @@
 			files = (
 				2852A83C2DB5EF9B28061518 /* AIConsoleView.swift in Sources */,
 				FA7CC29FC1C50354116F6C7D /* AINewsWidget.swift in Sources */,
+				1A2B3C4D5E6F708192A3B4C5 /* AITool+Localization.swift in Sources */,
 				563FC258EB065276B8630A4C /* AITool.swift in Sources */,
 				8C394C293B75193D2222C15D /* AIWebView.swift in Sources */,
+				0C1D2E3F405162738495A6B7 /* AppTab.swift in Sources */,
 				3E4D8E94C3CDFBC42F8844C6 /* AIWikiApp.swift in Sources */,
 				043E2373010F6701DA678B0B /* AppDesign.swift in Sources */,
 				63E2B497023183A67997FBA7 /* AppStore.swift in Sources */,
@@ -517,6 +552,7 @@
 				9393C2EF5944D2512EFB9A15 /* ExportPreviewView.swift in Sources */,
 				7A11FD67EC55BB517B394768 /* FavoritesView.swift in Sources */,
 				12EBD8DDE76995BDD4017342 /* HomeView.swift in Sources */,
+				0A1B2C3D4E5F60718293A4B5 /* L10n.swift in Sources */,
 				B75424C144BFB75D16351045 /* PromptStudioView.swift in Sources */,
 				53A0F09BBAE8E036F8773352 /* RadarChartView.swift in Sources */,
 				7940D9A7FCC8A2A17B107AD3 /* RootTabView.swift in Sources */,
@@ -526,6 +562,7 @@
 				3AD4C9B9DB7CDFB690727CE5 /* SettingsView.swift in Sources */,
 				E983D2D37DFAD9F1927CA7C2 /* SplashView.swift in Sources */,
 				E77672FCE8FFA3B08F2EB29A /* SpotlightManager.swift in Sources */,
+				2A3B4C5D6E7F8091A2B3C4D5 /* TaskScenario+Localization.swift in Sources */,
 				83837F22CA6B7152C7201CFE /* TaskScenario.swift in Sources */,
 				EAEAE349BF9DFC793EE24A01 /* ToolCardExportView.swift in Sources */,
 				255D215EDCED5C1A55D6E14E /* ToolDetailView.swift in Sources */,
@@ -636,7 +673,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -738,7 +775,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;

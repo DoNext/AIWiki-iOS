@@ -38,15 +38,15 @@ struct AIWikiApp: App {
             
             switch host {
             case "tab":
-                if let tabIndex = Int(path) {
-                    store.selectedTab = tabIndex
+                if let tabIndex = Int(path), let tab = AppTab(rawValue: tabIndex) {
+                    store.selectedTab = tab
                 }
             case "tool":
                 if let tool = store.tool(withID: path) {
                     store.deepLinkTool = tool
                 }
             case "compare":
-                store.selectedTab = 2
+                store.selectedTab = .compare
             default:
                 break
             }

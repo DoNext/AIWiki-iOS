@@ -26,11 +26,11 @@ struct CategoriesView: View {
                                     Image(systemName: CategoryIcon.symbol(for: item.name))
                                         .font(.title)
                                         .foregroundStyle(AppGradients.accent)
-                                    Text(item.name)
+                                    Text(L10n.text(item.name))
                                         .font(.subheadline)
                                         .fontWeight(.semibold)
                                         .foregroundColor(AppColors.textPrimary)
-                                    Text("\(item.count) 个工具")
+                                    Text(L10n.format("%d 个工具", item.count))
                                         .font(.caption)
                                         .foregroundColor(AppColors.textSecondary)
                                 }

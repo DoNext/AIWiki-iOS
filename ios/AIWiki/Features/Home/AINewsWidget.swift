@@ -17,7 +17,7 @@ struct AINewsWidget: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Label(tips[currentIndex].title, systemImage: "sparkles")
+                Label(L10n.text(tips[currentIndex].title), systemImage: "sparkles")
                     .font(.caption)
                     .fontWeight(.bold)
                     .foregroundColor(AppColors.accent)
@@ -33,7 +33,7 @@ struct AINewsWidget: View {
                 }
             }
             
-            Text(tips[currentIndex].content)
+            Text(L10n.text(tips[currentIndex].content))
                 .font(.subheadline)
                 .foregroundColor(AppColors.textPrimary)
                 .lineLimit(2)

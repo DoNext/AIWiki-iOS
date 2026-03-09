@@ -13,7 +13,7 @@ struct ToolListRow: View {
                 Text(tool.name)
                     .font(.headline)
                     .foregroundColor(AppColors.textPrimary)
-                Text(tool.intro)
+                Text(tool.localizedIntro)
                     .font(.subheadline)
                     .foregroundColor(AppColors.textSecondary)
                     .lineLimit(2)
@@ -29,7 +29,7 @@ struct ToolListRow: View {
                     .foregroundColor(store.isFavorite(tool.id) ? AppColors.accent : AppColors.textSecondary)
             }
             .buttonStyle(.plain)
-            .accessibilityLabel(store.isFavorite(tool.id) ? "取消收藏" : "收藏")
+            .accessibilityLabel(Text(store.isFavorite(tool.id) ? "取消收藏" : "收藏"))
         }
         .padding(14)
         .cardStyle()
