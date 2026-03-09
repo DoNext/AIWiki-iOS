@@ -18,8 +18,7 @@ struct AINewsWidget: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Label(L10n.text(tips[currentIndex].title), systemImage: "sparkles")
-                    .font(.caption)
-                    .fontWeight(.bold)
+                    .font(.caption2.weight(.semibold))
                     .foregroundColor(AppColors.accent)
                 
                 Spacer()
