@@ -28,6 +28,13 @@ Compare template files against an app repository:
 sh release-template/tools/diff_template_against_app.sh /path/to/your-app-repo
 ```
 
+Generate metadata files from a simple config file:
+
+```bash
+cp release-template/examples/metadata.env.example /path/to/your-app-repo/metadata.env
+sh release-template/tools/init_metadata.sh /path/to/your-app-repo /path/to/your-app-repo/metadata.env
+```
+
 ## Required replacements after install
 
 Replace these values before using the workflow:

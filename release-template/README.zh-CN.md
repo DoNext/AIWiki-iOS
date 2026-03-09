@@ -31,6 +31,13 @@ sh release-template/tools/install_into_app.sh /path/to/your-app-repo
 sh release-template/tools/diff_template_against_app.sh /path/to/your-app-repo
 ```
 
+如果你想自动批量替换 App Store metadata，可以先复制示例配置，再运行：
+
+```bash
+cp release-template/examples/metadata.env.example /path/to/your-app-repo/metadata.env
+sh release-template/tools/init_metadata.sh /path/to/your-app-repo /path/to/your-app-repo/metadata.env
+```
+
 然后立即替换这些内容：
 
 - `APP_BUNDLE_ID`
