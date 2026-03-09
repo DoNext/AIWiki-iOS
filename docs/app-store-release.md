@@ -33,6 +33,7 @@ After those are in place, normal metadata and screenshot updates can be driven l
 - `scripts/release_to_app_store.sh`: one-command wrapper
 - `ci_scripts/ci_post_xcodebuild.sh`: Xcode Cloud auto-submit hook
 - `ci_scripts/exportOptions-appstore.plist`: export options used by Xcode Cloud
+- `docs/new-app-release-template.md`: checklist for reusing this flow in a new app
 
 ## Prerequisites
 
