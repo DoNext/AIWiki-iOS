@@ -17,7 +17,13 @@
 
 ## 复制到新仓库后的第一步
 
-把这些文件按原相对路径复制到新仓库根目录。
+优先使用安装脚本：
+
+```bash
+sh release-template/tools/install_into_app.sh /path/to/your-app-repo
+```
+
+如果你只是参考，也可以手工复制这些文件到新仓库根目录。
 
 然后立即替换这些内容：
 
