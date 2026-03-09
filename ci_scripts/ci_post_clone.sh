@@ -9,7 +9,10 @@ bash scripts/check_all.sh
 
 if [ -f "Gemfile" ]; then
   echo "[ci_post_clone] Install Ruby gems for release automation"
-  bundle config set path vendor/bundle
+  export BUNDLE_PATH="$PWD/vendor/bundle"
+  export BUNDLE_BIN="$PWD/vendor/bundle/bin"
+  export BUNDLE_APP_CONFIG="$PWD/.bundle"
+  bundle config set --local path "$BUNDLE_PATH"
   bundle install --jobs 4 --retry 3
 fi
 
