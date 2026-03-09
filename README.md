@@ -100,6 +100,25 @@ You can also pass a custom simulator destination:
 bash scripts/generate_screenshots.sh en-US "platform=iOS Simulator,name=iPad Pro 13-inch (M4)"
 ```
 
+## App Store release automation
+
+This repo includes a local App Store release flow based on `fastlane`.
+
+Main entrypoint:
+
+```bash
+bash scripts/release_to_app_store.sh --version 1.0.0 --build-number 12
+```
+
+Release metadata lives in `fastlane/metadata`, and localized screenshots are uploaded from `screenshots/AppStore`.
+If your Xcode Cloud environment supports text-only secrets, the App Store Connect `.p8` can also be provided through `APP_STORE_CONNECT_KEY_CONTENT`.
+
+Full setup instructions:
+
+- `docs/app-store-release.md`
+
+Xcode Cloud can also drive the whole archive -> export -> upload -> submit flow using `ci_scripts/ci_post_xcodebuild.sh`.
+
 ---
 
 <a name="简体中文"></a>

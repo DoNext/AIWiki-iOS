@@ -1,0 +1,10 @@
+AIWiki is a privacy-first, offline guide to AI tools and prompt workflows.
+
+Browse curated tools by category, compare options, save favorites locally, and learn practical prompt patterns without creating an account or sending your data to a server.
+
+Core features:
+- Offline AI tool directory
+- Fast search and category filters
+- Local favorites and lightweight comparison
+- Prompt Studio and practical use-case examples
+- No tracking, no analytics, no login

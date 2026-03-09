@@ -7,6 +7,12 @@ cd ..
 echo "[ci_post_clone] Run repository checks"
 bash scripts/check_all.sh
 
+if [ -f "Gemfile" ]; then
+  echo "[ci_post_clone] Install Ruby gems for release automation"
+  bundle config set path vendor/bundle
+  bundle install --jobs 4 --retry 3
+fi
+
 if [ -n "${CI_BUILD_NUMBER:-}" ]; then
   echo "[ci_post_clone] Set build number to ${CI_BUILD_NUMBER}"
   xcrun agvtool new-version -all "${CI_BUILD_NUMBER}" >/dev/null
