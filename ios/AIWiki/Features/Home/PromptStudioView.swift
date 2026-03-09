@@ -6,11 +6,11 @@ struct PromptStudioView: View {
     @EnvironmentObject private var store: AppStore
     
     // Form States
-    @State private var selectedRole = "通用助手"
+    @State private var selectedRole = "prompt_studio.role.general"
     @State private var taskDescription = ""
-    @State private var selectedTone = "专业"
+    @State private var selectedTone = "prompt_studio.tone.professional"
     @State private var constraints = ""
-    @State private var outputFormat = "纯文本"
+    @State private var outputFormat = "prompt_studio.format.plain_text"
     
     // Result States
     @State private var generatedPrompt = ""
@@ -18,9 +18,28 @@ struct PromptStudioView: View {
     @State private var showingHistory = false
     @State private var hasSaved = false
     
-    let roles = ["通用助手", "资深程序员", "营销专家", "翻译官", "创意作家", "数据分析师"]
-    let tones = ["专业", "友好", "严谨", "幽默", "简洁"]
-    let formats = ["纯文本", "Markdown 表格", "JSON", "列表", "代码块"]
+    let roles = [
+        "prompt_studio.role.general",
+        "prompt_studio.role.engineer",
+        "prompt_studio.role.marketer",
+        "prompt_studio.role.translator",
+        "prompt_studio.role.writer",
+        "prompt_studio.role.analyst"
+    ]
+    let tones = [
+        "prompt_studio.tone.professional",
+        "prompt_studio.tone.friendly",
+        "prompt_studio.tone.rigorous",
+        "prompt_studio.tone.humorous",
+        "prompt_studio.tone.concise"
+    ]
+    let formats = [
+        "prompt_studio.format.plain_text",
+        "prompt_studio.format.markdown_table",
+        "prompt_studio.format.json",
+        "prompt_studio.format.list",
+        "prompt_studio.format.code_block"
+    ]
 
     var body: some View {
         NavigationStack {
@@ -167,7 +186,7 @@ struct PromptHistoryView: View {
                     } label: {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
-                                Text(item.role)
+                                Text(L10n.text(item.role))
                                     .font(.caption.bold())
                                     .padding(.horizontal, 8)
                                     .padding(.vertical, 4)
@@ -241,7 +260,7 @@ struct PromptDetailView: View {
             VStack(alignment: .leading, spacing: 20) {
                 // Header
                 HStack {
-                    Text(item.role)
+                    Text(L10n.text(item.role))
                         .font(.headline)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)

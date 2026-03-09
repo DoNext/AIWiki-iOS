@@ -15,78 +15,46 @@ struct CompetitorBriefOutcomeView: View {
 
     private var context: String {
         """
-        对比对象：\(productA) vs \(productB)
-        时间范围：\(compareWindow)
-        重点维度：\(focus)
-        读者：\(audience)
+        \(L10n.text("outcome.competitor.context.products"))\(productA) vs \(productB)
+        \(L10n.text("outcome.competitor.context.window"))\(compareWindow)
+        \(L10n.text("outcome.competitor.context.focus"))\(focus)
+        \(L10n.text("outcome.competitor.context.audience"))\(audience)
         """
     }
 
     private var prompt: String {
-        """
-        你是资深战略分析师。请基于以下信息生成竞品分析简报：
-        \(context)
-
-        输出结构：
-        1) 结论摘要（不超过120字）
-        2) 功能差异表
-        3) 定价与商业模式差异
-        4) 目标用户和典型场景
-        5) 我方可执行机会（短期/中期）
-        6) 风险与假设
-
-        每个关键结论标注来源链接。
-        """
+        L10n.format("outcome.competitor.prompt.body", context)
     }
 
     private var template: String {
-        """
-        【结论摘要】
-        ...
-
-        【功能差异】
-        - 维度1：A... / B...
-
-        【定价与商业模式】
-        - A...
-        - B...
-
-        【可执行机会】
-        - 短期（2周内）：
-        - 中期（1季度）：
-        """
+        L10n.text("outcome.competitor.template")
     }
 
     private var checklist: [String] {
         [
-            "是否明确时间窗口，避免过期信息",
-            "关键结论是否附来源",
-            "机会建议是否可执行并有优先级",
-            "是否区分事实和推测"
+            L10n.text("outcome.competitor.checklist.1"),
+            L10n.text("outcome.competitor.checklist.2"),
+            L10n.text("outcome.competitor.checklist.3"),
+            L10n.text("outcome.competitor.checklist.4")
         ]
     }
 
     private var refinePrompt: String {
-        """
-        请对上一版竞品简报做二次优化：
-        1) 删除重复论述
-        2) 强化“可执行动作”与负责人建议
-        3) 对每个结论补充来源可信度说明
-        """
+        L10n.text("outcome.competitor.refine")
     }
 
     private var fullPackage: String {
         """
-        [竞品提示词]
+        [\(L10n.text("outcome.competitor.package.prompt"))]
         \(prompt)
 
-        [简报模板]
+        [\(L10n.text("outcome.competitor.package.template"))]
         \(template)
 
-        [质量清单]
+        [\(L10n.text("outcome.competitor.package.checklist"))]
         \(checklist.map { "- \($0)" }.joined(separator: "\n"))
 
-        [二次优化]
+        [\(L10n.text("outcome.competitor.package.refine"))]
         \(refinePrompt)
         """
     }

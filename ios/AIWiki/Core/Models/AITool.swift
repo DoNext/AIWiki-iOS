@@ -52,15 +52,12 @@ struct AITool: Codable, Identifiable, Hashable {
 
         return [
             "reasoning": base,
-            "multimodal": multimodalText.contains("图像")
-                || multimodalText.contains("视频")
-                || multimodalText.contains("image")
+            "multimodal": multimodalText.contains("image")
                 || multimodalText.contains("video") ? 5 : 2,
             "speed": base,
-            "cost": pricingText.contains("免费")
-                || pricingText.contains("free")
+            "cost": pricingText.contains("free")
                 || pricingText.contains("open source")
-                || pricingText.contains("开源") ? 5 : 3,
+                ? 5 : 3,
             "easeOfUse": 4
         ]
     }

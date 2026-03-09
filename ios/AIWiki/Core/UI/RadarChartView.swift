@@ -13,11 +13,11 @@ struct RadarChartView: View {
     let colorB: Color = .orange
     
     let dimensions = [
-        RadarDimension(name: "推理能力", key: "reasoning"),
-        RadarDimension(name: "多模态", key: "multimodal"),
-        RadarDimension(name: "响应速度", key: "speed"),
-        RadarDimension(name: "性价比", key: "cost"),
-        RadarDimension(name: "易用性", key: "easeOfUse")
+        RadarDimension(name: L10n.text("radar.reasoning"), key: "reasoning"),
+        RadarDimension(name: L10n.text("radar.multimodal"), key: "multimodal"),
+        RadarDimension(name: L10n.text("radar.speed"), key: "speed"),
+        RadarDimension(name: L10n.text("radar.cost"), key: "cost"),
+        RadarDimension(name: L10n.text("radar.ease_of_use"), key: "easeOfUse")
     ]
     
     var body: some View {

@@ -4,20 +4,23 @@ import Charts
 struct ToolUsageStatsView: View {
     @EnvironmentObject private var store: AppStore
     
-    // 维度定义
     enum SkillDimension: String, CaseIterable {
-        case creative = "创意/绘图"
-        case writing = "文案/翻译"
-        case coding = "编程/开发"
-        case analytics = "数据/分析"
-        case generic = "通用/助手"
+        case creative = "stats.dimension.creative"
+        case writing = "stats.dimension.writing"
+        case coding = "stats.dimension.coding"
+        case analytics = "stats.dimension.analytics"
+        case generic = "stats.dimension.generic"
         
         static func from(category: String) -> SkillDimension {
             switch category {
-            case "图像生成", "视频生成", "艺术设计": return .creative
-            case "文案写作", "语言翻译", "文档处理": return .writing
-            case "编程开发", "代码补全": return .coding
-            case "数据分析", "学术搜索": return .analytics
+            case L10n.Category.imageGeneration, L10n.Category.video, L10n.Category.design:
+                return .creative
+            case L10n.Category.writing, L10n.Category.marketing:
+                return .writing
+            case L10n.Category.coding:
+                return .coding
+            case L10n.Category.dataAnalysis, L10n.Category.search:
+                return .analytics
             default: return .generic
             }
         }
@@ -36,7 +39,6 @@ struct ToolUsageStatsView: View {
         let total = max(1, events.count)
         return SkillDimension.allCases.map { dim in
             let count = counts[dim] ?? 0
-            // 基础分 1.0，根据打卡频率加成，最高 5.0
             return min(5.0, 1.0 + (Double(count) / Double(total) * 10.0))
         }
     }
@@ -48,15 +50,24 @@ struct ToolUsageStatsView: View {
         let totalCheckins = store.checkInEvents.count
         
         if totalCheckins < 5 {
-            return ("AI 初探者", "leaf.fill", "正在开启你的 AI 探索之旅，多去打卡发现更多工具吧！")
+            return (
+                L10n.text("stats.rank.beginner.title"),
+                "leaf.fill",
+                L10n.text("stats.rank.beginner.description")
+            )
         }
         
         switch topSkill {
-        case .creative: return ("光影艺术家", "paintbrush.fill", "你对视觉创意充满热情，是当之无愧的 AI 调色师。")
-        case .writing: return ("文字魔法师", "scroll.fill", "文字是你操控 AI 的咒语，沟通与表达是你的强项。")
-        case .coding: return ("数字架构师", "cpu.fill", "在代码的世界里，你正利用 AI 构建未来的蓝图。")
-        case .analytics: return ("智库观察家", "magnifyingglass.circle.fill", "洞悉数据，挖掘真相，AI 让你拥有了更广阔的视野。")
-        case .generic: return ("全能领航员", "safari.fill", "你游走在各类 AI 之间，是一位全能的工具应用专家。")
+        case .creative:
+            return (L10n.text("stats.rank.creative.title"), "paintbrush.fill", L10n.text("stats.rank.creative.description"))
+        case .writing:
+            return (L10n.text("stats.rank.writing.title"), "scroll.fill", L10n.text("stats.rank.writing.description"))
+        case .coding:
+            return (L10n.text("stats.rank.coding.title"), "cpu.fill", L10n.text("stats.rank.coding.description"))
+        case .analytics:
+            return (L10n.text("stats.rank.analytics.title"), "magnifyingglass.circle.fill", L10n.text("stats.rank.analytics.description"))
+        case .generic:
+            return (L10n.text("stats.rank.generic.title"), "safari.fill", L10n.text("stats.rank.generic.description"))
         }
     }
 
@@ -119,7 +130,7 @@ struct ToolUsageStatsView: View {
                             .stroke(AppColors.accent, lineWidth: 2)
                         
                         // Labels
-                        RadarLabelsView(dimensions: SkillDimension.allCases.map { $0.rawValue })
+                        RadarLabelsView(dimensions: SkillDimension.allCases.map(L10n.text))
                     }
                     .frame(height: 220)
                     .padding(.vertical, 20)

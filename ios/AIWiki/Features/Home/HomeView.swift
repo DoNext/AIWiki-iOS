@@ -21,11 +21,11 @@ struct HomeView: View {
 
     private var dailyTip: (title: String, content: String) {
         let tips = [
-            ("如何提问更有效？", "采用『背景 + 任务 + 限制 + 输出格式』结构，AI 回答准确率显著提升。"),
-            ("减少 AI 幻觉", "在提示词中明确加入『如果你不知道，请明确告知，不要编造』。"),
-            ("长文总结策略", "先让 AI 提取大纲目录，再针对特定章节深入提问，避免遗漏关键信息。"),
-            ("角色扮演", "让 AI 扮演特定专家（如：资深程序员、营销总监），获取更专业的回答视角。"),
-            ("提供示例 (Few-Shot)", "在要求 AI 输出复杂格式时，先提供一个你期望的格式示例。")
+            ("home.tip.ask_better.title", "home.tip.ask_better.body"),
+            ("home.tip.reduce_hallucinations.title", "home.tip.reduce_hallucinations.body"),
+            ("home.tip.long_summary.title", "home.tip.long_summary.body"),
+            ("home.tip.role_play.title", "home.tip.role_play.body"),
+            ("home.tip.few_shot.title", "home.tip.few_shot.body")
         ]
         let dayOfYear = Calendar.current.ordinality(of: .day, in: .year, for: Date()) ?? 0
         let tip = tips[dayOfYear % tips.count]

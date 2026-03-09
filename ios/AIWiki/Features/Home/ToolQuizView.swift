@@ -10,32 +10,32 @@ struct QuizQuestion: Identifiable {
 // MARK: - Quiz Data
 let quizQuestions = [
     QuizQuestion(
-        text: "你在寻找 AI 的主要用途是什么？",
-        options: ["处理文字/写作", "生成图像/设计", "编程辅助", "研究与资料整理", "视频音频处理"],
+        text: "quiz.question.use_case",
+        options: ["quiz.option.writing", "quiz.option.image_design", "quiz.option.coding", "quiz.option.research", "quiz.option.video_audio"],
         relatedCategories: [
-            "处理文字/写作": [L10n.Category.writing, L10n.Category.chat],
-            "生成图像/设计": [L10n.Category.imageGeneration, L10n.Category.design],
-            "编程辅助": [L10n.Category.coding],
-            "研究与资料整理": [L10n.Category.dataAnalysis, L10n.Category.chat, L10n.Category.search],
-            "视频音频处理": [L10n.Category.video, L10n.Category.audio]
+            "quiz.option.writing": [L10n.Category.writing, L10n.Category.chat],
+            "quiz.option.image_design": [L10n.Category.imageGeneration, L10n.Category.design],
+            "quiz.option.coding": [L10n.Category.coding],
+            "quiz.option.research": [L10n.Category.dataAnalysis, L10n.Category.chat, L10n.Category.search],
+            "quiz.option.video_audio": [L10n.Category.video, L10n.Category.audio]
         ]
     ),
     QuizQuestion(
-        text: "你的使用频率大概是？",
-        options: ["每天高频使用", "偶尔遇到难题才用", "正在学习了解中"],
+        text: "quiz.question.frequency",
+        options: ["quiz.option.daily", "quiz.option.occasional", "quiz.option.learning"],
         relatedCategories: [
-            "每天高频使用": [], // No specific category filter, maybe rank higher
-            "偶尔遇到难题才用": [],
-            "正在学习了解中": []
+            "quiz.option.daily": [],
+            "quiz.option.occasional": [],
+            "quiz.option.learning": []
         ]
     ),
     QuizQuestion(
-        text: "预算要求？",
-        options: ["仅看完全免费", "接受免费试用+升级", "好用就行，愿意付费"],
+        text: "quiz.question.budget",
+        options: ["quiz.option.free_only", "quiz.option.free_plus_upgrade", "quiz.option.paid_ok"],
         relatedCategories: [
-            "仅看完全免费": [], // Handled by complex filter later
-            "接受免费试用+升级": [],
-            "好用就行，愿意付费": []
+            "quiz.option.free_only": [],
+            "quiz.option.free_plus_upgrade": [],
+            "quiz.option.paid_ok": []
         ]
     )
 ]
@@ -218,9 +218,9 @@ struct ToolQuizView: View {
                 }
                 
                 // Q3 budget logic
-                if answers.count > 2 && answers[2] == "仅看完全免费" {
+                if answers.count > 2 && answers[2] == "quiz.option.free_only" {
                     let pricingText = (tool.localizedAccessPricing ?? tool.access?.pricing ?? "").lowercased()
-                    if pricingText.contains("免费") || pricingText.contains("free") || pricingText.contains("开源") || pricingText.contains("open source") {
+                    if pricingText.contains("free") || pricingText.contains("open source") {
                         scoredTools[i].score += 3
                     } else {
                         scoredTools[i].score -= 5 // Penalty if not free

@@ -7,11 +7,11 @@ struct AINewsWidget: View {
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
     private let tips = [
-        (title: "每日 AI 贴士", content: "使用「Prompt 指南」中的结构化模版，可以让模型回复更专业。"),
-        (title: "行业动态", content: "多模态大模型近期在视频生成领域取得重大突破，效率提升 3 倍。"),
-        (title: "效率专家", content: "尝试在提示词中加上‘一步步思考’，可以显著提高逻辑推理准确度。"),
-        (title: "新功能上线", content: "AI 枢纽现在支持一键切换多个模型对比，快去体验吧！"),
-        (title: "安全提醒", content: "在与大模型交流时，请勿输入个人隐私信息或公司核心机密。")
+        (title: "news.tip.daily.title", content: "news.tip.daily.body"),
+        (title: "news.industry.title", content: "news.industry.body"),
+        (title: "news.productivity.title", content: "news.productivity.body"),
+        (title: "news.feature.title", content: "news.feature.body"),
+        (title: "news.safety.title", content: "news.safety.body")
     ]
     
     var body: some View {

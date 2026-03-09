@@ -13,54 +13,37 @@ struct CodeDebugOutcomeView: View {
     }
 
     private var prompt: String {
-        """
-        你是资深 \(language) 工程师。请定位并修复以下问题。
-
-        预期行为：
-        \(expectedBehavior.isEmpty ? "未提供" : expectedBehavior)
-
-        报错日志：
-        \(errorLog)
-
-        代码片段：
-        \(codeSnippet)
-
-        请按以下格式输出：
-        A. 根因分析
-        B. 最小修复方案
-        C. 修复后代码
-        D. 回归测试清单
-        E. 防止复发建议
-        """
+        L10n.format(
+            "outcome.debug.prompt.body",
+            language,
+            expectedBehavior.isEmpty ? L10n.text("outcome.debug.value.not_provided") : expectedBehavior,
+            errorLog,
+            codeSnippet
+        )
     }
 
     private var checklist: [String] {
         [
-            "根因是否与日志一致",
-            "修复是否为最小改动",
-            "是否覆盖边界测试",
-            "是否评估副作用"
+            L10n.text("outcome.debug.checklist.1"),
+            L10n.text("outcome.debug.checklist.2"),
+            L10n.text("outcome.debug.checklist.3"),
+            L10n.text("outcome.debug.checklist.4")
         ]
     }
 
     private var refinePrompt: String {
-        """
-        请基于上一版修复结果进行二次审查：
-        1) 找出潜在副作用
-        2) 提供更稳健但复杂度可控的备选方案
-        3) 补充缺失测试用例
-        """
+        L10n.text("outcome.debug.refine")
     }
 
     private var fullPackage: String {
         """
-        [排错提示词]
+        [\(L10n.text("outcome.debug.package.prompt"))]
         \(prompt)
 
-        [质量清单]
+        [\(L10n.text("outcome.debug.package.checklist"))]
         \(checklist.map { "- \($0)" }.joined(separator: "\n"))
 
-        [二次优化]
+        [\(L10n.text("outcome.debug.package.refine"))]
         \(refinePrompt)
         """
     }

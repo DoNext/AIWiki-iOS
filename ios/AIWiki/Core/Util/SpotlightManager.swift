@@ -22,7 +22,13 @@ class SpotlightManager {
             attributeSet.displayName = tool.localizedName
             attributeSet.contentDescription = tool.localizedIntro
             
-            var keywords = [tool.localizedCategory, tool.localizedCompany, "AI", "工具", "助手"] + tool.localizedFeatures
+            var keywords = [
+                tool.localizedCategory,
+                tool.localizedCompany,
+                L10n.text("spotlight.keyword.ai"),
+                L10n.text("spotlight.keyword.tool"),
+                L10n.text("spotlight.keyword.assistant")
+            ] + tool.localizedFeatures
             keywords.append(tool.id)
             attributeSet.keywords = keywords
             attributeSet.alternateNames = [tool.id]
@@ -69,8 +75,8 @@ class SpotlightManager {
 import AppIntents
 
 struct OpenPromptStudioIntent: AppIntent {
-    static var title: LocalizedStringResource = "打开提示词工作室"
-    static var description = IntentDescription("立即打开 AIWiki 的提示词工作室开始创作。")
+    static var title: LocalizedStringResource = "intent.open_prompt_studio.title"
+    static var description = IntentDescription("intent.open_prompt_studio.description")
     static var openAppWhenRun: Bool = true
 
     @MainActor
@@ -81,8 +87,8 @@ struct OpenPromptStudioIntent: AppIntent {
 }
 
 struct ViewDashboardIntent: AppIntent {
-    static var title: LocalizedStringResource = "查看 AI 生产力仪表盘"
-    static var description = IntentDescription("查看您的 AI 技能图谱和打卡统计。")
+    static var title: LocalizedStringResource = "intent.view_dashboard.title"
+    static var description = IntentDescription("intent.view_dashboard.description")
     static var openAppWhenRun: Bool = true
 
     @MainActor
@@ -93,20 +99,23 @@ struct ViewDashboardIntent: AppIntent {
 }
 
 struct RandomToolIntent: AppIntent {
-    static var title: LocalizedStringResource = "随机推荐 AI 工具"
-    static var description = IntentDescription("从 AIWiki 库中随机为您推荐一个实用的 AI 工具。")
+    static var title: LocalizedStringResource = "intent.random_tool.title"
+    static var description = IntentDescription("intent.random_tool.description")
     
     @MainActor
     func perform() async throws -> some IntentResult & ReturnsValue<String> {
         let tips = [
-            "Midjourney: 顶尖的 AI 艺术生成工具。",
-            "ChatGPT: 强大的通用对话助手。",
-            "Claude: 擅长长文分析与逻辑推理。",
-            "Runway: 领先的 AI 视频创作平台。",
-            "Gamma: 自动生成演示文稿的利器。"
+            L10n.text("intent.random.tip.midjourney"),
+            L10n.text("intent.random.tip.chatgpt"),
+            L10n.text("intent.random.tip.claude"),
+            L10n.text("intent.random.tip.runway"),
+            L10n.text("intent.random.tip.gamma")
         ]
-        let recommendation = tips.randomElement() ?? "快去 AIWiki 探索更多工具吧！"
-        return .result(value: recommendation, dialog: "为您推荐：\(recommendation)")
+        let recommendation = tips.randomElement() ?? L10n.text("intent.random.tip.default")
+        return .result(
+            value: recommendation,
+            dialog: IntentDialog(stringLiteral: "\(L10n.text("intent.random.dialog_prefix"))\(recommendation)")
+        )
     }
 }
 
@@ -115,22 +124,22 @@ struct AIWikiShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: OpenPromptStudioIntent(),
             phrases: [
-                "在 \(.applicationName) 中打开提示词工作室",
-                "使用 \(.applicationName) 创作提示词",
-                "打开 \(.applicationName) 提示词"
+                "intent.open_prompt_studio.phrase.1",
+                "intent.open_prompt_studio.phrase.2",
+                "intent.open_prompt_studio.phrase.3"
             ],
-            shortTitle: "打开提示词工作室",
+            shortTitle: LocalizedStringResource("intent.open_prompt_studio.short_title"),
             systemImageName: "wand.and.stars"
         )
         
         AppShortcut(
             intent: ViewDashboardIntent(),
             phrases: [
-                "在 \(.applicationName) 查看我的 AI 成绩单",
-                "显示 \(.applicationName) 仪表盘",
-                "查看 \(.applicationName) 技能分析"
+                "intent.view_dashboard.phrase.1",
+                "intent.view_dashboard.phrase.2",
+                "intent.view_dashboard.phrase.3"
             ],
-            shortTitle: "查看仪表盘",
+            shortTitle: LocalizedStringResource("intent.view_dashboard.short_title"),
             systemImageName: "chart.bar.xaxis"
         )
     }

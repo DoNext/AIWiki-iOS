@@ -15,11 +15,11 @@ struct AIConsoleView: View {
     @State private var currentToolURL: String
     
     private let tools = [
-        ConsoleTool(id: "chatgpt", name: "对话大模型", url: "https://chatgpt.com"),
-        ConsoleTool(id: "claude", name: "逻辑推理", url: "https://claude.ai"),
-        ConsoleTool(id: "gemini", name: "多模态智脑", url: "https://gemini.google.com"),
-        ConsoleTool(id: "kimi", name: "高效率搜索", url: "https://kimi.moonshot.cn"),
-        ConsoleTool(id: "deepseek", name: "工程化助手", url: "https://chat.deepseek.com")
+        ConsoleTool(id: "chatgpt", name: L10n.text("console.tool.chatgpt"), url: "https://chatgpt.com"),
+        ConsoleTool(id: "claude", name: L10n.text("console.tool.claude"), url: "https://claude.ai"),
+        ConsoleTool(id: "gemini", name: L10n.text("console.tool.gemini"), url: "https://gemini.google.com"),
+        ConsoleTool(id: "kimi", name: L10n.text("console.tool.kimi"), url: "https://kimi.moonshot.cn"),
+        ConsoleTool(id: "deepseek", name: L10n.text("console.tool.deepseek"), url: "https://chat.deepseek.com")
     ]
     
     init(initialURL: String = "https://chatgpt.com") {

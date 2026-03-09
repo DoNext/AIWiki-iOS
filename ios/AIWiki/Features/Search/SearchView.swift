@@ -24,7 +24,14 @@ struct SearchView: View {
     }
 
     private var hotSearches: [String] {
-        ["AI 搜索", "文生图", "代码助手", "法律咨询", "语音转换", "文档分析"].map(L10n.text)
+        [
+            L10n.text("search.hot.ai_search"),
+            L10n.text("search.hot.image_generation"),
+            L10n.text("search.hot.coding"),
+            L10n.text("search.hot.legal"),
+            L10n.text("search.hot.voice"),
+            L10n.text("search.hot.documents")
+        ]
     }
 
     var body: some View {

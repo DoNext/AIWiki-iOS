@@ -14,116 +14,62 @@ struct WeeklyReportOutcomeView: View {
 
     private var contextBlock: String {
         """
-        读者：\(audience)
-        本周完成事项：\(highlights)
-        关键数据：\(metrics.isEmpty ? "暂无" : metrics)
-        风险/阻塞：\(risks.isEmpty ? "暂无" : risks)
-        下周计划：\(nextPlan.isEmpty ? "待补充" : nextPlan)
+        \(L10n.text("outcome.weekly.context.audience"))\(audience)
+        \(L10n.text("outcome.weekly.context.highlights"))\(highlights)
+        \(L10n.text("outcome.weekly.context.metrics"))\(metrics.isEmpty ? L10n.text("outcome.weekly.value.none") : metrics)
+        \(L10n.text("outcome.weekly.context.risks"))\(risks.isEmpty ? L10n.text("outcome.weekly.value.none") : risks)
+        \(L10n.text("outcome.weekly.context.next_plan"))\(nextPlan.isEmpty ? L10n.text("outcome.weekly.value.todo") : nextPlan)
         """
     }
 
     private var promptForGeneralAI: String {
-        """
-        你是团队负责人助理。请根据以下信息生成可直接发送的中文周报：
-        \(contextBlock)
-
-        输出格式固定：
-        1) 本周完成（3-5条）
-        2) 关键数据（含变化趋势）
-        3) 风险与阻塞（含影响和缓解动作）
-        4) 下周计划（按优先级）
-        5) 需要协同事项（按负责人）
-
-        要求：结论先行，语言简洁，不要空话。
-        """
+        L10n.format("outcome.weekly.prompt.general", contextBlock)
     }
 
     private var promptForLogicAI: String {
-        """
-        你是严谨的项目管理助理。基于以下输入生成周报，并额外指出“信息缺口”：
-        \(contextBlock)
-
-        返回结构：
-        A. 管理层 120 字摘要
-        B. 本周完成（项目符号）
-        C. 风险与建议动作
-        D. 下周计划
-        E. 信息缺口（如缺负责人/缺数据）
-        """
+        L10n.format("outcome.weekly.prompt.logic", contextBlock)
     }
 
     private var promptForCreativeAI: String {
-        """
-        请把以下周工作信息整理成“可对外同步”的周报：
-        \(contextBlock)
-
-        输出要求：
-        - 先给 3 行摘要
-        - 再给完整周报
-        - 最后给一个“30秒口头汇报版本”
-        """
+        L10n.format("outcome.weekly.prompt.creative", contextBlock)
     }
 
     private var deliveryTemplate: String {
-        """
-        【本周完成】
-        - ...
-
-        【关键数据】
-        - 指标A：本周 X（上周 Y，环比 ...）
-
-        【风险与阻塞】
-        - 问题：...
-        - 影响：...
-        - 缓解动作：...
-
-        【下周计划】
-        - P0：...
-        - P1：...
-
-        【需要协同】
-        - 事项：...｜Owner：...｜截止：...
-        """
+        L10n.text("outcome.weekly.template")
     }
 
     private var qualityChecklist: [String] {
         [
-            "是否写清“结果”而不是只写“过程”",
-            "关键数据是否带对比（上周/目标）",
-            "风险项是否给出影响和动作",
-            "下周计划是否有优先级和负责人",
-            "全文是否能在 1 分钟内读完核心信息"
+            L10n.text("outcome.weekly.checklist.1"),
+            L10n.text("outcome.weekly.checklist.2"),
+            L10n.text("outcome.weekly.checklist.3"),
+            L10n.text("outcome.weekly.checklist.4"),
+            L10n.text("outcome.weekly.checklist.5")
         ]
     }
 
     private var refinePrompt: String {
-        """
-        请基于上一版周报做二次优化：
-        1) 删掉空话和重复表达
-        2) 把风险与动作写得更具体
-        3) 将下周计划按 P0/P1 排序并补 owner
-        4) 最终控制在 450 字内
-        """
+        L10n.text("outcome.weekly.refine")
     }
 
     private var fullPackage: String {
         """
-        [通用 AI 提示词]
+        [\(L10n.text("outcome.weekly.package.general_prompt"))]
         \(promptForGeneralAI)
 
-        [逻辑提示词]
+        [\(L10n.text("outcome.weekly.package.logic_prompt"))]
         \(promptForLogicAI)
 
-        [创意提示词]
+        [\(L10n.text("outcome.weekly.package.creative_prompt"))]
         \(promptForCreativeAI)
 
-        [可交付模板]
+        [\(L10n.text("outcome.weekly.package.template"))]
         \(deliveryTemplate)
 
-        [质量检查清单]
+        [\(L10n.text("outcome.weekly.package.checklist"))]
         \(qualityChecklist.map { "- \($0)" }.joined(separator: "\n"))
 
-        [二次优化提示词]
+        [\(L10n.text("outcome.weekly.package.refine_prompt"))]
         \(refinePrompt)
         """
     }
