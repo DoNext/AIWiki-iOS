@@ -195,3 +195,16 @@ Run the style checker after bulk copy edits:
 ```bash
 scripts/check_en_localizable_style.py
 ```
+
+To enforce the same rule locally before each commit:
+
+```bash
+bash scripts/install_git_hooks.sh
+```
+
+Shared entrypoints:
+
+```bash
+make lint-copy
+bash scripts/check_all.sh
+```

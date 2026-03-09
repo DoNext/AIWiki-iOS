@@ -50,6 +50,29 @@ This project uses **XcodeGen** to manage the project file.
    ```
 3. Open `AIWiki.xcodeproj` in Xcode and build for your target device or simulator.
 
+## Copy quality check
+
+Run the English localization style check before committing seed copy changes:
+
+```bash
+python3 scripts/check_en_localizable_style.py
+```
+
+Or use the shared check entrypoints:
+
+```bash
+make lint-copy
+bash scripts/check_all.sh
+```
+
+## Git hooks
+
+Install the local git hook template to run the same localization style check before commit:
+
+```bash
+bash scripts/install_git_hooks.sh
+```
+
 ---
 
 <a name="简体中文"></a>
