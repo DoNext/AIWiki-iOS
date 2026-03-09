@@ -1,1 +1,1 @@
-AI,artificial intelligence,prompt,tools,assistant,offline,productivity,search
+replace,with,your,app,keywords

@@ -29,7 +29,8 @@ if [ -z "${CI_ARCHIVE_PATH:-}" ] || [ ! -d "${CI_ARCHIVE_PATH}" ]; then
   exit 1
 fi
 
-INFO_PLIST="${CI_ARCHIVE_PATH}/Products/Applications/AIWiki.app/Info.plist"
+APP_PRODUCT_NAME="${APP_PRODUCT_NAME:-App}"
+INFO_PLIST="${CI_ARCHIVE_PATH}/Products/Applications/${APP_PRODUCT_NAME}.app/Info.plist"
 if [ ! -f "${INFO_PLIST}" ]; then
   echo "[ci_post_xcodebuild] App Info.plist not found at ${INFO_PLIST}" >&2
   exit 1

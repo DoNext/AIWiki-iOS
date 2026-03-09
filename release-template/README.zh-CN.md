@@ -22,6 +22,7 @@
 然后立即替换这些内容：
 
 - `APP_BUNDLE_ID`
+- `APP_PRODUCT_NAME`
 - App 名称
 - 副标题
 - 描述
@@ -45,6 +46,7 @@
 - `XCODE_CLOUD_AUTO_SUBMIT=1`
 - `XCODE_CLOUD_RELEASE_WORKFLOW=Release`
 - `APP_BUNDLE_ID=<新 bundle id>`
+- `APP_PRODUCT_NAME=<Xcode 产物名，例如 MyApp>`
 - `APP_STORE_CONNECT_KEY_ID=<key id>`
 - `APP_STORE_CONNECT_ISSUER_ID=<issuer id>`
 - `APP_STORE_CONNECT_KEY_CONTENT=<p8 原文或 base64>`

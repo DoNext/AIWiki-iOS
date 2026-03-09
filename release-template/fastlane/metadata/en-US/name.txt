@@ -1,1 +1,1 @@
-AIWiki
+ExampleApp

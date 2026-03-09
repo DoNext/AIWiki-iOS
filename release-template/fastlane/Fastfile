@@ -96,7 +96,7 @@ platform :ios do
 
     upload_to_app_store(
       api_key: api_key,
-      app_identifier: ENV.fetch("APP_BUNDLE_ID", "com.next.wiki"),
+      app_identifier: ENV.fetch("APP_BUNDLE_ID", "com.example.app"),
       app_version: options[:version] || ENV["APP_STORE_VERSION"],
       build_number: (options[:ipa] || ENV["APP_STORE_IPA_PATH"]) ? nil : (options[:build_number] || ENV["APP_STORE_BUILD_NUMBER"]),
       ipa: options[:ipa] || ENV["APP_STORE_IPA_PATH"],
