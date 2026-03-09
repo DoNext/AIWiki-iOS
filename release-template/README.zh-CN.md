@@ -25,6 +25,12 @@ sh release-template/tools/install_into_app.sh /path/to/your-app-repo
 
 如果你只是参考，也可以手工复制这些文件到新仓库根目录。
 
+如果要比较模板和某个 App 仓库当前有哪些差异，可以运行：
+
+```bash
+sh release-template/tools/diff_template_against_app.sh /path/to/your-app-repo
+```
+
 然后立即替换这些内容：
 
 - `APP_BUNDLE_ID`
