@@ -1,5 +1,9 @@
 default_platform(:ios)
 
+ROOT_DIR = File.expand_path("..", __dir__)
+METADATA_DIR = File.join(__dir__, "metadata")
+SCREENSHOTS_DIR = File.join(ROOT_DIR, "screenshots", "AppStore")
+
 def truthy?(value, default: false)
   return default if value.nil?
 
@@ -54,8 +58,8 @@ platform :ios do
 
   desc "Validate local metadata and screenshot assets before upload"
   lane :validate_release_assets do |options|
-    metadata_root = File.join(Dir.pwd, "fastlane", "metadata")
-    screenshots_root = File.join(Dir.pwd, "screenshots", "AppStore")
+    metadata_root = METADATA_DIR
+    screenshots_root = SCREENSHOTS_DIR
 
     UI.user_error!("Missing metadata directory at #{metadata_root}") unless Dir.exist?(metadata_root)
     UI.user_error!("Missing screenshot directory at #{screenshots_root}") unless Dir.exist?(screenshots_root)
@@ -89,8 +93,8 @@ platform :ios do
       app_version: options[:version] || ENV["APP_STORE_VERSION"],
       build_number: options[:build_number] || ENV["APP_STORE_BUILD_NUMBER"],
       ipa: options[:ipa] || ENV["APP_STORE_IPA_PATH"],
-      metadata_path: "./fastlane/metadata",
-      screenshots_path: "./screenshots/AppStore",
+      metadata_path: METADATA_DIR,
+      screenshots_path: SCREENSHOTS_DIR,
       overwrite_screenshots: true,
       skip_metadata: truthy?(options[:skip_metadata], default: false),
       skip_screenshots: truthy?(options[:skip_screenshots], default: false),
