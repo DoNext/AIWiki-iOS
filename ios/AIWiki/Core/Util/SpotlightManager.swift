@@ -124,9 +124,9 @@ struct AIWikiShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: OpenPromptStudioIntent(),
             phrases: [
-                "intent.open_prompt_studio.phrase.1",
-                "intent.open_prompt_studio.phrase.2",
-                "intent.open_prompt_studio.phrase.3"
+                "Open Prompt Studio in \(.applicationName)",
+                "Create prompts with \(.applicationName)",
+                "Open \(.applicationName) prompts"
             ],
             shortTitle: LocalizedStringResource("intent.open_prompt_studio.short_title"),
             systemImageName: "wand.and.stars"
@@ -135,9 +135,9 @@ struct AIWikiShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: ViewDashboardIntent(),
             phrases: [
-                "intent.view_dashboard.phrase.1",
-                "intent.view_dashboard.phrase.2",
-                "intent.view_dashboard.phrase.3"
+                "Show my AI dashboard in \(.applicationName)",
+                "Show \(.applicationName) dashboard",
+                "View \(.applicationName) skill analysis"
             ],
             shortTitle: LocalizedStringResource("intent.view_dashboard.short_title"),
             systemImageName: "chart.bar.xaxis"

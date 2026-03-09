@@ -73,6 +73,33 @@ Install the local git hook template to run the same localization style check bef
 bash scripts/install_git_hooks.sh
 ```
 
+## App Store screenshots
+
+Localized screenshot assets are organized by locale:
+
+- Raw device captures: `screenshots/raw/zh-Hans` and `screenshots/raw/en-US`
+- Final App Store images: `screenshots/AppStore/zh-Hans` and `screenshots/AppStore/en-US`
+
+To generate localized App Store composites from raw captures:
+
+```bash
+swift screenshots/make_screenshots.swift zh-Hans
+swift screenshots/make_screenshots.swift en-US
+```
+
+To capture raw screenshots from UI tests and generate the localized App Store set in one step:
+
+```bash
+bash scripts/generate_screenshots.sh zh-Hans
+bash scripts/generate_screenshots.sh en-US
+```
+
+You can also pass a custom simulator destination:
+
+```bash
+bash scripts/generate_screenshots.sh en-US "platform=iOS Simulator,name=iPad Pro 13-inch (M4)"
+```
+
 ---
 
 <a name="简体中文"></a>

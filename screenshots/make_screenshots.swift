@@ -20,18 +20,51 @@ let configs = [
     AppStoreConfig(name: "iPad_13", width: 2064, height: 2752, textY: 252, textFont: 112, screenX: 226, screenY: 555, screenW: 1612, screenRadius: 40)
 ]
 
-let screens = [
-    ("01_Home", "一键开启 AI 知识之旅"),
-    ("02_PromptStudio", "AI 提示词创作与收藏"),
-    ("03_Compare", "导出精美工具对比长图"),
-    ("04_Favorites", "常用工具，随手可得"),
-    ("05_Dashboard", "AI 生产力图谱与称号")
-]
+struct LocalePack {
+    let code: String
+    let rawSourceDir: String
+    let outputDir: String
+    let screenTexts: [(String, String)]
+}
 
-let baseDir = "/Users/yinchaoyu/Downloads/scratch/test-clone/beijing-camera-ios/screenshots"
-let outputDir = baseDir + "/AppStore"
+let repoRoot = "/Users/yinchaoyu/Downloads/apps/AIWiki"
+let screenshotsRoot = repoRoot + "/screenshots"
 
-try? FileManager.default.createDirectory(atPath: outputDir, withIntermediateDirectories: true)
+func makeLocalePack(from arguments: [String]) -> LocalePack {
+    let locale = arguments.dropFirst().first ?? "zh-Hans"
+    switch locale {
+    case "en", "en-US":
+        return LocalePack(
+            code: "en-US",
+            rawSourceDir: screenshotsRoot + "/raw/en-US",
+            outputDir: screenshotsRoot + "/AppStore/en-US",
+            screenTexts: [
+                ("01_Home", "Find the right AI tool faster"),
+                ("02_PromptStudio", "Draft stronger prompts in seconds"),
+                ("03_Compare", "Compare tools side by side"),
+                ("04_Favorites", "Build your personal AI toolkit"),
+                ("05_Dashboard", "Track your AI usage patterns")
+            ]
+        )
+    default:
+        return LocalePack(
+            code: "zh-Hans",
+            rawSourceDir: screenshotsRoot + "/raw/zh-Hans",
+            outputDir: screenshotsRoot + "/AppStore/zh-Hans",
+            screenTexts: [
+                ("01_Home", "快速找到合适的 AI 工具"),
+                ("02_PromptStudio", "更快写出高质量提示词"),
+                ("03_Compare", "并排比较工具差异"),
+                ("04_Favorites", "沉淀你的常用工具库"),
+                ("05_Dashboard", "查看你的 AI 使用轨迹")
+            ]
+        )
+    }
+}
+
+let selectedLocalePack = makeLocalePack(from: CommandLine.arguments)
+
+try? FileManager.default.createDirectory(atPath: selectedLocalePack.outputDir, withIntermediateDirectories: true)
 
 func createGradient(context: CGContext, width: CGFloat, height: CGFloat) {
     let colors = [
@@ -45,36 +78,58 @@ func createGradient(context: CGContext, width: CGFloat, height: CGFloat) {
 func drawText(text: String, context: CGContext, config: AppStoreConfig) {
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.alignment = .center
+    paragraphStyle.lineBreakMode = .byWordWrapping
+
+    let shadow = NSShadow()
+    shadow.shadowColor = NSColor.black.withAlphaComponent(0.45)
+    shadow.shadowBlurRadius = 10
+    shadow.shadowOffset = CGSize(width: 0, height: -2)
     
     let attrs: [NSAttributedString.Key: Any] = [
         .font: NSFont.systemFont(ofSize: config.textFont, weight: .bold),
         .foregroundColor: NSColor.white,
-        .paragraphStyle: paragraphStyle
+        .paragraphStyle: paragraphStyle,
+        .shadow: shadow
     ]
-    
+
     let string = NSAttributedString(string: text, attributes: attrs)
-    // CGContext coordinates are bottom-left for AppKit.
-    // textY was defined from the top. We convert it to distance from bottom.
-    let rectY = config.height - config.textY - config.textFont * 2
-    let rect = CGRect(x: 0, y: rectY, width: config.width, height: config.textFont * 2)
-    string.draw(in: rect)
+    let horizontalInset = config.width * 0.12
+    let maxRect = CGRect(
+        x: horizontalInset,
+        y: config.height - config.textY - config.textFont * 3.2,
+        width: config.width - horizontalInset * 2,
+        height: config.textFont * 3.2
+    )
+    let measuredRect = string.boundingRect(
+        with: maxRect.size,
+        options: [.usesLineFragmentOrigin, .usesFontLeading]
+    )
+    let drawRect = CGRect(
+        x: maxRect.minX,
+        y: maxRect.midY - ceil(measuredRect.height) / 2,
+        width: maxRect.width,
+        height: ceil(measuredRect.height)
+    )
+
+    string.draw(
+        with: drawRect,
+        options: [.usesLineFragmentOrigin, .usesFontLeading]
+    )
 }
 
 func process() {
     for config in configs {
-        for (suffix, marketingText) in screens {
+        for (suffix, marketingText) in selectedLocalePack.screenTexts {
             // Find the raw screenshot
-            // For iPhone configs, use iPhone_17_Pro_Max raw screenshots
-            // For iPad configs, use iPad_Pro_(12.9-inch)_(6th_generation) screenshots
-            let sourcePrefix = config.name.contains("iPad") ? "iPad_Pro_(12.9-inch)_(6th_generation)" : "iPhone_17_Pro_Max"
-            let imagePath = "\(baseDir)/\(sourcePrefix)_\(suffix).png"
+            // Raw screenshots are captured from the current simulator lineup.
+            let sourcePrefix = config.name.contains("iPad") ? "iPad_Pro_13-inch_(M5)" : "iPhone_17_Pro_Max"
+            let imagePath = "\(selectedLocalePack.rawSourceDir)/\(sourcePrefix)_\(suffix).png"
             
             guard let rawImage = NSImage(contentsOfFile: imagePath) else {
                 print("Missing raw image: \(imagePath)")
                 continue
             }
             
-            let destRect = CGRect(x: 0, y: 0, width: config.width, height: config.height)
             guard let bitmapRep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(config.width), pixelsHigh: Int(config.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0) else { continue }
             
             NSGraphicsContext.saveGraphicsState()
@@ -109,12 +164,17 @@ func process() {
             // Clip to rounded rect and draw image
             path.addClip()
             // NSImage draw in unflipped context
-            rawImage.draw(in: screenRect, from: NSRect(x: 0, y: 0, width: rawImage.size.width, height: rawImage.size.height), operation: .copy, fraction: 1.0)
+            rawImage.draw(
+                in: screenRect,
+                from: NSRect(x: 0, y: 0, width: rawImage.size.width, height: rawImage.size.height),
+                operation: NSCompositingOperation.copy,
+                fraction: 1.0
+            )
             
             NSGraphicsContext.restoreGraphicsState()
             
             if let data = bitmapRep.representation(using: .png, properties: [:]) {
-                let outPath = "\(outputDir)/\(config.name)_\(suffix).png"
+                let outPath = "\(selectedLocalePack.outputDir)/\(config.name)_\(suffix).png"
                 try? data.write(to: URL(fileURLWithPath: outPath))
                 print("Generated \(outPath)")
             }

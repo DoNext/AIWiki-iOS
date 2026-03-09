@@ -130,7 +130,7 @@ struct ToolUsageStatsView: View {
                             .stroke(AppColors.accent, lineWidth: 2)
                         
                         // Labels
-                        RadarLabelsView(dimensions: SkillDimension.allCases.map(L10n.text))
+                        RadarLabelsView(dimensions: SkillDimension.allCases.map { L10n.text($0.rawValue) })
                     }
                     .frame(height: 220)
                     .padding(.vertical, 20)
