@@ -24,14 +24,14 @@ struct ToolDetailView: View {
             VStack(spacing: 20) {
                 // MARK: - Header
                 VStack(spacing: 14) {
-                    ToolAvatar(name: tool.name, size: 80)
+                    ToolAvatar(name: tool.localizedName, size: 80)
 
-                    Text(tool.name)
+                    Text(tool.localizedName)
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.textPrimary)
 
-                    Text(tool.company)
+                    Text(tool.localizedCompany)
                         .font(.subheadline)
                         .foregroundColor(AppColors.textSecondary)
 
@@ -328,7 +328,7 @@ struct ToolDetailView: View {
                 // MARK: - Info & Actions
                 detailSection(L10n.text(L10n.Detail.basicInfo)) {
                     VStack(alignment: .leading, spacing: 10) {
-                        infoRow(label: L10n.text(L10n.Common.company), value: tool.company)
+                        infoRow(label: L10n.text(L10n.Common.company), value: tool.localizedCompany)
                         infoRow(label: L10n.text(L10n.Common.category), value: tool.localizedCategory)
 
                         if let access = tool.access {
@@ -359,7 +359,7 @@ struct ToolDetailView: View {
                             .cornerRadius(12)
                         }
                         .fullScreenCover(isPresented: $showingConsole) {
-                            AIConsoleView(initialToolName: tool.name, initialURL: tool.url)
+                            AIConsoleView(initialURL: tool.url)
                         }
                     }
 
@@ -471,7 +471,7 @@ struct ToolDetailView: View {
             }
         }
         .sheet(isPresented: $showingShareSheet) {
-            let text = "\(L10n.text(L10n.Detail.sharePrefix))\(tool.name) — \(tool.localizedIntro) 👉 \(tool.url)"
+            let text = "\(L10n.text(L10n.Detail.sharePrefix))\(tool.localizedName) — \(tool.localizedIntro) 👉 \(tool.url)"
             ShareSheet(items: [text])
         }
         .sheet(isPresented: $showingExportPreview) {

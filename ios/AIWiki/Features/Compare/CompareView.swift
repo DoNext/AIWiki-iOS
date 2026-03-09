@@ -98,13 +98,13 @@ struct CompareView: View {
             
             // Tool names
             HStack {
-                Text(a.name)
+                Text(a.localizedName)
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                 Text(L10n.text(L10n.Compare.versus))
                     .font(.caption.bold())
                     .foregroundColor(AppColors.accent)
-                Text(b.name)
+                Text(b.localizedName)
                     .font(.headline)
                     .frame(maxWidth: .infinity)
             }
@@ -133,8 +133,8 @@ struct CompareView: View {
         Button(action: action) {
             VStack(spacing: 8) {
                 if let tool {
-                    ToolAvatar(name: tool.name, size: 48)
-                    Text(tool.name)
+                    ToolAvatar(name: tool.localizedName, size: 48)
+                    Text(tool.localizedName)
                         .font(.caption.weight(.semibold))
                         .foregroundColor(AppColors.textPrimary)
                         .lineLimit(1)
@@ -188,7 +188,7 @@ struct CompareView: View {
                 .cardStyle()
             
             compareRow(title: L10n.text(L10n.Detail.intro), valueA: a.localizedIntro, valueB: b.localizedIntro)
-            compareRow(title: L10n.text(L10n.Common.company), valueA: a.company, valueB: b.company)
+            compareRow(title: L10n.text(L10n.Common.company), valueA: a.localizedCompany, valueB: b.localizedCompany)
             compareRow(title: L10n.text(L10n.Common.category), valueA: a.localizedCategory, valueB: b.localizedCategory)
 
             compareTags(title: L10n.text(L10n.Compare.coreFeatures), tagsA: a.localizedFeatures, tagsB: b.localizedFeatures)

@@ -274,9 +274,9 @@ struct HomeView: View {
 
     private func featuredToolCard(_ tool: AITool) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            ToolAvatar(name: tool.name, size: 48)
+            ToolAvatar(name: tool.localizedName, size: 48)
 
-            Text(tool.name)
+            Text(tool.localizedName)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundColor(AppColors.textPrimary)

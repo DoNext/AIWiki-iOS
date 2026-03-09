@@ -2,22 +2,28 @@ import SwiftUI
 import UIKit
 
 struct AIConsoleView: View {
+    private struct ConsoleTool: Identifiable {
+        let id: String
+        let name: String
+        let url: String
+    }
+
     @Environment(\.dismiss) private var dismiss
     @State private var url: URL
     @State private var reloadTrigger = false
     @State private var showingPromptStudio = false
-    @State private var currentToolName: String
+    @State private var currentToolURL: String
     
     private let tools = [
-        (name: "对话大模型", url: "https://chatgpt.com"),
-        (name: "逻辑推理", url: "https://claude.ai"),
-        (name: "多模态智脑", url: "https://gemini.google.com"),
-        (name: "高效率搜索", url: "https://kimi.moonshot.cn"),
-        (name: "工程化助手", url: "https://chat.deepseek.com")
+        ConsoleTool(id: "chatgpt", name: "对话大模型", url: "https://chatgpt.com"),
+        ConsoleTool(id: "claude", name: "逻辑推理", url: "https://claude.ai"),
+        ConsoleTool(id: "gemini", name: "多模态智脑", url: "https://gemini.google.com"),
+        ConsoleTool(id: "kimi", name: "高效率搜索", url: "https://kimi.moonshot.cn"),
+        ConsoleTool(id: "deepseek", name: "工程化助手", url: "https://chat.deepseek.com")
     ]
     
-    init(initialToolName: String = "对话大模型", initialURL: String = "https://chatgpt.com") {
-        _currentToolName = State(initialValue: initialToolName)
+    init(initialURL: String = "https://chatgpt.com") {
+        _currentToolURL = State(initialValue: initialURL)
         _url = State(initialValue: URL(string: initialURL)!)
     }
     
@@ -27,20 +33,20 @@ struct AIConsoleView: View {
                 // Tool Switcher Bar
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        ForEach(tools, id: \.name) { tool in
+                        ForEach(tools) { tool in
                             Button {
                                 if let newURL = URL(string: tool.url) {
                                     url = newURL
-                                    currentToolName = tool.name
+                                    currentToolURL = tool.url
                                     reloadTrigger = true
                                 }
                             } label: {
                             Text(tool.name)
-                                .font(.subheadline.weight(currentToolName == tool.name ? .bold : .medium))
+                                .font(.subheadline.weight(currentToolURL == tool.url ? .bold : .medium))
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)
-                                .background(currentToolName == tool.name ? AppColors.accent : AppColors.cardHighlight)
-                                .foregroundStyle(currentToolName == tool.name ? .white : AppColors.textPrimary)
+                                .background(currentToolURL == tool.url ? AppColors.accent : AppColors.cardHighlight)
+                                .foregroundStyle(currentToolURL == tool.url ? .white : AppColors.textPrimary)
                                 .clipShape(.rect(cornerRadius: 20))
                             }
                         }

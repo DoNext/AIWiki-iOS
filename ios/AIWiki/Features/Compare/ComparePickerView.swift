@@ -8,7 +8,7 @@ struct ComparePickerView: View {
 
     private var results: [AITool] {
         if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            return store.tools.sorted { $0.name.localizedCompare($1.name) == .orderedAscending }
+            return store.tools.sorted { $0.localizedName.localizedCompare($1.localizedName) == .orderedAscending }
         }
         let keyword = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         return store.tools.filter { $0.localizedSearchText.contains(keyword) }
@@ -21,9 +21,9 @@ struct ComparePickerView: View {
                     onSelect(tool)
                 } label: {
                     HStack(spacing: 12) {
-                        ToolAvatar(name: tool.name, size: 36)
+                        ToolAvatar(name: tool.localizedName, size: 36)
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(tool.name)
+                            Text(tool.localizedName)
                                 .font(.subheadline.weight(.semibold))
                                 .foregroundColor(AppColors.textPrimary)
                             Text(tool.localizedCategory)

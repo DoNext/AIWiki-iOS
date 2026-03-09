@@ -60,19 +60,19 @@ enum AppGradients {
 enum CategoryIcon {
     static func symbol(for category: String) -> String {
         switch category {
-        case "聊天机器人": return "bubble.left.and.bubble.right.fill"
-        case "编程助手": return "chevron.left.forwardslash.chevron.right"
-        case "图像生成": return "photo.artframe"
-        case "数据分析": return "chart.bar.xaxis"
-        case "多模态模型": return "brain.head.profile"
-        case "音频处理": return "waveform"
-        case "视频工具": return "film"
-        case "写作助手": return "pencil.and.outline"
-        case "搜索引擎": return "magnifyingglass"
-        case "办公效率": return "briefcase.fill"
-        case "设计工具": return "paintbrush.pointed.fill"
-        case "教育学习": return "graduationcap.fill"
-        case "营销工具": return "megaphone.fill"
+        case L10n.Category.chat: return "bubble.left.and.bubble.right.fill"
+        case L10n.Category.coding: return "chevron.left.forwardslash.chevron.right"
+        case L10n.Category.imageGeneration: return "photo.artframe"
+        case L10n.Category.dataAnalysis: return "chart.bar.xaxis"
+        case L10n.Category.multimodal: return "brain.head.profile"
+        case L10n.Category.audio: return "waveform"
+        case L10n.Category.video: return "film"
+        case L10n.Category.writing: return "pencil.and.outline"
+        case L10n.Category.search: return "magnifyingglass"
+        case L10n.Category.productivity: return "briefcase.fill"
+        case L10n.Category.design: return "paintbrush.pointed.fill"
+        case L10n.Category.education: return "graduationcap.fill"
+        case L10n.Category.marketing: return "megaphone.fill"
         default: return "sparkles"
         }
     }
@@ -150,4 +150,3 @@ struct FlowLayout: Layout {
         return (CGSize(width: maxWidth, height: y + rowHeight), origins)
     }
 }
-

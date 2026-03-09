@@ -1,6 +1,8 @@
 import Foundation
 
 extension AITool {
+    var localizedName: String { L10n.text(name) }
+    var localizedCompany: String { L10n.text(company) }
     var localizedIntro: String { L10n.text(intro) }
     var localizedCategory: String { L10n.text(category) }
     var localizedFeatures: [String] { features.map(L10n.text) }
@@ -18,9 +20,10 @@ extension AITool {
 
     var localizedSearchText: String {
         let parts = [
-            name,
+            localizedName,
+            id,
             localizedIntro,
-            company,
+            localizedCompany,
             localizedCategory
         ] + localizedFeatures
         return parts.joined(separator: " ").lowercased()
@@ -28,6 +31,7 @@ extension AITool {
 }
 
 extension LearningMaterial {
+    var localizedName: String { L10n.text(name) }
     var localizedSummary: String { L10n.text(summary) }
     var localizedCoreCapabilities: [String] { coreCapabilities.map(L10n.text) }
     var localizedGettingStarted: [String] { gettingStarted.map(L10n.text) }

@@ -35,18 +35,18 @@ struct ToolCardExportView: View {
                             .frame(width: 72, height: 72)
                             .shadow(color: AppColors.accent.opacity(0.3), radius: 10, x: 0, y: 5)
                         
-                        Text(String(tool.name.prefix(1)))
+                        Text(String(tool.localizedName.prefix(1)))
                             .font(.system(size: 32, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(tool.name)
+                        Text(tool.localizedName)
                             .font(.system(size: 28, weight: .heavy, design: .rounded))
                             .foregroundColor(AppColors.textPrimary)
                         
                         HStack(spacing: 8) {
-                            Text(tool.category)
+                            Text(tool.localizedCategory)
                                 .font(.caption.weight(.bold))
                                 .foregroundColor(AppColors.accent)
                                 .padding(.horizontal, 8)
@@ -71,7 +71,7 @@ struct ToolCardExportView: View {
                     }
                 }
                 
-                Text(tool.intro)
+                Text(tool.localizedIntro)
                     .font(.subheadline)
                     .foregroundColor(AppColors.textSecondary)
                     .lineLimit(2)
@@ -82,7 +82,7 @@ struct ToolCardExportView: View {
                     VStack(alignment: .leading, spacing: 16) {
                         cardSection(title: L10n.text(L10n.ExportCard.highlights), icon: "sparkles") {
                             VStack(alignment: .leading, spacing: 8) {
-                                ForEach(tool.features.prefix(4), id: \.self) { feature in
+                                ForEach(tool.localizedFeatures.prefix(4), id: \.self) { feature in
                                     HStack(alignment: .top, spacing: 6) {
                                         Image(systemName: "checkmark.circle.fill")
                                             .foregroundColor(.green)
@@ -97,7 +97,7 @@ struct ToolCardExportView: View {
                             }
                         }
                         
-                        if let bestPractices = tool.bestPractices, !bestPractices.isEmpty {
+                        if let bestPractices = tool.localizedBestPractices, !bestPractices.isEmpty {
                             cardSection(title: L10n.text(L10n.Detail.bestPractices), icon: "lightbulb.fill") {
                                 VStack(alignment: .leading, spacing: 8) {
                                     ForEach(bestPractices.prefix(3), id: \.self) { practice in
@@ -117,14 +117,15 @@ struct ToolCardExportView: View {
                         if let access = tool.access {
                             cardSection(title: L10n.text(L10n.ExportCard.accessInfo), icon: "info.circle.fill") {
                                 VStack(alignment: .leading, spacing: 6) {
-                                    infoItem(label: L10n.text(L10n.Common.pricing), value: access.pricing)
-                                    infoItem(label: L10n.text(L10n.Common.platform), value: access.platforms.joined(separator: "/"))
+                                    infoItem(label: L10n.text(L10n.Common.pricing), value: tool.localizedAccessPricing ?? access.pricing)
+                                    infoItem(label: L10n.text(L10n.Common.platform), value: (tool.localizedAccessPlatforms ?? access.platforms).joined(separator: "/"))
                                     infoItem(label: L10n.text(L10n.ExportCard.account), value: access.accountRequired ? L10n.text(L10n.Common.yes) : L10n.text(L10n.Common.no))
                                 }
                             }
                         }
                         
-                        if let templates = tool.promptTemplates, let first = templates.first {
+                        let templates = tool.localizedPromptTemplates
+                        if let first = templates.first {
                             cardSection(title: L10n.text(L10n.ExportCard.suggestedPrompt), icon: "terminal.fill") {
                                 Text(first.prompt)
                                     .font(.system(size: 11))

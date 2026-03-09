@@ -319,12 +319,12 @@ final class AppStore: ObservableObject {
     }
 
     private func score(tool: AITool, tokens: [String]) -> Int {
-        let name = tool.name.lowercased()
-        let intro = tool.intro.lowercased()
-        let category = tool.category.lowercased()
-        let company = tool.company.lowercased()
-        let features = tool.features.joined(separator: " ").lowercased()
-        let useCases = (tool.useCases ?? []).joined(separator: " ").lowercased()
+        let name = tool.localizedName.lowercased()
+        let intro = tool.localizedIntro.lowercased()
+        let category = tool.localizedCategory.lowercased()
+        let company = tool.localizedCompany.lowercased()
+        let features = tool.localizedFeatures.joined(separator: " ").lowercased()
+        let useCases = (tool.localizedUseCases ?? []).joined(separator: " ").lowercased()
 
         var score = 0
         for token in tokens {

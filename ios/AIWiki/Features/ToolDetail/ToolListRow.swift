@@ -7,10 +7,10 @@ struct ToolListRow: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            ToolAvatar(name: tool.name, size: 44)
+            ToolAvatar(name: tool.localizedName, size: 44)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(tool.name)
+                Text(tool.localizedName)
                     .font(.headline)
                     .foregroundColor(AppColors.textPrimary)
                 Text(tool.localizedIntro)

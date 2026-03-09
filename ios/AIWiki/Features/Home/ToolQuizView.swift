@@ -13,11 +13,11 @@ let quizQuestions = [
         text: "你在寻找 AI 的主要用途是什么？",
         options: ["处理文字/写作", "生成图像/设计", "编程辅助", "研究与资料整理", "视频音频处理"],
         relatedCategories: [
-            "处理文字/写作": ["写作助手", "聊天机器人"],
-            "生成图像/设计": ["图像生成", "设计工具"],
-            "编程辅助": ["编程助手"],
-            "研究与资料整理": ["数据分析", "聊天机器人", "搜索引擎"],
-            "视频音频处理": ["视频工具", "音频处理"]
+            "处理文字/写作": [L10n.Category.writing, L10n.Category.chat],
+            "生成图像/设计": [L10n.Category.imageGeneration, L10n.Category.design],
+            "编程辅助": [L10n.Category.coding],
+            "研究与资料整理": [L10n.Category.dataAnalysis, L10n.Category.chat, L10n.Category.search],
+            "视频音频处理": [L10n.Category.video, L10n.Category.audio]
         ]
     ),
     QuizQuestion(
@@ -219,7 +219,8 @@ struct ToolQuizView: View {
                 
                 // Q3 budget logic
                 if answers.count > 2 && answers[2] == "仅看完全免费" {
-                    if tool.access?.pricing.contains("免费版") == true || tool.access?.pricing.contains("开源") == true {
+                    let pricingText = (tool.localizedAccessPricing ?? tool.access?.pricing ?? "").lowercased()
+                    if pricingText.contains("免费") || pricingText.contains("free") || pricingText.contains("开源") || pricingText.contains("open source") {
                         scoredTools[i].score += 3
                     } else {
                         scoredTools[i].score -= 5 // Penalty if not free

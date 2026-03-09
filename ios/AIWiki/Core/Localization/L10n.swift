@@ -78,6 +78,22 @@ enum L10n {
         static let toolCount = "categories.toolCount"
     }
 
+    enum Category {
+        static let writing = "category.writing"
+        static let productivity = "category.productivity"
+        static let imageGeneration = "category.image_generation"
+        static let multimodal = "category.multimodal"
+        static let search = "category.search"
+        static let education = "category.education"
+        static let dataAnalysis = "category.data_analysis"
+        static let coding = "category.coding"
+        static let chat = "category.chat"
+        static let marketing = "category.marketing"
+        static let video = "category.video"
+        static let design = "category.design"
+        static let audio = "category.audio"
+    }
+
     enum Compare {
         static let title = "compare.title"
         static let toolA = "compare.tool_a"

@@ -18,16 +18,16 @@ class SpotlightManager {
         
         let searchableItems = tools.map { tool -> CSSearchableItem in
             let attributeSet = CSSearchableItemAttributeSet(contentType: .data)
-            attributeSet.title = tool.name
-            attributeSet.displayName = tool.name
-            attributeSet.contentDescription = tool.intro
+            attributeSet.title = tool.localizedName
+            attributeSet.displayName = tool.localizedName
+            attributeSet.contentDescription = tool.localizedIntro
             
-            var keywords = [tool.category, tool.company, "AI", "工具", "助手"] + tool.features
+            var keywords = [tool.localizedCategory, tool.localizedCompany, "AI", "工具", "助手"] + tool.localizedFeatures
             keywords.append(tool.id)
             attributeSet.keywords = keywords
             attributeSet.alternateNames = [tool.id]
             
-            print("Spotlight: Preparing item [\(tool.id)] -> \(tool.name)")
+            print("Spotlight: Preparing item [\(tool.id)] -> \(tool.localizedName)")
             
             return CSSearchableItem(
                 uniqueIdentifier: tool.id,
@@ -46,9 +46,9 @@ class SpotlightManager {
                     if let error = error {
                         print("Spotlight: Indexing ERROR - \(error.localizedDescription)")
                     } else {
-                        print("Spotlight: Indexing SUCCESS for \(tools.count) items.")
-                        if let first = tools.first {
-                            print("Spotlight: Verify by searching for '\(first.name)' or '\(first.category)'")
+                            print("Spotlight: Indexing SUCCESS for \(tools.count) items.")
+                            if let first = tools.first {
+                            print("Spotlight: Verify by searching for '\(first.localizedName)' or '\(first.localizedCategory)'")
                         }
                     }
                 }

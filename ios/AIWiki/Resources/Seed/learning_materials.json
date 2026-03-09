@@ -1,21 +1,21 @@
 [
   {
     "id": "claude",
-    "name": "逻辑推理引擎",
-    "summary": "逻辑推理引擎 is 智能科研机构's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work.",
+    "name": "learning.claude.name",
+    "summary": "learning.claude.summary",
     "core_capabilities": [
-      "逻辑推理引擎 is a space to think",
-      "The AI for problem solvers",
-      "How you can use 逻辑推理引擎",
-      "Keep thinking with 逻辑推理引擎",
-      "逻辑推理引擎 models",
-      "Explore the latest releases"
+      "learning.claude.capability.1",
+      "learning.claude.capability.2",
+      "learning.claude.capability.3",
+      "learning.claude.capability.4",
+      "learning.claude.capability.5",
+      "learning.claude.capability.6"
     ],
     "getting_started": [
-      "No ads. No sponsored content. Just genuinely helpful conversations.",
-      "Tackle any big, bold, bewildering challenge with 逻辑推理引擎.",
-      "This is another test",
-      "逻辑推理引擎 builds on your ideas, expands on your logic, and simplifies complexity one step at a time."
+      "learning.claude.getting_started.1",
+      "learning.claude.getting_started.2",
+      "learning.claude.getting_started.3",
+      "learning.claude.getting_started.4"
     ],
     "official_links": [
       "https://www.anthropic.com/claude",
@@ -30,16 +30,16 @@
   },
   {
     "id": "cursor",
-    "name": "Cursor",
-    "summary": "Built to make you extraordinarily productive, Cursor is the best way to build software with AI.",
+    "name": "learning.cursor.name",
+    "summary": "learning.cursor.summary",
     "core_capabilities": [],
     "getting_started": [],
     "official_links": [
       "https://cursor.com/docs"
     ],
     "caveats": [
-      "未自动提取到能力点，建议人工编辑。",
-      "未自动提取到入门步骤，建议人工编辑。"
+      "learning.cursor.caveat.1",
+      "learning.cursor.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -49,8 +49,8 @@
   },
   {
     "id": "gemini",
-    "name": "多模态智脑",
-    "summary": "Meet 多模态智脑, 全球技术厂商’s AI assistant. Get help with writing, planning, brainstorming, and more. Experience the power of generative AI.",
+    "name": "learning.gemini.name",
+    "summary": "learning.gemini.summary",
     "core_capabilities": [],
     "getting_started": [],
     "official_links": [
@@ -58,8 +58,8 @@
       "https://ai.google.dev/gemini-api/docs/models"
     ],
     "caveats": [
-      "未自动提取到能力点，建议人工编辑。",
-      "未自动提取到入门步骤，建议人工编辑。"
+      "learning.gemini.caveat.1",
+      "learning.gemini.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -69,21 +69,21 @@
   },
   {
     "id": "github-copilot",
-    "name": "GitHub Copilot",
-    "summary": "GitHub Copilot works alongside you directly in your editor, suggesting whole lines or entire functions for you.",
+    "name": "learning.github-copilot.name",
+    "summary": "learning.github-copilot.summary",
     "core_capabilities": [
-      "Navigation Menu",
-      "Use saved searches to filter your results more quickly",
-      "Companies using Copilot",
-      "Code, command, and collaborate",
-      "Tailor-made for your organization",
-      "Take flight with GitHub Copilot"
+      "learning.github-copilot.capability.1",
+      "learning.github-copilot.capability.2",
+      "learning.github-copilot.capability.3",
+      "learning.github-copilot.capability.4",
+      "learning.github-copilot.capability.5",
+      "learning.github-copilot.capability.6"
     ],
     "getting_started": [
-      "We read every piece of feedback, and take your input very seriously.",
-      "To see all available qualifiers, see our documentation .",
-      "Your AI accelerator for every workflow, from the editor to the enterprise.",
-      "Choose from leading LLMs optimized for speed, accuracy, or cost."
+      "learning.github-copilot.getting_started.1",
+      "learning.github-copilot.getting_started.2",
+      "learning.github-copilot.getting_started.3",
+      "learning.github-copilot.getting_started.4"
     ],
     "official_links": [
       "https://github.com/features/copilot",
@@ -98,18 +98,18 @@
   },
   {
     "id": "grok",
-    "name": "Grok",
-    "summary": "Learn how to use our products and services",
+    "name": "learning.grok.name",
+    "summary": "learning.grok.summary",
     "core_capabilities": [
-      "Get started",
-      "Grok 4.20 Early Access",
-      "Quick start with the API"
+      "learning.grok.capability.1",
+      "learning.grok.capability.2",
+      "learning.grok.capability.3"
     ],
     "getting_started": [
-      "Build with Grok, the AI model designed to deliver truthful, insightful answers.",
-      "Learn how to integrate Grok into your applications.",
-      "Learn about billing, API keys, and account settings.",
-      "Learn how to use Grok on web and mobile."
+      "learning.grok.getting_started.1",
+      "learning.grok.getting_started.2",
+      "learning.grok.getting_started.3",
+      "learning.grok.getting_started.4"
     ],
     "official_links": [
       "https://docs.x.ai/overview",
@@ -125,21 +125,21 @@
   },
   {
     "id": "midjourney",
-    "name": "Midjourney",
-    "summary": "### Welcome to Midjourney, your portal to transforming text into amazing images and videos! If you're ready to unleash your creativity, this guide is your first step to crafting st",
+    "name": "learning.midjourney.name",
+    "summary": "learning.midjourney.summary",
     "core_capabilities": [],
     "getting_started": [
-      "Image 1: getting-started-header.png",
-      "Subscribing to Midjourney[](http://docs.midjourney.com/docs/quick-start#h_01JHRHRGGEB9WPRYSR22DGBDPQ)",
-      "Before you dive into creating your first masterpiece, you'll need to subscribe to one of our plans. Here's how you can get started:",
-      "* Log in to midjourney.com: Logging In & Connecting Accounts"
+      "learning.midjourney.getting_started.1",
+      "learning.midjourney.getting_started.2",
+      "learning.midjourney.getting_started.3",
+      "learning.midjourney.getting_started.4"
     ],
     "official_links": [
       "https://docs.midjourney.com/docs/quick-start",
       "https://www.midjourney.com/"
     ],
     "caveats": [
-      "未自动提取到能力点，建议人工编辑。"
+      "learning.midjourney.caveat.1"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -149,16 +149,16 @@
   },
   {
     "id": "notebooklm",
-    "name": "NotebookLM",
-    "summary": "Meet NotebookLM, the AI research tool and thinking partner that can analyze your sources, turn complexity into clarity and transform your content.",
+    "name": "learning.notebooklm.name",
+    "summary": "learning.notebooklm.summary",
     "core_capabilities": [],
     "getting_started": [],
     "official_links": [
       "https://notebooklm.google/"
     ],
     "caveats": [
-      "未自动提取到能力点，建议人工编辑。",
-      "未自动提取到入门步骤，建议人工编辑。"
+      "learning.notebooklm.caveat.1",
+      "learning.notebooklm.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -168,14 +168,14 @@
   },
   {
     "id": "perplexity",
-    "name": "Perplexity",
-    "summary": "Overview - Perplexity",
+    "name": "learning.perplexity.name",
+    "summary": "learning.perplexity.summary",
     "core_capabilities": [
-      "Available APIs"
+      "learning.perplexity.capability.1"
     ],
     "getting_started": [
-      "Get ranked web search results with advanced filtering and real-time data.",
-      "Access third-party models with web search tools and presets."
+      "learning.perplexity.getting_started.1",
+      "learning.perplexity.getting_started.2"
     ],
     "official_links": [
       "https://docs.perplexity.ai/",
@@ -190,21 +190,21 @@
   },
   {
     "id": "stable-diffusion",
-    "name": "Stable Diffusion",
-    "summary": "Experience unparalleled image generation capabilities with SDXL Turbo and \r\nStable Diffusion XL. Our models use shorter prompts and generate \r\ndescriptive images with enhanced composition and realistic aesthetics.",
+    "name": "learning.stable-diffusion.name",
+    "summary": "learning.stable-diffusion.summary",
     "core_capabilities": [
-      "Versatile styles",
-      "Prompt Adherence",
-      "Diverse Outputs",
-      "Flexible options for any use case.",
-      "Professional-grade image generation that works where you do.",
-      "Self-Hosted License"
+      "learning.stable-diffusion.capability.1",
+      "learning.stable-diffusion.capability.2",
+      "learning.stable-diffusion.capability.3",
+      "learning.stable-diffusion.capability.4",
+      "learning.stable-diffusion.capability.5",
+      "learning.stable-diffusion.capability.6"
     ],
     "getting_started": [
-      "Stable Diffusion 3.5",
-      "Stable Diffusion 3.5",
-      "Where the model excels.",
-      "Generate a wide range of image styles like 3D, photography, painting, line art, and more."
+      "learning.stable-diffusion.getting_started.1",
+      "learning.stable-diffusion.getting_started.2",
+      "learning.stable-diffusion.getting_started.3",
+      "learning.stable-diffusion.getting_started.4"
     ],
     "official_links": [
       "https://stability.ai/stable-diffusion"
@@ -218,24 +218,24 @@
   },
   {
     "id": "jasper",
-    "name": "Jasper",
-    "summary": "AI 驱动的营销内容生成平台",
+    "name": "learning.jasper.name",
+    "summary": "learning.jasper.summary",
     "core_capabilities": [
-      "营销文案生成",
-      "品牌语调定制",
-      "多语言内容"
+      "learning.jasper.capability.1",
+      "learning.jasper.capability.2",
+      "learning.jasper.capability.3"
     ],
     "getting_started": [
-      "注册 Jasper 账号并选择内容模板",
-      "选择品牌语调和目标受众",
-      "输入关键词生成初稿，再人工润色"
+      "learning.jasper.getting_started.1",
+      "learning.jasper.getting_started.2",
+      "learning.jasper.getting_started.3"
     ],
     "official_links": [
       "https://www.jasper.ai/"
     ],
     "caveats": [
-      "免费额度有限，高频使用需付费",
-      "生成内容需人工校验事实准确性"
+      "learning.jasper.caveat.1",
+      "learning.jasper.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -245,24 +245,24 @@
   },
   {
     "id": "notion-ai",
-    "name": "Notion AI",
-    "summary": "嵌入 Notion 的 AI 写作与知识管理助手",
+    "name": "learning.notion-ai.name",
+    "summary": "learning.notion-ai.summary",
     "core_capabilities": [
-      "文档生成",
-      "知识问答",
-      "内容改写"
+      "learning.notion-ai.capability.1",
+      "learning.notion-ai.capability.2",
+      "learning.notion-ai.capability.3"
     ],
     "getting_started": [
-      "在 Notion 中按空格键唤出 AI 助手",
-      "使用 /summarize 快速总结文档",
-      "用 AI 改写语气或翻译段落"
+      "learning.notion-ai.getting_started.1",
+      "learning.notion-ai.getting_started.2",
+      "learning.notion-ai.getting_started.3"
     ],
     "official_links": [
       "https://www.notion.so/product/ai"
     ],
     "caveats": [
-      "需要 Notion 付费计划才能使用",
-      "长文档处理可能较慢"
+      "learning.notion-ai.caveat.1",
+      "learning.notion-ai.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -272,24 +272,24 @@
   },
   {
     "id": "grammarly",
-    "name": "Grammarly",
-    "summary": "AI 英文写作校对与润色工具",
+    "name": "learning.grammarly.name",
+    "summary": "learning.grammarly.summary",
     "core_capabilities": [
-      "语法检查",
-      "风格建议",
-      "语调调整"
+      "learning.grammarly.capability.1",
+      "learning.grammarly.capability.2",
+      "learning.grammarly.capability.3"
     ],
     "getting_started": [
-      "安装浏览器插件或桌面应用",
-      "在任意输入框中自动检测语法错误",
-      "使用语气调整功能优化表达"
+      "learning.grammarly.getting_started.1",
+      "learning.grammarly.getting_started.2",
+      "learning.grammarly.getting_started.3"
     ],
     "official_links": [
       "https://www.grammarly.com/"
     ],
     "caveats": [
-      "免费版功能有限，高级语法建议需要 Premium",
-      "对中文内容不适用"
+      "learning.grammarly.caveat.1",
+      "learning.grammarly.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -299,24 +299,24 @@
   },
   {
     "id": "elevenlabs",
-    "name": "ElevenLabs",
-    "summary": "高质量 AI 语音合成与克隆平台",
+    "name": "learning.elevenlabs.name",
+    "summary": "learning.elevenlabs.summary",
     "core_capabilities": [
-      "文字转语音",
-      "声音克隆",
-      "多语言语音"
+      "learning.elevenlabs.capability.1",
+      "learning.elevenlabs.capability.2",
+      "learning.elevenlabs.capability.3"
     ],
     "getting_started": [
-      "上传文本或输入要转换的内容",
-      "选择预设声音或克隆自己的声音",
-      "调整语速和情感参数后导出音频"
+      "learning.elevenlabs.getting_started.1",
+      "learning.elevenlabs.getting_started.2",
+      "learning.elevenlabs.getting_started.3"
     ],
     "official_links": [
       "https://elevenlabs.io/"
     ],
     "caveats": [
-      "免费额度每月有限",
-      "声音克隆需注意版权和隐私问题"
+      "learning.elevenlabs.caveat.1",
+      "learning.elevenlabs.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -326,24 +326,24 @@
   },
   {
     "id": "suno",
-    "name": "Suno",
-    "summary": "AI 音乐生成平台",
+    "name": "learning.suno.name",
+    "summary": "learning.suno.summary",
     "core_capabilities": [
-      "文字生成音乐",
-      "风格定制",
-      "歌词创作"
+      "learning.suno.capability.1",
+      "learning.suno.capability.2",
+      "learning.suno.capability.3"
     ],
     "getting_started": [
-      "访问 Suno 官网并登录",
-      "输入歌词或让 AI 自动生成",
-      "选择音乐风格生成完整歌曲"
+      "learning.suno.getting_started.1",
+      "learning.suno.getting_started.2",
+      "learning.suno.getting_started.3"
     ],
     "official_links": [
       "https://suno.com/"
     ],
     "caveats": [
-      "商用需购买付费许可",
-      "复杂音乐结构的细微调整有限"
+      "learning.suno.caveat.1",
+      "learning.suno.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -353,24 +353,24 @@
   },
   {
     "id": "runway",
-    "name": "Runway",
-    "summary": "多功能 AI 视频生成与编辑平台",
+    "name": "learning.runway.name",
+    "summary": "learning.runway.summary",
     "core_capabilities": [
-      "文字生成视频",
-      "视频编辑",
-      "绿幕去除"
+      "learning.runway.capability.1",
+      "learning.runway.capability.2",
+      "learning.runway.capability.3"
     ],
     "getting_started": [
-      "注册 Runway 账号获取免费积分",
-      "上传视频或图片素材",
-      "使用 Gen-2 进行文本生成视频"
+      "learning.runway.getting_started.1",
+      "learning.runway.getting_started.2",
+      "learning.runway.getting_started.3"
     ],
     "official_links": [
       "https://runwayml.com/"
     ],
     "caveats": [
-      "生成HD视频消耗积分较快",
-      "视频时长目前受限"
+      "learning.runway.caveat.1",
+      "learning.runway.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -380,24 +380,24 @@
   },
   {
     "id": "heygen",
-    "name": "HeyGen",
-    "summary": "AI 数字人视频生成平台",
+    "name": "learning.heygen.name",
+    "summary": "learning.heygen.summary",
     "core_capabilities": [
-      "数字人视频",
-      "多语言口型同步",
-      "品牌定制"
+      "learning.heygen.capability.1",
+      "learning.heygen.capability.2",
+      "learning.heygen.capability.3"
     ],
     "getting_started": [
-      "选择虚拟人形象和语言",
-      "输入脚本文本",
-      "一键生成带口型同步的视频"
+      "learning.heygen.getting_started.1",
+      "learning.heygen.getting_started.2",
+      "learning.heygen.getting_started.3"
     ],
     "official_links": [
       "https://www.heygen.com/"
     ],
     "caveats": [
-      "免费版有水印",
-      "复杂手势和表情仍不够自然"
+      "learning.heygen.caveat.1",
+      "learning.heygen.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -407,24 +407,24 @@
   },
   {
     "id": "pika",
-    "name": "Pika",
-    "summary": "轻量级 AI 视频生成工具",
+    "name": "learning.pika.name",
+    "summary": "learning.pika.summary",
     "core_capabilities": [
-      "图片转视频",
-      "文字转视频",
-      "视频风格转换"
+      "learning.pika.capability.1",
+      "learning.pika.capability.2",
+      "learning.pika.capability.3"
     ],
     "getting_started": [
-      "上传图片或输入文字描述",
-      "选择视频风格和时长",
-      "调整运动参数后生成视频"
+      "learning.pika.getting_started.1",
+      "learning.pika.getting_started.2",
+      "learning.pika.getting_started.3"
     ],
     "official_links": [
       "https://pika.art/"
     ],
     "caveats": [
-      "生成时间较长",
-      "精确控制运动方向仍有挑战"
+      "learning.pika.caveat.1",
+      "learning.pika.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -434,15 +434,15 @@
   },
   {
     "id": "phind",
-    "name": "Phind",
-    "summary": "面向开发者的 AI 搜索引擎",
+    "name": "learning.phind.name",
+    "summary": "learning.phind.summary",
     "core_capabilities": [
-      "代码搜索",
-      "技术问答",
-      "来源引用"
+      "learning.phind.capability.1",
+      "learning.phind.capability.2",
+      "learning.phind.capability.3"
     ],
     "getting_started": [
-      "访问 https://www.phind.com/ 开始使用 Phind"
+      "learning.phind.getting_started.1"
     ],
     "official_links": [
       "https://www.phind.com/"
@@ -456,15 +456,15 @@
   },
   {
     "id": "you-com",
-    "name": "You.com",
-    "summary": "支持 AI 增强的隐私优先搜索引擎",
+    "name": "learning.you-com.name",
+    "summary": "learning.you-com.summary",
     "core_capabilities": [
-      "AI 摘要",
-      "隐私搜索",
-      "多模式搜索"
+      "learning.you-com.capability.1",
+      "learning.you-com.capability.2",
+      "learning.you-com.capability.3"
     ],
     "getting_started": [
-      "访问 https://you.com/ 开始使用 You.com"
+      "learning.you-com.getting_started.1"
     ],
     "official_links": [
       "https://you.com/"
@@ -478,24 +478,24 @@
   },
   {
     "id": "gamma",
-    "name": "Gamma",
-    "summary": "AI 驱动的演示文稿生成工具",
+    "name": "learning.gamma.name",
+    "summary": "learning.gamma.summary",
     "core_capabilities": [
-      "一键生成 PPT",
-      "自动排版",
-      "多模板"
+      "learning.gamma.capability.1",
+      "learning.gamma.capability.2",
+      "learning.gamma.capability.3"
     ],
     "getting_started": [
-      "输入主题让 AI 自动生成 PPT 大纲",
-      "选择设计主题和配色方案",
-      "逐页调整内容后导出"
+      "learning.gamma.getting_started.1",
+      "learning.gamma.getting_started.2",
+      "learning.gamma.getting_started.3"
     ],
     "official_links": [
       "https://gamma.app/"
     ],
     "caveats": [
-      "导出 PDF/PPTX 需付费",
-      "复杂图表和数据可视化支持有限"
+      "learning.gamma.caveat.1",
+      "learning.gamma.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -505,15 +505,15 @@
   },
   {
     "id": "otter-ai",
-    "name": "Otter.ai",
-    "summary": "AI 会议记录与转写工具",
+    "name": "learning.otter-ai.name",
+    "summary": "learning.otter-ai.summary",
     "core_capabilities": [
-      "实时转写",
-      "会议摘要",
-      "说话人识别"
+      "learning.otter-ai.capability.1",
+      "learning.otter-ai.capability.2",
+      "learning.otter-ai.capability.3"
     ],
     "getting_started": [
-      "访问 https://otter.ai/ 开始使用 Otter.ai"
+      "learning.otter-ai.getting_started.1"
     ],
     "official_links": [
       "https://otter.ai/"
@@ -527,15 +527,15 @@
   },
   {
     "id": "beautiful-ai",
-    "name": "Beautiful.ai",
-    "summary": "AI 智能排版演示工具",
+    "name": "learning.beautiful-ai.name",
+    "summary": "learning.beautiful-ai.summary",
     "core_capabilities": [
-      "智能排版",
-      "模板库",
-      "团队协作"
+      "learning.beautiful-ai.capability.1",
+      "learning.beautiful-ai.capability.2",
+      "learning.beautiful-ai.capability.3"
     ],
     "getting_started": [
-      "访问 https://www.beautiful.ai/ 开始使用 Beautiful.ai"
+      "learning.beautiful-ai.getting_started.1"
     ],
     "official_links": [
       "https://www.beautiful.ai/"
@@ -549,24 +549,24 @@
   },
   {
     "id": "canva-ai",
-    "name": "Canva AI",
-    "summary": "Canva 内置的 AI 设计助手",
+    "name": "learning.canva-ai.name",
+    "summary": "learning.canva-ai.summary",
     "core_capabilities": [
-      "AI 生成图",
-      "魔法橡皮擦",
-      "模板推荐"
+      "learning.canva-ai.capability.1",
+      "learning.canva-ai.capability.2",
+      "learning.canva-ai.capability.3"
     ],
     "getting_started": [
-      "登录 Canva 选择设计模板",
-      "使用 Magic Design 自动生成设计方案",
-      "用 AI 图片编辑功能快速修图"
+      "learning.canva-ai.getting_started.1",
+      "learning.canva-ai.getting_started.2",
+      "learning.canva-ai.getting_started.3"
     ],
     "official_links": [
       "https://www.canva.com/"
     ],
     "caveats": [
-      "部分 AI 功能需要 Pro 订阅",
-      "生成设计可能与品牌风格不完全一致"
+      "learning.canva-ai.caveat.1",
+      "learning.canva-ai.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -576,24 +576,24 @@
   },
   {
     "id": "figma-ai",
-    "name": "Figma AI",
-    "summary": "Figma 内置的 AI 设计辅助功能",
+    "name": "learning.figma-ai.name",
+    "summary": "learning.figma-ai.summary",
     "core_capabilities": [
-      "自动布局",
-      "文案生成",
-      "设计建议"
+      "learning.figma-ai.capability.1",
+      "learning.figma-ai.capability.2",
+      "learning.figma-ai.capability.3"
     ],
     "getting_started": [
-      "在 Figma 中启用 AI 功能",
-      "使用自动布局建议优化设计",
-      "用 AI 生成设计变体"
+      "learning.figma-ai.getting_started.1",
+      "learning.figma-ai.getting_started.2",
+      "learning.figma-ai.getting_started.3"
     ],
     "official_links": [
       "https://www.figma.com/"
     ],
     "caveats": [
-      "AI 功能仍在beta阶段",
-      "生成结果可能需要手动调整"
+      "learning.figma-ai.caveat.1",
+      "learning.figma-ai.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -603,24 +603,24 @@
   },
   {
     "id": "looka",
-    "name": "Looka",
-    "summary": "AI Logo 和品牌设计工具",
+    "name": "learning.looka.name",
+    "summary": "learning.looka.summary",
     "core_capabilities": [
-      "Logo 生成",
-      "品牌套件",
-      "名片设计"
+      "learning.looka.capability.1",
+      "learning.looka.capability.2",
+      "learning.looka.capability.3"
     ],
     "getting_started": [
-      "输入品牌名称和行业",
-      "选择偏好的图标和颜色风格",
-      "AI 生成多个 Logo 方案供选择"
+      "learning.looka.getting_started.1",
+      "learning.looka.getting_started.2",
+      "learning.looka.getting_started.3"
     ],
     "official_links": [
       "https://looka.com/"
     ],
     "caveats": [
-      "下载高清 Logo 需付费",
-      "生成的 Logo 可能与已有品牌相似"
+      "learning.looka.caveat.1",
+      "learning.looka.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -630,15 +630,15 @@
   },
   {
     "id": "khan-academy-ai",
-    "name": "Khanmigo",
-    "summary": "Khan Academy 的 AI 学习辅导员",
+    "name": "learning.khan-academy-ai.name",
+    "summary": "learning.khan-academy-ai.summary",
     "core_capabilities": [
-      "个性化辅导",
-      "题目讲解",
-      "学习进度跟踪"
+      "learning.khan-academy-ai.capability.1",
+      "learning.khan-academy-ai.capability.2",
+      "learning.khan-academy-ai.capability.3"
     ],
     "getting_started": [
-      "访问 https://www.khanacademy.org/khan-labs 开始使用 Khanmigo"
+      "learning.khan-academy-ai.getting_started.1"
     ],
     "official_links": [
       "https://www.khanacademy.org/khan-labs",
@@ -653,24 +653,24 @@
   },
   {
     "id": "duolingo-max",
-    "name": "Duolingo Max",
-    "summary": "AI 增强的语言学习应用",
+    "name": "learning.duolingo-max.name",
+    "summary": "learning.duolingo-max.summary",
     "core_capabilities": [
-      "AI 对话练习",
-      "错误讲解",
-      "个性化课程"
+      "learning.duolingo-max.capability.1",
+      "learning.duolingo-max.capability.2",
+      "learning.duolingo-max.capability.3"
     ],
     "getting_started": [
-      "升级到 Duolingo Max 计划",
-      "使用 AI 角色扮演练习对话",
-      "让 AI 解释你的语法错误"
+      "learning.duolingo-max.getting_started.1",
+      "learning.duolingo-max.getting_started.2",
+      "learning.duolingo-max.getting_started.3"
     ],
     "official_links": [
       "https://www.duolingo.com/"
     ],
     "caveats": [
-      "仅支持部分语言课程",
-      "需要订阅 Max 计划"
+      "learning.duolingo-max.caveat.1",
+      "learning.duolingo-max.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -680,24 +680,24 @@
   },
   {
     "id": "photomath",
-    "name": "Photomath",
-    "summary": "AI 拍照解数学题工具",
+    "name": "learning.photomath.name",
+    "summary": "learning.photomath.summary",
     "core_capabilities": [
-      "拍照解题",
-      "分步讲解",
-      "图形计算"
+      "learning.photomath.capability.1",
+      "learning.photomath.capability.2",
+      "learning.photomath.capability.3"
     ],
     "getting_started": [
-      "拍照扫描数学题目",
-      "查看 AI 分步解题过程",
-      "理解每一步的解题思路"
+      "learning.photomath.getting_started.1",
+      "learning.photomath.getting_started.2",
+      "learning.photomath.getting_started.3"
     ],
     "official_links": [
       "https://photomath.com/"
     ],
     "caveats": [
-      "复杂高等数学支持有限",
-      "拍照识别偏手写体时可能不准"
+      "learning.photomath.caveat.1",
+      "learning.photomath.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -707,24 +707,24 @@
   },
   {
     "id": "synthesia",
-    "name": "Synthesia",
-    "summary": "AI 虚拟人视频制作平台",
+    "name": "learning.synthesia.name",
+    "summary": "learning.synthesia.summary",
     "core_capabilities": [
-      "虚拟主持人",
-      "多语言配音",
-      "企业定制"
+      "learning.synthesia.capability.1",
+      "learning.synthesia.capability.2",
+      "learning.synthesia.capability.3"
     ],
     "getting_started": [
-      "选择 AI 虚拟主持人",
-      "输入视频脚本文字",
-      "选择语言和场景后生成视频"
+      "learning.synthesia.getting_started.1",
+      "learning.synthesia.getting_started.2",
+      "learning.synthesia.getting_started.3"
     ],
     "official_links": [
       "https://www.synthesia.io/"
     ],
     "caveats": [
-      "免费试用版有水印和时长限制",
-      "虚拟人表情自然度仍在改进中"
+      "learning.synthesia.caveat.1",
+      "learning.synthesia.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -734,24 +734,24 @@
   },
   {
     "id": "adcreative-ai",
-    "name": "AdCreative.ai",
-    "summary": "AI 广告创意生成工具",
+    "name": "learning.adcreative-ai.name",
+    "summary": "learning.adcreative-ai.summary",
     "core_capabilities": [
-      "广告素材生成",
-      "效果预测",
-      "A/B 测试"
+      "learning.adcreative-ai.capability.1",
+      "learning.adcreative-ai.capability.2",
+      "learning.adcreative-ai.capability.3"
     ],
     "getting_started": [
-      "输入品牌信息和产品描述",
-      "选择广告平台和尺寸",
-      "AI 生成多组广告创意供选择"
+      "learning.adcreative-ai.getting_started.1",
+      "learning.adcreative-ai.getting_started.2",
+      "learning.adcreative-ai.getting_started.3"
     ],
     "official_links": [
       "https://www.adcreative.ai/"
     ],
     "caveats": [
-      "生成效果依赖输入质量",
-      "需要付费订阅"
+      "learning.adcreative-ai.caveat.1",
+      "learning.adcreative-ai.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -761,24 +761,24 @@
   },
   {
     "id": "copy-ai",
-    "name": "Copy.ai",
-    "summary": "AI 营销文案一站式平台",
+    "name": "learning.copy-ai.name",
+    "summary": "learning.copy-ai.summary",
     "core_capabilities": [
-      "文案生成",
-      "工作流自动化",
-      "SEO 内容"
+      "learning.copy-ai.capability.1",
+      "learning.copy-ai.capability.2",
+      "learning.copy-ai.capability.3"
     ],
     "getting_started": [
-      "选择内容类型（广告文案、社交帖子等）",
-      "输入产品信息和目标受众",
-      "从多个生成方案中选择最佳版本"
+      "learning.copy-ai.getting_started.1",
+      "learning.copy-ai.getting_started.2",
+      "learning.copy-ai.getting_started.3"
     ],
     "official_links": [
       "https://www.copy.ai/"
     ],
     "caveats": [
-      "免费版每月生成次数有限",
-      "生成内容需根据品牌调性微调"
+      "learning.copy-ai.caveat.1",
+      "learning.copy-ai.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -788,24 +788,24 @@
   },
   {
     "id": "deepseek",
-    "name": "工程化助手",
-    "summary": "深度求索推出的开源大语言模型",
+    "name": "learning.deepseek.name",
+    "summary": "learning.deepseek.summary",
     "core_capabilities": [
-      "代码生成",
-      "数学推理",
-      "长文本处理"
+      "learning.deepseek.capability.1",
+      "learning.deepseek.capability.2",
+      "learning.deepseek.capability.3"
     ],
     "getting_started": [
-      "访问 工程化助手 官网或 API",
-      "在对话框中直接提问",
-      "使用代码模式进行编程辅助"
+      "learning.deepseek.getting_started.1",
+      "learning.deepseek.getting_started.2",
+      "learning.deepseek.getting_started.3"
     ],
     "official_links": [
       "https://www.deepseek.com/"
     ],
     "caveats": [
-      "部分高峰时段可能响应较慢",
-      "复杂推理任务仍需人工验证"
+      "learning.deepseek.caveat.1",
+      "learning.deepseek.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -815,15 +815,15 @@
   },
   {
     "id": "qianwen",
-    "name": "通义千问",
-    "summary": "阿里云推出的大语言模型",
+    "name": "learning.qianwen.name",
+    "summary": "learning.qianwen.summary",
     "core_capabilities": [
-      "多语言对话",
-      "文档分析",
-      "代码生成"
+      "learning.qianwen.capability.1",
+      "learning.qianwen.capability.2",
+      "learning.qianwen.capability.3"
     ],
     "getting_started": [
-      "访问 https://tongyi.aliyun.com/ 开始使用 通义千问"
+      "learning.qianwen.getting_started.1"
     ],
     "official_links": [
       "https://tongyi.aliyun.com/"
@@ -837,15 +837,15 @@
   },
   {
     "id": "kimi",
-    "name": "高效率助手",
-    "summary": "月之暗面推出的长文本 AI 助手",
+    "name": "learning.kimi.name",
+    "summary": "learning.kimi.summary",
     "core_capabilities": [
-      "超长文本理解",
-      "文档分析",
-      "联网搜索"
+      "learning.kimi.capability.1",
+      "learning.kimi.capability.2",
+      "learning.kimi.capability.3"
     ],
     "getting_started": [
-      "访问 https://kimi.moonshot.cn/ 开始使用 高效率助手"
+      "learning.kimi.getting_started.1"
     ],
     "official_links": [
       "https://kimi.moonshot.cn/"
@@ -859,15 +859,15 @@
   },
   {
     "id": "v0",
-    "name": "v0",
-    "summary": "Vercel 推出的 AI UI 代码生成工具",
+    "name": "learning.v0.name",
+    "summary": "learning.v0.summary",
     "core_capabilities": [
-      "UI 代码生成",
-      "组件设计",
-      "实时预览"
+      "learning.v0.capability.1",
+      "learning.v0.capability.2",
+      "learning.v0.capability.3"
     ],
     "getting_started": [
-      "访问 https://v0.dev/ 开始使用 v0"
+      "learning.v0.getting_started.1"
     ],
     "official_links": [
       "https://v0.dev/"
@@ -881,15 +881,15 @@
   },
   {
     "id": "replit-ai",
-    "name": "Replit AI",
-    "summary": "在线 IDE 集成的 AI 编程助手",
+    "name": "learning.replit-ai.name",
+    "summary": "learning.replit-ai.summary",
     "core_capabilities": [
-      "代码生成",
-      "在线运行",
-      "协作编程"
+      "learning.replit-ai.capability.1",
+      "learning.replit-ai.capability.2",
+      "learning.replit-ai.capability.3"
     ],
     "getting_started": [
-      "访问 https://replit.com/ 开始使用 Replit AI"
+      "learning.replit-ai.getting_started.1"
     ],
     "official_links": [
       "https://replit.com/"
@@ -903,15 +903,15 @@
   },
   {
     "id": "doubao",
-    "name": "豆包",
-    "summary": "字节跳动推出的 AI 对话助手",
+    "name": "learning.doubao.name",
+    "summary": "learning.doubao.summary",
     "core_capabilities": [
-      "多轮对话",
-      "文档理解",
-      "图像生成"
+      "learning.doubao.capability.1",
+      "learning.doubao.capability.2",
+      "learning.doubao.capability.3"
     ],
     "getting_started": [
-      "访问 https://www.doubao.com/ 开始使用 豆包"
+      "learning.doubao.getting_started.1"
     ],
     "official_links": [
       "https://www.doubao.com/"
@@ -925,15 +925,15 @@
   },
   {
     "id": "ideogram",
-    "name": "Ideogram",
-    "summary": "擅长文字渲染的 AI 图像生成工具",
+    "name": "learning.ideogram.name",
+    "summary": "learning.ideogram.summary",
     "core_capabilities": [
-      "文字渲染",
-      "海报设计",
-      "风格多样"
+      "learning.ideogram.capability.1",
+      "learning.ideogram.capability.2",
+      "learning.ideogram.capability.3"
     ],
     "getting_started": [
-      "访问 https://ideogram.ai/ 开始使用 Ideogram"
+      "learning.ideogram.getting_started.1"
     ],
     "official_links": [
       "https://ideogram.ai/"
@@ -947,24 +947,24 @@
   },
   {
     "id": "julius-ai",
-    "name": "Julius AI",
-    "summary": "AI 数据分析与可视化工具",
+    "name": "learning.julius-ai.name",
+    "summary": "learning.julius-ai.summary",
     "core_capabilities": [
-      "数据可视化",
-      "统计分析",
-      "自然语言查询"
+      "learning.julius-ai.capability.1",
+      "learning.julius-ai.capability.2",
+      "learning.julius-ai.capability.3"
     ],
     "getting_started": [
-      "上传 CSV/Excel 数据文件",
-      "用自然语言提问分析数据",
-      "自动生成图表和统计摘要"
+      "learning.julius-ai.getting_started.1",
+      "learning.julius-ai.getting_started.2",
+      "learning.julius-ai.getting_started.3"
     ],
     "official_links": [
       "https://julius.ai/"
     ],
     "caveats": [
-      "大文件上传有大小限制",
-      "复杂统计分析仍需专业工具辅助"
+      "learning.julius-ai.caveat.1",
+      "learning.julius-ai.caveat.2"
     ],
     "last_verified_at": "2026-03-02",
     "review_status": "APPROVED",
@@ -974,15 +974,15 @@
   },
   {
     "id": "dify",
-    "name": "Dify",
-    "summary": "开源 AI 应用开发平台",
+    "name": "learning.dify.name",
+    "summary": "learning.dify.summary",
     "core_capabilities": [
-      "AI 应用编排",
-      "知识库",
-      "工作流自动化"
+      "learning.dify.capability.1",
+      "learning.dify.capability.2",
+      "learning.dify.capability.3"
     ],
     "getting_started": [
-      "访问 https://dify.ai/ 开始使用 Dify"
+      "learning.dify.getting_started.1"
     ],
     "official_links": [
       "https://dify.ai/"
@@ -996,15 +996,15 @@
   },
   {
     "id": "coze",
-    "name": "Coze（扣子）",
-    "summary": "字节跳动的 AI 应用搭建平台",
+    "name": "learning.coze.name",
+    "summary": "learning.coze.summary",
     "core_capabilities": [
-      "AI Bot 搭建",
-      "插件系统",
-      "多平台发布"
+      "learning.coze.capability.1",
+      "learning.coze.capability.2",
+      "learning.coze.capability.3"
     ],
     "getting_started": [
-      "访问 https://www.coze.com/ 开始使用 Coze（扣子）"
+      "learning.coze.getting_started.1"
     ],
     "official_links": [
       "https://www.coze.com/"

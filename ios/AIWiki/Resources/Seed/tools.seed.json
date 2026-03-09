@@ -1,1842 +1,1842 @@
 [
   {
     "id": "claude",
-    "name": "逻辑推理引擎",
-    "intro": "面向通用任务的人工智能助手",
+    "name": "tool.claude.name",
+    "intro": "tool.claude.intro",
     "features": [
-      "长文本理解",
-      "写作辅助",
-      "代码生成"
+      "tool.claude.feature.1",
+      "tool.claude.feature.2",
+      "tool.claude.feature.3"
     ],
-    "company": "智能科研机构",
+    "company": "tool.claude.company",
     "url": "https://claude.ai/",
     "icon": "claude.png",
-    "category": "聊天机器人",
+    "category": "category.chat",
     "source_url": "https://www.anthropic.com/claude",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "长文阅读与总结",
-      "文档润色",
-      "规范写作",
-      "代码解释与重构建议"
+      "tool.claude.use_case.1",
+      "tool.claude.use_case.2",
+      "tool.claude.use_case.3",
+      "tool.claude.use_case.4"
     ],
     "best_practices": [
-      "输入长文时先给任务边界和输出结构",
-      "要求回答中标注不确定点，降低幻觉影响",
-      "对关键条款采用逐段提问而不是一次问完"
+      "tool.claude.best_practice.1",
+      "tool.claude.best_practice.2",
+      "tool.claude.best_practice.3"
     ],
     "strengths": [
-      "长上下文处理能力突出",
-      "回答风格稳定",
-      "长文整理体验好"
+      "tool.claude.strength.1",
+      "tool.claude.strength.2",
+      "tool.claude.strength.3"
     ],
     "limitations": [
-      "实时信息覆盖有限",
-      "某些代码场景不如专注编程工具高效"
+      "tool.claude.limitation.1",
+      "tool.claude.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "长文归纳模板",
-        "prompt": "请阅读以下内容并输出：1) 200字摘要；2) 5个关键要点；3) 潜在风险与假设；4) 给管理层的一页纸结论。原文：<粘贴内容>。"
+        "title": "tool.claude.prompt.1.title",
+        "prompt": "tool.claude.prompt.1.body"
       },
       {
-        "title": "规范改写模板",
-        "prompt": "请把以下草稿改写成正式文档，要求术语统一、逻辑严谨、句子简洁，并给出改写前后差异要点。草稿：<粘贴文本>。"
+        "title": "tool.claude.prompt.2.title",
+        "prompt": "tool.claude.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.claude.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android",
-        "API"
+        "tool.claude.access.platform.1",
+        "tool.claude.access.platform.2",
+        "tool.claude.access.platform.3",
+        "tool.claude.access.platform.4"
       ],
       "api_available": true
     }
   },
   {
     "id": "gemini",
-    "name": "多模态智脑",
-    "intro": "全球技术厂商 推出的多模态 AI 助手",
+    "name": "tool.gemini.name",
+    "intro": "tool.gemini.intro",
     "features": [
-      "文本生成",
-      "图像理解",
-      "跨设备协作"
+      "tool.gemini.feature.1",
+      "tool.gemini.feature.2",
+      "tool.gemini.feature.3"
     ],
-    "company": "全球技术厂商",
+    "company": "tool.gemini.company",
     "url": "https://gemini.google.com/",
     "icon": "gemini.png",
-    "category": "多模态模型",
+    "category": "category.multimodal",
     "source_url": "https://gemini.google.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "多模态问答",
-      "全球技术厂商 生态办公辅助",
-      "图文理解",
-      "学习与资料整理"
+      "tool.gemini.use_case.1",
+      "tool.gemini.use_case.2",
+      "tool.gemini.use_case.3",
+      "tool.gemini.use_case.4"
     ],
     "best_practices": [
-      "涉及图像任务时，明确你希望它关注的区域或元素",
-      "与文档任务结合时，要求按目录层级输出",
-      "先用简版问题探索，再逐步增加约束"
+      "tool.gemini.best_practice.1",
+      "tool.gemini.best_practice.2",
+      "tool.gemini.best_practice.3"
     ],
     "strengths": [
-      "多模态能力均衡",
-      "与 全球技术厂商 服务协同强",
-      "跨设备使用体验好"
+      "tool.gemini.strength.1",
+      "tool.gemini.strength.2",
+      "tool.gemini.strength.3"
     ],
     "limitations": [
-      "部分高级能力受地区和版本影响",
-      "不同入口能力表现可能不一致"
+      "tool.gemini.limitation.1",
+      "tool.gemini.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "图文分析模板",
-        "prompt": "请基于我上传的图片和以下问题进行分析：1) 先描述关键视觉信息；2) 再回答问题；3) 给出你不确定的点。问题：<在此填写>。"
+        "title": "tool.gemini.prompt.1.title",
+        "prompt": "tool.gemini.prompt.1.body"
       },
       {
-        "title": "学习计划模板",
-        "prompt": "你是学习教练。请为我制定4周学习计划，输出包含：每周目标、每天任务、复盘清单、风险提示。学习主题：<在此填写>。"
+        "title": "tool.gemini.prompt.2.title",
+        "prompt": "tool.gemini.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.gemini.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "Android",
-        "iOS",
-        "API"
+        "tool.gemini.access.platform.1",
+        "tool.gemini.access.platform.2",
+        "tool.gemini.access.platform.3",
+        "tool.gemini.access.platform.4"
       ],
       "api_available": true
     }
   },
   {
     "id": "github-copilot",
-    "name": "GitHub Copilot",
-    "intro": "面向开发者的 AI 编程助手",
+    "name": "tool.github-copilot.name",
+    "intro": "tool.github-copilot.intro",
     "features": [
-      "代码补全",
-      "聊天问答",
-      "IDE 集成"
+      "tool.github-copilot.feature.1",
+      "tool.github-copilot.feature.2",
+      "tool.github-copilot.feature.3"
     ],
-    "company": "GitHub",
+    "company": "tool.github-copilot.company",
     "url": "https://github.com/features/copilot",
     "icon": "copilot.png",
-    "category": "编程助手",
+    "category": "category.coding",
     "source_url": "https://github.com/features/copilot",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "IDE 内代码补全",
-      "单元测试生成",
-      "重构建议",
-      "代码解释与学习"
+      "tool.github-copilot.use_case.1",
+      "tool.github-copilot.use_case.2",
+      "tool.github-copilot.use_case.3",
+      "tool.github-copilot.use_case.4"
     ],
     "best_practices": [
-      "让 Copilot 先给最小可运行版本，再逐步增强",
-      "在注释中写明输入、输出和边界条件",
-      "生成后必须跑测试并人工审查关键逻辑"
+      "tool.github-copilot.best_practice.1",
+      "tool.github-copilot.best_practice.2",
+      "tool.github-copilot.best_practice.3"
     ],
     "strengths": [
-      "开发流程内嵌体验好",
-      "补全速度快",
-      "与主流 IDE 集成完善"
+      "tool.github-copilot.strength.1",
+      "tool.github-copilot.strength.2",
+      "tool.github-copilot.strength.3"
     ],
     "limitations": [
-      "复杂业务上下文理解有限",
-      "生成代码需要严格审查"
+      "tool.github-copilot.limitation.1",
+      "tool.github-copilot.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "单元测试生成模板",
-        "prompt": "请为下面函数编写单元测试，覆盖正常输入、边界条件和异常输入。测试框架：<填写>。函数代码：<粘贴代码>。"
+        "title": "tool.github-copilot.prompt.1.title",
+        "prompt": "tool.github-copilot.prompt.1.body"
       },
       {
-        "title": "重构建议模板",
-        "prompt": "请对以下代码做可读性与可维护性重构，要求不改变行为，并输出：1) 重构前问题；2) 重构后代码；3) 风险点。代码：<粘贴代码>。"
+        "title": "tool.github-copilot.prompt.2.title",
+        "prompt": "tool.github-copilot.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "订阅制（部分场景可试用）",
+      "pricing": "tool.github-copilot.access.pricing",
       "account_required": true,
       "platforms": [
-        "VS Code",
-        "JetBrains",
-        "Neovim",
-        "GitHub"
+        "tool.github-copilot.access.platform.1",
+        "tool.github-copilot.access.platform.2",
+        "tool.github-copilot.access.platform.3",
+        "tool.github-copilot.access.platform.4"
       ],
       "api_available": false
     }
   },
   {
     "id": "cursor",
-    "name": "Cursor",
-    "intro": "集成 AI 的代码编辑器",
+    "name": "tool.cursor.name",
+    "intro": "tool.cursor.intro",
     "features": [
-      "代码生成",
-      "代码重构",
-      "项目问答"
+      "tool.cursor.feature.1",
+      "tool.cursor.feature.2",
+      "tool.cursor.feature.3"
     ],
-    "company": "Anysphere",
+    "company": "tool.cursor.company",
     "url": "https://www.cursor.com/",
     "icon": "cursor.png",
-    "category": "编程助手",
+    "category": "category.coding",
     "source_url": "https://www.cursor.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "仓库级代码理解",
-      "多文件改造",
-      "Bug 定位",
-      "快速原型开发"
+      "tool.cursor.use_case.1",
+      "tool.cursor.use_case.2",
+      "tool.cursor.use_case.3",
+      "tool.cursor.use_case.4"
     ],
     "best_practices": [
-      "先让模型总结项目结构，再下发改动任务",
-      "复杂改动拆成小步并逐步验证",
-      "每次改动后通过测试或构建检查回归"
+      "tool.cursor.best_practice.1",
+      "tool.cursor.best_practice.2",
+      "tool.cursor.best_practice.3"
     ],
     "strengths": [
-      "项目级上下文对话强",
-      "多文件编辑效率高",
-      "AI 工作流集成度高"
+      "tool.cursor.strength.1",
+      "tool.cursor.strength.2",
+      "tool.cursor.strength.3"
     ],
     "limitations": [
-      "错误修改可能跨文件扩散",
-      "仍需工程师把关架构与安全"
+      "tool.cursor.limitation.1",
+      "tool.cursor.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "仓库理解模板",
-        "prompt": "请先总结该仓库架构、核心模块与依赖关系，再指出最可能的性能瓶颈和可维护性风险。"
+        "title": "tool.cursor.prompt.1.title",
+        "prompt": "tool.cursor.prompt.1.body"
       },
       {
-        "title": "Bug 修复模板",
-        "prompt": "这是一个线上 bug，请按“根因 -> 修复方案 -> 改动文件清单 -> 回归测试点”输出。相关日志/代码：<粘贴内容>。"
+        "title": "tool.cursor.prompt.2.title",
+        "prompt": "tool.cursor.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.cursor.access.pricing",
       "account_required": true,
       "platforms": [
-        "macOS",
-        "Windows",
-        "Linux"
+        "tool.cursor.access.platform.1",
+        "tool.cursor.access.platform.2",
+        "tool.cursor.access.platform.3"
       ],
       "api_available": false
     }
   },
   {
     "id": "midjourney",
-    "name": "Midjourney",
-    "intro": "基于提示词的图像生成工具",
+    "name": "tool.midjourney.name",
+    "intro": "tool.midjourney.intro",
     "features": [
-      "文生图",
-      "风格化生成",
-      "社区画廊"
+      "tool.midjourney.feature.1",
+      "tool.midjourney.feature.2",
+      "tool.midjourney.feature.3"
     ],
-    "company": "Midjourney",
+    "company": "tool.midjourney.company",
     "url": "https://www.midjourney.com/",
     "icon": "midjourney.png",
-    "category": "图像生成",
+    "category": "category.image_generation",
     "source_url": "https://www.midjourney.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "概念视觉探索",
-      "海报与封面草图",
-      "品牌风格尝试",
-      "社媒素材创意"
+      "tool.midjourney.use_case.1",
+      "tool.midjourney.use_case.2",
+      "tool.midjourney.use_case.3",
+      "tool.midjourney.use_case.4"
     ],
     "best_practices": [
-      "提示词包含主体、风格、镜头、光线和构图",
-      "先低成本批量探索，再放大优选方向",
-      "用负面描述减少不希望出现的元素"
+      "tool.midjourney.best_practice.1",
+      "tool.midjourney.best_practice.2",
+      "tool.midjourney.best_practice.3"
     ],
     "strengths": [
-      "风格化效果突出",
-      "创意探索效率高",
-      "社区生态活跃"
+      "tool.midjourney.strength.1",
+      "tool.midjourney.strength.2",
+      "tool.midjourney.strength.3"
     ],
     "limitations": [
-      "精确可控性有限",
-      "商用前需关注版权和合规"
+      "tool.midjourney.limitation.1",
+      "tool.midjourney.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "品牌海报模板",
-        "prompt": "A modern poster for <品牌/主题>, clean composition, strong focal point, cinematic lighting, high contrast, premium editorial style."
+        "title": "tool.midjourney.prompt.1.title",
+        "prompt": "tool.midjourney.prompt.1.body"
       },
       {
-        "title": "角色概念模板",
-        "prompt": "Character concept of <角色描述>, full body, detailed costume, dynamic pose, dramatic rim light, concept art quality."
+        "title": "tool.midjourney.prompt.2.title",
+        "prompt": "tool.midjourney.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "订阅制",
+      "pricing": "tool.midjourney.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "Discord"
+        "tool.midjourney.access.platform.1",
+        "tool.midjourney.access.platform.2"
       ],
       "api_available": false
     }
   },
   {
     "id": "stable-diffusion",
-    "name": "Stable Diffusion",
-    "intro": "开源的图像生成基础模型",
+    "name": "tool.stable-diffusion.name",
+    "intro": "tool.stable-diffusion.intro",
     "features": [
-      "文生图",
-      "图像编辑",
-      "本地部署"
+      "tool.stable-diffusion.feature.1",
+      "tool.stable-diffusion.feature.2",
+      "tool.stable-diffusion.feature.3"
     ],
-    "company": "Stability AI",
+    "company": "tool.stable-diffusion.company",
     "url": "https://stability.ai/stable-diffusion",
     "icon": "stable-diffusion.png",
-    "category": "图像生成",
+    "category": "category.image_generation",
     "source_url": "https://stability.ai/stable-diffusion",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "本地文生图",
-      "企业内网图像生成",
-      "风格迁移",
-      "可控图像工作流"
+      "tool.stable-diffusion.use_case.1",
+      "tool.stable-diffusion.use_case.2",
+      "tool.stable-diffusion.use_case.3",
+      "tool.stable-diffusion.use_case.4"
     ],
     "best_practices": [
-      "先确定模型版本与采样参数再调提示词",
-      "结合 ControlNet / LoRA 提升可控性",
-      "为每个项目固定参数模板，便于复现"
+      "tool.stable-diffusion.best_practice.1",
+      "tool.stable-diffusion.best_practice.2",
+      "tool.stable-diffusion.best_practice.3"
     ],
     "strengths": [
-      "可本地部署",
-      "可扩展性强",
-      "生态插件丰富"
+      "tool.stable-diffusion.strength.1",
+      "tool.stable-diffusion.strength.2",
+      "tool.stable-diffusion.strength.3"
     ],
     "limitations": [
-      "学习和调参门槛较高",
-      "算力与显存要求较高"
+      "tool.stable-diffusion.limitation.1",
+      "tool.stable-diffusion.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "写实产品图模板",
-        "prompt": "highly detailed product photo of <产品>, studio lighting, clean background, realistic materials, sharp focus"
+        "title": "tool.stable-diffusion.prompt.1.title",
+        "prompt": "tool.stable-diffusion.prompt.1.body"
       },
       {
-        "title": "风格化插画模板",
-        "prompt": "stylized illustration of <主题>, vibrant colors, dynamic composition, soft shadows, artstation quality"
+        "title": "tool.stable-diffusion.prompt.2.title",
+        "prompt": "tool.stable-diffusion.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "开源模型（部署成本自担）",
+      "pricing": "tool.stable-diffusion.access.pricing",
       "account_required": false,
       "platforms": [
-        "Local",
-        "Cloud"
+        "tool.stable-diffusion.access.platform.1",
+        "tool.stable-diffusion.access.platform.2"
       ],
       "api_available": true
     }
   },
   {
     "id": "notebooklm",
-    "name": "NotebookLM",
-    "intro": "面向资料整理的 AI 研究助手",
+    "name": "tool.notebooklm.name",
+    "intro": "tool.notebooklm.intro",
     "features": [
-      "文档问答",
-      "要点总结",
-      "来源引用"
+      "tool.notebooklm.feature.1",
+      "tool.notebooklm.feature.2",
+      "tool.notebooklm.feature.3"
     ],
-    "company": "全球技术厂商",
+    "company": "tool.notebooklm.company",
     "url": "https://notebooklm.google/",
     "icon": "notebooklm.png",
-    "category": "数据分析",
+    "category": "category.data_analysis",
     "source_url": "https://notebooklm.google/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "资料归纳",
-      "研究问答",
-      "课程复习",
-      "知识库摘要"
+      "tool.notebooklm.use_case.1",
+      "tool.notebooklm.use_case.2",
+      "tool.notebooklm.use_case.3",
+      "tool.notebooklm.use_case.4"
     ],
     "best_practices": [
-      "先上传高质量来源，再进行问答",
-      "要求回答引用具体来源段落",
-      "对重点结论要求列出证据链"
+      "tool.notebooklm.best_practice.1",
+      "tool.notebooklm.best_practice.2",
+      "tool.notebooklm.best_practice.3"
     ],
     "strengths": [
-      "来源引用能力强",
-      "长资料整理效率高",
-      "学习场景体验好"
+      "tool.notebooklm.strength.1",
+      "tool.notebooklm.strength.2",
+      "tool.notebooklm.strength.3"
     ],
     "limitations": [
-      "依赖输入资料质量",
-      "跨来源推理仍需人工核验"
+      "tool.notebooklm.limitation.1",
+      "tool.notebooklm.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "研究摘要模板",
-        "prompt": "请基于当前资料输出研究摘要：1) 核心观点；2) 支持证据；3) 未解决问题；4) 下一步研究建议。"
+        "title": "tool.notebooklm.prompt.1.title",
+        "prompt": "tool.notebooklm.prompt.1.body"
       },
       {
-        "title": "考试复习模板",
-        "prompt": "请把当前资料整理为复习卡片，格式为：概念定义、关键公式/原则、常见误区、3道自测题。"
+        "title": "tool.notebooklm.prompt.2.title",
+        "prompt": "tool.notebooklm.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "免费版 + 订阅版（能力差异视版本）",
+      "pricing": "tool.notebooklm.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.notebooklm.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "perplexity",
-    "name": "Perplexity",
-    "intro": "支持联网检索的 AI 搜索工具",
+    "name": "tool.perplexity.name",
+    "intro": "tool.perplexity.intro",
     "features": [
-      "搜索问答",
-      "来源引用",
-      "研究模式"
+      "tool.perplexity.feature.1",
+      "tool.perplexity.feature.2",
+      "tool.perplexity.feature.3"
     ],
-    "company": "Perplexity",
+    "company": "tool.perplexity.company",
     "url": "https://www.perplexity.ai/",
     "icon": "perplexity.png",
-    "category": "数据分析",
+    "category": "category.data_analysis",
     "source_url": "https://www.perplexity.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "信息检索",
-      "行业调研",
-      "竞品速览",
-      "事实问答"
+      "tool.perplexity.use_case.1",
+      "tool.perplexity.use_case.2",
+      "tool.perplexity.use_case.3",
+      "tool.perplexity.use_case.4"
     ],
     "best_practices": [
-      "提问时指定时间范围和目标受众",
-      "要求按来源可信度分层输出",
-      "关键结论交叉验证至少两个来源"
+      "tool.perplexity.best_practice.1",
+      "tool.perplexity.best_practice.2",
+      "tool.perplexity.best_practice.3"
     ],
     "strengths": [
-      "检索与回答一体化",
-      "来源可追溯",
-      "调研速度快"
+      "tool.perplexity.strength.1",
+      "tool.perplexity.strength.2",
+      "tool.perplexity.strength.3"
     ],
     "limitations": [
-      "来源质量不一",
-      "深度分析仍需人工结构化"
+      "tool.perplexity.limitation.1",
+      "tool.perplexity.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "行业扫描模板",
-        "prompt": "请做<行业>近12个月趋势扫描，输出：主要趋势、关键事件、代表公司、风险因素，并附来源链接。"
+        "title": "tool.perplexity.prompt.1.title",
+        "prompt": "tool.perplexity.prompt.1.body"
       },
       {
-        "title": "竞品对比模板",
-        "prompt": "对比<产品A>与<产品B>，维度包括功能、定价、目标用户、优势与短板。请标注每个结论的来源。"
+        "title": "tool.perplexity.prompt.2.title",
+        "prompt": "tool.perplexity.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.perplexity.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android"
+        "tool.perplexity.access.platform.1",
+        "tool.perplexity.access.platform.2",
+        "tool.perplexity.access.platform.3"
       ],
       "api_available": true
     }
   },
   {
     "id": "grok",
-    "name": "Grok",
-    "intro": "支持多模态交互的 AI 助手",
+    "name": "tool.grok.name",
+    "intro": "tool.grok.intro",
     "features": [
-      "对话问答",
-      "图像理解",
-      "实时信息"
+      "tool.grok.feature.1",
+      "tool.grok.feature.2",
+      "tool.grok.feature.3"
     ],
-    "company": "xAI",
+    "company": "tool.grok.company",
     "url": "https://grok.com/",
     "icon": "grok.png",
-    "category": "多模态模型",
+    "category": "category.multimodal",
     "source_url": "https://x.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "多模态对话",
-      "实时热点讨论",
-      "图像理解问答",
-      "通用知识探索"
+      "tool.grok.use_case.1",
+      "tool.grok.use_case.2",
+      "tool.grok.use_case.3",
+      "tool.grok.use_case.4"
     ],
     "best_practices": [
-      "涉及实时事件时先限定时间窗口",
-      "图像任务请明确你关心的细节维度",
-      "让模型分别输出事实、观点与不确定点"
+      "tool.grok.best_practice.1",
+      "tool.grok.best_practice.2",
+      "tool.grok.best_practice.3"
     ],
     "strengths": [
-      "实时性场景表现好",
-      "多模态交互自然",
-      "对话风格有辨识度"
+      "tool.grok.strength.1",
+      "tool.grok.strength.2",
+      "tool.grok.strength.3"
     ],
     "limitations": [
-      "某些专业深度不稳定",
-      "地区与平台可用性可能有差异"
+      "tool.grok.limitation.1",
+      "tool.grok.limitation.2"
     ],
     "prompt_templates": [
       {
-        "title": "热点追踪模板",
-        "prompt": "请总结过去7天<主题>的关键进展，按“时间线 + 影响评估 + 后续观察点”输出。"
+        "title": "tool.grok.prompt.1.title",
+        "prompt": "tool.grok.prompt.1.body"
       },
       {
-        "title": "图像问答模板",
-        "prompt": "请基于我上传的图片回答以下问题，并区分“确定信息”和“推测信息”。问题：<在此填写>。"
+        "title": "tool.grok.prompt.2.title",
+        "prompt": "tool.grok.prompt.2.body"
       }
     ],
     "access": {
-      "pricing": "订阅制（部分能力与平台绑定）",
+      "pricing": "tool.grok.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android"
+        "tool.grok.access.platform.1",
+        "tool.grok.access.platform.2",
+        "tool.grok.access.platform.3"
       ],
       "api_available": true
     }
   },
   {
     "id": "jasper",
-    "name": "Jasper",
-    "intro": "AI 驱动的营销内容生成平台",
+    "name": "tool.jasper.name",
+    "intro": "tool.jasper.intro",
     "features": [
-      "营销文案生成",
-      "品牌语调定制",
-      "多语言内容"
+      "tool.jasper.feature.1",
+      "tool.jasper.feature.2",
+      "tool.jasper.feature.3"
     ],
-    "company": "Jasper AI",
+    "company": "tool.jasper.company",
     "url": "https://www.jasper.ai/",
     "icon": "jasper.png",
-    "category": "写作助手",
+    "category": "category.writing",
     "source_url": "https://www.jasper.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "广告文案",
-      "博客写作",
-      "社媒帖子",
-      "邮件营销"
+      "tool.jasper.use_case.1",
+      "tool.jasper.use_case.2",
+      "tool.jasper.use_case.3",
+      "tool.jasper.use_case.4"
     ],
     "best_practices": [
-      "先设定品牌语调和目标受众",
-      "给足背景信息让内容更精准"
+      "tool.jasper.best_practice.1",
+      "tool.jasper.best_practice.2"
     ],
     "strengths": [
-      "营销场景模板丰富",
-      "品牌语调一致性好"
+      "tool.jasper.strength.1",
+      "tool.jasper.strength.2"
     ],
     "limitations": [
-      "非营销场景表现一般"
+      "tool.jasper.limitation.1"
     ],
     "access": {
-      "pricing": "订阅制",
+      "pricing": "tool.jasper.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.jasper.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "notion-ai",
-    "name": "Notion AI",
-    "intro": "嵌入 Notion 的 AI 写作与知识管理助手",
+    "name": "tool.notion-ai.name",
+    "intro": "tool.notion-ai.intro",
     "features": [
-      "文档生成",
-      "知识问答",
-      "内容改写"
+      "tool.notion-ai.feature.1",
+      "tool.notion-ai.feature.2",
+      "tool.notion-ai.feature.3"
     ],
-    "company": "Notion",
+    "company": "tool.notion-ai.company",
     "url": "https://www.notion.so/product/ai",
     "icon": "notion.png",
-    "category": "写作助手",
+    "category": "category.writing",
     "source_url": "https://www.notion.so/product/ai",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "会议纪要整理",
-      "文档草稿",
-      "知识库问答",
-      "任务列表生成"
+      "tool.notion-ai.use_case.1",
+      "tool.notion-ai.use_case.2",
+      "tool.notion-ai.use_case.3",
+      "tool.notion-ai.use_case.4"
     ],
     "best_practices": [
-      "结合 Notion 数据库使用效果最佳",
-      "用斜杠命令快速调用 AI"
+      "tool.notion-ai.best_practice.1",
+      "tool.notion-ai.best_practice.2"
     ],
     "strengths": [
-      "与 Notion 生态深度集成",
-      "上下文理解准确"
+      "tool.notion-ai.strength.1",
+      "tool.notion-ai.strength.2"
     ],
     "limitations": [
-      "离开 Notion 生态无法使用"
+      "tool.notion-ai.limitation.1"
     ],
     "access": {
-      "pricing": "附加订阅",
+      "pricing": "tool.notion-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android",
-        "macOS",
-        "Windows"
+        "tool.notion-ai.access.platform.1",
+        "tool.notion-ai.access.platform.2",
+        "tool.notion-ai.access.platform.3",
+        "tool.notion-ai.access.platform.4",
+        "tool.notion-ai.access.platform.5"
       ],
       "api_available": false
     }
   },
   {
     "id": "grammarly",
-    "name": "Grammarly",
-    "intro": "AI 英文写作校对与润色工具",
+    "name": "tool.grammarly.name",
+    "intro": "tool.grammarly.intro",
     "features": [
-      "语法检查",
-      "风格建议",
-      "语调调整"
+      "tool.grammarly.feature.1",
+      "tool.grammarly.feature.2",
+      "tool.grammarly.feature.3"
     ],
-    "company": "Grammarly",
+    "company": "tool.grammarly.company",
     "url": "https://www.grammarly.com/",
     "icon": "grammarly.png",
-    "category": "写作助手",
+    "category": "category.writing",
     "source_url": "https://www.grammarly.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "英文邮件润色",
-      "学术论文校对",
-      "商务文档改写"
+      "tool.grammarly.use_case.1",
+      "tool.grammarly.use_case.2",
+      "tool.grammarly.use_case.3"
     ],
     "best_practices": [
-      "设定写作目标和受众以获得最佳建议",
-      "配合浏览器插件使用效率最高"
+      "tool.grammarly.best_practice.1",
+      "tool.grammarly.best_practice.2"
     ],
     "strengths": [
-      "英文校对精准",
-      "多平台覆盖"
+      "tool.grammarly.strength.1",
+      "tool.grammarly.strength.2"
     ],
     "limitations": [
-      "中文支持有限"
+      "tool.grammarly.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.grammarly.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "Chrome",
-        "iOS",
-        "Android",
-        "macOS",
-        "Windows"
+        "tool.grammarly.access.platform.1",
+        "tool.grammarly.access.platform.2",
+        "tool.grammarly.access.platform.3",
+        "tool.grammarly.access.platform.4",
+        "tool.grammarly.access.platform.5",
+        "tool.grammarly.access.platform.6"
       ],
       "api_available": true
     }
   },
   {
     "id": "elevenlabs",
-    "name": "ElevenLabs",
-    "intro": "高质量 AI 语音合成与克隆平台",
+    "name": "tool.elevenlabs.name",
+    "intro": "tool.elevenlabs.intro",
     "features": [
-      "文字转语音",
-      "声音克隆",
-      "多语言语音"
+      "tool.elevenlabs.feature.1",
+      "tool.elevenlabs.feature.2",
+      "tool.elevenlabs.feature.3"
     ],
-    "company": "ElevenLabs",
+    "company": "tool.elevenlabs.company",
     "url": "https://elevenlabs.io/",
     "icon": "elevenlabs.png",
-    "category": "音频处理",
+    "category": "category.audio",
     "source_url": "https://elevenlabs.io/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "有声书制作",
-      "播客配音",
-      "视频旁白",
-      "多语言内容"
+      "tool.elevenlabs.use_case.1",
+      "tool.elevenlabs.use_case.2",
+      "tool.elevenlabs.use_case.3",
+      "tool.elevenlabs.use_case.4"
     ],
     "best_practices": [
-      "使用高质量音频样本进行声音克隆",
-      "选择适合内容类型的语音风格"
+      "tool.elevenlabs.best_practice.1",
+      "tool.elevenlabs.best_practice.2"
     ],
     "strengths": [
-      "语音自然度极高",
-      "声音克隆效果好"
+      "tool.elevenlabs.strength.1",
+      "tool.elevenlabs.strength.2"
     ],
     "limitations": [
-      "高级功能需付费"
+      "tool.elevenlabs.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.elevenlabs.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "API"
+        "tool.elevenlabs.access.platform.1",
+        "tool.elevenlabs.access.platform.2"
       ],
       "api_available": true
     }
   },
   {
     "id": "suno",
-    "name": "Suno",
-    "intro": "AI 音乐生成平台",
+    "name": "tool.suno.name",
+    "intro": "tool.suno.intro",
     "features": [
-      "文字生成音乐",
-      "风格定制",
-      "歌词创作"
+      "tool.suno.feature.1",
+      "tool.suno.feature.2",
+      "tool.suno.feature.3"
     ],
-    "company": "Suno",
+    "company": "tool.suno.company",
     "url": "https://suno.com/",
     "icon": "suno.png",
-    "category": "音频处理",
+    "category": "category.audio",
     "source_url": "https://suno.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "背景音乐制作",
-      "短视频配乐",
-      "歌曲创作实验"
+      "tool.suno.use_case.1",
+      "tool.suno.use_case.2",
+      "tool.suno.use_case.3"
     ],
     "best_practices": [
-      "描述清楚风格、节奏和情绪",
-      "多次迭代筛选最佳结果"
+      "tool.suno.best_practice.1",
+      "tool.suno.best_practice.2"
     ],
     "strengths": [
-      "音乐质量高",
-      "操作门槛低"
+      "tool.suno.strength.1",
+      "tool.suno.strength.2"
     ],
     "limitations": [
-      "商用版权条款需注意"
+      "tool.suno.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.suno.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.suno.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "runway",
-    "name": "Runway",
-    "intro": "多功能 AI 视频生成与编辑平台",
+    "name": "tool.runway.name",
+    "intro": "tool.runway.intro",
     "features": [
-      "文字生成视频",
-      "视频编辑",
-      "绿幕去除"
+      "tool.runway.feature.1",
+      "tool.runway.feature.2",
+      "tool.runway.feature.3"
     ],
-    "company": "Runway",
+    "company": "tool.runway.company",
     "url": "https://runwayml.com/",
     "icon": "runway.png",
-    "category": "视频工具",
+    "category": "category.video",
     "source_url": "https://runwayml.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "短视频创作",
-      "特效制作",
-      "概念视频",
-      "广告素材"
+      "tool.runway.use_case.1",
+      "tool.runway.use_case.2",
+      "tool.runway.use_case.3",
+      "tool.runway.use_case.4"
     ],
     "best_practices": [
-      "先用简短描述测试风格",
-      "结合图片引导视频方向"
+      "tool.runway.best_practice.1",
+      "tool.runway.best_practice.2"
     ],
     "strengths": [
-      "视频质量领先",
-      "工具链完整"
+      "tool.runway.strength.1",
+      "tool.runway.strength.2"
     ],
     "limitations": [
-      "生成时间较长",
-      "高分辨率需付费"
+      "tool.runway.limitation.1",
+      "tool.runway.limitation.2"
     ],
     "access": {
-      "pricing": "免费试用 + 订阅版",
+      "pricing": "tool.runway.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.runway.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "heygen",
-    "name": "HeyGen",
-    "intro": "AI 数字人视频生成平台",
+    "name": "tool.heygen.name",
+    "intro": "tool.heygen.intro",
     "features": [
-      "数字人视频",
-      "多语言口型同步",
-      "品牌定制"
+      "tool.heygen.feature.1",
+      "tool.heygen.feature.2",
+      "tool.heygen.feature.3"
     ],
-    "company": "HeyGen",
+    "company": "tool.heygen.company",
     "url": "https://www.heygen.com/",
     "icon": "heygen.png",
-    "category": "视频工具",
+    "category": "category.video",
     "source_url": "https://www.heygen.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "产品讲解视频",
-      "培训视频",
-      "多语言营销",
-      "新闻播报"
+      "tool.heygen.use_case.1",
+      "tool.heygen.use_case.2",
+      "tool.heygen.use_case.3",
+      "tool.heygen.use_case.4"
     ],
     "best_practices": [
-      "选择匹配品牌调性的数字人形象",
-      "脚本简洁口语化效果更好"
+      "tool.heygen.best_practice.1",
+      "tool.heygen.best_practice.2"
     ],
     "strengths": [
-      "数字人效果逼真",
-      "多语言翻译便捷"
+      "tool.heygen.strength.1",
+      "tool.heygen.strength.2"
     ],
     "limitations": [
-      "高度定制需企业版"
+      "tool.heygen.limitation.1"
     ],
     "access": {
-      "pricing": "免费试用 + 订阅版",
+      "pricing": "tool.heygen.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.heygen.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "pika",
-    "name": "Pika",
-    "intro": "轻量级 AI 视频生成工具",
+    "name": "tool.pika.name",
+    "intro": "tool.pika.intro",
     "features": [
-      "图片转视频",
-      "文字转视频",
-      "视频风格转换"
+      "tool.pika.feature.1",
+      "tool.pika.feature.2",
+      "tool.pika.feature.3"
     ],
-    "company": "Pika",
+    "company": "tool.pika.company",
     "url": "https://pika.art/",
     "icon": "pika.png",
-    "category": "视频工具",
+    "category": "category.video",
     "source_url": "https://pika.art/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "社媒视频",
-      "创意短片",
-      "产品动画"
+      "tool.pika.use_case.1",
+      "tool.pika.use_case.2",
+      "tool.pika.use_case.3"
     ],
     "best_practices": [
-      "用高质量图片作为起始帧",
-      "保持提示词简洁明确"
+      "tool.pika.best_practice.1",
+      "tool.pika.best_practice.2"
     ],
     "strengths": [
-      "生成速度快",
-      "使用门槛低"
+      "tool.pika.strength.1",
+      "tool.pika.strength.2"
     ],
     "limitations": [
-      "视频时长有限"
+      "tool.pika.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.pika.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.pika.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "phind",
-    "name": "Phind",
-    "intro": "面向开发者的 AI 搜索引擎",
+    "name": "tool.phind.name",
+    "intro": "tool.phind.intro",
     "features": [
-      "代码搜索",
-      "技术问答",
-      "来源引用"
+      "tool.phind.feature.1",
+      "tool.phind.feature.2",
+      "tool.phind.feature.3"
     ],
-    "company": "Phind",
+    "company": "tool.phind.company",
     "url": "https://www.phind.com/",
     "icon": "phind.png",
-    "category": "搜索引擎",
+    "category": "category.search",
     "source_url": "https://www.phind.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "技术问题检索",
-      "API 用法查询",
-      "错误排查",
-      "框架对比"
+      "tool.phind.use_case.1",
+      "tool.phind.use_case.2",
+      "tool.phind.use_case.3",
+      "tool.phind.use_case.4"
     ],
     "best_practices": [
-      "包含技术栈信息让结果更精准",
-      "贴上错误日志直接搜索"
+      "tool.phind.best_practice.1",
+      "tool.phind.best_practice.2"
     ],
     "strengths": [
-      "开发者场景优化",
-      "搜索结果精准"
+      "tool.phind.strength.1",
+      "tool.phind.strength.2"
     ],
     "limitations": [
-      "非技术领域表现一般"
+      "tool.phind.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.phind.access.pricing",
       "account_required": false,
       "platforms": [
-        "Web"
+        "tool.phind.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "you-com",
-    "name": "You.com",
-    "intro": "支持 AI 增强的隐私优先搜索引擎",
+    "name": "tool.you-com.name",
+    "intro": "tool.you-com.intro",
     "features": [
-      "AI 摘要",
-      "隐私搜索",
-      "多模式搜索"
+      "tool.you-com.feature.1",
+      "tool.you-com.feature.2",
+      "tool.you-com.feature.3"
     ],
-    "company": "You.com",
+    "company": "tool.you-com.company",
     "url": "https://you.com/",
     "icon": "you.png",
-    "category": "搜索引擎",
+    "category": "category.search",
     "source_url": "https://you.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "日常搜索",
-      "学术研究",
-      "产品对比"
+      "tool.you-com.use_case.1",
+      "tool.you-com.use_case.2",
+      "tool.you-com.use_case.3"
     ],
     "best_practices": [
-      "善用不同搜索模式切换",
-      "复杂问题用 AI 聊天模式"
+      "tool.you-com.best_practice.1",
+      "tool.you-com.best_practice.2"
     ],
     "strengths": [
-      "注重隐私保护",
-      "AI 聊天模式方便"
+      "tool.you-com.strength.1",
+      "tool.you-com.strength.2"
     ],
     "limitations": [
-      "中文搜索结果不如英文"
+      "tool.you-com.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.you-com.access.pricing",
       "account_required": false,
       "platforms": [
-        "Web"
+        "tool.you-com.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "gamma",
-    "name": "Gamma",
-    "intro": "AI 驱动的演示文稿生成工具",
+    "name": "tool.gamma.name",
+    "intro": "tool.gamma.intro",
     "features": [
-      "一键生成 PPT",
-      "自动排版",
-      "多模板"
+      "tool.gamma.feature.1",
+      "tool.gamma.feature.2",
+      "tool.gamma.feature.3"
     ],
-    "company": "Gamma",
+    "company": "tool.gamma.company",
     "url": "https://gamma.app/",
     "icon": "gamma.png",
-    "category": "办公效率",
+    "category": "category.productivity",
     "source_url": "https://gamma.app/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "商业提案",
-      "周报月报",
-      "培训课件",
-      "项目汇报"
+      "tool.gamma.use_case.1",
+      "tool.gamma.use_case.2",
+      "tool.gamma.use_case.3",
+      "tool.gamma.use_case.4"
     ],
     "best_practices": [
-      "提供大纲结构让 AI 生成内容更精准",
-      "生成后微调设计细节"
+      "tool.gamma.best_practice.1",
+      "tool.gamma.best_practice.2"
     ],
     "strengths": [
-      "PPT 生成速度极快",
-      "主题设计丰富"
+      "tool.gamma.strength.1",
+      "tool.gamma.strength.2"
     ],
     "limitations": [
-      "复杂动画支持有限"
+      "tool.gamma.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.gamma.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.gamma.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "otter-ai",
-    "name": "Otter.ai",
-    "intro": "AI 会议记录与转写工具",
+    "name": "tool.otter-ai.name",
+    "intro": "tool.otter-ai.intro",
     "features": [
-      "实时转写",
-      "会议摘要",
-      "说话人识别"
+      "tool.otter-ai.feature.1",
+      "tool.otter-ai.feature.2",
+      "tool.otter-ai.feature.3"
     ],
-    "company": "Otter.ai",
+    "company": "tool.otter-ai.company",
     "url": "https://otter.ai/",
     "icon": "otter.png",
-    "category": "办公效率",
+    "category": "category.productivity",
     "source_url": "https://otter.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "会议纪要自动生成",
-      "采访记录",
-      "课堂笔记"
+      "tool.otter-ai.use_case.1",
+      "tool.otter-ai.use_case.2",
+      "tool.otter-ai.use_case.3"
     ],
     "best_practices": [
-      "确保麦克风质量好",
-      "会后立即审核关键决策内容"
+      "tool.otter-ai.best_practice.1",
+      "tool.otter-ai.best_practice.2"
     ],
     "strengths": [
-      "实时转写准确",
-      "自动生成摘要"
+      "tool.otter-ai.strength.1",
+      "tool.otter-ai.strength.2"
     ],
     "limitations": [
-      "中文支持不如英文"
+      "tool.otter-ai.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.otter-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android"
+        "tool.otter-ai.access.platform.1",
+        "tool.otter-ai.access.platform.2",
+        "tool.otter-ai.access.platform.3"
       ],
       "api_available": true
     }
   },
   {
     "id": "beautiful-ai",
-    "name": "Beautiful.ai",
-    "intro": "AI 智能排版演示工具",
+    "name": "tool.beautiful-ai.name",
+    "intro": "tool.beautiful-ai.intro",
     "features": [
-      "智能排版",
-      "模板库",
-      "团队协作"
+      "tool.beautiful-ai.feature.1",
+      "tool.beautiful-ai.feature.2",
+      "tool.beautiful-ai.feature.3"
     ],
-    "company": "Beautiful.ai",
+    "company": "tool.beautiful-ai.company",
     "url": "https://www.beautiful.ai/",
     "icon": "beautifulai.png",
-    "category": "办公效率",
+    "category": "category.productivity",
     "source_url": "https://www.beautiful.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "商务演示",
-      "投资路演",
-      "市场报告"
+      "tool.beautiful-ai.use_case.1",
+      "tool.beautiful-ai.use_case.2",
+      "tool.beautiful-ai.use_case.3"
     ],
     "best_practices": [
-      "从模板开始修改比从零开始更高效",
-      "善用品牌主题功能"
+      "tool.beautiful-ai.best_practice.1",
+      "tool.beautiful-ai.best_practice.2"
     ],
     "strengths": [
-      "设计感专业",
-      "排版自动化"
+      "tool.beautiful-ai.strength.1",
+      "tool.beautiful-ai.strength.2"
     ],
     "limitations": [
-      "导出格式有限"
+      "tool.beautiful-ai.limitation.1"
     ],
     "access": {
-      "pricing": "订阅制",
+      "pricing": "tool.beautiful-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.beautiful-ai.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "canva-ai",
-    "name": "Canva AI",
-    "intro": "Canva 内置的 AI 设计助手",
+    "name": "tool.canva-ai.name",
+    "intro": "tool.canva-ai.intro",
     "features": [
-      "AI 生成图",
-      "魔法橡皮擦",
-      "模板推荐"
+      "tool.canva-ai.feature.1",
+      "tool.canva-ai.feature.2",
+      "tool.canva-ai.feature.3"
     ],
-    "company": "Canva",
+    "company": "tool.canva-ai.company",
     "url": "https://www.canva.com/",
     "icon": "canva.png",
-    "category": "设计工具",
+    "category": "category.design",
     "source_url": "https://www.canva.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "社媒设计",
-      "海报制作",
-      "品牌素材",
-      "简历设计"
+      "tool.canva-ai.use_case.1",
+      "tool.canva-ai.use_case.2",
+      "tool.canva-ai.use_case.3",
+      "tool.canva-ai.use_case.4"
     ],
     "best_practices": [
-      "善用品牌套件保持视觉一致性",
-      "结合模板和 AI 生成效率最高"
+      "tool.canva-ai.best_practice.1",
+      "tool.canva-ai.best_practice.2"
     ],
     "strengths": [
-      "上手极简",
-      "模板生态海量"
+      "tool.canva-ai.strength.1",
+      "tool.canva-ai.strength.2"
     ],
     "limitations": [
-      "高级设计灵活性有限"
+      "tool.canva-ai.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.canva-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android"
+        "tool.canva-ai.access.platform.1",
+        "tool.canva-ai.access.platform.2",
+        "tool.canva-ai.access.platform.3"
       ],
       "api_available": false
     }
   },
   {
     "id": "figma-ai",
-    "name": "Figma AI",
-    "intro": "Figma 内置的 AI 设计辅助功能",
+    "name": "tool.figma-ai.name",
+    "intro": "tool.figma-ai.intro",
     "features": [
-      "自动布局",
-      "文案生成",
-      "设计建议"
+      "tool.figma-ai.feature.1",
+      "tool.figma-ai.feature.2",
+      "tool.figma-ai.feature.3"
     ],
-    "company": "Figma",
+    "company": "tool.figma-ai.company",
     "url": "https://www.figma.com/",
     "icon": "figma.png",
-    "category": "设计工具",
+    "category": "category.design",
     "source_url": "https://www.figma.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "UI 设计",
-      "原型制作",
-      "设计系统管理"
+      "tool.figma-ai.use_case.1",
+      "tool.figma-ai.use_case.2",
+      "tool.figma-ai.use_case.3"
     ],
     "best_practices": [
-      "先建好设计系统，AI 辅助效果更佳",
-      "用 AI 快速探索布局方案"
+      "tool.figma-ai.best_practice.1",
+      "tool.figma-ai.best_practice.2"
     ],
     "strengths": [
-      "与设计工作流深度集成",
-      "团队协作强"
+      "tool.figma-ai.strength.1",
+      "tool.figma-ai.strength.2"
     ],
     "limitations": [
-      "AI 功能仍在迭代中"
+      "tool.figma-ai.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.figma-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "macOS",
-        "Windows"
+        "tool.figma-ai.access.platform.1",
+        "tool.figma-ai.access.platform.2",
+        "tool.figma-ai.access.platform.3"
       ],
       "api_available": true
     }
   },
   {
     "id": "looka",
-    "name": "Looka",
-    "intro": "AI Logo 和品牌设计工具",
+    "name": "tool.looka.name",
+    "intro": "tool.looka.intro",
     "features": [
-      "Logo 生成",
-      "品牌套件",
-      "名片设计"
+      "tool.looka.feature.1",
+      "tool.looka.feature.2",
+      "tool.looka.feature.3"
     ],
-    "company": "Looka",
+    "company": "tool.looka.company",
     "url": "https://looka.com/",
     "icon": "looka.png",
-    "category": "设计工具",
+    "category": "category.design",
     "source_url": "https://looka.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "创业品牌设计",
-      "Logo 创作",
-      "品牌视觉体系"
+      "tool.looka.use_case.1",
+      "tool.looka.use_case.2",
+      "tool.looka.use_case.3"
     ],
     "best_practices": [
-      "提供行业和风格偏好让结果更匹配",
-      "多轮迭代筛选最佳方案"
+      "tool.looka.best_practice.1",
+      "tool.looka.best_practice.2"
     ],
     "strengths": [
-      "Logo 质量专业",
-      "品牌套件一站式"
+      "tool.looka.strength.1",
+      "tool.looka.strength.2"
     ],
     "limitations": [
-      "深度定制需人工设计"
+      "tool.looka.limitation.1"
     ],
     "access": {
-      "pricing": "按项目付费",
+      "pricing": "tool.looka.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.looka.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "khan-academy-ai",
-    "name": "Khanmigo",
-    "intro": "Khan Academy 的 AI 学习辅导员",
+    "name": "tool.khan-academy-ai.name",
+    "intro": "tool.khan-academy-ai.intro",
     "features": [
-      "个性化辅导",
-      "题目讲解",
-      "学习进度跟踪"
+      "tool.khan-academy-ai.feature.1",
+      "tool.khan-academy-ai.feature.2",
+      "tool.khan-academy-ai.feature.3"
     ],
-    "company": "Khan Academy",
+    "company": "tool.khan-academy-ai.company",
     "url": "https://www.khanacademy.org/khan-labs",
     "icon": "khanmigo.png",
-    "category": "教育学习",
+    "category": "category.education",
     "source_url": "https://www.khanacademy.org/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "数学辅导",
-      "科学实验指导",
-      "写作练习",
-      "编程入门"
+      "tool.khan-academy-ai.use_case.1",
+      "tool.khan-academy-ai.use_case.2",
+      "tool.khan-academy-ai.use_case.3",
+      "tool.khan-academy-ai.use_case.4"
     ],
     "best_practices": [
-      "让 AI 引导思考而非直接给答案",
-      "结合课程进度使用"
+      "tool.khan-academy-ai.best_practice.1",
+      "tool.khan-academy-ai.best_practice.2"
     ],
     "strengths": [
-      "教育理念专业",
-      "苏格拉底式引导"
+      "tool.khan-academy-ai.strength.1",
+      "tool.khan-academy-ai.strength.2"
     ],
     "limitations": [
-      "主要面向 K-12 教育"
+      "tool.khan-academy-ai.limitation.1"
     ],
     "access": {
-      "pricing": "订阅制",
+      "pricing": "tool.khan-academy-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.khan-academy-ai.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "duolingo-max",
-    "name": "Duolingo Max",
-    "intro": "AI 增强的语言学习应用",
+    "name": "tool.duolingo-max.name",
+    "intro": "tool.duolingo-max.intro",
     "features": [
-      "AI 对话练习",
-      "错误讲解",
-      "个性化课程"
+      "tool.duolingo-max.feature.1",
+      "tool.duolingo-max.feature.2",
+      "tool.duolingo-max.feature.3"
     ],
-    "company": "Duolingo",
+    "company": "tool.duolingo-max.company",
     "url": "https://www.duolingo.com/",
     "icon": "duolingo.png",
-    "category": "教育学习",
+    "category": "category.education",
     "source_url": "https://www.duolingo.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "外语学习",
-      "口语练习",
-      "语法巩固"
+      "tool.duolingo-max.use_case.1",
+      "tool.duolingo-max.use_case.2",
+      "tool.duolingo-max.use_case.3"
     ],
     "best_practices": [
-      "每天坚持练习比突击更有效",
-      "AI 对话练习多尝试不同场景"
+      "tool.duolingo-max.best_practice.1",
+      "tool.duolingo-max.best_practice.2"
     ],
     "strengths": [
-      "游戏化学习体验好",
-      "AI 纠错针对性强"
+      "tool.duolingo-max.strength.1",
+      "tool.duolingo-max.strength.2"
     ],
     "limitations": [
-      "高级语言学习深度有限"
+      "tool.duolingo-max.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.duolingo-max.access.pricing",
       "account_required": true,
       "platforms": [
-        "iOS",
-        "Android",
-        "Web"
+        "tool.duolingo-max.access.platform.1",
+        "tool.duolingo-max.access.platform.2",
+        "tool.duolingo-max.access.platform.3"
       ],
       "api_available": false
     }
   },
   {
     "id": "photomath",
-    "name": "Photomath",
-    "intro": "AI 拍照解数学题工具",
+    "name": "tool.photomath.name",
+    "intro": "tool.photomath.intro",
     "features": [
-      "拍照解题",
-      "分步讲解",
-      "图形计算"
+      "tool.photomath.feature.1",
+      "tool.photomath.feature.2",
+      "tool.photomath.feature.3"
     ],
-    "company": "全球技术厂商",
+    "company": "tool.photomath.company",
     "url": "https://photomath.com/",
     "icon": "photomath.png",
-    "category": "教育学习",
+    "category": "category.education",
     "source_url": "https://photomath.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "数学作业辅导",
-      "考试复习",
-      "公式理解"
+      "tool.photomath.use_case.1",
+      "tool.photomath.use_case.2",
+      "tool.photomath.use_case.3"
     ],
     "best_practices": [
-      "拍照清晰可提高识别率",
-      "重点看解题步骤而非只看答案"
+      "tool.photomath.best_practice.1",
+      "tool.photomath.best_practice.2"
     ],
     "strengths": [
-      "数学题识别准确",
-      "步骤讲解清晰"
+      "tool.photomath.strength.1",
+      "tool.photomath.strength.2"
     ],
     "limitations": [
-      "仅限数学领域"
+      "tool.photomath.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.photomath.access.pricing",
       "account_required": true,
       "platforms": [
-        "iOS",
-        "Android"
+        "tool.photomath.access.platform.1",
+        "tool.photomath.access.platform.2"
       ],
       "api_available": false
     }
   },
   {
     "id": "synthesia",
-    "name": "Synthesia",
-    "intro": "AI 虚拟人视频制作平台",
+    "name": "tool.synthesia.name",
+    "intro": "tool.synthesia.intro",
     "features": [
-      "虚拟主持人",
-      "多语言配音",
-      "企业定制"
+      "tool.synthesia.feature.1",
+      "tool.synthesia.feature.2",
+      "tool.synthesia.feature.3"
     ],
-    "company": "Synthesia",
+    "company": "tool.synthesia.company",
     "url": "https://www.synthesia.io/",
     "icon": "synthesia.png",
-    "category": "营销工具",
+    "category": "category.marketing",
     "source_url": "https://www.synthesia.io/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "培训视频",
-      "产品演示",
-      "多语言营销",
-      "内部沟通"
+      "tool.synthesia.use_case.1",
+      "tool.synthesia.use_case.2",
+      "tool.synthesia.use_case.3",
+      "tool.synthesia.use_case.4"
     ],
     "best_practices": [
-      "脚本简洁直白效果最好",
-      "选择匹配目标市场的虚拟人形象"
+      "tool.synthesia.best_practice.1",
+      "tool.synthesia.best_practice.2"
     ],
     "strengths": [
-      "无需真人出镜",
-      "多语言一键切换"
+      "tool.synthesia.strength.1",
+      "tool.synthesia.strength.2"
     ],
     "limitations": [
-      "虚拟人自然度仍有提升空间"
+      "tool.synthesia.limitation.1"
     ],
     "access": {
-      "pricing": "订阅制",
+      "pricing": "tool.synthesia.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.synthesia.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "adcreative-ai",
-    "name": "AdCreative.ai",
-    "intro": "AI 广告创意生成工具",
+    "name": "tool.adcreative-ai.name",
+    "intro": "tool.adcreative-ai.intro",
     "features": [
-      "广告素材生成",
-      "效果预测",
-      "A/B 测试"
+      "tool.adcreative-ai.feature.1",
+      "tool.adcreative-ai.feature.2",
+      "tool.adcreative-ai.feature.3"
     ],
-    "company": "AdCreative.ai",
+    "company": "tool.adcreative-ai.company",
     "url": "https://www.adcreative.ai/",
     "icon": "adcreative.png",
-    "category": "营销工具",
+    "category": "category.marketing",
     "source_url": "https://www.adcreative.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "社媒广告",
-      "Banner 设计",
-      "广告文案",
-      "投放优化"
+      "tool.adcreative-ai.use_case.1",
+      "tool.adcreative-ai.use_case.2",
+      "tool.adcreative-ai.use_case.3",
+      "tool.adcreative-ai.use_case.4"
     ],
     "best_practices": [
-      "输入品牌素材让生成更贴合",
-      "关注 AI 效果评分进行筛选"
+      "tool.adcreative-ai.best_practice.1",
+      "tool.adcreative-ai.best_practice.2"
     ],
     "strengths": [
-      "广告场景专业",
-      "批量生成效率高"
+      "tool.adcreative-ai.strength.1",
+      "tool.adcreative-ai.strength.2"
     ],
     "limitations": [
-      "其他设计场景不适用"
+      "tool.adcreative-ai.limitation.1"
     ],
     "access": {
-      "pricing": "订阅制",
+      "pricing": "tool.adcreative-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.adcreative-ai.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "copy-ai",
-    "name": "Copy.ai",
-    "intro": "AI 营销文案一站式平台",
+    "name": "tool.copy-ai.name",
+    "intro": "tool.copy-ai.intro",
     "features": [
-      "文案生成",
-      "工作流自动化",
-      "SEO 内容"
+      "tool.copy-ai.feature.1",
+      "tool.copy-ai.feature.2",
+      "tool.copy-ai.feature.3"
     ],
-    "company": "Copy.ai",
+    "company": "tool.copy-ai.company",
     "url": "https://www.copy.ai/",
     "icon": "copyai.png",
-    "category": "营销工具",
+    "category": "category.marketing",
     "source_url": "https://www.copy.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "落地页文案",
-      "产品描述",
-      "社媒内容",
-      "邮件序列"
+      "tool.copy-ai.use_case.1",
+      "tool.copy-ai.use_case.2",
+      "tool.copy-ai.use_case.3",
+      "tool.copy-ai.use_case.4"
     ],
     "best_practices": [
-      "先定义目标受众和痛点",
-      "多生成几个版本对比选择"
+      "tool.copy-ai.best_practice.1",
+      "tool.copy-ai.best_practice.2"
     ],
     "strengths": [
-      "文案质量稳定",
-      "模板丰富"
+      "tool.copy-ai.strength.1",
+      "tool.copy-ai.strength.2"
     ],
     "limitations": [
-      "中文文案质量不如英文"
+      "tool.copy-ai.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.copy-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.copy-ai.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "deepseek",
-    "name": "工程化助手",
-    "intro": "深度求索推出的开源大语言模型",
+    "name": "tool.deepseek.name",
+    "intro": "tool.deepseek.intro",
     "features": [
-      "代码生成",
-      "数学推理",
-      "长文本处理"
+      "tool.deepseek.feature.1",
+      "tool.deepseek.feature.2",
+      "tool.deepseek.feature.3"
     ],
-    "company": "深度求索",
+    "company": "tool.deepseek.company",
     "url": "https://www.deepseek.com/",
     "icon": "deepseek.png",
-    "category": "聊天机器人",
+    "category": "category.chat",
     "source_url": "https://www.deepseek.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "代码编写",
-      "数学证明",
-      "文档写作",
-      "知识问答"
+      "tool.deepseek.use_case.1",
+      "tool.deepseek.use_case.2",
+      "tool.deepseek.use_case.3",
+      "tool.deepseek.use_case.4"
     ],
     "best_practices": [
-      "复杂推理任务可启用深度思考模式",
-      "代码任务给足上下文"
+      "tool.deepseek.best_practice.1",
+      "tool.deepseek.best_practice.2"
     ],
     "strengths": [
-      "推理能力强",
-      "性价比高",
-      "代码能力突出"
+      "tool.deepseek.strength.1",
+      "tool.deepseek.strength.2",
+      "tool.deepseek.strength.3"
     ],
     "limitations": [
-      "多模态能力相对有限"
+      "tool.deepseek.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + API",
+      "pricing": "tool.deepseek.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "API"
+        "tool.deepseek.access.platform.1",
+        "tool.deepseek.access.platform.2"
       ],
       "api_available": true
     }
   },
   {
     "id": "qianwen",
-    "name": "通义千问",
-    "intro": "阿里云推出的大语言模型",
+    "name": "tool.qianwen.name",
+    "intro": "tool.qianwen.intro",
     "features": [
-      "多语言对话",
-      "文档分析",
-      "代码生成"
+      "tool.qianwen.feature.1",
+      "tool.qianwen.feature.2",
+      "tool.qianwen.feature.3"
     ],
-    "company": "阿里云",
+    "company": "tool.qianwen.company",
     "url": "https://tongyi.aliyun.com/",
     "icon": "qianwen.png",
-    "category": "聊天机器人",
+    "category": "category.chat",
     "source_url": "https://tongyi.aliyun.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "中文写作",
-      "数据分析",
-      "代码辅助",
-      "知识问答"
+      "tool.qianwen.use_case.1",
+      "tool.qianwen.use_case.2",
+      "tool.qianwen.use_case.3",
+      "tool.qianwen.use_case.4"
     ],
     "best_practices": [
-      "中文任务表现优秀",
-      "结合阿里云生态使用效果好"
+      "tool.qianwen.best_practice.1",
+      "tool.qianwen.best_practice.2"
     ],
     "strengths": [
-      "中文能力强",
-      "接入阿里生态",
-      "开源版本可私有化部署"
+      "tool.qianwen.strength.1",
+      "tool.qianwen.strength.2",
+      "tool.qianwen.strength.3"
     ],
     "limitations": [
-      "某些英文场景不如国际模型"
+      "tool.qianwen.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + API",
+      "pricing": "tool.qianwen.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "API"
+        "tool.qianwen.access.platform.1",
+        "tool.qianwen.access.platform.2"
       ],
       "api_available": true
     }
   },
   {
     "id": "kimi",
-    "name": "高效率助手",
-    "intro": "月之暗面推出的长文本 AI 助手",
+    "name": "tool.kimi.name",
+    "intro": "tool.kimi.intro",
     "features": [
-      "超长文本理解",
-      "文档分析",
-      "联网搜索"
+      "tool.kimi.feature.1",
+      "tool.kimi.feature.2",
+      "tool.kimi.feature.3"
     ],
-    "company": "月之暗面",
+    "company": "tool.kimi.company",
     "url": "https://kimi.moonshot.cn/",
     "icon": "kimi.png",
-    "category": "聊天机器人",
+    "category": "category.chat",
     "source_url": "https://kimi.moonshot.cn/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "长文阅读",
-      "论文分析",
-      "网页内容提取",
-      "文档问答"
+      "tool.kimi.use_case.1",
+      "tool.kimi.use_case.2",
+      "tool.kimi.use_case.3",
+      "tool.kimi.use_case.4"
     ],
     "best_practices": [
-      "适合处理超长文档",
-      "可直接传入文件或 URL"
+      "tool.kimi.best_practice.1",
+      "tool.kimi.best_practice.2"
     ],
     "strengths": [
-      "超长上下文窗口",
-      "中文理解优秀",
-      "文件处理方便"
+      "tool.kimi.strength.1",
+      "tool.kimi.strength.2",
+      "tool.kimi.strength.3"
     ],
     "limitations": [
-      "创意写作能力一般"
+      "tool.kimi.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.kimi.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android"
+        "tool.kimi.access.platform.1",
+        "tool.kimi.access.platform.2",
+        "tool.kimi.access.platform.3"
       ],
       "api_available": true
     }
   },
   {
     "id": "v0",
-    "name": "v0",
-    "intro": "Vercel 推出的 AI UI 代码生成工具",
+    "name": "tool.v0.name",
+    "intro": "tool.v0.intro",
     "features": [
-      "UI 代码生成",
-      "组件设计",
-      "实时预览"
+      "tool.v0.feature.1",
+      "tool.v0.feature.2",
+      "tool.v0.feature.3"
     ],
-    "company": "Vercel",
+    "company": "tool.v0.company",
     "url": "https://v0.dev/",
     "icon": "v0.png",
-    "category": "编程助手",
+    "category": "category.coding",
     "source_url": "https://v0.dev/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "快速原型",
-      "UI 组件生成",
-      "页面布局设计"
+      "tool.v0.use_case.1",
+      "tool.v0.use_case.2",
+      "tool.v0.use_case.3"
     ],
     "best_practices": [
-      "描述越具体生成效果越好",
-      "生成后在项目中微调"
+      "tool.v0.best_practice.1",
+      "tool.v0.best_practice.2"
     ],
     "strengths": [
-      "UI 代码质量高",
-      "实时预览方便",
-      "React/Next.js 生态"
+      "tool.v0.strength.1",
+      "tool.v0.strength.2",
+      "tool.v0.strength.3"
     ],
     "limitations": [
-      "仅限前端 UI"
+      "tool.v0.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.v0.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.v0.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "replit-ai",
-    "name": "Replit AI",
-    "intro": "在线 IDE 集成的 AI 编程助手",
+    "name": "tool.replit-ai.name",
+    "intro": "tool.replit-ai.intro",
     "features": [
-      "代码生成",
-      "在线运行",
-      "协作编程"
+      "tool.replit-ai.feature.1",
+      "tool.replit-ai.feature.2",
+      "tool.replit-ai.feature.3"
     ],
-    "company": "Replit",
+    "company": "tool.replit-ai.company",
     "url": "https://replit.com/",
     "icon": "replit.png",
-    "category": "编程助手",
+    "category": "category.coding",
     "source_url": "https://replit.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "快速原型",
-      "编程学习",
-      "小型项目开发",
-      "代码分享"
+      "tool.replit-ai.use_case.1",
+      "tool.replit-ai.use_case.2",
+      "tool.replit-ai.use_case.3",
+      "tool.replit-ai.use_case.4"
     ],
     "best_practices": [
-      "从模板开始比从零开始更高效",
-      "善用 AI 对话理解代码"
+      "tool.replit-ai.best_practice.1",
+      "tool.replit-ai.best_practice.2"
     ],
     "strengths": [
-      "无需本地环境",
-      "即写即跑",
-      "AI 与 IDE 一体化"
+      "tool.replit-ai.strength.1",
+      "tool.replit-ai.strength.2",
+      "tool.replit-ai.strength.3"
     ],
     "limitations": [
-      "大型项目性能受限"
+      "tool.replit-ai.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.replit-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android"
+        "tool.replit-ai.access.platform.1",
+        "tool.replit-ai.access.platform.2",
+        "tool.replit-ai.access.platform.3"
       ],
       "api_available": false
     }
   },
   {
     "id": "doubao",
-    "name": "豆包",
-    "intro": "字节跳动推出的 AI 对话助手",
+    "name": "tool.doubao.name",
+    "intro": "tool.doubao.intro",
     "features": [
-      "多轮对话",
-      "文档理解",
-      "图像生成"
+      "tool.doubao.feature.1",
+      "tool.doubao.feature.2",
+      "tool.doubao.feature.3"
     ],
-    "company": "字节跳动",
+    "company": "tool.doubao.company",
     "url": "https://www.doubao.com/",
     "icon": "doubao.png",
-    "category": "多模态模型",
+    "category": "category.multimodal",
     "source_url": "https://www.doubao.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "日常问答",
-      "文档分析",
-      "创意写作",
-      "图像创意"
+      "tool.doubao.use_case.1",
+      "tool.doubao.use_case.2",
+      "tool.doubao.use_case.3",
+      "tool.doubao.use_case.4"
     ],
     "best_practices": [
-      "中文提问效果最佳",
-      "复杂任务可分步引导"
+      "tool.doubao.best_practice.1",
+      "tool.doubao.best_practice.2"
     ],
     "strengths": [
-      "中文交互自然",
-      "多功能集成",
-      "免费额度充足"
+      "tool.doubao.strength.1",
+      "tool.doubao.strength.2",
+      "tool.doubao.strength.3"
     ],
     "limitations": [
-      "英文能力不如国际模型"
+      "tool.doubao.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.doubao.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "iOS",
-        "Android"
+        "tool.doubao.access.platform.1",
+        "tool.doubao.access.platform.2",
+        "tool.doubao.access.platform.3"
       ],
       "api_available": true
     }
   },
   {
     "id": "ideogram",
-    "name": "Ideogram",
-    "intro": "擅长文字渲染的 AI 图像生成工具",
+    "name": "tool.ideogram.name",
+    "intro": "tool.ideogram.intro",
     "features": [
-      "文字渲染",
-      "海报设计",
-      "风格多样"
+      "tool.ideogram.feature.1",
+      "tool.ideogram.feature.2",
+      "tool.ideogram.feature.3"
     ],
-    "company": "Ideogram",
+    "company": "tool.ideogram.company",
     "url": "https://ideogram.ai/",
     "icon": "ideogram.png",
-    "category": "图像生成",
+    "category": "category.image_generation",
     "source_url": "https://ideogram.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "Logo 创意",
-      "海报设计",
-      "社媒配图",
-      "文字艺术"
+      "tool.ideogram.use_case.1",
+      "tool.ideogram.use_case.2",
+      "tool.ideogram.use_case.3",
+      "tool.ideogram.use_case.4"
     ],
     "best_practices": [
-      "需要文字的图片优先选择 Ideogram",
-      "多次生成能选出满意结果"
+      "tool.ideogram.best_practice.1",
+      "tool.ideogram.best_practice.2"
     ],
     "strengths": [
-      "文字渲染业界领先",
-      "免费额度充足"
+      "tool.ideogram.strength.1",
+      "tool.ideogram.strength.2"
     ],
     "limitations": [
-      "写实图像不如 Midjourney"
+      "tool.ideogram.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.ideogram.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.ideogram.access.platform.1"
       ],
       "api_available": true
     }
   },
   {
     "id": "julius-ai",
-    "name": "Julius AI",
-    "intro": "AI 数据分析与可视化工具",
+    "name": "tool.julius-ai.name",
+    "intro": "tool.julius-ai.intro",
     "features": [
-      "数据可视化",
-      "统计分析",
-      "自然语言查询"
+      "tool.julius-ai.feature.1",
+      "tool.julius-ai.feature.2",
+      "tool.julius-ai.feature.3"
     ],
-    "company": "Julius AI",
+    "company": "tool.julius-ai.company",
     "url": "https://julius.ai/",
     "icon": "julius.png",
-    "category": "数据分析",
+    "category": "category.data_analysis",
     "source_url": "https://julius.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "数据探索",
-      "报表生成",
-      "统计分析",
-      "趋势预测"
+      "tool.julius-ai.use_case.1",
+      "tool.julius-ai.use_case.2",
+      "tool.julius-ai.use_case.3",
+      "tool.julius-ai.use_case.4"
     ],
     "best_practices": [
-      "上传干净数据效果更好",
-      "用自然语言描述你想看的图表"
+      "tool.julius-ai.best_practice.1",
+      "tool.julius-ai.best_practice.2"
     ],
     "strengths": [
-      "零代码数据分析",
-      "图表美观"
+      "tool.julius-ai.strength.1",
+      "tool.julius-ai.strength.2"
     ],
     "limitations": [
-      "超大数据集处理能力有限"
+      "tool.julius-ai.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.julius-ai.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web"
+        "tool.julius-ai.access.platform.1"
       ],
       "api_available": false
     }
   },
   {
     "id": "dify",
-    "name": "Dify",
-    "intro": "开源 AI 应用开发平台",
+    "name": "tool.dify.name",
+    "intro": "tool.dify.intro",
     "features": [
-      "AI 应用编排",
-      "知识库",
-      "工作流自动化"
+      "tool.dify.feature.1",
+      "tool.dify.feature.2",
+      "tool.dify.feature.3"
     ],
-    "company": "Dify",
+    "company": "tool.dify.company",
     "url": "https://dify.ai/",
     "icon": "dify.png",
-    "category": "办公效率",
+    "category": "category.productivity",
     "source_url": "https://dify.ai/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "企业 AI 助手",
-      "客服机器人",
-      "知识管理",
-      "自动化工作流"
+      "tool.dify.use_case.1",
+      "tool.dify.use_case.2",
+      "tool.dify.use_case.3",
+      "tool.dify.use_case.4"
     ],
     "best_practices": [
-      "先梳理业务流程再搭建 AI 工作流",
-      "善用知识库提高回答准确性"
+      "tool.dify.best_practice.1",
+      "tool.dify.best_practice.2"
     ],
     "strengths": [
-      "开源可自部署",
-      "低代码搭建 AI 应用",
-      "多模型支持"
+      "tool.dify.strength.1",
+      "tool.dify.strength.2",
+      "tool.dify.strength.3"
     ],
     "limitations": [
-      "复杂场景需要技术人员支持"
+      "tool.dify.limitation.1"
     ],
     "access": {
-      "pricing": "开源免费 + 云服务版",
+      "pricing": "tool.dify.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "Self-hosted"
+        "tool.dify.access.platform.1",
+        "tool.dify.access.platform.2"
       ],
       "api_available": true
     }
   },
   {
     "id": "coze",
-    "name": "Coze（扣子）",
-    "intro": "字节跳动的 AI 应用搭建平台",
+    "name": "tool.coze.name",
+    "intro": "tool.coze.intro",
     "features": [
-      "AI Bot 搭建",
-      "插件系统",
-      "多平台发布"
+      "tool.coze.feature.1",
+      "tool.coze.feature.2",
+      "tool.coze.feature.3"
     ],
-    "company": "字节跳动",
+    "company": "tool.coze.company",
     "url": "https://www.coze.com/",
     "icon": "coze.png",
-    "category": "办公效率",
+    "category": "category.productivity",
     "source_url": "https://www.coze.com/",
     "last_verified_at": "2026-03-02",
     "use_cases": [
-      "定制 AI 助手",
-      "客服自动化",
-      "内容创作工作流"
+      "tool.coze.use_case.1",
+      "tool.coze.use_case.2",
+      "tool.coze.use_case.3"
     ],
     "best_practices": [
-      "结合插件扩展 Bot 能力",
-      "发布到多个渠道扩大覆盖"
+      "tool.coze.best_practice.1",
+      "tool.coze.best_practice.2"
     ],
     "strengths": [
-      "零代码搭建",
-      "插件生态丰富",
-      "可发布到多平台"
+      "tool.coze.strength.1",
+      "tool.coze.strength.2",
+      "tool.coze.strength.3"
     ],
     "limitations": [
-      "复杂逻辑编排有学习成本"
+      "tool.coze.limitation.1"
     ],
     "access": {
-      "pricing": "免费版 + 订阅版",
+      "pricing": "tool.coze.access.pricing",
       "account_required": true,
       "platforms": [
-        "Web",
-        "Discord",
-        "Telegram"
+        "tool.coze.access.platform.1",
+        "tool.coze.access.platform.2",
+        "tool.coze.access.platform.3"
       ],
       "api_available": true
     }
