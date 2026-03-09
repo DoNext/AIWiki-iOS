@@ -36,11 +36,18 @@ def resolve_api_key_path
   key_content = ENV["APP_STORE_CONNECT_KEY_CONTENT"]
   UI.user_error!("Missing APP_STORE_CONNECT_KEY_FILE or APP_STORE_CONNECT_KEY_CONTENT") if key_content.nil? || key_content.empty?
 
+  normalized_key_content =
+    if key_content.include?("-----BEGIN")
+      key_content.gsub('\n', "\n")
+    else
+      Base64.decode64(key_content)
+    end
+
   tmp_dir = File.join(Dir.pwd, "fastlane", "tmp")
   FileUtils.mkdir_p(tmp_dir)
 
   tmp_path = File.join(tmp_dir, "AuthKey_#{ENV.fetch("APP_STORE_CONNECT_KEY_ID")}.p8")
-  File.write(tmp_path, key_content)
+  File.write(tmp_path, normalized_key_content)
   tmp_path
 end
 

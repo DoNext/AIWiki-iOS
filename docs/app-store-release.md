@@ -58,6 +58,8 @@ YOUR_KEY_CONTENT
 -----END PRIVATE KEY-----'
 ```
 
+If the Xcode Cloud text field strips line breaks, you can also store a Base64-encoded version of the `.p8` file in `APP_STORE_CONNECT_KEY_CONTENT`.
+
 3. Add review contact details so submission does not block:
 
 ```bash
