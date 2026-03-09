@@ -35,7 +35,7 @@ if [ ! -f "${INFO_PLIST}" ]; then
   exit 1
 fi
 
-VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "${INFO_PLIST}")"
+VERSION="${MARKETING_VERSION_OVERRIDE:-$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "${INFO_PLIST}")}"
 BUILD_NUMBER="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "${INFO_PLIST}")"
 
 if [ -n "${CI_APP_STORE_SIGNED_APP_PATH:-}" ]; then
