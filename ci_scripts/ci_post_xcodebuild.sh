@@ -38,19 +38,17 @@ fi
 VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "${INFO_PLIST}")"
 BUILD_NUMBER="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "${INFO_PLIST}")"
 
-EXPORT_PATH="/tmp/aiwiki-appstore-export"
-rm -rf "${EXPORT_PATH}"
-mkdir -p "${EXPORT_PATH}"
+if [ -n "${CI_APP_STORE_SIGNED_APP_PATH:-}" ]; then
+  IPA_PATH="${CI_APP_STORE_SIGNED_APP_PATH}"
+elif [ -n "${CI_APP_STORE_SIGNED_ARCHIVE_PATH:-}" ]; then
+  IPA_PATH="$(find "${CI_APP_STORE_SIGNED_ARCHIVE_PATH}" -name '*.ipa' | head -n 1)"
+else
+  echo "[ci_post_xcodebuild] Missing CI_APP_STORE_SIGNED_APP_PATH and CI_APP_STORE_SIGNED_ARCHIVE_PATH" >&2
+  exit 1
+fi
 
-echo "[ci_post_xcodebuild] Export archive for App Store"
-xcodebuild -exportArchive \
-  -archivePath "${CI_ARCHIVE_PATH}" \
-  -exportPath "${EXPORT_PATH}" \
-  -exportOptionsPlist "ci_scripts/exportOptions-appstore.plist"
-
-IPA_PATH="$(find "${EXPORT_PATH}" -maxdepth 1 -name '*.ipa' | head -n 1)"
-if [ -z "${IPA_PATH}" ]; then
-  echo "[ci_post_xcodebuild] IPA export failed, no .ipa found in ${EXPORT_PATH}" >&2
+if [ -z "${IPA_PATH:-}" ] || [ ! -e "${IPA_PATH}" ]; then
+  echo "[ci_post_xcodebuild] App Store signed artifact not found" >&2
   exit 1
 fi
 
