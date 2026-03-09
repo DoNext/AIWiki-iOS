@@ -59,11 +59,19 @@ if [ -z "${IPA_PATH:-}" ] || [ ! -e "${IPA_PATH}" ]; then
   exit 1
 fi
 
-echo "[ci_post_xcodebuild] Submit version ${VERSION} build ${BUILD_NUMBER} using ${IPA_PATH}"
-bash scripts/release_to_app_store.sh \
-  --upload-binary \
-  --version "${VERSION}" \
-  --build-number "${BUILD_NUMBER}" \
-  --ipa-path "${IPA_PATH}"
+if truthy "${APP_STORE_SKIP_BINARY_UPLOAD:-0}"; then
+  echo "[ci_post_xcodebuild] Submit metadata/review only for version ${VERSION} build ${BUILD_NUMBER}"
+  bash scripts/release_to_app_store.sh \
+    --skip-screenshots \
+    --version "${VERSION}" \
+    --build-number "${BUILD_NUMBER}"
+else
+  echo "[ci_post_xcodebuild] Submit version ${VERSION} build ${BUILD_NUMBER} using ${IPA_PATH}"
+  bash scripts/release_to_app_store.sh \
+    --upload-binary \
+    --version "${VERSION}" \
+    --build-number "${BUILD_NUMBER}" \
+    --ipa-path "${IPA_PATH}"
+fi
 
 echo "[ci_post_xcodebuild] Done"
