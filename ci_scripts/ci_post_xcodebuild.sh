@@ -39,7 +39,14 @@ VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "${INF
 BUILD_NUMBER="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "${INFO_PLIST}")"
 
 if [ -n "${CI_APP_STORE_SIGNED_APP_PATH:-}" ]; then
-  IPA_PATH="${CI_APP_STORE_SIGNED_APP_PATH}"
+  case "${CI_APP_STORE_SIGNED_APP_PATH}" in
+    *.ipa)
+      IPA_PATH="${CI_APP_STORE_SIGNED_APP_PATH}"
+      ;;
+    *)
+      IPA_PATH="$(find "${CI_APP_STORE_SIGNED_APP_PATH}" -name '*.ipa' | head -n 1)"
+      ;;
+  esac
 elif [ -n "${CI_APP_STORE_SIGNED_ARCHIVE_PATH:-}" ]; then
   IPA_PATH="$(find "${CI_APP_STORE_SIGNED_ARCHIVE_PATH}" -name '*.ipa' | head -n 1)"
 else
