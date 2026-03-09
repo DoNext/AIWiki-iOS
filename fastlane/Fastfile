@@ -98,7 +98,7 @@ platform :ios do
       api_key: api_key,
       app_identifier: ENV.fetch("APP_BUNDLE_ID", "com.next.wiki"),
       app_version: options[:version] || ENV["APP_STORE_VERSION"],
-      build_number: options[:build_number] || ENV["APP_STORE_BUILD_NUMBER"],
+      build_number: (options[:ipa] || ENV["APP_STORE_IPA_PATH"]) ? nil : (options[:build_number] || ENV["APP_STORE_BUILD_NUMBER"]),
       ipa: options[:ipa] || ENV["APP_STORE_IPA_PATH"],
       metadata_path: METADATA_DIR,
       screenshots_path: SCREENSHOTS_DIR,
