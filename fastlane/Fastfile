@@ -106,7 +106,7 @@ platform :ios do
       skip_metadata: truthy?(options[:skip_metadata], default: false),
       skip_screenshots: truthy?(options[:skip_screenshots], default: false),
       skip_binary_upload: truthy?(options[:skip_binary_upload], default: true),
-      submit_for_review: truthy?(options[:submit_for_review], default: true),
+      submit_for_review: truthy?(options[:submit_for_review] || ENV["APP_STORE_AUTO_SUBMIT"], default: false),
       automatic_release: truthy?(options[:auto_release], default: false),
       force: true,
       run_precheck_before_submit: true,
