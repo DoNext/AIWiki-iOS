@@ -60,11 +60,12 @@ if [ -z "${IPA_PATH:-}" ] || [ ! -e "${IPA_PATH}" ]; then
 fi
 
 if truthy "${APP_STORE_SKIP_BINARY_UPLOAD:-0}"; then
+  TARGET_BUILD_NUMBER="${APP_STORE_EXISTING_BUILD_NUMBER:-${BUILD_NUMBER}}"
   echo "[ci_post_xcodebuild] Submit metadata/review only for version ${VERSION} build ${BUILD_NUMBER}"
   bash scripts/release_to_app_store.sh \
     --skip-screenshots \
     --version "${VERSION}" \
-    --build-number "${BUILD_NUMBER}"
+    --build-number "${TARGET_BUILD_NUMBER}"
 else
   echo "[ci_post_xcodebuild] Submit version ${VERSION} build ${BUILD_NUMBER} using ${IPA_PATH}"
   bash scripts/release_to_app_store.sh \
