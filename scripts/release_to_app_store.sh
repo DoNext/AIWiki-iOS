@@ -5,6 +5,13 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
+if [[ -f "$ROOT_DIR/Gemfile" ]]; then
+  export BUNDLE_PATH="$ROOT_DIR/vendor/bundle"
+  export BUNDLE_BIN="$ROOT_DIR/vendor/bundle/bin"
+  export BUNDLE_APP_CONFIG="$ROOT_DIR/.bundle"
+  export PATH="$BUNDLE_BIN:$PATH"
+fi
+
 usage() {
   cat <<'EOF'
 Usage: bash scripts/release_to_app_store.sh [options]
@@ -33,7 +40,7 @@ require_env() {
   fi
 }
 
-if ! command -v fastlane >/dev/null 2>&1 && ! bundle exec fastlane --version >/dev/null 2>&1; then
+if ! command -v fastlane >/dev/null 2>&1 && ! command -v bundle >/dev/null 2>&1; then
   echo "fastlane is not installed. Run 'bundle install' or install fastlane first." >&2
   exit 1
 fi
