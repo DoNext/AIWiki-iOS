@@ -6,7 +6,9 @@ enum L10n {
     }
 
     static func format(_ key: String, _ arguments: CVarArg...) -> String {
-        String(format: text(key), locale: Locale.current, arguments: arguments)
+        // The format strings are repo-owned localization resources, so we
+        // acknowledge the Foundation formatter's unsafe API once here.
+        unsafe String(format: text(key), locale: Locale.current, arguments: arguments)
     }
 
     enum Tab {

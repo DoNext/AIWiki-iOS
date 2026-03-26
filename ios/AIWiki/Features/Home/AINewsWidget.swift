@@ -1,5 +1,6 @@
 import SwiftUI
 
+@MainActor
 struct AINewsWidget: View {
     @State private var currentIndex = 0
     @State private var direction: CGFloat = 1 // 1 for next, -1 for previous
@@ -39,8 +40,8 @@ struct AINewsWidget: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .id(currentIndex)
                 .transition(.asymmetric(
-                    insertion: .move(edge: direction > 0 ? .trailing : .leading).combined(with: .opacity),
-                    removal: .move(edge: direction > 0 ? .leading : .trailing).combined(with: .opacity)
+                    insertion: .move(edge: direction > 0 ? .trailing : .leading).combined(with: unsafe AnyTransition.opacity),
+                    removal: .move(edge: direction > 0 ? .leading : .trailing).combined(with: unsafe AnyTransition.opacity)
                 ))
         }
         .padding(16)

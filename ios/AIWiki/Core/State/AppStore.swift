@@ -94,7 +94,9 @@ final class AppStore: ObservableObject {
         }
         
         print("AppStore: Tools loaded (\(tools.count)), triggering Spotlight indexing...")
-        SpotlightManager.shared.indexTools(tools)
+        Task { @MainActor [tools] in
+            await SpotlightManager.shared.indexTools(tools)
+        }
     }
 
     func learningMaterial(for toolID: String) -> LearningMaterial? {

@@ -160,11 +160,11 @@ struct PromptStudioView: View {
     }
 
     private func generate() {
-        let rolePart = String(format: L10n.text(L10n.PromptStudio.roleTemplate), L10n.text(selectedRole))
-        let taskPart = String(format: L10n.text(L10n.PromptStudio.taskTemplate), taskDescription)
-        let tonePart = String(format: L10n.text(L10n.PromptStudio.toneTemplate), L10n.text(selectedTone))
-        let constraintPart = constraints.isEmpty ? "" : String(format: L10n.text(L10n.PromptStudio.constraintsTemplate), constraints)
-        let formatPart = String(format: L10n.text(L10n.PromptStudio.formatTemplate), L10n.text(outputFormat))
+        let rolePart = L10n.format(L10n.PromptStudio.roleTemplate, L10n.text(selectedRole))
+        let taskPart = L10n.format(L10n.PromptStudio.taskTemplate, taskDescription)
+        let tonePart = L10n.format(L10n.PromptStudio.toneTemplate, L10n.text(selectedTone))
+        let constraintPart = constraints.isEmpty ? "" : L10n.format(L10n.PromptStudio.constraintsTemplate, constraints)
+        let formatPart = L10n.format(L10n.PromptStudio.formatTemplate, L10n.text(outputFormat))
         
         withAnimation {
             generatedPrompt = rolePart + taskPart + tonePart + constraintPart + formatPart

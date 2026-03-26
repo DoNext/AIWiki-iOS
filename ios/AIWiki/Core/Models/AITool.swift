@@ -1,12 +1,12 @@
 import Foundation
 
-struct AITool: Codable, Identifiable, Hashable {
-    struct PromptTemplate: Codable, Hashable {
+struct AITool: Codable, Identifiable, Hashable, Sendable {
+    struct PromptTemplate: Codable, Hashable, Sendable {
         let title: String
         let prompt: String
     }
 
-    struct AccessInfo: Codable, Hashable {
+    struct AccessInfo: Codable, Hashable, Sendable {
         let pricing: String
         let accountRequired: Bool
         let platforms: [String]
@@ -84,7 +84,7 @@ struct AITool: Codable, Identifiable, Hashable {
 }
 
 
-struct LearningMaterial: Codable, Hashable {
+struct LearningMaterial: Codable, Hashable, Sendable {
     let id: String
     let name: String
     let summary: String
